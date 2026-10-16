@@ -298,6 +298,8 @@
   .proj-row.is-total{border-bottom:none;padding-top:10px;}
   .proj-row.is-total b{color:var(--accent-ink);}
   .note{font-size:14px;color:var(--muted);margin:12px 0 0;}
+  .res-link{display:inline-block;margin:14px 18px 0 0;font-family:"Montserrat",sans-serif;font-weight:600;font-size:14px;color:var(--accent-ink);text-decoration:none;}
+  .res-link:hover{text-decoration:underline;}
   .card .card-foot{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-weight:600;color:var(--accent-ink);}
 
   .months{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
@@ -568,25 +570,27 @@
     <div class="side-client">Plano Macro · Dr. Hilton Monteiro</div>
     <nav class="tabs-nav" aria-label="Partes do plano">
       <a href="#inicio" data-tab="inicio">Início</a>
-      <a href="#tab-briefing" data-tab="tab-briefing"><span>01</span>Briefing</a>
-      <a href="#tab-persona" data-tab="tab-persona"><span>02</span>Persona</a>
-      <a href="#tab-trafego" data-tab="tab-trafego"><span>03</span>Estratégia de tráfego</a>
-      <a href="#tab-perfil" data-tab="tab-perfil"><span>04</span>Estruturação do perfil</a>
-      <a href="#tab-roteiros" data-tab="tab-roteiros"><span>05</span>Roteiros</a>
-      <a href="#tab-comercial" data-tab="tab-comercial"><span>06</span>Comercial</a>
-      <a href="#tab-jornada" data-tab="tab-jornada"><span>07</span>Jornada</a>
-      <a href="#tab-info" data-tab="tab-info"><span>08</span>Informações gerais</a>
+      <a href="#tab-resumo" data-tab="tab-resumo"><span>01</span>Resumo</a>
+      <a href="#tab-briefing" data-tab="tab-briefing"><span>02</span>Briefing</a>
+      <a href="#tab-persona" data-tab="tab-persona"><span>03</span>Persona</a>
+      <a href="#tab-trafego" data-tab="tab-trafego"><span>04</span>Estratégia de tráfego</a>
+      <a href="#tab-perfil" data-tab="tab-perfil"><span>05</span>Estruturação do perfil</a>
+      <a href="#tab-roteiros" data-tab="tab-roteiros"><span>06</span>Roteiros</a>
+      <a href="#tab-comercial" data-tab="tab-comercial"><span>07</span>Comercial</a>
+      <a href="#tab-jornada" data-tab="tab-jornada"><span>08</span>Jornada</a>
+      <a href="#tab-info" data-tab="tab-info"><span>09</span>Informações gerais</a>
     </nav>
     <select class="tabs-select" aria-label="Partes do plano">
       <option value="inicio">Início</option>
-      <option value="tab-briefing">01 · Briefing</option>
-      <option value="tab-persona">02 · Persona</option>
-      <option value="tab-trafego">03 · Estratégia de tráfego</option>
-      <option value="tab-perfil">04 · Estruturação do perfil</option>
-      <option value="tab-roteiros">05 · Roteiros</option>
-      <option value="tab-comercial">06 · Comercial</option>
-      <option value="tab-jornada">07 · Jornada</option>
-      <option value="tab-info">08 · Informações gerais</option>
+      <option value="tab-resumo">01 · Resumo</option>
+      <option value="tab-briefing">02 · Briefing</option>
+      <option value="tab-persona">03 · Persona</option>
+      <option value="tab-trafego">04 · Estratégia de tráfego</option>
+      <option value="tab-perfil">05 · Estruturação do perfil</option>
+      <option value="tab-roteiros">06 · Roteiros</option>
+      <option value="tab-comercial">07 · Comercial</option>
+      <option value="tab-jornada">08 · Jornada</option>
+      <option value="tab-info">09 · Informações gerais</option>
     </select>
   </aside>
 
@@ -605,34 +609,148 @@
       <div><div class="k">Etapa</div><div class="v">Validação da estratégia</div></div>
     </div>
 
-    <h3 class="sub-h">O plano em 5 decisões</h3>
-    <div class="decisions">
-      <div class="decision"><b>Atendimento antes de verba</b><span>Na call de onboarding, o Dr. Hilton apontou o atendimento como o gargalo do consultório: a abordagem comercial e o tempo de resposta. Por isso o atendimento é tratado junto com a mídia: um manual de atendimento e um CRM simples (o sistema onde cada lead fica registrado com a etapa), porque mais verba sem atendimento rápido e consultivo só aumenta o desperdício.</span></div>
-      <div class="decision"><b>Dois procedimentos, com foco</b><span>Peyronie e UroFill®, validados separadamente. Disfunção erétil e reposição hormonal ficam pra depois: no histórico da conta, 30% da verba ia pra essas duas frentes.</span></div>
-      <div class="decision"><b>Funil KLT desde o primeiro dia</b><span>Conhecer, gostar e confiar rodando juntos: 85% da verba na conversão (formulário e Google) e 15% em vídeos que fazem o paciente conhecer o Dr. Hilton antes de chegar ao formulário.</span></div>
-      <div class="decision"><b>Qualificar e medir consulta, não lead</b><span>Formulário com 3 perguntas (procedimento, consulta particular de R$ 600 e prazo), definidas pela Elevare a partir do onboarding e validadas nesta apresentação, e cada lead com a etapa registrada num CRM simples.</span></div>
-      <div class="decision"><b>2 procedimentos a mais por mês até o 4º mês, além dos cerca de 3 de hoje</b><span>Com ticket de cerca de R$ 16 mil, são cerca de R$ 32 mil por mês. Um único procedimento paga cerca de 5 meses de investimento.</span></div>
-    </div>
 
     <h3 class="sub-h">O que tem neste plano</h3>
     <div class="toc">
-      <a href="#tab-briefing"><span>01</span><b>Briefing</b><em>Quem é o Dr. Hilton, o diagnóstico da conta, o mercado e o que alinhamos no onboarding.</em></a>
-      <a href="#tab-persona"><span>02</span><b>Persona</b><em>Os dois pacientes: o homem com Peyronie e o homem que busca o UroFill®.</em></a>
-      <a href="#tab-trafego"><span>03</span><b>Estratégia de tráfego</b><em>Funil KLT, público prioritário, Google e Meta, campanhas, projeção, objetivos e formulário.</em></a>
-      <a href="#tab-perfil"><span>04</span><b>Estruturação do perfil</b><em>Posicionamento, bio, destaques, fixados e linha editorial.</em></a>
-      <a href="#tab-roteiros"><span>05</span><b>Roteiros</b><em>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</em></a>
-      <a href="#tab-comercial"><span>06</span><b>Comercial</b><em>Manual de atendimento: do primeiro contato à consulta particular.</em></a>
-      <a href="#tab-jornada"><span>07</span><b>Jornada</b><em>Os primeiros 90 dias, quem faz o quê e o que alinhamos na apresentação.</em></a>
-      <a href="#tab-info"><span>08</span><b>Informações gerais</b><em>As regras do CFM, os termos usados e o que falta confirmar.</em></a>
+      <a href="#tab-resumo"><span>01</span><b>Resumo</b><em>O plano em uma página: o que vamos fazer, por quê e o que precisamos de você.</em></a>
+      <a href="#tab-briefing"><span>02</span><b>Briefing</b><em>Quem é o Dr. Hilton, o diagnóstico da conta, o mercado e o que alinhamos no onboarding.</em></a>
+      <a href="#tab-persona"><span>03</span><b>Persona</b><em>Os dois pacientes: o homem com Peyronie e o homem que busca o UroFill®.</em></a>
+      <a href="#tab-trafego"><span>04</span><b>Estratégia de tráfego</b><em>Funil KLT, público prioritário, Google e Meta, campanhas, projeção, objetivos e formulário.</em></a>
+      <a href="#tab-perfil"><span>05</span><b>Estruturação do perfil</b><em>Posicionamento, bio, destaques, fixados e linha editorial.</em></a>
+      <a href="#tab-roteiros"><span>06</span><b>Roteiros</b><em>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</em></a>
+      <a href="#tab-comercial"><span>07</span><b>Comercial</b><em>Manual de atendimento: do primeiro contato à consulta particular.</em></a>
+      <a href="#tab-jornada"><span>08</span><b>Jornada</b><em>Os primeiros 90 dias, quem faz o quê e o que alinhamos na apresentação.</em></a>
+      <a href="#tab-info"><span>09</span><b>Informações gerais</b><em>As regras do CFM, os termos usados e o que falta confirmar.</em></a>
     </div>
-    <a class="btn" href="#tab-briefing">Começar pelo briefing →</a>
+    <a class="btn" href="#tab-resumo">Começar pelo resumo →</a>
+  </div>
+
+  <div class="tab" id="tab-resumo">
+    <header class="tab-head"><span class="tab-num">Parte 01 de 09</span><h1>Resumo</h1><p>O plano em uma página: o que vamos fazer, por quê e o que precisamos de você. Cada bloco leva ao detalhe na aba correspondente.</p><nav class="tab-toc"><a href="#r-hoje">Onde estamos</a><a href="#r-critico">Ponto crítico</a><a href="#r-persona">Pra quem falamos</a><a href="#r-estrategia">A estratégia</a><a href="#r-posicionamento">Posicionamento</a><a href="#r-voce">O que precisamos de você</a><a href="#r-90dias">90 dias</a><a href="#r-decisoes">O que decidimos hoje</a></nav></header>
+
+  <section id="r-hoje">
+    <div class="sec-head"><span class="sec-num">1.1</span><h2>Onde estamos hoje</h2></div>
+    <div class="stats">
+      <div class="stat"><div class="num">5,0</div><div class="lbl">nota na Doctoralia, com 214 avaliações</div></div>
+      <div class="stat"><div class="num">~3/mês</div><div class="lbl">procedimentos hoje: 1 Peyronie e 2 UroFill®</div></div>
+      <div class="stat"><div class="num">R$ 11,4 mil</div><div class="lbl">investidos na Meta em quase 7 meses, antes da Elevare</div></div>
+      <div class="stat"><div class="num">R$ 11,08</div><div class="lbl">por conversa no WhatsApp (UroFill® R$ 7,85 · Peyronie R$ 15,19)</div></div>
+    </div>
+    <p>A reputação já está construída; o que falta é transformar contato em consulta, e hoje ninguém sabe quantos viram consulta.</p>
+    <a class="res-link" href="#contexto">Ver o briefing completo →</a><a class="res-link" href="#diagnostico">Ver o diagnóstico da conta →</a>
+  </section>
+
+  <section id="r-critico">
+    <div class="sec-head"><span class="sec-num">1.2</span><h2>O ponto crítico</h2></div>
+    <div class="callout">
+      <span class="mark">!</span>
+      <div><p><strong>O gargalo é o atendimento:</strong> a abordagem comercial e o tempo de resposta. Mais verba sem atendimento rápido e consultivo só aumenta o desperdício.</p></div>
+    </div>
+    <a class="res-link" href="#briefing">Ver o briefing da call →</a><a class="res-link" href="#swot">Ver a análise SWOT →</a>
+  </section>
+
+  <section id="r-persona">
+    <div class="sec-head"><span class="sec-num">1.3</span><h2>Pra quem vamos falar</h2></div>
+    <div class="grid3">
+      <div class="card"><span class="tag is-ghost">Peyronie</span><h3 style="margin-top:10px;">Marcos, 57 anos</h3><p>A curvatura atrapalha a relação e ele tem medo de que a cirurgia acabe com a ereção.</p><p><strong>Objeção:</strong> “Cirurgia no pênis? E se eu ficar pior?”</p></div>
+      <div class="card"><span class="tag is-ghost">UroFill®</span><h3 style="margin-top:10px;">Rafael, 35 anos</h3><p>Quer mais espessura com segurança e compara preço, inclusive com não médicos.</p><p><strong>Objeção:</strong> “Ele tem experiência mesmo nisso?”</p></div>
+      <div class="card"><span class="tag is-ghost">Consciência</span><h3 style="margin-top:10px;">Já sabem que existe tratamento</h3><p>O anúncio não precisa explicar o problema: precisa mostrar por que escolher o Dr. Hilton.</p></div>
+    </div>
+    <a class="res-link" href="#persona">Ver os dois pacientes →</a>
+  </section>
+
+  <section id="r-estrategia">
+    <div class="sec-head"><span class="sec-num">1.4</span><h2>A estratégia</h2></div>
+    <div class="stats">
+      <div class="stat"><div class="num">R$ 3 mil</div><div class="lbl">por mês, valor fixo: R$ 2 mil na Meta e R$ 1 mil no Google</div></div>
+      <div class="stat"><div class="num">85% · 15%</div><div class="lbl">R$ 2.550 na conversão (T) e R$ 450 em vídeos que fazem você ser conhecido (K e L)</div></div>
+      <div class="stat"><div class="num">5 meses</div><div class="lbl">de verba pagos por 1 único procedimento (ticket de cerca de R$ 16 mil)</div></div>
+      <div class="stat"><div class="num">+2/mês</div><div class="lbl">procedimentos a mais até o 4º mês, cerca de R$ 32 mil por mês</div></div>
+    </div>
+
+    <h3 class="sub-h">Como o paciente chega até a consulta</h3>
+    <div class="funnel"><span class="step">Assiste a um vídeo (K)</span><span class="step">Volta e interage (L)</span><span class="step">Entra no público quente (T)</span><span class="step">Formulário ou busca no Google</span><span class="step">Consulta de R$ 600</span></div>
+
+    <h3 class="sub-h">As 3 campanhas de conversão</h3>
+    <div class="grid3">
+      <div class="card"><span class="tag">A · Meta Ads</span><h3 style="margin-top:10px;">UroFill®</h3>
+        <p><strong>Público:</strong> homens de 30 a 60 anos, regiões prioritárias.</p>
+        <p><strong>Objetivo:</strong> leads de formulário (3 perguntas).</p>
+        <p><strong>Verba:</strong> divide R$ 1.550 com a B.</p>
+        <p><strong>Histórico:</strong> R$ 7,85 por conversa, o contato mais barato da conta.</p>
+        <p class="card-foot">Papel: volume. Alimenta o atendimento todo dia.</p></div>
+      <div class="card"><span class="tag">B · Meta Ads</span><h3 style="margin-top:10px;">Peyronie</h3>
+        <p><strong>Público:</strong> homens a partir de 45 anos, classe A/B.</p>
+        <p><strong>Objetivo:</strong> leads de formulário (3 perguntas).</p>
+        <p><strong>Verba:</strong> divide R$ 1.550 com a A.</p>
+        <p><strong>Histórico:</strong> R$ 15,19 por conversa.</p>
+        <p class="card-foot">Papel: converte quem se reconheceu nos vídeos. Medida por consulta, não por lead.</p></div>
+      <div class="card"><span class="tag">C · Google Ads</span><h3 style="margin-top:10px;">Busca: Peyronie e UroFill®</h3>
+        <p><strong>Público:</strong> quem pesquisa Peyronie, curvatura e preenchimento peniano.</p>
+        <p><strong>Objetivo:</strong> contato pelas páginas de Peyronie e UroFill®.</p>
+        <p><strong>Verba:</strong> R$ 1 mil, prioridade pro Peyronie.</p>
+        <p><strong>Histórico:</strong> ainda não auditado.</p>
+        <p class="card-foot">Papel: receita. Poucos contatos, ticket alto.</p></div>
+    </div>
+
+    <h3 class="sub-h">Os objetivos</h3>
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><span class="who">Primeiros 30 dias</span><b>Inteligência comercial</b><span>Pelo menos 95% dos leads no CRM, com a etapa de cada um.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Dia 31 ao 90</span><b>Melhorar lead → consulta</b><span>Crescer pelo menos 30% na taxa de agendamento.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Até o 4º mês</span><b>Receita atribuída ao tráfego</b><span>2 procedimentos a mais por mês, cerca de R$ 32 mil.</span></div></div>
+    </div>
+    <a class="res-link" href="#campanhas">Ver as campanhas →</a><a class="res-link" href="#projecao">Ver a projeção →</a><a class="res-link" href="#objetivos">Ver os objetivos →</a>
+  </section>
+
+  <section id="r-posicionamento">
+    <div class="sec-head"><span class="sec-num">1.5</span><h2>Como vamos nos posicionar</h2></div>
+    <div class="statement is-accent"><p>Peyronie com enxerto que busca preservar a ereção natural. UroFill® com médico urologista certificado. Tudo começa numa avaliação individual: cada caso tem uma anatomia, e cada problema pede uma estratégia.</p></div>
+    <a class="res-link" href="#posicionamento">Ver posicionamento e perfil →</a>
+  </section>
+
+  <section id="r-voce">
+    <div class="sec-head"><span class="sec-num">1.6</span><h2>O que precisamos de você</h2></div>
+    <div class="card" style="border:1px solid var(--line);">
+      <ul>
+        <li>Gravar os 6 vídeos da aba Roteiros, numa sessão por mês</li>
+        <li>Atendimento em até 5 minutos, seguindo o manual, com cada lead registrado no CRM</li>
+        <li>Escolher uma das 3 bios e montar os destaques e os fixados</li>
+        <li>Fornecer os acessos e manter saldo nas contas de anúncio</li>
+        <li>Confirmar o respaldo do UroFill® e a consulta à Codame</li>
+      </ul>
+    </div>
+    <a class="res-link" href="#roteiros-video">Ver os roteiros →</a><a class="res-link" href="#atendimento-fluxo">Ver o manual de atendimento →</a><a class="res-link" href="#responsabilidades">Ver quem faz o quê →</a>
+  </section>
+
+  <section id="r-90dias">
+    <div class="sec-head"><span class="sec-num">1.7</span><h2>Os primeiros 90 dias</h2></div>
+    <div class="months">
+      <div class="card"><div class="k">Mês 1</div><h3>Base de comparação</h3><p>Funil KLT e CRM no ar. O foco é medir lead → consulta → procedimento.</p></div>
+      <div class="card"><div class="k">Mês 2</div><h3>Otimização</h3><p>A verba vai pro que gera consulta, e os primeiros fechamentos entram no CRM.</p></div>
+      <div class="card"><div class="k">Mês 3 em diante</div><h3>Consolidação</h3><p>Verba no que fecha; depois, disfunção erétil e reposição hormonal.</p></div>
+    </div>
+    <a class="res-link" href="#jornada">Ver a jornada completa →</a>
+  </section>
+
+  <section id="r-decisoes">
+    <div class="sec-head"><span class="sec-num">1.8</span><h2>O que decidimos hoje</h2></div>
+    <div class="decisions">
+      <div class="decision"><b>Valor do UroFill® no atendimento</b><span>O que a equipe pode informar quando o paciente insiste no preço.</span></div>
+      <div class="decision"><b>Quem atende</b><span>Quem segue o manual da aba Comercial e se a secretária online dedicada ao WhatsApp vai ser contratada.</span></div>
+      <div class="decision"><b>Regras do CFM</b><span>Respaldo do UroFill®, consulta à Codame sobre o nome da marca e se há RQE em andrologia.</span></div>
+      <div class="decision"><b>Gravação</b><span>A data da sessão do mês e quais avaliações da Doctoralia e do Google podem ser usadas.</span></div>
+      <div class="decision"><b>Perfil</b><span>Qual das 3 bios entra no Instagram.</span></div>
+    </div>
+    <a class="res-link" href="#jornada">Ver o que alinhar na apresentação →</a><a class="res-link" href="#lacunas">Ver o que falta confirmar →</a>
+  </section>
+    <nav class="pager"><a href="#inicio">← Início</a><a href="#tab-briefing">Briefing →</a></nav>
   </div>
 
   <div class="tab" id="tab-briefing">
-    <header class="tab-head"><span class="tab-num">Parte 01 de 08</span><h1>Briefing</h1><p>Quem é o Dr. Hilton, o diagnóstico da conta de anúncios, o mercado e o que alinhamos na call de onboarding.</p><nav class="tab-toc"><a href="#contexto">Contexto</a><a href="#diagnostico">Diagnóstico da conta</a><a href="#mercado">Mercado</a><a href="#briefing">Briefing do onboarding</a><a href="#swot">SWOT</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 02 de 09</span><h1>Briefing</h1><p>Quem é o Dr. Hilton, o diagnóstico da conta de anúncios, o mercado e o que alinhamos na call de onboarding.</p><nav class="tab-toc"><a href="#contexto">Contexto</a><a href="#diagnostico">Diagnóstico da conta</a><a href="#mercado">Mercado</a><a href="#briefing">Briefing do onboarding</a><a href="#swot">SWOT</a></nav></header>
 
   <section id="contexto">
-    <div class="sec-head"><span class="sec-num">1.1</span><h2>Contexto do cliente</h2></div>
+    <div class="sec-head"><span class="sec-num">2.1</span><h2>Contexto do cliente</h2></div>
     <p class="sec-desc">Urologista em Brasília (Asa Sul), com consultório 100% particular a partir de 1º de setembro de 2026 e foco em dois procedimentos: a cirurgia da Doença de Peyronie e o UroFill®.</p>
     <div class="facts">
       <div class="fact"><div class="k">Nicho</div><div class="v">Saúde sexual masculina</div></div>
@@ -650,7 +768,7 @@
       <div class="card">
         <h3>O que vende</h3>
         <p><strong>Cirurgia para Doença de Peyronie</strong> (carro-chefe): cirurgia de correção da curvatura com enxerto de pericárdio bovino, que mantém a ereção natural. Diagnóstico com exame físico detalhado e ultrassom com Doppler.</p>
-        <p><strong>UroFill®</strong>: estética peniana com preenchimento de ácido hialurônico, técnica patenteada. Pago em pacote. Pra quem não consegue pagar o UroFill®, há opções de menor custo.</p>
+        <p><strong>UroFill®:</strong> estética peniana com preenchimento de ácido hialurônico, técnica patenteada. Pago em pacote. Pra quem não consegue pagar o UroFill®, há opções de menor custo.</p>
         <p>Atende ainda disfunção erétil e reposição hormonal, que entram depois de validar Peyronie e UroFill®.</p>
       </div>
       <div class="card">
@@ -676,7 +794,7 @@
   </section>
 
   <section id="diagnostico">
-    <div class="sec-head"><span class="sec-num">1.2</span><h2>Diagnóstico da conta de anúncios</h2></div>
+    <div class="sec-head"><span class="sec-num">2.2</span><h2>Diagnóstico da conta de anúncios</h2></div>
     <p class="sec-desc">Auditoria combinada no onboarding: o que a sua conta da Meta rodou de fevereiro a 24 de agosto de 2026, antes da Elevare. É a base pra planejar a verba e projetar resultados.</p>
     <div class="stats">
       <div class="stat"><div class="num">R$ 11,4 mil</div><div class="lbl">investidos na Meta em quase 7 meses (cerca de R$ 1,7 mil/mês, acima do R$ 1 mil estimado no onboarding)</div></div>
@@ -707,7 +825,7 @@
   </section>
 
   <section id="mercado">
-    <div class="sec-head"><span class="sec-num">1.3</span><h2>Mercado</h2></div>
+    <div class="sec-head"><span class="sec-num">2.3</span><h2>Mercado</h2></div>
     <p class="sec-desc">Há demanda dos dois lados, mas de jeitos diferentes. O Peyronie é um problema escondido que precisa de educação e confiança; o UroFill® é desejo estético, com muita comparação de preço.</p>
     <div class="stats">
       <div class="stat"><div class="num">6–10%</div><div class="lbl">dos homens de 40 a 70 anos têm Doença de Peyronie, segundo a SBU</div></div>
@@ -741,7 +859,7 @@
   </section>
 
   <section id="briefing">
-    <div class="sec-head"><span class="sec-num">1.4</span><h2>Briefing da call de onboarding</h2></div>
+    <div class="sec-head"><span class="sec-num">2.4</span><h2>Briefing da call de onboarding</h2></div>
     <p class="sec-desc">Call em 17/08/2026 com o Dr. Hilton. Pela Elevare: Lucas, Negócios Físicos e Larissa Almeida.</p>
     <div class="callout" style="margin-bottom:22px;">
       <span class="mark">!</span>
@@ -769,33 +887,33 @@
   </section>
 
   <section id="swot">
-    <div class="sec-head"><span class="sec-num">1.5</span><h2>Análise SWOT</h2></div>
+    <div class="sec-head"><span class="sec-num">2.5</span><h2>Análise SWOT</h2></div>
     <p class="sec-desc">O ativo clínico é forte. O desafio é transformar especialização médica em percepção de valor, demanda qualificada e conversão mensurável: o produto é premium, mas parte da jornada comercial ainda funciona como consultório convencional.</p>
     <div class="swot">
       <div class="card is-pos"><span class="kicker">Interno · a favor</span><h3>Forças</h3><ul>
-        <li><strong>Foco em Peyronie</strong> — carro-chefe, com cirurgia de correção da curvatura</li>
-        <li><strong>Enxerto de pericárdio bovino, preservando a ereção</strong> — eleva a conversa de “cirurgia” pra tratamento individualizado</li>
-        <li><strong>Doppler no diagnóstico</strong> — jornada de avaliação mais técnica</li>
-        <li><strong>Certificação UroFill® única no DF</strong> — diferencia o estético dos preenchimentos genéricos</li>
-        <li><strong>Prova social forte</strong> — 214 opiniões nota 5 na Doctoralia</li>
-        <li><strong>Ticket alto, parcelamento em 10x e plano cobrindo o hospital no Peyronie</strong> — comportam um custo por paciente maior</li>
-        <li><strong>Pacientes de fora de Brasília</strong> — como o da Paraíba, que te achou na internet</li>
+        <li><strong>Foco em Peyronie:</strong> carro-chefe, com cirurgia de correção da curvatura</li>
+        <li><strong>Enxerto de pericárdio bovino, preservando a ereção:</strong> eleva a conversa de “cirurgia” pra tratamento individualizado</li>
+        <li><strong>Doppler no diagnóstico:</strong> jornada de avaliação mais técnica</li>
+        <li><strong>Certificação UroFill® única no DF:</strong> diferencia o estético dos preenchimentos genéricos</li>
+        <li><strong>Prova social forte:</strong> 214 opiniões nota 5 na Doctoralia</li>
+        <li><strong>Ticket alto, parcelamento em 10x e plano cobrindo o hospital no Peyronie:</strong> comportam um custo por paciente maior</li>
+        <li><strong>Pacientes de fora de Brasília:</strong> como o da Paraíba, que te achou na internet</li>
       </ul></div>
       <div class="card is-neg"><span class="kicker">Interno · contra</span><h3>Fraquezas</h3><ul>
-        <li><strong>Atendimento</strong> — abordagem comercial e tempo de resposta, apontados por você como o gargalo</li>
-        <li><strong>Secretária dividida com outro consultório</strong> — menos tempo pros leads</li>
-        <li><strong>Sem CRM e sem taxa de conversão</strong> — não dá pra provar o que o marketing traz</li>
-        <li><strong>Conversão concentrada na consulta</strong> — paciente que compara preço com colegas mesmo depois de te ouvir</li>
-        <li><strong>Tema constrangedor</strong> — pouco comentário, pouca indicação e avaliações genéricas</li>
+        <li><strong>Atendimento:</strong> abordagem comercial e tempo de resposta, apontados por você como o gargalo</li>
+        <li><strong>Secretária dividida com outro consultório:</strong> menos tempo pros leads</li>
+        <li><strong>Sem CRM e sem taxa de conversão:</strong> não dá pra provar o que o marketing traz</li>
+        <li><strong>Conversão concentrada na consulta:</strong> paciente que compara preço com colegas mesmo depois de te ouvir</li>
+        <li><strong>Tema constrangedor:</strong> pouco comentário, pouca indicação e avaliações genéricas</li>
         <li><strong>Instagram pequeno</strong> (cerca de 2 mil seguidores) frente à reputação</li>
       </ul></div>
       <div class="card is-pos"><span class="kicker">Externo · a favor</span><h3>Oportunidades</h3><ul>
-        <li><strong>Peyronie como território de autoridade</strong> — o paciente pesquisa sozinho e chega confuso</li>
-        <li><strong>Segunda opinião</strong> — muitos vendem a prótese como única saída</li>
-        <li><strong>Peyronie pra fora de Brasília</strong> — sugestão sua, com pacientes que já vêm de outros estados</li>
-        <li><strong>Estética peniana como medicina</strong> — tirar a comparação de “preço por ml”</li>
-        <li><strong>Público LGBTQ+</strong> — 20% a 30% dos seus pacientes, mais fiel e que indica mais</li>
-        <li><strong>Disfunção erétil e reposição hormonal</strong> — depois de validar os dois procedimentos</li>
+        <li><strong>Peyronie como território de autoridade:</strong> o paciente pesquisa sozinho e chega confuso</li>
+        <li><strong>Segunda opinião:</strong> muitos vendem a prótese como única saída</li>
+        <li><strong>Peyronie pra fora de Brasília:</strong> sugestão sua, com pacientes que já vêm de outros estados</li>
+        <li><strong>Estética peniana como medicina:</strong> tirar a comparação de “preço por ml”</li>
+        <li><strong>Público LGBTQ+:</strong> 20% a 30% dos seus pacientes, mais fiel e que indica mais</li>
+        <li><strong>Disfunção erétil e reposição hormonal:</strong> depois de validar os dois procedimentos</li>
       </ul></div>
       <div class="card is-neg"><span class="kicker">Externo · contra</span><h3>Ameaças</h3><ul>
         <li>Guerra de preço no preenchimento peniano, com várias outras marcas e não médicos</li>
@@ -808,14 +926,14 @@
     </div>
   </section>
 
-    <nav class="pager"><a href="#inicio">← Início</a><a href="#tab-persona">Persona →</a></nav>
+    <nav class="pager"><a href="#tab-resumo">← Resumo</a><a href="#tab-persona">Persona →</a></nav>
   </div>
 
   <div class="tab" id="tab-persona">
-    <header class="tab-head"><span class="tab-num">Parte 02 de 08</span><h1>Persona</h1><p>Quem a mídia paga precisa convencer: medos, objeções e o que essa pessoa pensa antes de agendar.</p><nav class="tab-toc"><a href="#persona">Os dois pacientes</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 03 de 09</span><h1>Persona</h1><p>Quem a mídia paga precisa convencer: medos, objeções e o que essa pessoa pensa antes de agendar.</p><nav class="tab-toc"><a href="#persona">Os dois pacientes</a></nav></header>
 
   <section id="persona">
-    <div class="sec-head"><span class="sec-num">2.1</span><h2>Os dois pacientes</h2></div>
+    <div class="sec-head"><span class="sec-num">3.1</span><h2>Os dois pacientes</h2></div>
     <p class="sec-desc">São dois públicos diferentes, e cada procedimento tem a sua persona. Quem decide e paga é o próprio paciente. No Peyronie, a mídia precisa vencer a vergonha e o medo de piorar; no UroFill®, o medo de dar errado e a comparação de preço. Nomes, histórias e frases são ilustrativos, montados a partir do que você contou no onboarding, das suas páginas e das opiniões da Doctoralia e do Google.</p>
 
     <div class="persona-card">
@@ -824,7 +942,7 @@
         <h3>Marcos Albuquerque · Peyronie</h3>
         <div class="persona-meta"><span><b>57 anos</b></span><span>Lago Sul, Lago Norte ou Asa Sul</span><span>Renda estável, casado, classe A ou B</span></div>
         <p style="font-size:14px;margin:0;">Há um ano e meio sentiu dor na ereção e o pênis começou a entortar. Hoje a curvatura dificulta a relação e ele evita a intimidade sem explicar por quê. Quer resolver de forma definitiva, com sigilo. <strong>Maior impedimento:</strong> vergonha e falta de informação. Não sabe o nome do que tem e tem medo de que a cirurgia acabe com a ereção.</p>
-        <span class="confirm-tag">✓ Perfil do onboarding — a partir de 45 anos, obrigatoriamente a partir dos 50, classe A ou B</span>
+        <span class="confirm-tag">✓ Perfil do onboarding: a partir de 45 anos, obrigatoriamente a partir dos 50, classe A ou B</span>
       </div>
     </div>
     <div class="grid3">
@@ -844,7 +962,7 @@
         <h3>Rafael Nogueira · UroFill®</h3>
         <div class="persona-meta"><span><b>35 anos</b></span><span>Plano Piloto ou bairros novos de Brasília</span><span>Estruturado financeiramente, interesse em estética e autoestima</span></div>
         <p style="font-size:14px;margin:0;">Sempre teve insatisfação com a espessura do pênis e evita situações por causa disso. Viu anúncios de “harmonização peniana” e conhece quem fez com não médico. Quer se sentir seguro na intimidade, com resultado natural e discrição. <strong>Maior impedimento:</strong> medo de dar errado e o preço de um procedimento médico frente às ofertas mais baratas da internet.</p>
-        <span class="confirm-tag">✓ Perfil do onboarding — de 30 a 60 anos, interesse em estética e autoestima</span>
+        <span class="confirm-tag">✓ Perfil do onboarding: de 30 a 60 anos, interesse em estética e autoestima</span>
       </div>
     </div>
     <div class="grid3">
@@ -879,10 +997,10 @@
   </div>
 
   <div class="tab" id="tab-trafego">
-    <header class="tab-head"><span class="tab-num">Parte 03 de 08</span><h1>Estratégia de tráfego</h1><p>Do funil KLT às metas: o público prioritário, onde anunciar, as campanhas, a projeção, os objetivos e o formulário.</p><nav class="tab-toc"><a href="#klt">Funil KLT</a><a href="#publico">Público prioritário</a><a href="#plataforma">Google e Meta</a><a href="#campanhas">Campanhas</a><a href="#projecao">Projeção</a><a href="#objetivos">Objetivos</a><a href="#formulario">Formulário</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 04 de 09</span><h1>Estratégia de tráfego</h1><p>Do funil KLT às metas: o público prioritário, onde anunciar, as campanhas, a projeção, os objetivos e o formulário.</p><nav class="tab-toc"><a href="#klt">Funil KLT</a><a href="#publico">Público prioritário</a><a href="#plataforma">Google e Meta</a><a href="#campanhas">Campanhas</a><a href="#projecao">Projeção</a><a href="#objetivos">Objetivos</a><a href="#formulario">Formulário</a></nav></header>
 
   <section id="klt">
-    <div class="sec-head"><span class="sec-num">3.1</span><h2>O funil KLT: conhecer, gostar e confiar</h2></div>
+    <div class="sec-head"><span class="sec-num">4.1</span><h2>O funil KLT: conhecer, gostar e confiar</h2></div>
     <p class="sec-desc">KLT vem de <em>Know, Like, Trust</em>: conhecer, gostar e confiar. É o caminho que o paciente percorre até agendar. Primeiro ele precisa saber que você existe e que o problema dele tem nome. Depois, se identificar com o jeito que você explica e trata. Por fim, sentir segurança pra dar o passo. Como você contou no onboarding, o homem reluta muito e chega à internet perdido, cercado de tratamento que não funciona: anunciar só a consulta é pedir o contato de quem ainda não confia.</p>
     <div class="grid3">
       <div class="card">
@@ -890,24 +1008,24 @@
         <h3 style="margin-top:10px;">Saber que você existe e que o problema tem nome</h3>
         <p><strong>Pra quem:</strong> quem ainda não te conhece. O homem que acha que a curvatura é coisa da idade, ou que nunca pensou em fazer o preenchimento com um médico.</p>
         <p><strong>O que roda:</strong> campanha de distribuição na Meta (visualização de vídeo), com público aberto nas regiões do onboarding: Peyronie a partir de 45 anos e UroFill® de 30 a 60.</p>
-        <p><strong>Conteúdo:</strong> vídeos de até 1 minuto, de consciência e de diferencial: os sinais do Peyronie (R1), “preenchimento não é só ml” (R2), a técnica com enxerto de pericárdio bovino e a certificação na técnica UroFill®.</p>
-        <p class="card-foot">Como medimos: custo por vídeo assistido e quantas pessoas assistem à maior parte do vídeo.</p>
+        <p><strong>Conteúdo:</strong> posts e reels que já estão no perfil, escolhidos pelo desempenho: os de consciência e de diferencial, como os sinais do Peyronie, a técnica com enxerto e a certificação na técnica UroFill®.</p>
+        <p class="card-foot">Como medimos: seguidores novos por mês, custo por seguidor e quantas pessoas assistem à maior parte do vídeo.</p>
       </div>
       <div class="card">
         <span class="tag">L · Gostar</span>
         <h3 style="margin-top:10px;">Se identificar e tirar as dúvidas</h3>
         <p><strong>Pra quem:</strong> quem já assistiu aos vídeos do K ou interagiu com o perfil. Ele já sabe quem você é e quer entender se é pra ele.</p>
         <p><strong>O que roda:</strong> a mesma campanha de distribuição, num conjunto só com esse público.</p>
-        <p><strong>Conteúdo:</strong> educação e quebra de desinformação: o caso narrado (R3), o que o preenchimento faz e o que não faz (R4), o Doppler explicado, o plano que cobre a internação e a anestesia no Peyronie e o parcelamento em até 10x. Aqui o vídeo pode ser mais longo, porque quem chega quer entender.</p>
+        <p><strong>Conteúdo:</strong> posts e reels do perfil que educam e quebram desinformação, como o Doppler explicado, o plano que cobre a internação e a anestesia no Peyronie e o parcelamento em até 10x.</p>
         <p class="card-foot">Como medimos: comentários, salvamentos, compartilhamentos, visitas ao perfil e mensagens.</p>
       </div>
       <div class="card">
         <span class="tag">T · Confiar</span>
         <h3 style="margin-top:10px;">Sentir segurança pra agendar</h3>
         <p><strong>Pra quem:</strong> quem já conhece e gosta, e quem já pesquisa no Google. Falta a prova e um caminho claro até a consulta.</p>
-        <p><strong>O que roda:</strong> as campanhas de conversão da seção 3.4: o formulário de UroFill® (A) e o de Peyronie (C) na Meta, com o público quente dos últimos 30 dias, e a busca no Google (B).</p>
-        <p><strong>Conteúdo:</strong> prova permitida pelo CFM: depoimentos sóbrios (R5 e R6), as 214 opiniões, a formação e a certificação, como funciona a consulta, os R$ 600 e o parcelamento. Chamada direta: “agende sua avaliação”.</p>
-        <p class="card-foot">Como medimos: custo por consulta agendada e por procedimento.</p>
+        <p><strong>O que roda:</strong> as campanhas de conversão da seção 4.4: o formulário de UroFill® (A) e o de Peyronie (B) na Meta, com o público quente dos últimos 30 dias, e a busca no Google (C).</p>
+        <p><strong>Conteúdo:</strong> os 6 roteiros da aba Roteiros, com a prova permitida pelo CFM: depoimentos sóbrios, as 214 opiniões, a formação e a certificação, como funciona a consulta, os R$ 600 e o parcelamento. Chamada direta: “agende sua avaliação”.</p>
+        <p class="card-foot">Como medimos: custo por lead e custo por agendamento.</p>
       </div>
     </div>
 
@@ -925,13 +1043,13 @@
       <span class="mark">→</span>
       <div>
         <p><strong>As três etapas rodam juntas desde o primeiro dia.</strong> Enquanto o T converte quem já está pronto, o K e o L preparam os próximos. Sem eles, o T depende só de quem já decidiu, que nesse tema é pouca gente.</p>
-        <p>Os 6 roteiros da aba Roteiros cobrem o funil: R1 e R2 no K, R3 e R4 no L, R5 e R6 no T. Em todas as etapas valem as regras do CFM (seção 8.1): o diferencial aparece como qualificação, nunca como “único”.</p>
+        <p>O K e o L usam posts e reels que já estão no perfil, escolhidos pelo desempenho, sem produção nova. Os 6 roteiros da aba Roteiros são todos do T. Em todas as etapas valem as regras do CFM (seção 9.1): o diferencial aparece como qualificação, nunca como “único”.</p>
       </div>
     </div>
   </section>
 
   <section id="publico">
-    <div class="sec-head"><span class="sec-num">3.2</span><h2>Público prioritário</h2></div>
+    <div class="sec-head"><span class="sec-num">4.2</span><h2>Público prioritário</h2></div>
     <p class="sec-desc">Quem a mídia mira primeiro e o que fica pra depois.</p>
     <div class="grid2">
       <div class="card"><h3>Quem a mídia mira primeiro</h3>
@@ -944,8 +1062,8 @@
   </section>
 
   <section id="plataforma">
-    <div class="sec-head"><span class="sec-num">3.3</span><h2>Google e Meta: o papel de cada um</h2></div>
-    <p class="sec-desc">As duas plataformas servem a momentos diferentes do paciente. O investimento total é de R$ 3 mil por mês, como alinhado no onboarding, com valor fixo pra cada plataforma: R$ 2 mil na Meta (R$ 1.550 no formulário e R$ 450 na distribuição de vídeos) e R$ 1 mil no Google. Somando, 85% vai pra conversão e 15% pra distribuição (seção 3.1).</p>
+    <div class="sec-head"><span class="sec-num">4.3</span><h2>Google e Meta: o papel de cada um</h2></div>
+    <p class="sec-desc">As duas plataformas servem a momentos diferentes do paciente. O investimento total é de R$ 3 mil por mês, como alinhado no onboarding, com valor fixo pra cada plataforma: R$ 2 mil na Meta (R$ 1.550 no formulário e R$ 450 na distribuição de vídeos) e R$ 1 mil no Google. Somando, 85% vai pra conversão e 15% pra distribuição (seção 4.1).</p>
     <div class="grid2">
       <div class="card platform is-now"><span class="tag">Google · busca</span><h3 style="margin-top:12px;">Captura quem já está procurando</h3><p>Quem digita “pênis torto”, “curvatura peniana” ou “urofill” já sabe o que quer. Serve aos dois procedimentos, com prioridade pro Peyronie, que é um problema pesquisado em silêncio. No funil KLT, é a etapa de confiança pra quem já pesquisa.</p></div>
       <div class="card platform is-now"><span class="tag">Meta · Instagram e Facebook</span><h3 style="margin-top:12px;">Desperta, educa e converte</h3><p>Alcança quem ainda não pesquisou, com você explicando em vídeo e carrossel. É onde o desejo do UroFill® ganha escala e onde o homem com Peyronie descobre que o que ele tem tem nome. Na Meta rodam as três etapas do funil KLT. Tem as restrições de saúde sexual da Meta e do CFM.</p></div>
@@ -954,13 +1072,13 @@
       <span class="mark">→</span>
       <div>
         <p><strong>Resumo:</strong> o Google captura a demanda que já existe; a Meta cria, educa e converte.</p>
-        <p>Referência do histórico: a agência anterior dividia cerca de R$ 2 mil no Google e R$ 1 mil na Meta. A Elevare inverte: R$ 2 mil na Meta, onde o histórico mostra volume e onde o K, o L e o formulário rodam, e R$ 1 mil no Google, que no Distrito Federal tem pouca busca (seção 3.4).</p>
+        <p>Referência do histórico: a agência anterior dividia cerca de R$ 2 mil no Google e R$ 1 mil na Meta. A Elevare inverte: R$ 2 mil na Meta, onde o histórico mostra volume e onde o K, o L e o formulário rodam, e R$ 1 mil no Google, que no Distrito Federal tem pouca busca (seção 4.4).</p>
       </div>
     </div>
   </section>
 
   <section id="campanhas">
-    <div class="sec-head"><span class="sec-num">3.4</span><h2>As campanhas</h2></div>
+    <div class="sec-head"><span class="sec-num">4.4</span><h2>As campanhas</h2></div>
     <p class="sec-desc">Mesma autoridade, dois procedimentos que se comportam de forma diferente no tráfego pago: o UroFill® gera mais volume, o Peyronie tem menos volume e ciclo mais longo. São três campanhas de conversão (o T do funil KLT), alimentadas pela distribuição do K e do L, com o público quente em todas as da Meta.</p>
     <h3 class="sub-h">Como escolhemos</h3>
     <div class="criteria">
@@ -983,14 +1101,29 @@
       <p>O homem insatisfeito com a espessura compara preço com não médicos; o anúncio mostra que é um procedimento médico, feito por urologista certificado, com avaliação e acompanhamento.</p>
       <h4>Por que encaixa no seu perfil</h4>
       <ul><li><strong>Volume:</strong> no histórico, foram 521 conversas de UroFill®, a frente com mais contatos e o menor custo.</li><li><strong>Autoridade direta:</strong> a certificação responde ao medo de “cair na mão de não médico”.</li><li><strong>Correções:</strong> segundo você, chegam um ou dois pacientes por mês insatisfeitos ou com complicações de procedimentos feitos em outro lugar.</li></ul>
-      <div class="rota-box"><div class="k">Ponto de atenção</div><ul><li>Os mais jovens têm interesse, mas muitas vezes não fecham pelo valor: a pergunta sobre a consulta particular de R$ 600 filtra, e o parcelamento em até 10x e as opções de menor custo ajudam.</li><li>Antes de escalar, confirmar o enquadramento do UroFill® no CFM e o uso do nome da marca em anúncio (seção 8.1).</li></ul></div>
+      <div class="rota-box"><div class="k">Ponto de atenção</div><ul><li>Os mais jovens têm interesse, mas muitas vezes não fecham pelo valor: a pergunta sobre a consulta particular de R$ 600 filtra, e o parcelamento em até 10x e as opções de menor custo ajudam.</li><li>Antes de escalar, confirmar o enquadramento do UroFill® no CFM e o uso do nome da marca em anúncio (seção 9.1).</li></ul></div>
       <h4>O papel dela</h4>
       <p>Campanha de volume, que alimenta o atendimento todo dia. É onde a conversão lead → consulta vai ser medida primeiro.</p>
       <div class="rota-box is-accent"><div class="k">A contrapartida</div><p>Gravar os vídeos da aba Roteiros. A Elevare edita em até 5 dias úteis.</p></div>
     </div>
 
     <div class="rota">
-      <div class="rota-head"><span class="rota-letter">B</span><div><h3>Busca no Google: Peyronie e UroFill®</h3><p>Captura de alta intenção, onde o paciente já está decidindo. Prioridade pro Peyronie.</p></div><span class="tag is-ghost rota-plat">Google Ads · T</span></div>
+      <div class="rota-head"><span class="rota-letter">B</span><div><h3>Peyronie na Meta, pra quem já se reconheceu</h3><p>O K e o L mostram que a curvatura tem nome e tratamento; esta campanha leva quem se reconheceu até a consulta.</p></div><span class="tag is-ghost rota-plat">Meta Ads · T</span></div>
+      <div class="rota-metrics">
+        <div><div class="k">Público</div><div class="v">Homens a partir de 45 anos (obrigatório a partir dos 50), classe A/B</div></div>
+        <div><div class="k">Objetivo</div><div class="v">Leads de formulário (3 perguntas)</div></div>
+        <div><div class="k">Referência do histórico</div><div class="v">R$ 15,19 por conversa, sem filtro</div></div>
+        <div><div class="k">Ticket</div><div class="v">Cerca de R$ 16 mil (honorários)</div></div>
+        <div><div class="k">Ciclo até fechar</div><div class="v">Longo</div></div>
+      </div>
+      <h4>A tese, em uma frase</h4>
+      <p>O homem com Peyronie demora a procurar ajuda; quem já viu os vídeos e se reconheceu precisa de um caminho seguro até a consulta: formulário curto, consulta particular e o plano cobrindo a internação e a anestesia.</p>
+      <h4>O papel dela</h4>
+      <p>Converte o Peyronie na Meta, com o público quente que o K e o L formam. Não é avaliada pelo custo por lead, e sim por quantas consultas de Peyronie vêm dela.</p>
+    </div>
+
+    <div class="rota">
+      <div class="rota-head"><span class="rota-letter">C</span><div><h3>Busca no Google: Peyronie e UroFill®</h3><p>Captura de alta intenção, onde o paciente já está decidindo. Prioridade pro Peyronie.</p></div><span class="tag is-ghost rota-plat">Google Ads · T</span></div>
       <div class="rota-metrics">
         <div><div class="k">Público</div><div class="v">Quem pesquisa Peyronie, curvatura e preenchimento peniano</div></div>
         <div><div class="k">Objetivo</div><div class="v">Contato pelas páginas de Peyronie e UroFill®</div></div>
@@ -1012,31 +1145,16 @@
           <tr><td class="name">Especialista</td><td>andrologista</td><td>cerca de 400</td></tr>
         </tbody>
       </table></div>
-      <p class="note">Fonte: Planejador de palavras-chave do Google, região Distrito Federal, rede de pesquisa, consulta em 13/10/2026. O paciente pesquisa em linguagem leiga: termos técnicos como “doença de Peyronie” e “especialista Peyronie Brasília” têm volume próximo de zero no DF. “Aumento peniano” tem cerca de 320 buscas, mas a maioria procura método natural, então entra só como palavra de frase, com as negativas. Por isso o volume é pequeno e a verba de R$ 1 mil basta pro começo. Negativas desde o primeiro dia: natural, caseiro, bomba, extensor, alongador, remédio, funciona e como fazer crescer, porque trazem quem procura solução sem médico. Termos vulgares entram só como palavra-chave, nunca no texto do anúncio.</p>
+      <p class="note">Fonte: Planejador de palavras-chave do Google, Distrito Federal, 13/10/2026. Negativas: natural, caseiro, bomba, extensor, alongador e remédio.</p>
       <h4>Página de destino</h4>
       <p>A página de Peyronie que já existe ganha a ordem de uma página de decisão: problema → consequências → por que cada caso é diferente → avaliação e Doppler → técnicas → quem é o Dr. Hilton → agendar.</p>
       <h4>Anúncios da busca</h4>
       <div class="grid2">
         <div class="card"><h3>15 títulos (até 30 caracteres)</h3><ul><li>Tratamento para Peyronie</li><li>Cirurgia de Peyronie no DF</li><li>Curvatura peniana: avaliação</li><li>Urologista em Brasília</li><li>Dr. Hilton Monteiro</li><li>Avaliação com Doppler</li><li>Técnica com enxerto</li><li>Enxerto de pericárdio bovino</li><li>Consulta particular</li><li>Atendimento com sigilo</li><li>Agende sua avaliação</li><li>Asa Sul, Brasília</li><li>Parcelamento em até 10x</li><li>Estética peniana com médico</li><li>UroFill® com urologista</li></ul></div>
-        <div class="card"><h3>4 descrições (até 90 caracteres)</h3><ul><li>Dr. Hilton Monteiro, médico urologista. CRM-DF 17.083 · RQE 14.863. Agende com sigilo.</li><li>Curvatura que apareceu na vida adulta ou dor na ereção merecem avaliação especializada.</li><li>Cada caso de Peyronie pede uma estratégia. A decisão vem da avaliação e do exame.</li><li>Consulta particular na Asa Sul, em Brasília. Procedimentos em até 10x.</li></ul><p class="card-foot">A descrição 1 fica fixa na primeira posição, porque leva nome, CRM e RQE (CFM, art. 4º). Os títulos com UroFill® só entram depois da resposta da Codame (seção 8.1).</p></div>
+        <div class="card"><h3>4 descrições (até 90 caracteres)</h3><ul><li>Dr. Hilton Monteiro, médico urologista. CRM-DF 17.083 · RQE 14.863. Agende com sigilo.</li><li>Curvatura que apareceu na vida adulta ou dor na ereção merecem avaliação especializada.</li><li>Cada caso de Peyronie pede uma estratégia. A decisão vem da avaliação e do exame.</li><li>Consulta particular na Asa Sul, em Brasília. Procedimentos em até 10x.</li></ul><p class="card-foot">A descrição 1 fica fixa na primeira posição, porque leva nome, CRM e RQE (CFM, art. 4º). Os títulos com UroFill® só entram depois da resposta da Codame (seção 9.1).</p></div>
       </div>
       <h4>O papel dela</h4>
       <p>Campanha de receita: poucos contatos, ticket alto. Recebe mais verba conforme as consultas aparecem.</p>
-    </div>
-
-    <div class="rota">
-      <div class="rota-head"><span class="rota-letter">C</span><div><h3>Peyronie na Meta, pra quem já se reconheceu</h3><p>O K e o L mostram que a curvatura tem nome e tratamento; esta campanha leva quem se reconheceu até a consulta.</p></div><span class="tag is-ghost rota-plat">Meta Ads · T</span></div>
-      <div class="rota-metrics">
-        <div><div class="k">Público</div><div class="v">Homens a partir de 45 anos (obrigatório a partir dos 50), classe A/B</div></div>
-        <div><div class="k">Objetivo</div><div class="v">Leads de formulário (3 perguntas)</div></div>
-        <div><div class="k">Referência do histórico</div><div class="v">R$ 15,19 por conversa, sem filtro</div></div>
-        <div><div class="k">Ticket</div><div class="v">Cerca de R$ 16 mil (honorários)</div></div>
-        <div><div class="k">Ciclo até fechar</div><div class="v">Longo</div></div>
-      </div>
-      <h4>A tese, em uma frase</h4>
-      <p>O homem com Peyronie demora a procurar ajuda; quem já viu os vídeos e se reconheceu precisa de um caminho seguro até a consulta: formulário curto, consulta particular e o plano cobrindo a internação e a anestesia.</p>
-      <h4>O papel dela</h4>
-      <p>Converte o Peyronie na Meta, com o público quente que o K e o L formam. Não é avaliada pelo custo por lead, e sim por quantas consultas de Peyronie vêm dela.</p>
     </div>
 
     <div class="card" style="border:1px solid var(--line);margin-bottom:16px;">
@@ -1045,20 +1163,7 @@
       <p>Um conjunto com quem interagiu com o perfil ou com os anúncios nos últimos 30 dias, incluindo quem assistiu aos vídeos do K e do L. É onde o funil KLT desemboca: essa pessoa já te conhece, e é a mais perto de agendar.</p>
     </div>
 
-    <h3 class="sub-h">Lado a lado</h3>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th></th><th>A · UroFill®</th><th>B · Busca no Google</th><th>C · Peyronie na Meta</th><th>Distribuição</th></tr></thead>
-      <tbody>
-        <tr><td class="name">Etapa do KLT</td><td>T · Confiar</td><td>T · Confiar</td><td>T · Confiar</td><td>K · Conhecer e L · Gostar</td></tr>
-        <tr><td class="name">Plataforma</td><td>Meta</td><td>Google</td><td>Meta</td><td>Meta</td></tr>
-        <tr><td class="name">Natureza</td><td>Desejo estético</td><td>Problema pesquisado</td><td>Problema escondido</td><td>Apresentar e educar</td></tr>
-        <tr><td class="name">Referência do histórico</td><td>R$ 7,85 por conversa</td><td>Ainda não auditado</td><td>R$ 15,19 por conversa</td><td>Sem histórico comparável</td></tr>
-        <tr><td class="name">Volume</td><td>O maior do histórico</td><td>A medir</td><td>Menor que o UroFill® no histórico</td><td>Alcance, sem pedir contato</td></tr>
-        <tr><td class="name">Verba</td><td>Parte dos R$ 1.550 da Meta</td><td>R$ 1 mil</td><td>Parte dos R$ 1.550 da Meta</td><td>R$ 450</td></tr>
-        <tr><td class="name">Papel</td><td>Volume e medição</td><td>Receita</td><td>Conversão do Peyronie</td><td>Formar o público quente</td></tr>
-      </tbody>
-    </table></div>
-    <div class="statement is-accent" style="margin-top:22px;"><p>UroFill® como motor de volume na Meta, a busca do Google como motor de receita e o Peyronie convertendo na Meta, todos alimentados pelo K e pelo L, com o público quente em todas e valor fixo por plataforma: R$ 2 mil na Meta e R$ 1 mil no Google.</p><div class="statement-foot">O vencedor não é o lead mais barato: é a combinação de custo por lead, qualidade da conversa, consulta agendada e procedimento fechado.</div></div>
+    <div class="statement is-accent" style="margin-top:22px;"><p>UroFill® como motor de volume e o Peyronie convertendo na Meta, e a busca do Google como motor de receita, todos alimentados pelo K e pelo L, com o público quente em todas e valor fixo por plataforma: R$ 2 mil na Meta e R$ 1 mil no Google.</p><div class="statement-foot">O vencedor não é o lead mais barato: é a combinação de custo por lead, qualidade da conversa, consulta agendada e procedimento fechado.</div></div>
     <div class="callout" style="margin-top:22px;">
       <span class="mark">!</span>
       <div><p><strong>O que decide o projeto:</strong> se aumentarmos o tráfego sem corrigir o atendimento, escalamos desperdício, não receita.</p></div>
@@ -1066,7 +1171,7 @@
   </section>
 
   <section id="projecao">
-    <div class="sec-head"><span class="sec-num">3.5</span><h2>Projeção</h2></div>
+    <div class="sec-head"><span class="sec-num">4.5</span><h2>Projeção</h2></div>
     <p class="sec-desc">A projeção parte do que a sua conta já mostrou e do que precisa acontecer pra meta fechar. O número de leads é calibrado no primeiro mês, com o formulário rodando.</p>
     <div class="proj">
       <div class="proj-col">
@@ -1091,7 +1196,7 @@
   </section>
 
   <section id="objetivos">
-    <div class="sec-head"><span class="sec-num">3.6</span><h2>Objetivos de marketing (SMART)</h2></div>
+    <div class="sec-head"><span class="sec-num">4.6</span><h2>Objetivos de marketing (SMART)</h2></div>
     <p class="sec-desc">Sem dado de conversão no histórico, prometer meta de custo por lead ou de retorno desde o primeiro mês seria irresponsável. Primeiro criamos a base de comparação.</p>
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><span class="who">Nos primeiros 30 dias</span><b>Inteligência comercial</b><span>Pelo menos 95% dos leads das campanhas no CRM, com campanha, procedimento, consulta agendada, comparecimento, procedimento fechado, valor e motivo da perda.</span></div></div>
@@ -1103,7 +1208,7 @@
   </section>
 
   <section id="formulario">
-    <div class="sec-head"><span class="sec-num">3.7</span><h2>Como funciona a campanha de formulário</h2></div>
+    <div class="sec-head"><span class="sec-num">4.7</span><h2>Como funciona a campanha de formulário</h2></div>
     <p class="sec-desc">Pra não ter surpresa depois: o caminho do lead, do anúncio até o atendimento, e o que cada lado faz.</p>
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><span class="who">Paciente</span><b>Vê o anúncio e responde 3 perguntas</b><span>O formulário abre dentro do Instagram/Facebook, com nome e telefone preenchidos. As 3 perguntas filtram quem está pronto e já entregam o contexto pra quem vai atender. No fim, um botão de WhatsApp de atendimento prioritário.</span></div></div>
@@ -1127,10 +1232,10 @@
   </div>
 
   <div class="tab" id="tab-perfil">
-    <header class="tab-head"><span class="tab-num">Parte 04 de 08</span><h1>Estruturação do perfil</h1><p>O que precisa estar no perfil antes das campanhas: o posicionamento, a bio, os destaques, os fixados e a linha editorial.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#perfil">Bio, destaques e fixados</a><a href="#editorial">Linha editorial</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 05 de 09</span><h1>Estruturação do perfil</h1><p>O que precisa estar no perfil antes das campanhas: o posicionamento, a bio, os destaques, os fixados e a linha editorial.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#perfil">Bio, destaques e fixados</a><a href="#editorial">Linha editorial</a></nav></header>
 
   <section id="posicionamento">
-    <div class="sec-head"><span class="sec-num">4.1</span><h2>Posicionamento e proposta de valor</h2></div>
+    <div class="sec-head"><span class="sec-num">5.1</span><h2>Posicionamento e proposta de valor</h2></div>
     <p class="sec-desc">“Atendimento humanizado”, “qualidade” e “segurança” todo médico pode dizer. O território que vale ocupar não é “urologista em Brasília” nem “médico que faz preenchimento”: é <strong>a medicina que decide o tratamento certo pra função e a anatomia peniana de cada homem</strong>.</p>
 
     <h3 class="sub-h">Diferenciais competitivos defensáveis</h3>
@@ -1152,7 +1257,7 @@
   </section>
 
   <section id="perfil">
-    <div class="sec-head"><span class="sec-num">4.2</span><h2>Bio, destaques e fixados</h2></div>
+    <div class="sec-head"><span class="sec-num">5.2</span><h2>Bio, destaques e fixados</h2></div>
     <p class="sec-desc">Quem chega pelo anúncio visita o perfil antes de chamar no WhatsApp. Em poucos segundos ele precisa entender quem é, o que trata, por que confiar e como agendar.</p>
     <div class="callout" style="margin-bottom:6px;">
       <span class="mark">→</span>
@@ -1173,7 +1278,7 @@
       <div class="card"><span class="tag is-ghost">Opção 3 · Abre pelo diferencial</span><p class="bio">Cada caso, uma estratégia<br>Peyronie e UroFill® · 214 avaliações nota 5 na Doctoralia<br>Médico Urologista · CRM-DF 17.083 · RQE 14.863<br>Agende ↓</p></div>
     </div>
     <p style="font-size:14px;margin:10px 0 0;"><strong>Link da bio:</strong> WhatsApp do consultório com mensagem pronta e discreta (“Olá, gostaria de agendar uma avaliação”).</p>
-    <p class="note">Enquanto a Codame do CRM-DF não responder sobre o nome da marca (seção 8.1), “UroFill®” pode virar “estética peniana” na bio. Se você tiver o número de cirurgias de Peyronie ou de procedimentos UroFill® já feitos, ele vira o marco de autoridade mais forte.</p>
+    <p class="note">Enquanto a Codame do CRM-DF não responder sobre o nome da marca (seção 9.1), “UroFill®” pode virar “estética peniana” na bio. Se você tiver o número de cirurgias de Peyronie ou de procedimentos UroFill® já feitos, ele vira o marco de autoridade mais forte.</p>
 
     <h3 class="sub-h">2. Destaques</h3>
     <p style="font-size:14px;margin:0 0 12px;">Quatro destaques, nesta ordem. Capas simples e iguais entre si, no azul da marca. Cada destaque com 4 a 7 stories, pouco texto por tela.</p>
@@ -1225,7 +1330,7 @@
   </section>
 
   <section id="editorial">
-    <div class="sec-head"><span class="sec-num">4.3</span><h2>Linha editorial e pilares de conteúdo</h2></div>
+    <div class="sec-head"><span class="sec-num">5.3</span><h2>Linha editorial e pilares de conteúdo</h2></div>
     <p class="sec-desc">O paciente desse tema raramente comenta ou compartilha. A autoridade não pode depender de antes e depois: precisa vir de conhecimento demonstrado.</p>
     <div class="grid2">
       <div class="card"><h3>Tom de voz</h3><p><strong>Especialista, direto, discreto e seguro.</strong></p><p>“Vou te explicar o que realmente importa antes de você tomar uma decisão.”</p><p>Linguagem inclusiva, como você já faz: “parceiro ou parceira” e casais diversos nas ilustrações.</p></div>
@@ -1244,10 +1349,10 @@
   </div>
 
   <div class="tab" id="tab-roteiros">
-    <header class="tab-head"><span class="tab-num">Parte 05 de 08</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo, dois pra cada etapa do funil KLT, todos dentro das regras do CFM.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 06 de 09</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo, dois pra cada etapa do funil KLT, todos dentro das regras do CFM.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
 
   <section id="referencias">
-    <div class="sec-head"><span class="sec-num">5.1</span><h2>Referências da Biblioteca de Anúncios</h2></div>
+    <div class="sec-head"><span class="sec-num">6.1</span><h2>Referências da Biblioteca de Anúncios</h2></div>
     <p class="sec-desc">Buscamos na Biblioteca de Anúncios da Meta os anúncios do seu nicho que estão no ar há mais tempo no Brasil. Anúncio que roda por meses é anúncio que se paga: é o melhor sinal público de que o criativo funciona. Os criativos estão na pasta de referências do Drive.</p>
     <div class="tbl-wrap"><table>
       <thead><tr><th>No ar desde</th><th>Dias no ar</th><th>Anunciante</th><th>Formato</th><th>Prévia</th></tr></thead>
@@ -1273,8 +1378,8 @@
   </section>
 
   <section id="roteiros-video">
-    <div class="sec-head"><span class="sec-num">5.2</span><h2>Os 6 roteiros</h2></div>
-    <p class="sec-desc">Dois inspirados nos anúncios que estão há mais tempo no ar (K, conhecer), dois de antes e depois (L, gostar) e dois de depoimento (T, confiar). O roteiro é um ponto de partida: grave do seu jeito, mantendo a estrutura. Em todos, a identificação exigida pelo CFM aparece na tela, nenhum promete resultado e termos explícitos ganham o sinal sonoro, como você já faz.</p>
+    <div class="sec-head"><span class="sec-num">6.2</span><h2>Os 6 roteiros</h2></div>
+    <p class="sec-desc">Todos são do T, a etapa de conversão: dois inspirados nos anúncios que estão há mais tempo no ar, dois de antes e depois e dois de depoimento. O K e o L usam o que já está no perfil. O roteiro é um ponto de partida: grave do seu jeito, mantendo a estrutura. Em todos, a identificação exigida pelo CFM aparece na tela, nenhum promete resultado e termos explícitos ganham o sinal sonoro, como você já faz.</p>
 
     <div class="roteiro">
       <div class="roteiro-head"><span class="rot-n">R1</span><div><span class="tag is-ghost">Biblioteca · Peyronie</span><h3>“Curvatura que aparece na vida adulta”</h3></div></div>
@@ -1282,7 +1387,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
         <div><div class="k">Duração</div><div class="v">40 a 50 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Etapa e campanha</div><div class="v">K · Distribuição (Peyronie)</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">T · B, Peyronie</div></div>
       </div>
       <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Dr. João Guilherme Carvalhal, no ar desde 22/01/2026 · <a href="https://www.facebook.com/ads/library/?id=1827980091240781" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: a pergunta direta no gancho, o “calma, nem toda curvatura é problema” e a lista de sinais de alerta antes do nome da doença.</p>
       <div class="tbl-wrap"><table class="script">
@@ -1306,7 +1411,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera com objeto</div></div>
         <div><div class="k">Duração</div><div class="v">30 a 40 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Etapa e campanha</div><div class="v">K · Distribuição (UroFill®)</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">T · A, UroFill®</div></div>
       </div>
       <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Dr. Bruno Urologista, no ar desde 19/01/2026 · <a href="https://www.facebook.com/ads/library/?id=4452456294982134" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: o objeto na mão que quebra uma crença no gancho e a virada “o que importa de verdade é...”. Ficam de fora as promessas de desempenho: pelas regras do CFM, os seus anúncios não falam de resultado.</p>
       <div class="tbl-wrap"><table class="script">
@@ -1329,7 +1434,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
         <div><div class="k">Duração</div><div class="v">40 a 50 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Etapa e campanha</div><div class="v">L · Distribuição (Peyronie)</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">T · B, Peyronie</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1352,7 +1457,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala + ilustração</div></div>
         <div><div class="k">Duração</div><div class="v">35 a 45 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton (ilustração na edição)</div></div>
-        <div><div class="k">Etapa e campanha</div><div class="v">L · Distribuição (UroFill®)</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">T · A, UroFill®</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1374,7 +1479,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala + print</div></div>
         <div><div class="k">Duração</div><div class="v">25 a 35 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Etapa e campanha</div><div class="v">T · A e C, no público quente</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">T · A e B, no público quente</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1412,7 +1517,7 @@
     </div>
 
     <h3 class="sub-h">Palavras dos pacientes</h3>
-    <div class="card" style="border:1px solid var(--line);"><p>Expressões tiradas das opiniões públicas da Doctoralia (consulta em 13/10/2026). São o jeito que o paciente descreve o atendimento: usar nos ganchos, nas legendas e nos textos do T, sem nome de ninguém.</p><ul><li>“tirou todas minhas dúvidas”</li><li>“explicou detalhadamente todo o procedimento”</li><li>“passou muita segurança”</li><li>“ficou tudo bem esclarecido”</li><li>“o doutor passou muita confiança”</li><li>“atencioso e extremamente técnico”</li><li>“explicação dos tipos de tratamento”</li><li>“abriu custos”</li><li>“enxergou a necessidade de investigação de outros problemas”</li><li>“me sinto muito aliviado”</li></ul><p class="card-foot">Print de avaliação inteira segue a regra de depoimento sóbrio (seção 8.1).</p></div>
+    <div class="card" style="border:1px solid var(--line);"><p>Expressões tiradas das opiniões públicas da Doctoralia (consulta em 13/10/2026). São o jeito que o paciente descreve o atendimento: usar nos ganchos, nas legendas e nos textos do T, sem nome de ninguém.</p><ul><li>“tirou todas minhas dúvidas”</li><li>“explicou detalhadamente todo o procedimento”</li><li>“passou muita segurança”</li><li>“ficou tudo bem esclarecido”</li><li>“o doutor passou muita confiança”</li><li>“atencioso e extremamente técnico”</li><li>“explicação dos tipos de tratamento”</li><li>“abriu custos”</li><li>“enxergou a necessidade de investigação de outros problemas”</li><li>“me sinto muito aliviado”</li></ul><p class="card-foot">Print de avaliação inteira segue a regra de depoimento sóbrio (seção 9.1).</p></div>
     <h3 class="sub-h">Como gravar</h3>
     <div class="grid2">
       <div class="card"><h3>Na hora de gravar</h3><ul><li>Celular na vertical, na altura dos olhos, com a câmera de trás.</li><li>Todo vídeo sai com legenda da fala, porque a maioria assiste sem som. A Elevare coloca na edição.</li><li>Luz de frente pro rosto (janela ou luz de anel). Nada de luz forte atrás.</li><li>Microfone de lapela, ou um lugar silencioso, sem eco.</li><li>Grave o gancho 3 vezes, com jeitos diferentes de falar. É a parte que decide se a pessoa assiste.</li></ul></div>
@@ -1423,16 +1528,16 @@
   </div>
 
   <div class="tab" id="tab-comercial">
-    <header class="tab-head"><span class="tab-num">Parte 06 de 08</span><h1>Comercial</h1><p>Manual de atendimento pra quem atende os leads: do primeiro contato à consulta particular de Peyronie e de UroFill®.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz e discrição</a><a href="#disc">Perfis DISC</a><a href="#agenda">Agenda e pós-consulta</a><a href="#funil">Gestão do funil</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 07 de 09</span><h1>Comercial</h1><p>Manual de atendimento pra quem atende os leads: do primeiro contato à consulta particular de Peyronie e de UroFill®.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz e discrição</a><a href="#disc">Perfis DISC</a><a href="#agenda">Agenda e pós-consulta</a><a href="#funil">Gestão do funil</a></nav></header>
 
   <section id="atendimento-fluxo">
-    <div class="sec-head"><span class="sec-num">6.1</span><h2>O fluxo de atendimento</h2></div>
+    <div class="sec-head"><span class="sec-num">7.1</span><h2>O fluxo de atendimento</h2></div>
     <div class="facts" style="margin-top:0;">
       <div class="fact"><div class="k">Pra quem</div><div class="v">A equipe que atende o WhatsApp, com a supervisão da sua esposa</div></div>
       <div class="fact"><div class="k">Objetivo</div><div class="v">Consulta particular de Peyronie e de UroFill®</div></div>
       <div class="fact"><div class="k">Tom</div><div class="v">Discreto, acolhedor e técnico</div></div>
     </div>
-    <p>Quem preenche o formulário está pensando no assunto naquele momento, muitas vezes depois de anos convivendo com ele em silêncio. Se a resposta demora, o interesse esfria ou a vergonha volta e ele desiste. A regra é <strong>velocidade e insistência, com discrição</strong>: responder rápido, não desistir do contato e nunca expor o paciente.</p>
+    <p>Quem preenche o formulário está pensando no assunto naquele momento, muitas vezes depois de anos convivendo com ele em silêncio. Se a resposta demora, o interesse esfria ou a vergonha volta e ele desiste. A regra é <strong>velocidade e insistência, com discrição:</strong> responder rápido, não desistir do contato e nunca expor o paciente.</p>
     <div class="grid2">
       <div class="card"><h3>Tempo de resposta</h3><p>Até <strong>5 minutos</strong> em horário de atendimento.</p></div>
       <div class="card"><h3>Fora do horário</h3><p>Mensagem automática avisando quando o paciente vai ser atendido. Na manhã seguinte, entrar direto no assunto, sem repetir a saudação nem perguntar de novo o que ele já respondeu.</p></div>
@@ -1462,8 +1567,8 @@
   </section>
 
   <section id="qualificacao">
-    <div class="sec-head"><span class="sec-num">6.2</span><h2>Qualificação</h2></div>
-    <p class="sec-desc">O papel de quem atende não é vender o procedimento. É entender o caso, gerar confiança e levar até a consulta. Quem examina, indica o tratamento e apresenta o orçamento é o Dr. Hilton. Usamos a lógica do <strong>SPIN</strong>: situação, problema, impacto e necessidade, com o paciente contando a própria queixa.</p>
+    <div class="sec-head"><span class="sec-num">7.2</span><h2>Qualificação</h2></div>
+    <p class="sec-desc">O papel de quem atende não é vender o procedimento. É entender o caso, gerar confiança e levar até a consulta. Quem examina, indica o tratamento e apresenta o orçamento é o Dr. Hilton. Usamos a lógica do <strong>SPIN:</strong> situação, problema, impacto e necessidade, com o paciente contando a própria queixa.</p>
     <h3 class="sub-h">Lead de formulário: ler as respostas antes do contato</h3>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Pergunta do formulário</th><th>O que a resposta diz pra conversa</th></tr></thead>
@@ -1492,12 +1597,12 @@
     </div>
     <div class="callout" style="margin-top:18px;">
       <span class="mark">!</span>
-      <div><p><strong>O que não fazer na qualificação</strong></p><p>Não dizer se o paciente tem ou não indicação (só o Dr. Hilton, depois de examinar). Não passar o valor do procedimento de início. Não prometer resultado, tamanho, duração ou ausência de dor. Não usar “único” nem “o melhor”: o WhatsApp também conta como rede do médico pro CFM (seção 8.1). Se o paciente perguntar se outro médico faz o UroFill® no DF, responder com o fato: a lista oficial de médicos certificados, no site da UroFill®. Não repetir as perguntas do formulário. Não ligar sem autorização nem deixar recado de voz falando do procedimento. Não pedir CPF nem endereço antes de a data estar escolhida.</p></div>
+      <div><p><strong>O que não fazer na qualificação</strong></p><p>Não dizer se o paciente tem ou não indicação (só o Dr. Hilton, depois de examinar). Não passar o valor do procedimento de início. Não prometer resultado, tamanho, duração ou ausência de dor. Não usar “único” nem “o melhor”: o WhatsApp também conta como rede do médico pro CFM (seção 9.1). Se o paciente perguntar se outro médico faz o UroFill® no DF, responder com o fato: a lista oficial de médicos certificados, no site da UroFill®. Não repetir as perguntas do formulário. Não ligar sem autorização nem deixar recado de voz falando do procedimento. Não pedir CPF nem endereço antes de a data estar escolhida.</p></div>
     </div>
   </section>
 
   <section id="roteiro-whatsapp">
-    <div class="sec-head"><span class="sec-num">6.3</span><h2>Roteiro de conversa no WhatsApp</h2></div>
+    <div class="sec-head"><span class="sec-num">7.3</span><h2>Roteiro de conversa no WhatsApp</h2></div>
     <p class="sec-desc">Cinco blocos, cada um com um motivo. As falas são um ponto de partida: adapte ao seu jeito, mantendo a ordem e a discrição.</p>
     <div class="funnel" style="margin-bottom:18px;"><span class="step">1 Abertura</span><span class="step">2 Investigação</span><span class="step">3 Percepção de valor</span><span class="step">4 Isolar a objeção</span><span class="step">5 Consulta e datas</span></div>
     <div class="callout" style="margin-bottom:16px;">
@@ -1524,7 +1629,7 @@
   </section>
 
   <section id="objecoes">
-    <div class="sec-head"><span class="sec-num">6.4</span><h2>Matriz de objeções</h2></div>
+    <div class="sec-head"><span class="sec-num">7.4</span><h2>Matriz de objeções</h2></div>
     <p class="sec-desc">Objeção não é recusa, é pedido de mais informação. Neste tema, quase toda objeção é vergonha, medo ou dinheiro.</p>
     <div class="objections">
       <div class="card"><h3>“Quanto custa o procedimento?”</h3><p>“O valor depende do que o Dr. Hilton avaliar no seu caso, por isso a consulta vem antes. Na consulta você já sai com o planejamento e o valor certinho, que pode ser parcelado em até 10x.”</p><p class="note">Se insistir: no UroFill®, o valor varia com a quantidade e existem opções de menor custo (a faixa que pode ser informada é definida com o Dr. Hilton). No Peyronie, os honorários saem na consulta e o plano pode cobrir a internação e a anestesia.</p></div>
@@ -1548,7 +1653,7 @@
   </section>
 
   <section id="tom-voz-atendimento">
-    <div class="sec-head"><span class="sec-num">6.5</span><h2>Tom de voz e discrição</h2></div>
+    <div class="sec-head"><span class="sec-num">7.5</span><h2>Tom de voz e discrição</h2></div>
     <p class="sec-desc">O paciente não vê o seu rosto, e está confiando algo que muitas vezes nunca contou pra ninguém.</p>
     <div class="grid2">
       <div class="card"><h3>Sorriso na voz</h3><p>Antes de ligar, sorria de verdade. O sorriso muda o timbre e passa acolhimento e confiança.</p></div>
@@ -1561,7 +1666,7 @@
   </section>
 
   <section id="disc">
-    <div class="sec-head"><span class="sec-num">6.6</span><h2>Perfis de paciente (metodologia DISC)</h2></div>
+    <div class="sec-head"><span class="sec-num">7.6</span><h2>Perfis de paciente (metodologia DISC)</h2></div>
     <p class="sec-desc">Nos primeiros segundos de conversa, identifique o perfil e adapte a abordagem.</p>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Perfil</th><th>Como ele é</th><th>Como conduzir</th></tr></thead>
@@ -1575,7 +1680,7 @@
   </section>
 
   <section id="agenda">
-    <div class="sec-head"><span class="sec-num">6.7</span><h2>Agenda, confirmação e pós-consulta</h2></div>
+    <div class="sec-head"><span class="sec-num">7.7</span><h2>Agenda, confirmação e pós-consulta</h2></div>
     <div class="grid2">
       <div class="card"><h3>Regra de agenda</h3><ul><li>Sempre <strong>duas datas nos próximos 7 dias</strong>.</li><li>Sem horário nesse prazo: avisar o Dr. Hilton antes de oferecer datas mais distantes.</li><li>Quanto mais longe a data, maior a chance de desistência ou falta.</li></ul></div>
       <div class="card"><h3>Pós-consulta (orçamento aberto)</h3><ul><li>Como você contou, muitos pacientes saem da consulta pra fazer outros orçamentos. O pós-consulta existe pra isso.</li><li>Quem passou pela consulta e não fechou entra em “Orçamento aberto”.</li><li>Contato em <strong>2, 7 e 15 dias</strong>, perguntando se ficou alguma dúvida.</li><li>Perguntar com cuidado o que pesou (valor, medo, momento, outra opinião) e anotar no CRM.</li><li>Condição especial só com autorização do Dr. Hilton.</li><li><strong>Pedir a avaliação:</strong> logo depois da consulta ou do procedimento, mandar o link direto do Google e da Doctoralia. O paciente costuma escrever pouco, e o link facilita.</li></ul></div>
@@ -1592,7 +1697,7 @@
   </section>
 
   <section id="funil">
-    <div class="sec-head"><span class="sec-num">6.8</span><h2>Gestão do funil e previsibilidade</h2></div>
+    <div class="sec-head"><span class="sec-num">7.8</span><h2>Gestão do funil e previsibilidade</h2></div>
     <p class="sec-desc">Tudo só funciona se estiver registrado. Se não está no CRM, não aconteceu.</p>
     <h3 class="sub-h">Etapas do CRM</h3>
     <div class="tbl-wrap"><table>
@@ -1620,10 +1725,10 @@
   </div>
 
   <div class="tab" id="tab-jornada">
-    <header class="tab-head"><span class="tab-num">Parte 07 de 08</span><h1>Jornada</h1><p>Como funciona a implantação do plano, o que acontece nos primeiros 90 dias e quem faz o quê.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 08 de 09</span><h1>Jornada</h1><p>Como funciona a implantação do plano, o que acontece nos primeiros 90 dias e quem faz o quê.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a></nav></header>
 
   <section id="jornada">
-    <div class="sec-head"><span class="sec-num">7.1</span><h2>A jornada dos primeiros 90 dias</h2></div>
+    <div class="sec-head"><span class="sec-num">8.1</span><h2>A jornada dos primeiros 90 dias</h2></div>
     <div class="statement"><p>Dá pra disputar lead de urologia com uma campanha de “cirurgia de Peyronie” e outra de “aumente sua autoestima”. Ou dá pra construir uma categoria própria: o urologista que decide o tratamento certo pra cada anatomia, com técnica e sigilo.</p></div>
 
     <h3 class="sub-h">Como funciona a implantação</h3>
@@ -1672,7 +1777,7 @@
     <h3 class="sub-h">O que alinhar na apresentação deste plano</h3>
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><b>Valor do UroFill® no atendimento</b><span>O valor varia com a quantidade (cerca de R$ 16 mil em média) e há opções de menor custo. Definir o que a equipe pode informar quando o paciente insiste no preço.</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Regras do CFM</b><span>Respaldo do UroFill® (registro do produto, protocolo e termo de consentimento), consulta à Codame do CRM-DF sobre o nome da marca em anúncio e se há RQE de área de atuação em andrologia (seção 8.1).</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Regras do CFM</b><span>Respaldo do UroFill® (registro do produto, protocolo e termo de consentimento), consulta à Codame do CRM-DF sobre o nome da marca em anúncio e se há RQE de área de atuação em andrologia (seção 9.1).</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Conta de antes e depois</b><span>O teste combinado no onboarding segue as regras do CFM: fotos em conjunto, com evoluções boas e ruins, caráter educativo e sem identificar o paciente.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Atendimento</b><span>Quem segue o manual da aba Comercial e se a secretária online dedicada ao WhatsApp vai ser contratada.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Verba</b><span>Dos R$ 3 mil, valor fixo por plataforma: R$ 2 mil na Meta e R$ 1 mil no Google. No total, 85% vai pra conversão e 15% pra distribuição (K e L). O Google depende do acesso à conta.</span></div></div>
@@ -1682,7 +1787,7 @@
   </section>
 
   <section id="responsabilidades">
-    <div class="sec-head"><span class="sec-num">7.2</span><h2>Quem faz o quê</h2></div>
+    <div class="sec-head"><span class="sec-num">8.2</span><h2>Quem faz o quê</h2></div>
     <p class="sec-desc">Pra ninguém ficar esperando o outro: o que é da Elevare, o que é seu e o que é do atendimento, como combinado no onboarding.</p>
     <div class="grid3">
       <div class="card"><span class="kicker">Elevare</span><h3>Mídia, dados e criativos</h3><ul>
@@ -1717,10 +1822,10 @@
   </div>
 
   <div class="tab" id="tab-info">
-    <header class="tab-head"><span class="tab-num">Parte 08 de 08</span><h1>Informações gerais</h1><p>Pra consultar quando precisar: as regras do CFM que valem pra todo o material, os termos usados no plano e o que ainda falta confirmar.</p><nav class="tab-toc"><a href="#regras-cfm">Regras do CFM</a><a href="#termos">Termos usados neste plano</a><a href="#lacunas">O que falta confirmar</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 09 de 09</span><h1>Informações gerais</h1><p>Pra consultar quando precisar: as regras do CFM que valem pra todo o material, os termos usados no plano e o que ainda falta confirmar.</p><nav class="tab-toc"><a href="#regras-cfm">Regras do CFM</a><a href="#termos">Termos usados neste plano</a><a href="#lacunas">O que falta confirmar</a></nav></header>
 
   <section id="regras-cfm">
-    <div class="sec-head"><span class="sec-num">8.1</span><h2>Regras do CFM aplicadas a este plano</h2></div>
+    <div class="sec-head"><span class="sec-num">9.1</span><h2>Regras do CFM aplicadas a este plano</h2></div>
     <p class="sec-desc">Toda peça deste plano (anúncio, bio, destaque, fixado, roteiro e mensagem de WhatsApp) segue a Resolução CFM nº 2.336/2023. Instagram e WhatsApp contam como redes próprias do médico (art. 8º, §1º), então as regras valem ali também.</p>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Regra</th><th>O que a resolução diz</th><th>Como aplicamos aqui</th></tr></thead>
@@ -1748,7 +1853,7 @@
   </section>
 
   <section id="termos">
-    <div class="sec-head"><span class="sec-num">8.2</span><h2>Termos usados neste plano</h2></div>
+    <div class="sec-head"><span class="sec-num">9.2</span><h2>Termos usados neste plano</h2></div>
     <dl class="glossary">
       <div><dt>Lead</dt><dd>Pessoa que levantou a mão: preencheu o formulário ou mandou mensagem a partir de um anúncio.</dd></div>
       <div><dt>CPL (custo por lead)</dt><dd>Quanto custou, em mídia, cada lead. Ajuda a ler a campanha, mas o que importa é quanto custa cada consulta e cada procedimento.</dd></div>
@@ -1766,7 +1871,7 @@
   </section>
 
   <section id="lacunas">
-    <div class="sec-head"><span class="sec-num">8.3</span><h2>O que falta confirmar</h2></div>
+    <div class="sec-head"><span class="sec-num">9.3</span><h2>O que falta confirmar</h2></div>
     <div class="grid2">
       <div class="card"><h3>Ainda não confirmado</h3><ul>
         <li>Taxa de conversão de consulta em procedimento, por produto</li>
