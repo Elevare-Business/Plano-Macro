@@ -1,0 +1,2194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light">
+<title>Plano Macro Podolux</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    color-scheme:light;
+    --bg:#FFFFFF;
+    --surface:#FFFFFF;
+    --surface-2:#F4F4F4;
+    --text:#171717;
+    --text-soft:#5B5B5B;
+    --muted:#666666;
+    --gray:#E6E7EA;
+    --sage:#E9ECEB;
+    --sage-line:#B3B9B8;
+    --cool:#C7C9CC;
+    --ink:#171717;
+    --line:#DEDEDE;
+    --accent:#34419B;
+    --accent-ink:#34419B;
+    --on-accent:#FFFFFF;
+    --warn-line:#171717;
+    --warn-bg:#F4F4F4;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Montserrat", -apple-system, sans-serif;
+    line-height:1.6;
+    padding-inline:20px;
+    padding-block: max(0px, env(safe-area-inset-top,0px)) max(40px, env(safe-area-inset-bottom,0px));
+  }
+  h1,h2,h3,.display{
+    font-family:"Tenor Sans", Georgia, serif;
+    font-weight:400;
+    text-wrap:balance;
+    color:var(--text);
+    letter-spacing:.01em;
+  }
+  .wrap{max-width:880px;margin-inline:auto;}
+  a{color:var(--accent-ink);}
+
+  /* ---- Masthead ---- */
+  .brandbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-block:18px;border-bottom:1px solid var(--line);
+    gap:12px;flex-wrap:wrap;
+  }
+  .brandbar img{height:30px;width:auto;display:block;}
+  .brandbar .agency{
+    font-family:"Montserrat",sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  }
+
+  .masthead{
+    display:flex;flex-direction:column;gap:14px;
+    padding-block:30px 22px;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:"Montserrat",sans-serif;font-weight:700;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent-ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .masthead h1{font-size:clamp(30px,5vw,44px);line-height:1.06;margin:0;}
+  .masthead .sub{color:var(--text-soft);font-size:16px;max-width:58ch;}
+  .test-flag{
+    display:inline-flex;align-self:flex-start;align-items:center;gap:8px;
+    background:var(--accent);color:var(--on-accent);
+    padding:6px 12px;
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  /* ---- quick facts strip ---- */
+  .facts{
+    display:flex;flex-wrap:wrap;
+    gap:1px;background:var(--line);
+    border:1px solid var(--line);
+    margin-block:22px;
+  }
+  .fact{background:var(--surface);padding:14px 16px;flex:1 1 200px;min-width:0;}
+  .fact .k{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .fact .v{font-size:16px;font-weight:600;color:var(--text);overflow-wrap:break-word;}
+  .fact .v a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--accent);}
+  .fact.is-new .v{color:var(--accent-ink);}
+
+  /* ---- nav ---- */
+  nav.sections{
+    display:flex;gap:0;flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+    padding-block:0 26px;
+  }
+  nav.sections a{
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--text-soft);text-decoration:none;
+    padding:10px 16px 10px 0;margin-right:18px;
+    border-bottom:2px solid transparent;
+    transition:border-color .15s, color .15s;
+  }
+  nav.sections a:hover{border-color:var(--accent-ink);color:var(--text);}
+
+  section{padding-block:36px;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+  .sec-num{font-family:"Montserrat",sans-serif;font-weight:700;color:var(--accent-ink);font-size:14px;letter-spacing:.05em;}
+  section h2{font-size:clamp(23px,3.6vw,29px);margin:0;}
+  .sec-desc{color:var(--text-soft);font-size:16px;max-width:62ch;margin-top:-6px;margin-bottom:20px;}
+
+  p{color:var(--text-soft);}
+  strong{color:var(--text);}
+
+  /* ---- generic card grid ---- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+  .card{background:var(--surface);padding:18px 20px;}
+  .card h3{font-size:16px;line-height:1.35;margin:0 0 8px;font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:0;text-transform:none;color:var(--text);}
+  .card ul{margin:0;padding-left:16px;}
+  .card li{margin-bottom:6px;font-size:16px;color:var(--text-soft);}
+  .card p{font-size:16px;margin:0;}
+  .card p + p{margin-top:8px;}
+
+  .tag{
+    display:inline-block;font-family:"Montserrat",monospace;font-weight:700;font-size:12px;
+    background:var(--accent);color:var(--on-accent);
+    padding:4px 9px;letter-spacing:.04em;text-transform:uppercase;
+  }
+  .tag.is-ghost{background:transparent;color:var(--accent-ink);border:1px solid var(--accent-ink);}
+
+  /* ---- persona hero card ---- */
+  .persona-card{
+    background:var(--surface);border:1px solid var(--line);
+    padding:26px;
+    display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;
+    margin-bottom:1px;
+  }
+  @media (max-width:560px){.persona-card{grid-template-columns:1fr;}}
+  .avatar{
+    width:60px;height:60px;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Tenor Sans",serif;color:#fff;font-size:22px;
+    flex-shrink:0;
+  }
+  .persona-card h3{font-family:"Tenor Sans",serif;font-size:22px;margin:0 0 6px;}
+  .persona-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:14px;margin-bottom:12px;font-family:"Montserrat",sans-serif;}
+  .persona-meta b{color:var(--text-soft);}
+  .confirm-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--accent-ink);margin-top:10px;
+  }
+
+  .quote-strip{
+    display:flex;flex-direction:column;gap:1px;
+    margin-block:1px 22px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .quote{
+    background:var(--surface-2);border-left:3px solid var(--accent);
+    padding:12px 16px;
+    font-size:16px;font-style:italic;color:var(--text-soft);
+  }
+
+  .ladder{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);counter-reset:step;}
+  .rung{
+    display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;
+    padding:12px 16px;background:var(--surface);
+  }
+  .rung .n{
+    counter-increment:step;
+    font-family:"Montserrat",sans-serif;color:var(--on-accent);font-weight:700;font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+    width:24px;height:24px;background:var(--accent);
+  }
+  .rung .n::before{content: counter(step);}
+  .rung b{font-size:14px;color:var(--text);display:block;font-family:"Montserrat",sans-serif;}
+  .rung span{font-size:14px;color:var(--text-soft);}
+  .rung .who{
+    display:inline-block;margin-top:3px;
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* ---- stat strip (mercado) ---- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:22px;}
+  @media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stats.is-2{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:640px){.stats.is-2{grid-template-columns:1fr;}}
+  .stat{background:var(--surface);padding:18px 16px;}
+  .stat .num{font-family:"Tenor Sans",serif;font-size:27px;color:var(--accent-ink);font-variant-numeric:tabular-nums;}
+  .stat .lbl{font-size:14px;color:var(--muted);margin-top:4px;font-family:"Montserrat",sans-serif;}
+
+  table{width:100%;border-collapse:collapse;font-size:16px;}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);}
+  tr:last-child td{border-bottom:none;}
+  td{color:var(--text-soft);}
+  td.name{color:var(--text);font-weight:600;}
+
+  .callout{
+    border:1px solid var(--warn-line);
+    background:var(--warn-bg);padding:16px 20px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .callout .mark{
+    font-family:"Tenor Sans",serif;color:var(--accent-ink);font-weight:700;flex-shrink:0;font-size:18px;
+  }
+  .callout p{margin:0;color:var(--text);font-size:16px;}
+  .callout p + p{margin-top:8px;color:var(--text-soft);font-size:14px;}
+
+  /* ---- plano macro ---- */
+  .sub-h{font-size:18px;line-height:1.3;margin:32px 0 12px;font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:0;text-transform:none;color:var(--text);}
+  .swot{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:640px){.swot{grid-template-columns:1fr;}}
+  .swot .card{border-top:3px solid var(--line);}
+  .swot .card.is-pos{border-top-color:var(--accent-ink);}
+  .swot .card.is-neg{border-top-color:var(--text);}
+  .swot .card h3{font-size:18px;margin-bottom:12px;}
+
+  .statement{background:var(--surface-2);border-left:3px solid var(--accent);padding:20px 24px;}
+  .statement p{font-family:"Tenor Sans",Georgia,serif;font-size:22px;line-height:1.45;color:var(--text);margin:0;}
+  .statement-foot{margin-top:12px;font-size:14px;color:var(--text-soft);}
+  .statement.is-accent{background:var(--text);border-left-color:var(--accent-ink);}
+  .statement.is-accent p,.statement.is-accent .statement-foot,.statement.is-accent strong{color:var(--bg);}
+
+  .funnel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+  .funnel .step{
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.03em;
+    padding:8px 12px;border:1px solid var(--accent);color:var(--accent-ink);
+  }
+  .funnel .step + .step::before{content:"→";margin-right:10px;color:var(--muted);}
+
+  .strategy{border:1px solid var(--line);padding:20px;margin-bottom:16px;}
+  .strategy-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .strategy-head h3{font-size:22px;margin:0;}
+  .strategy > p{font-size:16px;margin:0 0 14px;}
+
+  .pillars{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .pillars > .card{flex:1 1 250px;}
+  .pillars .hook{margin-top:10px;font-style:italic;color:var(--text);}
+
+  .fixados{display:flex;flex-direction:column;gap:16px;}
+  .fixado{border:1px solid var(--line);padding:20px;}
+  .fixado-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+  .fixado-type{font-family:"Montserrat",sans-serif;font-size:12px;color:var(--muted);font-weight:600;}
+  .art,.legenda{padding:14px 16px;margin-bottom:1px;}
+  .art{background:var(--surface-2);}
+  .legenda{border:1px solid var(--line);}
+  .art-k{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+  .art p,.legenda p{font-size:14px;margin:0 0 6px;}
+  .art .art-title{font-family:"Tenor Sans",Georgia,serif;font-size:18px;color:var(--text);}
+  .fixado-foot{font-size:14px;margin:12px 0 0;}
+  .card p.bio{margin-top:12px;padding:12px 14px;background:var(--surface-2);font-size:14px;color:var(--text);line-height:1.55;}
+
+  .platform.is-now{box-shadow:inset 0 3px 0 var(--accent);}
+
+  .criteria{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:22px;}
+  .criteria > .card{flex:1 1 300px;}
+  .criteria.is-3 > .card{flex-basis:240px;}
+  .crit-n{display:block;font-family:"Tenor Sans",Georgia,serif;font-size:26px;color:var(--accent-ink);margin-bottom:6px;}
+  .criteria .card h3{text-transform:none;font-size:16px;letter-spacing:0;}
+
+  .rota{border:1px solid var(--line);padding:22px;margin-bottom:16px;}
+  .rota-head{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;margin-bottom:16px;}
+  @media (max-width:560px){.rota-head{grid-template-columns:auto 1fr;}.rota-plat{grid-column:2;justify-self:start;}}
+  .rota-letter{font-family:"Tenor Sans",Georgia,serif;font-size:40px;line-height:1;color:var(--accent-ink);}
+  .rota-head h3{font-size:22px;margin:0 0 6px;}
+  .rota-head p{font-size:16px;margin:0;}
+  .rota-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:16px;}
+  .rota-metrics > div{background:var(--surface-2);padding:12px 14px;}
+  .rota-metrics .k,.rota-box .k,.proj .k,.months .k{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  .rota-metrics .v{font-size:16px;font-weight:600;color:var(--text);}
+  .rota h4{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:20px 0 6px;}
+  .rota p,.rota li{font-size:16px;}
+  .rota ul{margin:0;padding-left:18px;color:var(--text-soft);}
+  .rota-box{border:1px solid var(--warn-line);background:var(--warn-bg);padding:12px 16px;margin-top:14px;}
+  .rota-box.is-accent{border-color:var(--accent-ink);}
+  .rota-box p{margin:0;font-size:16px;}
+
+  .proj{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:640px){.proj{grid-template-columns:1fr;}}
+  .proj-col{background:var(--surface);padding:16px 18px;}
+  .proj-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;}
+  .proj-row span{color:var(--text-soft);}
+  .proj-row b{color:var(--text);font-variant-numeric:tabular-nums;text-align:right;}
+  .proj-row.is-total{border-bottom:none;padding-top:10px;}
+  .proj-row.is-total b{color:var(--accent-ink);}
+  .note{font-size:14px;color:var(--muted);margin:12px 0 0;}
+  .card .card-foot{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-weight:600;color:var(--accent-ink);}
+
+  .months{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:640px){.months{grid-template-columns:1fr;}}
+  .impl-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 12px;}
+  .impl-head .k{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);}
+  .impl-head b{font-family:"Montserrat",sans-serif;font-size:16px;color:var(--text);}
+  .journey{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .jstep{background:var(--surface);padding:16px 14px;}
+  .jstep .jn{font-family:"Tenor Sans",serif;font-size:22px;color:var(--accent-ink);font-variant-numeric:tabular-nums;}
+  .jstep b{display:block;font-family:"Montserrat",sans-serif;font-size:14px;color:var(--text);margin:6px 0 4px;}
+  .jstep span{display:block;font-size:14px;color:var(--muted);}
+  .jstep.is-here{outline:2px solid var(--accent-ink);outline-offset:-2px;}
+  .jstep.is-here .here{display:inline-block;margin-top:8px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);}
+  .impl-next{margin:10px 0 0;font-family:"Montserrat",sans-serif;font-size:14px;font-weight:600;color:var(--accent-ink);}
+  @media (max-width:900px){.journey{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:640px){.journey{grid-template-columns:repeat(2,1fr);}}
+  .months .card h3{text-transform:none;font-family:"Tenor Sans",Georgia,serif;font-weight:400;font-size:18px;letter-spacing:0;}
+
+  /* nada de card/bloco partido no PDF */
+  .card,.fixado,.strategy,.statement,.callout,.rung,tr,.rota-box,.proj-col,.roteiro-head{break-inside:avoid;}
+
+  footer{padding-block:28px 10px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:"Montserrat",sans-serif;}
+  footer a{color:var(--accent-ink);}
+  /* ---- layout em abas (menu à esquerda) ---- */
+  body{padding-inline:0;}
+  .layout{display:grid;grid-template-columns:240px minmax(0,1fr);max-width:1200px;margin-inline:auto;}
+  .side{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:28px 22px;border-right:1px solid var(--line);}
+  .side-logo{display:block;width:150px;color:var(--text);margin-bottom:16px;}
+  .side-logo svg{display:block;width:100%;height:auto;}
+  .side-client{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:6px 0 26px;}
+  .tabs-nav{display:flex;flex-direction:column;gap:2px;}
+  .tabs-nav a{display:flex;gap:10px;align-items:baseline;padding:9px 10px;text-decoration:none;color:var(--text-soft);font-family:"Montserrat",sans-serif;font-size:14px;font-weight:600;border-left:2px solid transparent;}
+  .tabs-nav a span{font-size:12px;color:var(--muted);font-weight:700;min-width:18px;}
+  .tabs-nav a:hover{color:var(--text);background:var(--surface-2);}
+  .tabs-nav a.is-active{color:var(--accent-ink);border-left-color:var(--accent-ink);background:var(--surface-2);}
+  .tabs-nav a.is-active span{color:var(--accent-ink);}
+  .tabs-select{display:none;}
+  .main{padding:0 40px 40px;min-width:0;}
+  .main > .tab{max-width:880px;}
+
+  .js .tab{display:none;}
+  .js .tab.is-active{display:block;}
+  .tab-head{padding-block:36px 8px;border-bottom:1px solid var(--line);}
+  .tab-num{font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);}
+  .tab-head h1{font-size:clamp(30px,4.6vw,42px);line-height:1.08;margin:6px 0 10px;}
+  .tab-head p{font-size:16px;max-width:62ch;margin:0 0 20px;}
+  .tab-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px;}
+  .tab-toc a{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;color:var(--text-soft);text-decoration:none;border:1px solid var(--line);padding:5px 10px;}
+  .tab-toc a:hover{border-color:var(--accent-ink);color:var(--accent-ink);}
+  .pager{display:flex;justify-content:space-between;gap:12px;padding-block:26px 6px;border-top:1px solid var(--line);margin-top:10px;}
+  .pager a{font-family:"Montserrat",sans-serif;font-weight:700;font-size:14px;color:var(--accent-ink);text-decoration:none;}
+
+  /* capa */
+  .cover{padding-block:56px 30px;}
+  .cover .eyebrow{margin-bottom:18px;}
+  .cover-title{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:0 0 20px;}
+  .cover-title em{font-style:italic;color:var(--accent-ink);}
+  .cover-sub{font-size:18px;max-width:60ch;margin:0 0 28px;}
+  .cover-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:18px;}
+  .cover-strip .k{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  .cover-strip .v{font-family:"Tenor Sans",Georgia,serif;font-size:18px;color:var(--text);}
+  .toc{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-bottom:26px;}
+  .toc a{display:grid;grid-template-columns:52px 1fr auto;gap:2px 16px;align-items:center;padding:14px 6px;border-bottom:1px solid var(--line);text-decoration:none;transition:background .15s;}
+  .toc a:hover{background:var(--surface-2);}
+  .toc span{grid-row:span 2;font-family:"Tenor Sans",Georgia,serif;font-size:22px;color:var(--accent-ink);}
+  .toc b{font-family:"Montserrat",sans-serif;font-weight:600;font-size:16px;color:var(--text);}
+  .toc em{grid-column:2;font-style:normal;font-size:14px;color:var(--text-soft);}
+  .toc a::after{content:"→";grid-column:3;grid-row:1 / span 2;color:var(--muted);font-family:"Montserrat",sans-serif;}
+  .toc a:hover::after{color:var(--accent-ink);}
+  .btn{display:inline-block;background:var(--accent);color:var(--on-accent);text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:700;font-size:14px;letter-spacing:.03em;padding:13px 20px;}
+
+  /* roteiros */
+  .roteiro{border:1px solid var(--line);padding:22px;margin-bottom:16px;}
+  .roteiro-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin-bottom:12px;}
+  .rot-n{font-family:"Tenor Sans",Georgia,serif;font-size:34px;line-height:1;color:var(--accent-ink);}
+  .roteiro-head h3{font-size:22px;margin:8px 0 0;}
+  table.script td:nth-child(2){color:var(--text);}
+
+  /* comercial */
+  .objections{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .objections > .card{flex:1 1 270px;}
+  .objections .card h3{text-transform:none;font-family:"Tenor Sans",Georgia,serif;font-weight:400;font-size:18px;letter-spacing:0;}
+
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;}
+    .side{position:sticky;top:0;z-index:5;height:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-right:none;border-bottom:1px solid var(--line);background:var(--bg);}
+    .side-client,.tabs-nav{display:none;}
+    .side-logo{width:112px;margin:0;}
+    .tabs-select{display:block;max-width:62vw;font-family:"Montserrat",sans-serif;font-size:14px;font-weight:600;padding:8px 10px;border:1px solid var(--line);background:var(--surface);color:var(--text);}
+    .main{padding:0 16px 32px;}
+  }
+
+  /* ---- revisão: componentes ---- */
+  @media (min-width:901px) and (min-height:780px){
+    .side::after{content:"";position:absolute;left:22px;bottom:26px;width:150px;height:132px;pointer-events:none;
+      background-image:radial-gradient(circle,var(--text) 1.05px,transparent 1.45px);background-size:9px 9px;
+      clip-path:polygon(50% 0,100% 100%,0 100%);
+      -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.35) 50%,transparent 100%);
+              mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.35) 50%,transparent 100%);
+      opacity:.2;}
+  }
+  .decisions{border-top:2px solid var(--text);margin:6px 0 8px;counter-reset:dec;}
+  .decision{display:grid;grid-template-columns:52px 1fr;gap:3px 16px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .decision::before{counter-increment:dec;content:counter(dec,decimal-leading-zero);grid-row:span 2;font-family:"Tenor Sans",Georgia,serif;font-size:26px;line-height:1.1;color:var(--accent-ink);}
+  .decision b{font-family:"Montserrat",sans-serif;font-weight:600;font-size:18px;color:var(--text);}
+  .decision span{font-size:16px;color:var(--text-soft);}
+  .kicker{display:block;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  span.status{display:inline-block;margin-left:8px;padding:2px 7px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);color:var(--muted);vertical-align:2px;}
+  span.status.is-done{border-color:var(--accent-ink);color:var(--accent-ink);}
+  .glossary{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 28px;margin:0;}
+  .glossary > div{padding:12px 0;border-bottom:1px solid var(--line);}
+  .glossary dt{font-family:"Montserrat",sans-serif;font-weight:600;font-size:16px;color:var(--text);}
+  .glossary dd{margin:2px 0 0;font-size:16px;color:var(--text-soft);}
+  a:focus-visible,select:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px;}
+  section{scroll-margin-top:12px;}
+  @media (max-width:900px){ section{scroll-margin-top:76px;} }
+  /* no celular, toda tabela vira uma pilha de cartões (rótulos vêm do cabeçalho, via script) */
+  @media (max-width:640px){
+    .tbl-wrap{border:none;overflow:visible;}
+    .tbl-wrap table,.tbl-wrap tbody,.tbl-wrap tr,.tbl-wrap td{display:block;width:100%;}
+    .tbl-wrap thead{display:none;}
+    .tbl-wrap tr{border:1px solid var(--line);background:var(--surface);padding:12px 14px;margin-bottom:8px;}
+    .tbl-wrap td{border:none;padding:3px 0;}
+    .tbl-wrap td:empty{display:none;}
+    .tbl-wrap td.name{font-size:16px;padding-bottom:4px;}
+    .tbl-wrap td[data-label]:not(.name)::before{content:attr(data-label);display:block;margin-top:6px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+    .decision{grid-template-columns:40px 1fr;}
+    .toc a{grid-template-columns:40px 1fr auto;gap:2px 12px;}
+  }
+
+  /* PDF / impressão: todas as abas em sequência, sem menu */
+  @media print{
+    .side,.pager,.btn,.tab-toc{display:none !important;}
+    .layout{display:block;}
+    .main{padding:0 24px;}
+    .js .tab,.tab{display:block !important;}
+    .tab + .tab{border-top:2px solid var(--accent);margin-top:24px;}
+  }
+
+
+  /* ---- revisão de design 12/10/2026 (brandbook Elevare) ---- */
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  .skip{position:absolute;left:-9999px;top:0;z-index:10;background:var(--accent);color:var(--on-accent);padding:10px 16px;font-family:"Montserrat",sans-serif;font-weight:600;font-size:14px;text-decoration:none;}
+  .skip:focus{left:16px;top:12px;}
+  /* brandbook: Montserrat SemiBold é a fonte primária; Tenor Sans fica nos títulos de apoio (capa, abas, números) */
+  section h2{font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:0;font-size:clamp(22px,3.2vw,26px);line-height:1.25;}
+  .cover-title em{font-style:normal;}
+  .tabs-select{font-size:16px;}
+  /* destaques num estilo só: fundo cinza + filete azul à esquerda */
+  .callout,.rota-box,.rota-box.is-accent{border:none;border-left:3px solid var(--accent);background:var(--surface-2);}
+  .callout .mark{display:none;}
+  .callout p + p{color:var(--text-soft);}
+  /* fluxos: linha simples de etapas, sem cara de botão */
+  .funnel{gap:4px 0;}
+  .funnel .step{border:none;padding:4px 0;color:var(--text);font-weight:600;font-size:14px;letter-spacing:0;}
+  .funnel .step + .step::before{content:"→";margin:0 10px;color:var(--accent-ink);}
+  @media (max-width:640px){
+    .funnel{flex-direction:column;align-items:flex-start;}
+    .funnel .step + .step::before{content:"↓";display:block;margin:0 0 2px;}
+  }
+  /* números: alinhados à direita e com algarismos de mesma largura */
+  th.num,td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  tr.is-total td{font-weight:600;color:var(--text);border-top:2px solid var(--text);}
+  @media (max-width:640px){.tbl-wrap td.num{text-align:left;}}
+  /* menos enfeite de modelo pronto */
+  .toc a::after{content:none;}
+  .toc a{grid-template-columns:52px 1fr;}
+  .crit-n{display:none;}
+  /* funil KLT: as três etapas sobem de intensidade, do contato frio à confiança */
+  #klt .grid3 > .card:nth-child(2){background:var(--surface-2);}
+  #klt .grid3 > .card:nth-child(3){background:var(--text);}
+  #klt .grid3 > .card:nth-child(3) h3,#klt .grid3 > .card:nth-child(3) p,#klt .grid3 > .card:nth-child(3) strong{color:var(--bg);}
+  #klt .grid3 > .card:nth-child(3) .card-foot{border-top-color:rgba(127,127,127,.4);color:var(--bg);}
+  #klt .grid3 > .card:nth-child(3) .tag{background:var(--bg);color:var(--text);}
+  .proj-row b{white-space:nowrap;}
+  .split{display:flex;height:34px;margin:0 0 12px;font-family:"Montserrat",sans-serif;font-weight:600;font-size:14px;}
+  .split span{display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden;}
+  .split .is-main{background:var(--accent);color:var(--on-accent);}
+  .split .is-rest{background:var(--text);color:var(--bg);margin-left:2px;min-width:max-content;}
+  /* índice da aba fixo no topo enquanto rola (computador) */
+  @media (min-width:901px){
+    .tab-toc{position:sticky;top:0;z-index:4;background:var(--bg);padding:10px 0;margin-bottom:12px;border-bottom:1px solid var(--line);}
+    section{scroll-margin-top:64px;}
+  }
+
+  /* ---- variação de cor 12/10/2026: ritmo com a paleta e as secundárias do brandbook ---- */
+  /* cabeçalho de cada aba numa faixa azul da marca */
+  .tab-head{background:var(--accent);border-bottom:none;margin-inline:-40px;padding:40px 40px 26px;}
+  .tab-head h1{color:#FFFFFF;}
+  .tab-head p{color:#E6E7EA;}
+  .tab-head .tab-num{color:#E6E7EA;}
+  /* seções alternam branco e cinza; dentro do cinza, os cartões ficam brancos */
+  .tab > section:nth-of-type(even){background:var(--gray);margin-inline:-40px;padding-inline:40px;border-bottom-color:transparent;}
+  .tab > section:nth-of-type(odd){border-bottom-color:transparent;}
+  /* número da seção como selo azul */
+  .sec-num{background:var(--accent);color:var(--on-accent);padding:3px 8px;font-size:12px;letter-spacing:.04em;align-self:center;}
+  /* destaques e alertas em verde-acinzentado, com filete azul */
+  .callout,.rota-box,.rota-box.is-accent{background:var(--sage);border-left-color:var(--accent);}
+  .statement{background:var(--sage);border-left-color:var(--sage-line);}
+  .quote{background:var(--sage);}
+  /* frase de decisão em azul da marca, texto branco */
+  .statement.is-accent{background:var(--accent);border-left-color:var(--ink);}
+  .statement.is-accent p,.statement.is-accent .statement-foot,.statement.is-accent strong{color:#FFFFFF;}
+  /* cabeçalho das tabelas em azul da marca, texto branco */
+  th{background:var(--accent);color:#FFFFFF;}
+  .tab > section:nth-of-type(even) .tbl-wrap{background:var(--surface);}
+  /* cartões de estratégia, roteiro, rota e fixado com topo colorido pra separar blocos longos */
+  .strategy,.roteiro,.rota,.fixado{background:var(--surface);border-top:3px solid var(--accent);}
+  .tab > section:nth-of-type(even) .strategy,.tab > section:nth-of-type(even) .roteiro,
+  .tab > section:nth-of-type(even) .rota,.tab > section:nth-of-type(even) .fixado{border-color:var(--cool);border-top-color:var(--accent);}
+  .art{background:var(--sage);}
+  /* SWOT: força e oportunidade em azul, fraqueza e ameaça em preto */
+  .swot .card.is-neg{border-top-color:var(--ink);}
+  /* números de destaque em azul sobre cinza frio */
+  .stat{background:var(--surface);}
+  .proj-col:first-child{background:var(--gray);}
+  .tab > section:nth-of-type(even) .proj-col:first-child{background:var(--sage);}
+  /* jornada: passo atual em azul cheio */
+  .jstep.is-here{background:var(--accent);outline:none;}
+  .jstep.is-here .jn,.jstep.is-here b,.jstep.is-here span,.jstep.is-here .here{color:#FFFFFF;}
+  /* barra lateral branca, separada do conteúdo por uma linha preta fina */
+  .side{background:var(--bg);border-right:1px solid var(--ink);}
+  .tabs-nav a:hover{background:var(--gray);}
+  .tabs-nav a.is-active{background:var(--gray);}
+  /* capa: faixa de dados em cinza */
+  .cover-strip{background:var(--gray);border:none;padding:18px 20px;}
+  .decisions{border-top-color:var(--accent);}
+  .tab-toc{background:var(--surface);}
+  .tab-toc a{background:var(--surface);}
+  @media (min-width:901px){ .tab-toc{background:var(--bg);} }
+  .tab > section:nth-of-type(even) .callout,.tab > section:nth-of-type(even) .rota-box,
+  .tab > section:nth-of-type(even) .statement:not(.is-accent),.tab > section:nth-of-type(even) .quote,
+  .tab > section:nth-of-type(even) .art,.tab > section:nth-of-type(even) .card p.bio{background:var(--surface);}
+  .tab > section:nth-of-type(even) .proj-col:first-child{background:var(--surface);}
+  body{margin:0;}
+  /* cabeçalho das abas: menor e com a mesma altura em todas; botões do índice afastados do cabeçalho */
+  .tab-head{height:188px;padding:28px 40px 24px;display:flex;flex-direction:column;justify-content:flex-end;}
+  .tab-head h1{font-size:clamp(28px,3.4vw,34px);line-height:1.1;margin:4px 0 8px;}
+  .tab-head p{margin:0;max-width:66ch;}
+  .tab-toc{margin:0 0 8px;padding:16px 0;border-bottom:1px solid var(--line);}
+  @media (min-width:901px){ .tab-toc{padding:16px 0;margin:0 0 8px;} }
+  @media (max-width:900px){
+    .tab{scroll-margin-top:64px;}
+    .tab-head{margin-inline:-16px;padding:24px 16px 20px;height:auto;min-height:208px;}
+    .tab > section:nth-of-type(even){margin-inline:-16px;padding-inline:16px;}
+    .side{background:var(--bg);}
+  }
+  @media print{
+    .tab-head,.tab > section:nth-of-type(even){margin-inline:0;}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+
+
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="layout">
+
+  <aside class="side">
+    <a class="side-logo" href="#inicio"><svg role="img" aria-label="ELEVARE Business Group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="573 368 309 79.5"><defs><g/><clipPath id="11576bdf47"><path d="M 698 375 L 732 375 L 732 413 L 698 413 Z M 698 375 " clip-rule="nonzero"/></clipPath><clipPath id="4aea36ff11"><path d="M 731.539062 412.058594 L 699.148438 412.292969 L 698.886719 375.980469 L 731.277344 375.75 Z M 731.539062 412.058594 " clip-rule="nonzero"/></clipPath><clipPath id="0f09a3b431"><path d="M 715.34375 412.175781 L 698.886719 375.988281 L 731.277344 375.753906 Z M 715.34375 412.175781 " clip-rule="nonzero"/></clipPath><clipPath id="84e6c9b559"><path d="M 738.585938 386.847656 L 770.976562 386.847656 L 770.976562 423.160156 L 738.585938 423.160156 Z M 738.585938 386.847656 " clip-rule="nonzero"/></clipPath><clipPath id="5523d27120"><path d="M 754.78125 386.847656 L 770.976562 423.152344 L 738.585938 423.152344 Z M 754.78125 386.847656 " clip-rule="nonzero"/></clipPath></defs><g fill="currentColor" fill-opacity="1"><g transform="translate(693.653809, 422.622421)"><g><path d="M 2 -46.84375 L 21.609375 0 L 25.625 0 L 44.640625 -46.84375 L 41.15625 -46.84375 L 25.5625 -8.296875 L 25.296875 -8.296875 L 9.234375 -46.84375 Z M 2 -46.84375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(730.38927, 422.622421)"><g><path d="M 34.0625 -13.78125 L 40.484375 0 L 46.984375 0 L 25.15625 -46.84375 L 21.8125 -46.84375 L 2 0 L 5.09375 0 L 10.96875 -13.78125 Z M 32.65625 -16.796875 L 12.25 -16.796875 L 21.890625 -39.34375 L 22.15625 -39.34375 Z M 32.65625 -16.796875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(775.796731, 422.241609)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 14.125 0 L 14.125 -20.671875 L 17.0625 -20.671875 C 18.3125 -20.671875 19.347656 -20.5625 20.171875 -20.34375 C 21.003906 -20.125 21.753906 -19.742188 22.421875 -19.203125 C 23.085938 -18.671875 23.707031 -17.976562 24.28125 -17.125 C 24.863281 -16.28125 25.5625 -15.234375 26.375 -13.984375 L 31.65625 -6.15625 C 32.320312 -5.132812 32.976562 -4.195312 33.625 -3.34375 C 34.269531 -2.5 34.972656 -1.773438 35.734375 -1.171875 C 36.492188 -0.566406 37.351562 -0.0859375 38.3125 0.265625 C 39.269531 0.617188 40.421875 0.796875 41.765625 0.796875 C 42.742188 0.796875 43.546875 0.75 44.171875 0.65625 C 44.796875 0.570312 45.421875 0.351562 46.046875 0 L 46.046875 -2.46875 C 45.816406 -2.425781 45.585938 -2.394531 45.359375 -2.375 C 45.140625 -2.351562 44.921875 -2.34375 44.703125 -2.34375 C 43.765625 -2.34375 42.9375 -2.472656 42.21875 -2.734375 C 41.507812 -3.003906 40.84375 -3.394531 40.21875 -3.90625 C 39.59375 -4.425781 38.988281 -5.050781 38.40625 -5.78125 C 37.832031 -6.519531 37.234375 -7.359375 36.609375 -8.296875 C 34.734375 -11.015625 33.28125 -13.1875 32.25 -14.8125 C 31.226562 -16.445312 30.414062 -17.707031 29.8125 -18.59375 C 29.207031 -19.488281 28.710938 -20.132812 28.328125 -20.53125 C 27.953125 -20.9375 27.5 -21.273438 26.96875 -21.546875 L 26.296875 -21.890625 L 26.296875 -22.15625 C 28.441406 -22.289062 30.28125 -22.757812 31.8125 -23.5625 C 33.351562 -24.363281 34.613281 -25.363281 35.59375 -26.5625 C 36.582031 -27.769531 37.296875 -29.078125 37.734375 -30.484375 C 38.179688 -31.890625 38.40625 -33.257812 38.40625 -34.59375 C 38.40625 -35.800781 38.171875 -37.117188 37.703125 -38.546875 C 37.242188 -39.972656 36.441406 -41.300781 35.296875 -42.53125 C 34.160156 -43.757812 32.609375 -44.785156 30.640625 -45.609375 C 28.679688 -46.429688 26.207031 -46.84375 23.21875 -46.84375 Z M 14.125 -43.90625 L 20.875 -43.90625 C 22.570312 -43.90625 24.097656 -43.65625 25.453125 -43.15625 C 26.816406 -42.664062 27.988281 -41.984375 28.96875 -41.109375 C 29.957031 -40.242188 30.707031 -39.207031 31.21875 -38 C 31.726562 -36.800781 31.984375 -35.488281 31.984375 -34.0625 C 31.984375 -32.851562 31.75 -31.632812 31.28125 -30.40625 C 30.8125 -29.1875 30.109375 -28.070312 29.171875 -27.0625 C 28.234375 -26.0625 27.082031 -25.25 25.71875 -24.625 C 24.363281 -24 22.796875 -23.6875 21.015625 -23.6875 L 14.125 -23.6875 Z M 14.125 -43.90625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(823.838686, 422.241609)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 38.28125 0 L 38.28125 -3.6875 L 14.125 -3.6875 L 14.125 -23.28125 L 34.859375 -23.28125 L 34.859375 -26.375 L 14.125 -26.375 L 14.125 -43.171875 L 38.28125 -43.171875 L 38.28125 -46.84375 Z M 8.03125 -46.84375 "/></g></g></g><g clip-path="url(#11576bdf47)"><g clip-path="url(#4aea36ff11)"><g clip-path="url(#0f09a3b431)"><path fill="currentColor" d="M 731.539062 412.058594 L 699.148438 412.292969 L 698.886719 375.980469 L 731.277344 375.75 Z M 731.539062 412.058594 " fill-opacity="1" fill-rule="nonzero"/></g></g></g><g clip-path="url(#84e6c9b559)"><g clip-path="url(#5523d27120)"><path fill="currentColor" d="M 738.585938 386.847656 L 770.976562 386.847656 L 770.976562 423.160156 L 738.585938 423.160156 Z M 738.585938 386.847656 " fill-opacity="1" fill-rule="nonzero"/></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(868.223196, 380.585768)"><g><path d="M 5.34375 -7.375 L 6.015625 -7.375 C 6.347656 -7.375 6.625 -7.265625 6.84375 -7.046875 C 7.0625 -6.828125 7.171875 -6.578125 7.171875 -6.296875 C 7.171875 -6.085938 7.132812 -5.910156 7.0625 -5.765625 C 6.988281 -5.628906 6.890625 -5.519531 6.765625 -5.4375 C 6.648438 -5.351562 6.523438 -5.289062 6.390625 -5.25 C 6.265625 -5.21875 6.144531 -5.203125 6.03125 -5.203125 L 5.34375 -5.203125 Z M 4.40625 -2.21875 L 5.34375 -2.21875 L 5.34375 -4.640625 L 5.984375 -4.640625 C 6.023438 -4.640625 6.097656 -4.566406 6.203125 -4.421875 C 6.304688 -4.285156 6.421875 -4.125 6.546875 -3.9375 C 6.671875 -3.75 6.785156 -3.566406 6.890625 -3.390625 C 7.003906 -3.210938 7.082031 -3.085938 7.125 -3.015625 C 7.21875 -2.898438 7.300781 -2.785156 7.375 -2.671875 C 7.445312 -2.566406 7.53125 -2.472656 7.625 -2.390625 C 7.726562 -2.304688 7.835938 -2.242188 7.953125 -2.203125 C 8.078125 -2.160156 8.234375 -2.140625 8.421875 -2.140625 C 8.578125 -2.140625 8.695312 -2.148438 8.78125 -2.171875 C 8.875 -2.191406 8.960938 -2.226562 9.046875 -2.28125 L 9.046875 -2.75 C 8.960938 -2.726562 8.875 -2.71875 8.78125 -2.71875 C 8.550781 -2.71875 8.382812 -2.773438 8.28125 -2.890625 C 8.175781 -3.003906 8.097656 -3.101562 8.046875 -3.1875 L 6.890625 -4.796875 C 7.117188 -4.859375 7.3125 -4.945312 7.46875 -5.0625 C 7.632812 -5.1875 7.769531 -5.320312 7.875 -5.46875 C 7.976562 -5.613281 8.050781 -5.757812 8.09375 -5.90625 C 8.132812 -6.0625 8.15625 -6.207031 8.15625 -6.34375 C 8.15625 -6.4375 8.132812 -6.566406 8.09375 -6.734375 C 8.0625 -6.910156 7.976562 -7.082031 7.84375 -7.25 C 7.707031 -7.425781 7.515625 -7.578125 7.265625 -7.703125 C 7.015625 -7.828125 6.6875 -7.890625 6.28125 -7.890625 L 4.40625 -7.890625 Z M 1.984375 -5.140625 C 1.984375 -5.742188 2.097656 -6.304688 2.328125 -6.828125 C 2.566406 -7.359375 2.882812 -7.820312 3.28125 -8.21875 C 3.675781 -8.613281 4.132812 -8.925781 4.65625 -9.15625 C 5.1875 -9.382812 5.75 -9.5 6.34375 -9.5 C 6.945312 -9.5 7.507812 -9.382812 8.03125 -9.15625 C 8.5625 -8.925781 9.023438 -8.613281 9.421875 -8.21875 C 9.816406 -7.820312 10.128906 -7.359375 10.359375 -6.828125 C 10.597656 -6.304688 10.71875 -5.742188 10.71875 -5.140625 C 10.71875 -4.546875 10.597656 -3.984375 10.359375 -3.453125 C 10.128906 -2.929688 9.816406 -2.46875 9.421875 -2.0625 C 9.023438 -1.664062 8.5625 -1.351562 8.03125 -1.125 C 7.507812 -0.894531 6.945312 -0.78125 6.34375 -0.78125 C 5.75 -0.78125 5.1875 -0.894531 4.65625 -1.125 C 4.132812 -1.351562 3.675781 -1.664062 3.28125 -2.0625 C 2.882812 -2.46875 2.566406 -2.929688 2.328125 -3.453125 C 2.097656 -3.984375 1.984375 -4.546875 1.984375 -5.140625 Z M 1.03125 -5.140625 C 1.03125 -4.410156 1.171875 -3.722656 1.453125 -3.078125 C 1.734375 -2.429688 2.113281 -1.863281 2.59375 -1.375 C 3.070312 -0.894531 3.632812 -0.515625 4.28125 -0.234375 C 4.925781 0.0351562 5.613281 0.171875 6.34375 0.171875 C 7.082031 0.171875 7.773438 0.0351562 8.421875 -0.234375 C 9.066406 -0.515625 9.628906 -0.894531 10.109375 -1.375 C 10.585938 -1.863281 10.96875 -2.429688 11.25 -3.078125 C 11.53125 -3.722656 11.671875 -4.410156 11.671875 -5.140625 C 11.671875 -5.878906 11.53125 -6.566406 11.25 -7.203125 C 10.96875 -7.847656 10.585938 -8.410156 10.109375 -8.890625 C 9.628906 -9.378906 9.066406 -9.765625 8.421875 -10.046875 C 7.773438 -10.328125 7.082031 -10.46875 6.34375 -10.46875 C 5.613281 -10.46875 4.925781 -10.328125 4.28125 -10.046875 C 3.632812 -9.765625 3.070312 -9.378906 2.59375 -8.890625 C 2.113281 -8.410156 1.734375 -7.847656 1.453125 -7.203125 C 1.171875 -6.566406 1.03125 -5.878906 1.03125 -5.140625 Z M 1.03125 -5.140625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(573.726649, 445.180654)"><g><path d="M 8.375 -5.453125 C 9.070312 -5.296875 9.609375 -4.992188 9.984375 -4.546875 C 10.359375 -4.097656 10.546875 -3.523438 10.546875 -2.828125 C 10.546875 -1.921875 10.210938 -1.222656 9.546875 -0.734375 C 8.878906 -0.242188 7.890625 0 6.578125 0 L 1.71875 0 L 1.71875 -10.5625 L 6.28125 -10.5625 C 7.457031 -10.5625 8.367188 -10.320312 9.015625 -9.84375 C 9.660156 -9.375 9.984375 -8.707031 9.984375 -7.84375 C 9.984375 -7.257812 9.835938 -6.765625 9.546875 -6.359375 C 9.265625 -5.953125 8.875 -5.648438 8.375 -5.453125 Z M 2.84375 -9.640625 L 2.84375 -5.8125 L 6.203125 -5.8125 C 7.054688 -5.8125 7.710938 -5.972656 8.171875 -6.296875 C 8.640625 -6.628906 8.875 -7.109375 8.875 -7.734375 C 8.875 -8.347656 8.640625 -8.816406 8.171875 -9.140625 C 7.710938 -9.472656 7.054688 -9.640625 6.203125 -9.640625 Z M 6.5625 -0.921875 C 7.507812 -0.921875 8.222656 -1.082031 8.703125 -1.40625 C 9.191406 -1.726562 9.4375 -2.226562 9.4375 -2.90625 C 9.4375 -4.226562 8.476562 -4.890625 6.5625 -4.890625 L 2.84375 -4.890625 L 2.84375 -0.921875 Z M 6.5625 -0.921875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(596.357546, 445.180654)"><g><path d="M 5.984375 0.09375 C 4.609375 0.09375 3.535156 -0.296875 2.765625 -1.078125 C 2.003906 -1.867188 1.625 -3.015625 1.625 -4.515625 L 1.625 -10.5625 L 2.75 -10.5625 L 2.75 -4.5625 C 2.75 -3.332031 3.023438 -2.414062 3.578125 -1.8125 C 4.128906 -1.207031 4.929688 -0.90625 5.984375 -0.90625 C 7.035156 -0.90625 7.835938 -1.207031 8.390625 -1.8125 C 8.941406 -2.414062 9.21875 -3.332031 9.21875 -4.5625 L 9.21875 -10.5625 L 10.3125 -10.5625 L 10.3125 -4.515625 C 10.3125 -3.015625 9.929688 -1.867188 9.171875 -1.078125 C 8.410156 -0.296875 7.347656 0.09375 5.984375 0.09375 Z M 5.984375 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(619.562008, 445.180654)"><g><path d="M 4.640625 0.09375 C 3.847656 0.09375 3.09375 -0.03125 2.375 -0.28125 C 1.65625 -0.539062 1.097656 -0.875 0.703125 -1.28125 L 1.140625 -2.140625 C 1.523438 -1.753906 2.035156 -1.441406 2.671875 -1.203125 C 3.304688 -0.972656 3.960938 -0.859375 4.640625 -0.859375 C 5.578125 -0.859375 6.28125 -1.03125 6.75 -1.375 C 7.226562 -1.726562 7.46875 -2.179688 7.46875 -2.734375 C 7.46875 -3.148438 7.335938 -3.484375 7.078125 -3.734375 C 6.828125 -3.992188 6.515625 -4.191406 6.140625 -4.328125 C 5.765625 -4.460938 5.25 -4.609375 4.59375 -4.765625 C 3.789062 -4.972656 3.15625 -5.164062 2.6875 -5.34375 C 2.21875 -5.53125 1.8125 -5.816406 1.46875 -6.203125 C 1.132812 -6.585938 0.96875 -7.109375 0.96875 -7.765625 C 0.96875 -8.296875 1.109375 -8.78125 1.390625 -9.21875 C 1.671875 -9.65625 2.101562 -10.003906 2.6875 -10.265625 C 3.269531 -10.523438 3.992188 -10.65625 4.859375 -10.65625 C 5.460938 -10.65625 6.050781 -10.570312 6.625 -10.40625 C 7.207031 -10.238281 7.710938 -10.007812 8.140625 -9.71875 L 7.765625 -8.828125 C 7.316406 -9.117188 6.835938 -9.335938 6.328125 -9.484375 C 5.828125 -9.628906 5.335938 -9.703125 4.859375 -9.703125 C 3.929688 -9.703125 3.234375 -9.523438 2.765625 -9.171875 C 2.296875 -8.816406 2.0625 -8.351562 2.0625 -7.78125 C 2.0625 -7.363281 2.191406 -7.023438 2.453125 -6.765625 C 2.710938 -6.515625 3.035156 -6.320312 3.421875 -6.1875 C 3.804688 -6.050781 4.328125 -5.898438 4.984375 -5.734375 C 5.753906 -5.546875 6.378906 -5.359375 6.859375 -5.171875 C 7.335938 -4.984375 7.742188 -4.703125 8.078125 -4.328125 C 8.410156 -3.953125 8.578125 -3.441406 8.578125 -2.796875 C 8.578125 -2.265625 8.429688 -1.773438 8.140625 -1.328125 C 7.859375 -0.890625 7.421875 -0.539062 6.828125 -0.28125 C 6.234375 -0.03125 5.503906 0.09375 4.640625 0.09375 Z M 4.640625 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(640.094883, 445.180654)"><g><path d="M 1.71875 -10.5625 L 2.84375 -10.5625 L 2.84375 0 L 1.71875 0 Z M 1.71875 -10.5625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(655.903441, 445.180654)"><g><path d="M 10.546875 -10.5625 L 10.546875 0 L 9.625 0 L 2.84375 -8.578125 L 2.84375 0 L 1.71875 0 L 1.71875 -10.5625 L 2.640625 -10.5625 L 9.453125 -2 L 9.453125 -10.5625 Z M 10.546875 -10.5625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(679.424871, 445.180654)"><g><path d="M 9.1875 -0.96875 L 9.1875 0 L 1.71875 0 L 1.71875 -10.5625 L 8.96875 -10.5625 L 8.96875 -9.59375 L 2.84375 -9.59375 L 2.84375 -5.84375 L 8.296875 -5.84375 L 8.296875 -4.890625 L 2.84375 -4.890625 L 2.84375 -0.96875 Z M 9.1875 -0.96875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(700.772804, 445.180654)"><g><path d="M 4.640625 0.09375 C 3.847656 0.09375 3.09375 -0.03125 2.375 -0.28125 C 1.65625 -0.539062 1.097656 -0.875 0.703125 -1.28125 L 1.140625 -2.140625 C 1.523438 -1.753906 2.035156 -1.441406 2.671875 -1.203125 C 3.304688 -0.972656 3.960938 -0.859375 4.640625 -0.859375 C 5.578125 -0.859375 6.28125 -1.03125 6.75 -1.375 C 7.226562 -1.726562 7.46875 -2.179688 7.46875 -2.734375 C 7.46875 -3.148438 7.335938 -3.484375 7.078125 -3.734375 C 6.828125 -3.992188 6.515625 -4.191406 6.140625 -4.328125 C 5.765625 -4.460938 5.25 -4.609375 4.59375 -4.765625 C 3.789062 -4.972656 3.15625 -5.164062 2.6875 -5.34375 C 2.21875 -5.53125 1.8125 -5.816406 1.46875 -6.203125 C 1.132812 -6.585938 0.96875 -7.109375 0.96875 -7.765625 C 0.96875 -8.296875 1.109375 -8.78125 1.390625 -9.21875 C 1.671875 -9.65625 2.101562 -10.003906 2.6875 -10.265625 C 3.269531 -10.523438 3.992188 -10.65625 4.859375 -10.65625 C 5.460938 -10.65625 6.050781 -10.570312 6.625 -10.40625 C 7.207031 -10.238281 7.710938 -10.007812 8.140625 -9.71875 L 7.765625 -8.828125 C 7.316406 -9.117188 6.835938 -9.335938 6.328125 -9.484375 C 5.828125 -9.628906 5.335938 -9.703125 4.859375 -9.703125 C 3.929688 -9.703125 3.234375 -9.523438 2.765625 -9.171875 C 2.296875 -8.816406 2.0625 -8.351562 2.0625 -7.78125 C 2.0625 -7.363281 2.191406 -7.023438 2.453125 -6.765625 C 2.710938 -6.515625 3.035156 -6.320312 3.421875 -6.1875 C 3.804688 -6.050781 4.328125 -5.898438 4.984375 -5.734375 C 5.753906 -5.546875 6.378906 -5.359375 6.859375 -5.171875 C 7.335938 -4.984375 7.742188 -4.703125 8.078125 -4.328125 C 8.410156 -3.953125 8.578125 -3.441406 8.578125 -2.796875 C 8.578125 -2.265625 8.429688 -1.773438 8.140625 -1.328125 C 7.859375 -0.890625 7.421875 -0.539062 6.828125 -0.28125 C 6.234375 -0.03125 5.503906 0.09375 4.640625 0.09375 Z M 4.640625 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(721.305679, 445.180654)"><g><path d="M 4.640625 0.09375 C 3.847656 0.09375 3.09375 -0.03125 2.375 -0.28125 C 1.65625 -0.539062 1.097656 -0.875 0.703125 -1.28125 L 1.140625 -2.140625 C 1.523438 -1.753906 2.035156 -1.441406 2.671875 -1.203125 C 3.304688 -0.972656 3.960938 -0.859375 4.640625 -0.859375 C 5.578125 -0.859375 6.28125 -1.03125 6.75 -1.375 C 7.226562 -1.726562 7.46875 -2.179688 7.46875 -2.734375 C 7.46875 -3.148438 7.335938 -3.484375 7.078125 -3.734375 C 6.828125 -3.992188 6.515625 -4.191406 6.140625 -4.328125 C 5.765625 -4.460938 5.25 -4.609375 4.59375 -4.765625 C 3.789062 -4.972656 3.15625 -5.164062 2.6875 -5.34375 C 2.21875 -5.53125 1.8125 -5.816406 1.46875 -6.203125 C 1.132812 -6.585938 0.96875 -7.109375 0.96875 -7.765625 C 0.96875 -8.296875 1.109375 -8.78125 1.390625 -9.21875 C 1.671875 -9.65625 2.101562 -10.003906 2.6875 -10.265625 C 3.269531 -10.523438 3.992188 -10.65625 4.859375 -10.65625 C 5.460938 -10.65625 6.050781 -10.570312 6.625 -10.40625 C 7.207031 -10.238281 7.710938 -10.007812 8.140625 -9.71875 L 7.765625 -8.828125 C 7.316406 -9.117188 6.835938 -9.335938 6.328125 -9.484375 C 5.828125 -9.628906 5.335938 -9.703125 4.859375 -9.703125 C 3.929688 -9.703125 3.234375 -9.523438 2.765625 -9.171875 C 2.296875 -8.816406 2.0625 -8.351562 2.0625 -7.78125 C 2.0625 -7.363281 2.191406 -7.023438 2.453125 -6.765625 C 2.710938 -6.515625 3.035156 -6.320312 3.421875 -6.1875 C 3.804688 -6.050781 4.328125 -5.898438 4.984375 -5.734375 C 5.753906 -5.546875 6.378906 -5.359375 6.859375 -5.171875 C 7.335938 -4.984375 7.742188 -4.703125 8.078125 -4.328125 C 8.410156 -3.953125 8.578125 -3.441406 8.578125 -2.796875 C 8.578125 -2.265625 8.429688 -1.773438 8.140625 -1.328125 C 7.859375 -0.890625 7.421875 -0.539062 6.828125 -0.28125 C 6.234375 -0.03125 5.503906 0.09375 4.640625 0.09375 Z M 4.640625 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(741.838553, 445.180654)"><g/></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(757.043355, 445.180654)"><g><path d="M 9.15625 -5.28125 L 10.234375 -5.28125 L 10.234375 -1.25 C 9.742188 -0.820312 9.160156 -0.488281 8.484375 -0.25 C 7.804688 -0.0195312 7.097656 0.09375 6.359375 0.09375 C 5.296875 0.09375 4.34375 -0.132812 3.5 -0.59375 C 2.65625 -1.0625 1.988281 -1.707031 1.5 -2.53125 C 1.019531 -3.351562 0.78125 -4.269531 0.78125 -5.28125 C 0.78125 -6.300781 1.019531 -7.21875 1.5 -8.03125 C 1.988281 -8.851562 2.65625 -9.492188 3.5 -9.953125 C 4.34375 -10.421875 5.300781 -10.65625 6.375 -10.65625 C 7.175781 -10.65625 7.910156 -10.523438 8.578125 -10.265625 C 9.253906 -10.015625 9.828125 -9.632812 10.296875 -9.125 L 9.59375 -8.421875 C 8.757812 -9.242188 7.703125 -9.65625 6.421875 -9.65625 C 5.554688 -9.65625 4.78125 -9.46875 4.09375 -9.09375 C 3.40625 -8.71875 2.863281 -8.191406 2.46875 -7.515625 C 2.082031 -6.847656 1.890625 -6.101562 1.890625 -5.28125 C 1.890625 -4.457031 2.082031 -3.710938 2.46875 -3.046875 C 2.863281 -2.378906 3.398438 -1.851562 4.078125 -1.46875 C 4.765625 -1.09375 5.539062 -0.90625 6.40625 -0.90625 C 7.488281 -0.90625 8.40625 -1.175781 9.15625 -1.71875 Z M 9.15625 -5.28125 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(779.961029, 445.180654)"><g><path d="M 8.9375 0 L 6.515625 -3.390625 C 6.242188 -3.359375 5.960938 -3.34375 5.671875 -3.34375 L 2.84375 -3.34375 L 2.84375 0 L 1.71875 0 L 1.71875 -10.5625 L 5.671875 -10.5625 C 7.023438 -10.5625 8.082031 -10.238281 8.84375 -9.59375 C 9.601562 -8.957031 9.984375 -8.070312 9.984375 -6.9375 C 9.984375 -6.113281 9.773438 -5.414062 9.359375 -4.84375 C 8.941406 -4.28125 8.347656 -3.875 7.578125 -3.625 L 10.15625 0 Z M 5.640625 -4.296875 C 6.691406 -4.296875 7.492188 -4.523438 8.046875 -4.984375 C 8.597656 -5.453125 8.875 -6.101562 8.875 -6.9375 C 8.875 -7.789062 8.597656 -8.445312 8.046875 -8.90625 C 7.492188 -9.363281 6.691406 -9.59375 5.640625 -9.59375 L 2.84375 -9.59375 L 2.84375 -4.296875 Z M 5.640625 -4.296875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(802.124022, 445.180654)"><g><path d="M 6.34375 0.09375 C 5.289062 0.09375 4.335938 -0.140625 3.484375 -0.609375 C 2.640625 -1.078125 1.976562 -1.71875 1.5 -2.53125 C 1.019531 -3.351562 0.78125 -4.269531 0.78125 -5.28125 C 0.78125 -6.300781 1.019531 -7.21875 1.5 -8.03125 C 1.976562 -8.84375 2.640625 -9.484375 3.484375 -9.953125 C 4.335938 -10.421875 5.289062 -10.65625 6.34375 -10.65625 C 7.382812 -10.65625 8.328125 -10.421875 9.171875 -9.953125 C 10.015625 -9.492188 10.675781 -8.851562 11.15625 -8.03125 C 11.632812 -7.21875 11.875 -6.300781 11.875 -5.28125 C 11.875 -4.269531 11.632812 -3.351562 11.15625 -2.53125 C 10.675781 -1.707031 10.015625 -1.0625 9.171875 -0.59375 C 8.328125 -0.132812 7.382812 0.09375 6.34375 0.09375 Z M 6.34375 -0.90625 C 7.175781 -0.90625 7.925781 -1.09375 8.59375 -1.46875 C 9.269531 -1.84375 9.800781 -2.363281 10.1875 -3.03125 C 10.570312 -3.707031 10.765625 -4.457031 10.765625 -5.28125 C 10.765625 -6.101562 10.570312 -6.847656 10.1875 -7.515625 C 9.800781 -8.191406 9.269531 -8.71875 8.59375 -9.09375 C 7.925781 -9.46875 7.175781 -9.65625 6.34375 -9.65625 C 5.507812 -9.65625 4.75 -9.46875 4.0625 -9.09375 C 3.382812 -8.71875 2.851562 -8.191406 2.46875 -7.515625 C 2.082031 -6.847656 1.890625 -6.101562 1.890625 -5.28125 C 1.890625 -4.457031 2.082031 -3.707031 2.46875 -3.03125 C 2.851562 -2.363281 3.382812 -1.84375 4.0625 -1.46875 C 4.75 -1.09375 5.507812 -0.90625 6.34375 -0.90625 Z M 6.34375 -0.90625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(826.03787, 445.180654)"><g><path d="M 5.984375 0.09375 C 4.609375 0.09375 3.535156 -0.296875 2.765625 -1.078125 C 2.003906 -1.867188 1.625 -3.015625 1.625 -4.515625 L 1.625 -10.5625 L 2.75 -10.5625 L 2.75 -4.5625 C 2.75 -3.332031 3.023438 -2.414062 3.578125 -1.8125 C 4.128906 -1.207031 4.929688 -0.90625 5.984375 -0.90625 C 7.035156 -0.90625 7.835938 -1.207031 8.390625 -1.8125 C 8.941406 -2.414062 9.21875 -3.332031 9.21875 -4.5625 L 9.21875 -10.5625 L 10.3125 -10.5625 L 10.3125 -4.515625 C 10.3125 -3.015625 9.929688 -1.867188 9.171875 -1.078125 C 8.410156 -0.296875 7.347656 0.09375 5.984375 0.09375 Z M 5.984375 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(849.242321, 445.180654)"><g><path d="M 5.671875 -10.5625 C 7.023438 -10.5625 8.082031 -10.238281 8.84375 -9.59375 C 9.601562 -8.957031 9.984375 -8.070312 9.984375 -6.9375 C 9.984375 -5.8125 9.601562 -4.925781 8.84375 -4.28125 C 8.082031 -3.644531 7.023438 -3.328125 5.671875 -3.328125 L 2.84375 -3.328125 L 2.84375 0 L 1.71875 0 L 1.71875 -10.5625 Z M 5.640625 -4.3125 C 6.691406 -4.3125 7.492188 -4.539062 8.046875 -5 C 8.597656 -5.457031 8.875 -6.101562 8.875 -6.9375 C 8.875 -7.789062 8.597656 -8.445312 8.046875 -8.90625 C 7.492188 -9.363281 6.691406 -9.59375 5.640625 -9.59375 L 2.84375 -9.59375 L 2.84375 -4.3125 Z M 5.640625 -4.3125 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(567.360233, 423.057)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 38.28125 0 L 38.28125 -3.6875 L 14.125 -3.6875 L 14.125 -23.28125 L 34.859375 -23.28125 L 34.859375 -26.375 L 14.125 -26.375 L 14.125 -43.171875 L 38.28125 -43.171875 L 38.28125 -46.84375 Z M 8.03125 -46.84375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(608.911954, 423.057)"><g><path d="M 8.03125 0 L 8.03125 -46.84375 L 14.125 -46.84375 L 14.125 -3.6875 L 38.28125 -3.6875 L 38.28125 0 Z M 8.03125 0 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(650.463674, 423.057)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 38.28125 0 L 38.28125 -3.6875 L 14.125 -3.6875 L 14.125 -23.28125 L 34.859375 -23.28125 L 34.859375 -26.375 L 14.125 -26.375 L 14.125 -43.171875 L 38.28125 -43.171875 L 38.28125 -46.84375 Z M 8.03125 -46.84375 "/></g></g></g></svg></a>
+    <div class="side-client">Plano Macro · Podolux</div>
+    <nav class="tabs-nav" aria-label="Partes do plano">
+      <a href="#inicio" data-tab="inicio">Início</a>
+      <a href="#tab-briefing" data-tab="tab-briefing"><span>01</span>Briefing</a>
+      <a href="#tab-persona" data-tab="tab-persona"><span>02</span>Persona</a>
+      <a href="#tab-trafego" data-tab="tab-trafego"><span>03</span>Estratégia de tráfego</a>
+      <a href="#tab-perfil" data-tab="tab-perfil"><span>04</span>Estruturação do perfil</a>
+      <a href="#tab-roteiros" data-tab="tab-roteiros"><span>05</span>Roteiros</a>
+      <a href="#tab-comercial" data-tab="tab-comercial"><span>06</span>Comercial</a>
+      <a href="#tab-jornada" data-tab="tab-jornada"><span>07</span>Jornada</a>
+      <a href="#tab-info" data-tab="tab-info"><span>08</span>Informações gerais</a>
+    </nav>
+    <select class="tabs-select" aria-label="Partes do plano">
+      <option value="inicio">Início</option>
+      <option value="tab-briefing">01 · Briefing</option>
+      <option value="tab-persona">02 · Persona</option>
+      <option value="tab-trafego">03 · Estratégia de tráfego</option>
+      <option value="tab-perfil">04 · Estruturação do perfil</option>
+      <option value="tab-roteiros">05 · Roteiros</option>
+      <option value="tab-comercial">06 · Comercial</option>
+      <option value="tab-jornada">07 · Jornada</option>
+      <option value="tab-info">08 · Informações gerais</option>
+    </select>
+  </aside>
+
+  <main class="main" id="conteudo" tabindex="-1">
+
+  
+  <div class="tab cover" id="inicio">
+    <div class="eyebrow">Plano Macro · Tráfego pago</div>
+    <h1 class="cover-title">Transformando o tratamento de micose da <em>Podolux</em> em agenda previsível.</h1>
+    <p class="cover-sub">Lu, o seu maior ativo hoje é um tratamento que as clientes já provaram que querem: o pacote de micose puxou o melhor mês da clínica e foi a frente mais barata da conta. O que falta é filtrar quem chega, medir o que vira venda e construir prova de micose no perfil. Este documento reúne o que alinhamos na call de onboarding, o diagnóstico da sua conta e a estratégia pra validarmos juntas.</p>
+
+    <div class="cover-strip">
+      <div><div class="k">Cliente</div><div class="v">Podolux</div></div>
+      <div><div class="k">Modalidade</div><div class="v">Clínica de podologia, atendimento presencial</div></div>
+      <div><div class="k">Plataforma</div><div class="v">Meta Ads (Google na fase 2)</div></div>
+      <div><div class="k">Investimento</div><div class="v">R$ 1.500 por mês</div></div>
+      <div><div class="k">Etapa</div><div class="v">Validação da estratégia</div></div>
+    </div>
+
+    <h3 class="sub-h">O plano em 5 decisões</h3>
+    <div class="decisions">
+      <div class="decision"><b>Micose é a frente do plano</b><span>O pacote de R$ 2.000 é o maior ticket, o vídeo de micose puxou agosto (R$ 22 mil) e a frente custou cerca de R$ 2 por conversa na conta.</span></div>
+      <div class="decision"><b>Meta agora, Google depois</b><span>Com R$ 1.500 por mês, um motor só aprende melhor. A Meta tem histórico e cria a vontade de tratar; o Google entra quando a Meta estiver validada.</span></div>
+      <div class="decision"><b>Filtrar antes de atender</b><span>Na call, a Lu contou que a verba maior trouxe leads reclamando de preço. O formulário de 3 perguntas filtra antes do contato.</span></div>
+      <div class="decision"><b>Prova de micose antes de escalar</b><span>As 13 avaliações do Google são da inauguração e nenhuma fala de micose. O plano pede avaliações e relatos desse tratamento.</span></div>
+      <div class="decision"><b>Medir agendamento e venda, não conversa</b><span>Sem CRM, a taxa de 68% não tem base. A planilha de acompanhamento, com as vendas enviadas toda terça, cria a conversão real no mês 1.</span></div>
+    </div>
+
+    <h3 class="sub-h">O que tem neste plano</h3>
+    <div class="toc">
+      <a href="#tab-briefing"><span>01</span><b>Briefing</b><em>Quem é a Podolux, o diagnóstico da conta, o mercado e o que alinhamos no onboarding.</em></a>
+      <a href="#tab-persona"><span>02</span><b>Persona</b><em>Quem é a sua cliente ideal: medos, objeções e o que ela pensa antes de agendar.</em></a>
+      <a href="#tab-trafego"><span>03</span><b>Estratégia de tráfego</b><em>Funil KLT, público prioritário, plataforma, campanhas, projeção, objetivos e formulário.</em></a>
+      <a href="#tab-perfil"><span>04</span><b>Estruturação do perfil</b><em>Posicionamento, bio, destaques, fixados e linha editorial.</em></a>
+      <a href="#tab-roteiros"><span>05</span><b>Roteiros</b><em>Referências que estão no ar há mais tempo e os 6 roteiros de vídeo.</em></a>
+      <a href="#tab-comercial"><span>06</span><b>Comercial</b><em>Manual de atendimento: do primeiro contato até a avaliação.</em></a>
+      <a href="#tab-jornada"><span>07</span><b>Jornada</b><em>Os primeiros 90 dias, quem faz o quê e o que alinhar na apresentação.</em></a>
+      <a href="#tab-info"><span>08</span><b>Informações gerais</b><em>As regras de comunicação, os termos usados e o que falta confirmar.</em></a>
+    </div>
+    <a class="btn" href="#tab-briefing">Começar pelo briefing →</a>
+  </div>
+
+  
+  <div class="tab" id="tab-briefing">
+    <header class="tab-head"><span class="tab-num">Parte 01 de 08</span><h1>Briefing</h1><p>Quem é a Podolux, o diagnóstico da conta de anúncios, o mercado e tudo o que alinhamos na call de onboarding.</p><nav class="tab-toc"><a href="#contexto">Contexto do cliente</a><a href="#diagnostico">Diagnóstico da conta</a><a href="#mercado">Mercado</a><a href="#briefing">Briefing da call de onboarding</a><a href="#swot">Análise SWOT</a></nav></header>
+  <section id="contexto">
+    <div class="sec-head"><span class="sec-num">1.1</span><h2>Contexto do cliente</h2></div>
+    <p class="sec-desc">O que a Podolux vende, os diferenciais e o que ainda falta confirmar.</p>
+    <div class="facts">
+      <div class="fact"><div class="k">Nicho</div><div class="v">Podologia clínica, com foco em tratamento de micose</div></div>
+      <div class="fact"><div class="k">Site</div><div class="v">Não tem</div></div>
+      <div class="fact"><div class="k">Instagram</div><div class="v"><a href="https://www.instagram.com/podoluxdf/" target="_blank" rel="noopener">@podoluxdf</a></div></div>
+      <div class="fact"><div class="k">Seguidores</div><div class="v">590 (15/10/2026)</div></div>
+      <div class="fact"><div class="k">Ticket</div><div class="v">Micose R$ 2.000 (pacote) · podologia R$ 160 a R$ 185 · combos até R$ 395</div></div>
+      <div class="fact"><div class="k">Google Meu Negócio</div><div class="v"><a href="https://share.google/QmabDBp28bVwF1J0N" target="_blank" rel="noopener">5,0 · 13 avaliações</a></div></div>
+      <div class="fact"><div class="k">Região</div><div class="v">Taguatinga, Riacho Fundo I e II, Recanto das Emas e Guará</div></div>
+      <div class="fact is-new"><div class="k">Orçamento aprovado</div><div class="v">R$ 1.500 por mês, em 2 aportes quinzenais de R$ 750</div></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>O que vende</h3>
+        <p><strong>Tratamento de micose</strong> é o carro-chefe e o maior ticket: pacote de 10 sessões semanais por R$ 2.000. Com a máquina nova de nuvem de ozônio, a Lu projeta 8 sessões por R$ 2.500 (ainda não está em vigor). A <strong>podologia</strong> (simples R$ 160, com ozônio R$ 185) é a recorrência mensal, e os combos vão até o &quot;master&quot;, de R$ 395. O perfil também fala de unha encravada, calos e fissuras.</p>
+      </div>
+      <div class="card">
+        <h3>Diferencial competitivo (segundo a Lu)</h3>
+        <ul>
+          <li>Tratamento de micose associado ao ozônio e à orientação de produtos tópicos, no lugar de métodos que a Lu considera ineficazes, como a alta frequência.</li>
+          <li>Sondagem antes do preço e da agenda: a Lu pergunta há quanto tempo é a micose e o que a cliente já tentou.</li>
+          <li>Atendimento direto da Lu pelo WhatsApp, com resposta em 7 a 8 minutos.</li>
+          <li>Ambiente elogiado nas avaliações do Google.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tom de voz</h3>
+        <p>Direto e acolhedor, pelo que o perfil mostra (&quot;Micose tem tratamento&quot;). O tom definitivo ainda precisa ser confirmado com a Lu.</p>
+      </div>
+      <div class="card">
+        <h3>Restrições</h3>
+        <p>A imagem da ex-profissional Jaque não pode aparecer em nenhum material (processo judicial em andamento); nos vídeos antigos, só mãos em procedimento, se for estritamente necessário. Saúde: sem promessa de cura e sem antes e depois que fira a política da Meta (ver Informações gerais). O atendimento infantil fica fora do foco das campanhas.</p>
+      </div>
+    </div>
+  </section>
+  <section id="diagnostico">
+    <div class="sec-head"><span class="sec-num">1.2</span><h2>Diagnóstico da conta de anúncios</h2></div>
+    <p class="sec-desc">Auditoria combinada no onboarding: o que a conta da Meta rodou de 01/01 a 05/10/2026, antes da Elevare. Todo o investimento está entre julho e setembro, no período da agência anterior (de 24/07 ao começo de outubro). É a base pra planejar a verba.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">R$ 3,15 mil</div><div class="lbl">investidos no período, quase tudo em 3 meses (julho R$ 626, agosto R$ 1.069, setembro R$ 1.457)</div></div>
+      <div class="stat"><div class="num">1.194</div><div class="lbl">conversas iniciadas no WhatsApp (cerca de 400 por mês)</div></div>
+      <div class="stat"><div class="num">R$ 2,64</div><div class="lbl">custo médio por conversa na conta toda</div></div>
+      <div class="stat"><div class="num">R$ 2,00</div><div class="lbl">por conversa nas campanhas de micose, a frente mais barata</div></div>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Frente</th><th>Investimento</th><th>Conversas</th><th>Custo por conversa</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Campanhas de micose</td><td>R$ 1.045</td><td>523</td><td>R$ 2,00</td></tr>
+        <tr><td class="name">Demais campanhas (fora de micose)</td><td>R$ 2.105</td><td>671</td><td>R$ 3,14</td></tr>
+        <tr><td class="name">Conta toda</td><td>R$ 3.150</td><td>1.194</td><td>R$ 2,64</td></tr>
+      </tbody>
+    </table></div>
+    <h3 class="sub-h">O que o histórico mostra</h3>
+    <div class="grid2">
+      <div class="card"><h3>Verba espalhada em engajamento</h3><p>Dois terços do investimento (R$ 2.105 de R$ 3.150) foram pra campanhas que não eram de micose, o serviço de maior ticket. A agência anterior rodava engajamento com conversa no WhatsApp.</p></div>
+      <div class="card"><h3>Falta de filtro</h3><p>A conversa a cerca de R$ 2 é barata, mas sem pergunta nenhuma antes do contato. A Lu contou que, ao subir a verba, vieram leads reclamando do preço do pacote.</p></div>
+      <div class="card"><h3>Dado que falta: a conversão</h3><p>A Lu relata 68% de conversão entre 25/07 e a primeira semana de setembro, mas não há CRM nem planilha que mostre a base (de quê pra quê). Sem isso, o custo por conversa não diz o custo por venda.</p></div>
+      <div class="card"><h3>O que funcionou: micose</h3><p>É a frente mais barata e foi a que movimentou o melhor mês da clínica: um vídeo de micose puxou agosto (R$ 22 mil de faturamento, segundo a Lu).</p></div>
+    </div>
+    <p class="note">Fonte: conta de anúncios da Meta da Podolux, consulta somente leitura, período de 01/01 a 05/10/2026. A linha &quot;Demais campanhas&quot; é a diferença entre o total e as campanhas de micose, sem separar cada campanha. A Lu comentou na call que chegou a subir a verba para R$ 2 mil; na conta, o maior mês foi setembro, com R$ 1.457. Não foi auditado o Google Ads, porque a Lu não informa histórico nessa plataforma.</p>
+  </section>
+  <section id="mercado">
+    <div class="sec-head"><span class="sec-num">1.3</span><h2>Mercado</h2></div>
+    <p class="sec-desc">A podologia está saindo do salão e indo pra clínica, com tecnologia como argumento de venda, e o tratamento de micose é o serviço de maior ticket e de maior constância.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">R$ 910 a R$ 2.000</div><div class="lbl">pacotes de micose de concorrentes em Taguatinga, citados pela Lu (5 sessões a pacote completo)</div></div>
+      <div class="stat"><div class="num">685 dias</div><div class="lbl">de anúncio ativo da By Pé, clínica de Brasília, na Biblioteca da Meta (no ar desde 29/11/2024)</div></div>
+      <div class="stat"><div class="num">13 x 32</div><div class="lbl">avaliações da Podolux e da Sublime Podologia, concorrente direta mais próxima, no Google (nota 5,0 nas duas)</div></div>
+      <div class="stat"><div class="num">PL 618/2022</div><div class="lbl">regulamentação da profissão aprovada na CCJ da Câmara em dez/2024, aguardando o plenário; hoje não há conselho</div></div>
+    </div>
+
+    <h3 class="sub-h">Concorrência direta em Taguatinga e Brasília</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Concorrente</th><th>Posicionamento</th><th>Como comunica</th><th>Ponto fraco vs. Podolux</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Sublime Podologia (Taguatinga Norte)</td><td>Ficha no Google com nota 5,0 e 32 avaliações</td><td>Não levantado</td><td>Tem mais prova social que a Podolux hoje. A brecha é provar o tratamento de micose, que é o que a cliente procura.</td></tr>
+          <tr><td class="name">By Pé Podologia Clínica (Brasília)</td><td>&quot;A mais completa clínica de podologia de Brasília&quot;</td><td>Território de &quot;completa&quot; e de qualidade; anúncio em vídeo no ar há quase um ano</td><td>O discurso de &quot;clínica completa&quot; é o saturado e não fala de método nem de acompanhamento da micose.</td></tr>
+          <tr><td class="name">Pronto-Pé (rede no DF)</td><td>Rede de clínicas podológicas, com presença na imprensa (Correio Braziliense, 02/2026)</td><td>Marca e confiança de rede</td><td>O atendimento pessoal da dona e a sondagem do caso são o que uma rede dificilmente replica.</td></tr>
+          <tr><td class="name">Outras clínicas de Taguatinga (citadas pela Lu)</td><td>Pacote de micose de R$ 910 (5 sessões) a R$ 1.500 e R$ 2.000</td><td>Nomes não citados na call</td><td>O preço da Podolux está na média. O pacote mais barato entrega menos sessões.</td></tr>
+          <tr><td class="name">Indiretos: laser, clínicas de estética, farmácia e dermatologista</td><td>Promessa de resultado rápido, com tecnologia</td><td>&quot;Antes e depois&quot; e depoimento, e anúncio de laser pra micose na Biblioteca de Anúncios</td><td>Disputam a mesma dor, e é o que a sua cliente já tentou. A Podolux responde com método e acompanhamento, não com promessa.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">→</span>
+      <div>
+        <p><strong>Conclusão competitiva:</strong> &quot;tecnologia&quot; e &quot;clínica completa&quot; são o discurso que todo concorrente da região já usa. Disputar nesse território coloca a Podolux numa comparação de preço e de aparelho.</p>
+        <p>O território livre é <strong>tratamento de micose com começo, meio e fim</strong>: avaliação, número de sessões definido, cuidado em casa e acompanhamento até a unha nova crescer. Fala direto com quem já gastou com pomada e sessão avulsa.</p>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:22px;">
+      <div class="card">
+        <h3>Gap de mercado</h3>
+        <p>Entre os concorrentes que levantamos, nenhum comunica a micose como um tratamento com etapas e acompanhamento. A categoria fala de equipamento; quem sofre com a unha quer saber quanto tempo leva, quanto custa no total e se vai resolver.</p>
+      </div>
+      <div class="card">
+        <h3>Canais prioritários</h3>
+        <p><strong>Google Ads</strong>, onde a mulher que já pesquisa por podologia e tratamento de micose procura clínica (entra na fase 2, depois de medir o volume). <strong>Meta Ads</strong>, pra despertar a vontade de tratar, educar com vídeo e converter pelo formulário, no funil KLT.</p>
+      </div>
+    </div>
+  </section>
+  <section id="briefing">
+    <div class="sec-head"><span class="sec-num">1.4</span><h2>Briefing da call de onboarding</h2></div>
+    <p class="sec-desc">Call em 06/10/2026, com a Lu Silva, sócia da Podolux, e o time da Elevare.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Momento da clínica</h3>
+        <ul>
+          <li>Aberta há cerca de 3 meses.</li>
+          <li>Faturamento: 1º mês parcial cerca de R$ 12 mil; agosto R$ 22 mil (puxado por um vídeo de micose); setembro cerca de R$ 13 mil, abaixo da meta de R$ 30 mil, com três semanas sem fluxo de caixa.</li>
+          <li>A Lu projeta R$ 40 mil a R$ 50 mil por mês com leads qualificados.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Público e região</h3>
+        <ul>
+          <li>Mulheres de 29 a 40 anos.</li>
+          <li>Taguatinga, Riacho Fundo I e II, Recanto das Emas e Guará.</li>
+          <li>Atendimento infantil fora do foco das campanhas, pela complexidade.</li>
+          <li>Horário de 9h às 18h, com pouco movimento de manhã.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Comercial hoje</h3>
+        <ul>
+          <li>Só WhatsApp, sem CRM.</li>
+          <li>A Lu atende pessoalmente e faz sondagem (tempo da micose, tratamentos anteriores) antes de passar valor ou agendar.</li>
+          <li>Tempo médio de resposta: 7 a 8 minutos.</li>
+          <li>Objeção principal: o preço do pacote de micose, que costuma levar a desconto ou brinde (limpeza).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Histórico de mídia</h3>
+        <ul>
+          <li>Agência anterior de 24/07 ao começo de outubro, com campanhas de engajamento e conversa no WhatsApp.</li>
+          <li>A Lu encerrou por três semanas sem resultado, falta de suporte e por ter sido culpada pela queda depois de pedir ajuste de público.</li>
+          <li>A agência anterior recomendava mais de R$ 5 mil de verba.</li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="sub-h">Combinados da call</h3>
+    <div class="grid2">
+      <div class="card">
+        <h3>Verba e financeiro</h3>
+        <ul>
+          <li>R$ 1.500 por mês, em dois aportes quinzenais de R$ 750.</li>
+          <li>Aviso de saldo com 1 a 2 dias de antecedência.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Prazos e rotina</h3>
+        <ul>
+          <li>A Lu envia as vendas toda terça-feira.</li>
+          <li>Edição de vídeo em até 72 horas.</li>
+          <li>Primeira campanha em até 7 dias depois do setup.</li>
+          <li>Escopo: a criação e a postagem de conteúdo orgânico e de stories não fazem parte do trabalho da Elevare. A produção audiovisual será confirmada pela Victoria (CS).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">!</span>
+      <div>
+        <p><strong>Alerta principal:</strong> a imagem da ex-profissional Jaque não pode aparecer em nenhum material, por causa do processo judicial em andamento. Vídeos e fotos antigos precisam ser revisados antes de qualquer uso em anúncio.</p>
+      </div>
+    </div>
+  </section>
+  <section id="swot">
+    <div class="sec-head"><span class="sec-num">1.5</span><h2>Análise SWOT</h2></div>
+    <p class="sec-desc">A Podolux tem um tratamento de ticket alto que já provou demanda. O problema central é transformar a conversa barata em agendamento de pacote, com filtro, prova do carro-chefe e medição.</p>
+
+    <div class="swot">
+      <div class="card is-pos">
+        <span class="kicker">Interno · a favor</span>
+        <h3>Forças</h3>
+        <ul>
+          <li><strong>Pacote de micose de R$ 2.000:</strong> uma única venda paga a verba de um mês inteiro (R$ 1.500) e ainda sobra.</li>
+          <li><strong>Demanda já provada:</strong> o vídeo de micose puxou o melhor mês (agosto, R$ 22 mil) e a frente custou cerca de R$ 2 por conversa.</li>
+          <li><strong>Sondagem antes do preço:</strong> a Lu entende o caso antes de vender, o que qualifica o lead e reduz o desconto.</li>
+          <li><strong>Experiência de gestão:</strong> a Lu já geriu uma clínica no Conjunto Nacional que foi de R$ 40 mil pra R$ 170 mil por mês com pacotes e combos.</li>
+        </ul>
+      </div>
+      <div class="card is-neg">
+        <span class="kicker">Interno · contra</span>
+        <h3>Fraquezas</h3>
+        <ul>
+          <li><strong>Sem prova de micose:</strong> as 13 avaliações são da inauguração e falam de atendimento e pés macios. Quem pesquisa a micose não vê um caso parecido.</li>
+          <li><strong>Sem CRM:</strong> a conversão de 68% não tem base, então o custo por venda é desconhecido.</li>
+          <li><strong>Perfil pequeno:</strong> 590 seguidores e sem site, o que pesa na confiança de um pacote de R$ 2.000.</li>
+          <li><strong>Caixa apertado:</strong> três semanas sem fluxo em setembro; a verba não pode parar.</li>
+          <li><strong>Atendimento concentrado em uma pessoa:</strong> com mais leads, o tempo de 7 a 8 minutos de resposta tende a subir.</li>
+        </ul>
+      </div>
+      <div class="card is-pos">
+        <span class="kicker">Externo · a favor</span>
+        <h3>Oportunidades</h3>
+        <ul>
+          <li><strong>Território &quot;começo, meio e fim&quot;:</strong> a concorrência fala de equipamento. Comunicar o método de micose ocupa um espaço livre.</li>
+          <li><strong>Calor do DF:</strong> de setembro a março o uso de sandália e a vontade de resolver os pés aumentam.</li>
+          <li><strong>Recorrência:</strong> quem trata a micose pode virar cliente da podologia mensal (R$ 160 a R$ 185) e dos combos.</li>
+          <li><strong>Google:</strong> a busca por podologia na região existe (ver Campanha B) e pode capturar quem já procura.</li>
+        </ul>
+      </div>
+      <div class="card is-neg">
+        <span class="kicker">Externo · contra</span>
+        <h3>Ameaças</h3>
+        <ul>
+          <li>Concorrente direta com mais avaliações (Sublime, 32) e pacotes de micose a partir de R$ 910.</li>
+          <li>Clínicas de estética e laser prometendo resultado rápido pra mesma dor.</li>
+          <li>Política da Meta pra saúde e regra de ozonioterapia (Lei 14.648/2023) limitam o que o anúncio pode dizer.</li>
+          <li>Regulamentação da podologia em andamento (PL 618/2022 e PL 632/2023 do DF) pode mudar exigências.</li>
+          <li>Aumentar verba sem filtro traz lead que só reclama de preço, como já aconteceu.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    <nav class="pager"><a href="#inicio">← Início</a><a href="#tab-persona">Persona →</a></nav>
+  </div>
+
+  
+  <div class="tab" id="tab-persona">
+    <header class="tab-head"><span class="tab-num">Parte 02 de 08</span><h1>Persona</h1><p>Quem a mídia paga precisa convencer: medos, objeções e o que essa pessoa pensa antes de agendar.</p><nav class="tab-toc"><a href="#persona">Persona</a></nav></header>
+  <section id="persona">
+    <div class="sec-head"><span class="sec-num">2.1</span><h2>Persona</h2></div>
+    <p class="sec-desc">A mídia paga precisa convencer a mulher que decide e paga o próprio tratamento: quem convive com a micose há meses e já gastou com o que não funcionou. Nome, história e frases são ilustrativos, montados a partir do que você contou no onboarding e das pesquisas.</p>
+
+    <div class="persona-card">
+      <div class="avatar">JF</div>
+      <div>
+        <h3>Juliana Ferreira</h3>
+        <div class="persona-meta">
+          <span><b>34 anos</b></span>
+          <span>Taguatinga-DF (ou Guará, Riacho Fundo, Recanto das Emas)</span>
+          <span>Trabalha de dia, tem um filho pequeno</span>
+        </div>
+        <p style="font-size:14px;margin:0;">Cuida da casa e do trabalho e deixa a própria saúde por último. Sonha em usar sandália e ir à piscina sem pensar nos pés. Convive há meses ou anos com micose em uma ou mais unhas: amareladas, grossas, quebradiças ou descolando. <strong>Maior impedimento:</strong> já gastou com pomada, esmalte de farmácia, receita caseira e, às vezes, sessões que não resolveram. Hoje desconfia de qualquer tratamento e acha caro pagar R$ 2.000 de uma vez.</p>
+        <span class="confirm-tag">✓ Perfil do onboarding: mulheres de 29 a 40 anos de Taguatinga, Riacho Fundo I e II, Recanto das Emas e Guará</span>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <h3>5 medos</h3>
+        <ul>
+          <li>Gastar de novo e não resolver.</li>
+          <li>A micose espalhar pras outras unhas ou passar pro filho.</li>
+          <li>Precisar de remédio forte, que faz mal ao fígado.</li>
+          <li>Alguém reparar nos pés numa festa, na praia ou no salão.</li>
+          <li>Ser julgada por &quot;falta de higiene&quot;.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>5 objeções</h3>
+        <ul>
+          <li>&quot;R$ 2.000 é muito pra unha.&quot;</li>
+          <li>&quot;Já tentei e não deu certo, por que agora daria?&quot;</li>
+          <li>&quot;Toda semana não consigo ir.&quot;</li>
+          <li>&quot;Será que é micose mesmo ou é outra coisa?&quot;</li>
+          <li>&quot;Vou tentar mais uma pomada antes.&quot;</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>O que já tentou</h3>
+        <ul>
+          <li>Esmalte antimicótico e pomada de farmácia, sem constância.</li>
+          <li>Receita caseira (vinagre, bicarbonato, alho) indicada por parente ou vídeo.</li>
+          <li>Manicure que lixa e corta, e a unha piora.</li>
+          <li>Sessões de outro método em outro lugar, sem resultado (a Lu cita a alta frequência).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote-strip">
+      <div class="quote">“Já gastei com tanta pomada que daria pra ter feito um tratamento.“</div>
+      <div class="quote">“R$ 2.000 é muito pra unha.“</div>
+      <div class="quote">“Já tentei e não deu certo, por que agora daria?“</div>
+      <div class="quote">“Toda semana eu não consigo ir.“</div>
+      <div class="quote">“Esmalte escuro resolve, ninguém vê.“</div>
+    </div>
+
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">→</span>
+      <div><p><strong>Observação: a prova social ainda não é de micose.</strong> As 13 avaliações do Google são da inauguração e falam de atendimento, ambiente e &quot;pés macios&quot;. A comunicação do tratamento precisa trazer explicação do método e relato real de cliente de micose, e o pedido de avaliação no pós-atendimento deve mirar esse tratamento.</p></div>
+    </div>
+
+    <h3 class="sub-h">Níveis de consciência (Schwartz)</h3>
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><b>Totalmente inconsciente</b><span>Acha que a unha é &quot;assim mesmo&quot;, grossa ou amarelada por idade ou por causa do sapato.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Consciente do problema</b><span>Sabe que é micose, esconde e tenta pomada.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Consciente da solução</b><span>Sabe que existe tratamento em clínica de podologia, com sessões.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Consciente do produto</b><span>Conhece a Podolux pelo Instagram ou pelo anúncio, mas não sabe como funciona o pacote.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Totalmente consciente</b><span>Já conversou com a Lu, entende o pacote e só precisa decidir sobre o valor e o horário.</span></div></div>
+    </div>
+    <p class="note">O público da campanha está entre o consciente do problema e o consciente da solução.</p>
+  </section>
+    <nav class="pager"><a href="#tab-briefing">← Briefing</a><a href="#tab-trafego">Estratégia de tráfego →</a></nav>
+  </div>
+
+  
+  <div class="tab" id="tab-trafego">
+    <header class="tab-head"><span class="tab-num">Parte 03 de 08</span><h1>Estratégia de tráfego</h1><p>Do funil KLT às metas: o público prioritário, onde anunciar, as campanhas, a projeção, os objetivos e o formulário.</p><nav class="tab-toc"><a href="#klt">Funil KLT</a><a href="#publico">Público prioritário</a><a href="#plataforma">Por que Meta agora e Google depois</a><a href="#campanhas">As campanhas</a><a href="#projecao">Projeção</a><a href="#objetivos">Objetivos de marketing (SMART)</a><a href="#formulario">Como funciona a campanha de formulário</a></nav></header>
+  <section id="klt">
+    <div class="sec-head"><span class="sec-num">3.1</span><h2>O funil KLT: conhecer, gostar e confiar</h2></div>
+    <p class="sec-desc">KLT vem de <em>Know, Like, Trust</em>: conhecer, gostar e confiar. É o caminho que a cliente percorre até agendar: primeiro saber que você existe e que a micose tem tratamento, depois se identificar com o jeito que você explica e trabalha e, por fim, sentir segurança pra dar o passo. Na call, a Lu contou que o pacote de R$ 2.000 gera objeção de preço: quem confia antes de perguntar o valor reclama menos dele.</p>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag">K · Conhecer</span>
+        <h3 style="margin-top:10px;">Saber que você existe e que a micose tem tratamento</h3>
+        <p><strong>Pra quem:</strong> mulheres que ainda não conhecem a Podolux.</p>
+        <p><strong>O que roda:</strong> campanha de distribuição na Meta (visualização de vídeo), com público aberto de mulheres de 29 a 40 anos em Taguatinga, Riacho Fundo I e II, Recanto das Emas e Guará.</p>
+        <p><strong>Conteúdo:</strong> posts e reels que já estão no perfil, escolhidos pelo desempenho: o vídeo de micose que mais funcionou e os de &quot;Micose tem tratamento&quot;, sem a imagem da ex-profissional.</p>
+        <p class="card-foot">Como medimos: seguidores novos por mês, custo por seguidor e quantas pessoas assistem à maior parte do vídeo.</p>
+      </div>
+      <div class="card">
+        <span class="tag">L · Gostar</span>
+        <h3 style="margin-top:10px;">Se identificar e tirar as dúvidas</h3>
+        <p><strong>Pra quem:</strong> quem já assistiu aos vídeos do K ou interagiu com o perfil.</p>
+        <p><strong>O que roda:</strong> a mesma campanha de distribuição, num conjunto só com esse público.</p>
+        <p><strong>Conteúdo:</strong> posts e reels do perfil que educam e quebram objeção: como a micose se trata, o que esperar das sessões, cuidado em casa e bastidores da clínica.</p>
+        <p class="card-foot">Como medimos: comentários, salvamentos, compartilhamentos, visitas ao perfil e mensagens.</p>
+      </div>
+      <div class="card">
+        <span class="tag">T · Confiar</span>
+        <h3 style="margin-top:10px;">Sentir segurança pra agendar</h3>
+        <p><strong>Pra quem:</strong> quem já conhece e gosta, e (na fase 2) quem já pesquisa podologia no Google.</p>
+        <p><strong>O que roda:</strong> as campanhas de conversão da seção 3.4, com o público quente dos últimos 30 dias.</p>
+        <p><strong>Conteúdo:</strong> os 6 roteiros da aba Roteiros, com o método do pacote, a forma de pagamento e a prova que já existe, e chamada direta pra agendar.</p>
+        <p class="card-foot">Como medimos: custo por lead e custo por agendamento.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h">Como a verba se divide</h3>
+    <div class="stats is-2">
+      <div class="stat"><div class="num">85%</div><div class="lbl">no T, a conversão (cerca de R$ 1.275 por mês)</div></div>
+      <div class="stat"><div class="num">15%</div><div class="lbl">no K e no L, a distribuição na Meta (cerca de R$ 225 por mês)</div></div>
+    </div>
+
+    <h3 class="sub-h">Como a cliente anda no funil</h3>
+    <div class="funnel"><span class="step">Assiste a um vídeo (K)</span><span class="step">Volta e interage (L)</span><span class="step">Entra no público quente (T)</span><span class="step">Preenche o formulário</span><span class="step">Avaliação</span></div>
+
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">→</span>
+      <div>
+        <p><strong>As três etapas rodam juntas desde o primeiro dia.</strong> Enquanto o T converte quem já está pronta, o K e o L preparam as próximas.</p>
+        <p>O K e o L usam posts e reels que já estão no perfil, escolhidos pelo desempenho, sem produção nova. Os 6 roteiros da aba Roteiros são todos do T.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="publico">
+    <div class="sec-head"><span class="sec-num">3.2</span><h2>Público prioritário</h2></div>
+    <p class="sec-desc">Quem a mídia mira primeiro e o que fica pra depois.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Quem a mídia mira primeiro</h3>
+        <p>Mulheres de 29 a 40 anos de Taguatinga, Riacho Fundo I e II, Recanto das Emas e Guará, como alinhado na call.</p>
+        <ul>
+          <li>Convive com a micose há meses ou anos e já tentou pomada, esmalte ou sessões sem resultado.</li>
+          <li>Pesquisa no Instagram e no Google, pergunta o preço no WhatsApp e compara.</li>
+          <li>O gatilho é o calor, um evento (praia, piscina, casamento) ou a vergonha num momento social.</li>
+          <li>Valoriza ser ouvida, entender o próprio caso e saber quanto tempo o tratamento leva.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Público secundário / o que fica pra depois</h3>
+        <p>O atendimento infantil fica fora das campanhas, pela complexidade, como definido na call. A podologia de manutenção (limpeza mensal, calos, fissuras) aparece como conteúdo no perfil e como recorrência de quem já é cliente, mas não ganha campanha própria agora: com R$ 1.500 por mês, dividir a verba entre serviços faria nenhum aprender direito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="plataforma">
+    <div class="sec-head"><span class="sec-num">3.3</span><h2>Por que Meta agora e Google depois</h2></div>
+    <p class="sec-desc">As duas plataformas servem a momentos diferentes da operação. Com a verba da Podolux, começar pela Meta e abrir o Google só depois de validar a primeira economiza dinheiro.</p>
+
+    <div class="grid2">
+      <div class="card platform is-now">
+        <span class="tag">Meta Ads · agora</span>
+        <h3 style="margin-top:12px;">Desperta a vontade de tratar e converte quem já conhece</h3>
+        <p>A micose costuma ser adiada por meses ou anos, e quem convive com ela muitas vezes não pesquisa &quot;clínica&quot;. A Meta alcança essa mulher, educa com vídeo e filtra pelo formulário. É também a única plataforma com histórico na conta (cerca de R$ 2 por conversa em micose) e onde o vídeo de micose já provou que funciona.</p>
+      </div>
+      <div class="card platform">
+        <span class="tag is-ghost">Google Ads · fase 2</span>
+        <h3 style="margin-top:12px;">Captura quem já está procurando podologia</h3>
+        <p>O Google responde a quem já digitou &quot;podólogo&quot; ou &quot;podologia taguatinga&quot;. É uma boa segunda frente, mas a Podolux não tem site, não tem histórico na plataforma e o volume dos termos de micose ainda precisa ser medido. O gatilho pra entrar: 30 a 45 dias de dado da Meta, planilha com vendas registradas e um destino definido pro clique.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">→</span>
+      <div>
+        <p><strong>Resumo:</strong> a Meta é a fundação agora; o Google captura a demanda depois.</p>
+        <p>Abrir as duas com R$ 1.500 dividiria a verba e nenhuma aprenderia direito. Quando o Google entrar, o plano define um valor fixo pra cada plataforma. O que se ajusta ao longo do mês é a verba entre as campanhas da mesma plataforma.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="campanhas">
+    <div class="sec-head"><span class="sec-num">3.4</span><h2>As campanhas</h2></div>
+    <p class="sec-desc">Duas campanhas: a A, de micose na Meta, abre o plano; a B, de busca no Google, entra na fase 2. A decisão final é tomada junto na call.</p>
+
+    <h3 class="sub-h">Como escolhemos</h3>
+    <div class="criteria">
+      <div class="card"><span class="crit-n">01</span><h3>A dor que a pessoa sente agora</h3><p>Micose incomoda todo dia, e a vergonha de mostrar os pés é o que move quem procura tratamento.</p></div>
+      <div class="card"><span class="crit-n">02</span><h3>Ticket que paga o canal</h3><p>Um pacote de R$ 2.000 paga a verba mensal inteira (R$ 1.500). A podologia de R$ 160 a R$ 185 precisaria de muitas vendas pra isso.</p></div>
+      <div class="card"><span class="crit-n">03</span><h3>O que o histórico já provou</h3><p>Micose foi a frente mais barata da conta (cerca de R$ 2 por conversa) e o vídeo dela puxou o melhor mês.</p></div>
+      <div class="card"><span class="crit-n">04</span><h3>Capacidade de atendimento</h3><p>A Lu atende pessoalmente e responde em 7 a 8 minutos. Um foco só mantém esse ritmo e a conversa de qualidade.</p></div>
+    </div>
+
+    <div class="rota">
+      <div class="rota-head">
+        <span class="rota-letter">A</span>
+        <div>
+          <h3>Tratamento de micose para mulheres de 29 a 40 anos que já tentaram resolver</h3>
+          <p>É o serviço de maior ticket e a frente que já funcionou na conta. Entra com formulário pra qualificar antes do contato.</p>
+        </div>
+        <span class="tag is-ghost rota-plat">Meta Ads</span>
+      </div>
+      <div class="rota-metrics">
+        <div><div class="k">Público</div><div class="v">Mulheres de 29 a 40 anos, Taguatinga, Riacho Fundo I e II, Recanto das Emas e Guará</div></div>
+        <div><div class="k">Objetivo</div><div class="v">Leads por formulário (3 perguntas)</div></div>
+        <div><div class="k">Referência do histórico</div><div class="v">R$ 2,00 por conversa, sem filtro</div></div>
+        <div><div class="k">Ticket</div><div class="v">R$ 2.000 (pacote de 10 sessões)</div></div>
+        <div><div class="k">Ciclo até fechar</div><div class="v">Sem dado (sem CRM)</div></div>
+      </div>
+      <h4>A tese, em uma frase</h4>
+      <p>Micose tem tratamento, e ele tem começo, meio e fim: a mulher que já gastou com pomada e sessão avulsa vê quantas sessões, o que acontece em cada uma e como cuidar em casa.</p>
+      <h4>Por que encaixa no seu perfil</h4>
+      <ul>
+        <li><strong>Ticket alto:</strong> uma venda do pacote paga a verba de um mês.</li>
+        <li><strong>Já funcionou:</strong> o vídeo de micose puxou agosto e a frente teve o menor custo por conversa.</li>
+        <li><strong>Sondagem da Lu:</strong> o atendimento já pergunta o tempo da micose e os tratamentos anteriores, que é o que o formulário antecipa.</li>
+        <li><strong>Recorrência:</strong> quem trata a micose tende a virar cliente de podologia mensal.</li>
+      </ul>
+      <div class="rota-box">
+        <div class="k">Ponto de atenção</div>
+        <ul>
+          <li>O preço de R$ 2.000 gera objeção e já levou a desconto ou brinde. O formulário pergunta a forma de pagamento pra preparar a conversa.</li>
+          <li>O formulário reduz o volume de contatos e aumenta a qualidade. Menos conversas é o esperado.</li>
+          <li>Não anunciar &quot;ozonioterapia&quot; até confirmar quem aplica e o registro do equipamento na Anvisa (ver Informações gerais).</li>
+          <li>A prova de micose ainda não existe no Google: construir avaliações desse tratamento é parte do plano.</li>
+        </ul>
+      </div>
+      <h4>O papel dela</h4>
+      <p>Campanha de entrada e única conversão da Meta no mês 1. Se a B entrar depois, a A continua como a frente que educa e cria demanda.</p>
+      <div class="rota-box is-accent">
+        <div class="k">A contrapartida</div>
+        <p>Gravar os vídeos a partir dos roteiros, responder o formulário em até 5 minutos, pedir avaliação às clientes de micose depois do atendimento e enviar as vendas toda terça-feira.</p>
+      </div>
+    </div>
+
+    <div class="card" style="border:1px solid var(--line);margin-bottom:16px;">
+      <span class="kicker">Em todas as campanhas da Meta</span>
+      <h3>Público quente (remarketing)</h3>
+      <p>Um conjunto com quem interagiu com o perfil ou com os anúncios nos últimos 30 dias. Essa pessoa já te conhece, e é a mais perto de agendar.</p>
+    </div>
+
+    <div class="rota">
+      <div class="rota-head">
+        <span class="rota-letter">B</span>
+        <div>
+          <h3>Busca no Google por podologia e micose na região</h3>
+          <p>Captura quem já está procurando. Entra na fase 2, depois de validar a Meta.</p>
+        </div>
+        <span class="tag is-ghost rota-plat">Google Ads</span>
+      </div>
+      <div class="rota-metrics">
+        <div><div class="k">Público</div><div class="v">Quem pesquisa podologia e micose de unha nas regiões da campanha</div></div>
+        <div><div class="k">Objetivo</div><div class="v">Leads no WhatsApp</div></div>
+        <div><div class="k">Referência do histórico</div><div class="v">Sem histórico no Google</div></div>
+        <div><div class="k">Ticket</div><div class="v">R$ 2.000 (micose) · R$ 160 a R$ 185 (podologia)</div></div>
+        <div><div class="k">Ciclo até fechar</div><div class="v">Sem dado (sem CRM)</div></div>
+      </div>
+      <h4>A tese, em uma frase</h4>
+      <p>Quem digita &quot;podólogo&quot; ou &quot;podologia taguatinga&quot; já decidiu procurar ajuda: a campanha leva essa pessoa pra uma conversa com a Lu.</p>
+      <h4>Por que encaixa no seu perfil</h4>
+      <ul>
+        <li><strong>Intenção alta:</strong> a busca mostra uma pessoa que já está procurando uma clínica.</li>
+        <li><strong>Recorrência:</strong> a busca por podologia traz a cliente de manutenção, que volta todo mês.</li>
+        <li><strong>Complementa a Meta:</strong> pega quem já sabe o que quer e não passou pelo funil de vídeo.</li>
+      </ul>
+      <div class="rota-box">
+        <div class="k">Ponto de atenção</div>
+        <ul>
+          <li>A Podolux não tem site: antes de abrir, é preciso definir o destino do clique.</li>
+          <li>Os termos de micose não devolveram volume no Planejador. O volume é conferido antes de abrir, sem estimativa.</li>
+          <li>A busca por &quot;podólogo&quot; traz muita gente de manutenção, não de micose: o filtro pelas palavras de micose e as negativas decidem a qualidade.</li>
+        </ul>
+      </div>
+      <h4>Palavras pesquisadas e volume no Distrito Federal</h4>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Grupo</th><th>Palavras</th><th>Buscas por mês no Distrito Federal</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Podologia na região</td><td>podólogo · podologia taguatinga · clínica de podologia</td><td>1.300 · 390 · 50</td></tr>
+          <tr><td class="name">Micose</td><td>tratamento de micose de unha · micose de unha · fungo na unha</td><td>Sem volume retornado (a medir antes de abrir)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Fonte: Planejador de palavras-chave do Google, Distrito Federal, 15/10/2026 (média mensal). O volume é do Distrito Federal inteiro, que é maior que as 4 regiões da campanha, e os termos de micose voltaram zerados também na busca pelo Brasil, então não usamos número. Negativas: curso, vaga, emprego, estágio, salário, gratuito, receita caseira, remédio, infantil.</p>
+      <h4>Página de destino</h4>
+      <p>Pendente: a Podolux não tem site. A recomendação é uma página simples, na ordem: a micose e o tratamento com começo, meio e fim, como é a avaliação, onde fica a clínica (Águas Claras, ao lado do Shopping Taguatinga) e o botão de WhatsApp.</p>
+      <h4>O papel dela</h4>
+      <p>Segunda frente, na fase 2: entra quando a Meta estiver validada, a planilha tiver vendas registradas e o destino do clique estiver definido.</p>
+    </div>
+
+    <div class="statement is-accent" style="margin-top:22px;">
+      <p>Começar só pela A, com os R$ 1.500 na Meta, e abrir a B depois de 30 a 45 dias de dado.</p>
+      <div class="statement-foot">O vencedor não é a conversa mais barata: é a combinação de custo por lead, qualidade da conversa, agendamento e venda do pacote.</div>
+    </div>
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">!</span>
+      <div>
+        <p><strong>Mais verba sem filtro repete o que já aconteceu:</strong> na call, a Lu contou que, ao subir a verba, vieram leads reclamando do preço. Aumentar o tráfego sem o formulário e sem resposta rápida escala conversa, não venda.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projecao">
+    <div class="sec-head"><span class="sec-num">3.5</span><h2>Projeção</h2></div>
+    <p class="sec-desc">A projeção parte do que a sua conta já mostrou e do que precisa acontecer pra meta fechar. O número de leads é calibrado no primeiro mês, com as campanhas novas rodando.</p>
+
+    <div class="proj">
+      <div class="proj-col">
+        <div class="k">Ponto de partida · histórico da conta (jul a set/2026)</div>
+        <div class="proj-row"><span>Investimento médio</span><b>cerca de R$ 1.050 por mês</b></div>
+        <div class="proj-row"><span>Conversas por mês</span><b>cerca de 400</b></div>
+        <div class="proj-row"><span>Custo por conversa</span><b>R$ 2,64</b></div>
+        <div class="proj-row is-total"><span>Avaliações e vendas</span><b>Sem dado (sem CRM)</b></div>
+      </div>
+      <div class="proj-col">
+        <div class="k">Com R$ 1.500 por mês</div>
+        <div class="proj-row"><span>Investimento</span><b>R$ 1.500 (onboarding)</b></div>
+        <div class="proj-row"><span>Teto pelo custo do histórico</span><b>≈ 480 a 750 conversas por mês</b></div>
+        <div class="proj-row"><span>Ponto de equilíbrio</span><b>1 pacote de micose (R$ 2.000) paga a verba do mês</b></div>
+        <div class="proj-row is-total"><span>Meta da clínica</span><b>R$ 30 mil por mês (setembro: cerca de R$ 13 mil)</b></div>
+      </div>
+    </div>
+    <p class="note">Histórico: conta da Meta da Podolux, de 01/01 a 05/10/2026, com o investimento concentrado de julho a setembro. O teto é a verba dividida pelo custo por conversa da frente mais cara (R$ 3,14) e da mais barata (R$ 2,00), e só vale sem filtro: o formulário reduz o volume e aumenta a qualidade. Pra chegar de R$ 13 mil a R$ 30 mil só com pacotes de micose, seriam cerca de 8 a 9 pacotes a mais por mês (R$ 17 mil ÷ R$ 2.000), e o faturamento da clínica não vem só do tráfego. A conversão real sai da planilha no primeiro mês.</p>
+  </section>
+
+  <section id="objetivos">
+    <div class="sec-head"><span class="sec-num">3.6</span><h2>Objetivos de marketing (SMART)</h2></div>
+    <p class="sec-desc">Sem CRM e sem conversão confirmada, os primeiros 30 dias criam o baseline. Meta de custo por lead arbitrária seria irresponsável, então os objetivos partem do ticket e da verba confirmados.</p>
+
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><span class="who">Primeiros 30 dias</span><b>Criar o baseline de conversão</b><span>Registrar 100% dos leads na planilha, com a etapa de cada um (respondeu, agendou, compareceu, fechou). Mede: planilha semanal e vendas enviadas toda terça, que dão o custo por lead, por agendamento e por pacote.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Até o fim do mês 2</span><b>Pelo menos 1 pacote de micose por mês vindo do tráfego</b><span>Um pacote de R$ 2.000 cobre os R$ 1.500 de verba. Mede: venda com origem registrada na planilha.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Até o fim do mês 3</span><b>Construir a prova de micose</b><span>10 avaliações novas no Google de clientes que trataram a micose, pedidas no pós-atendimento. Mede: ficha do Google Meu Negócio (hoje são 13, nenhuma de micose).</span></div></div>
+    </div>
+
+    <h3 class="sub-h">Métricas que passam a mandar</h3>
+    <div class="funnel">
+      <span class="step">Lead</span><span class="step">Lead qualificado</span><span class="step">Avaliação agendada</span><span class="step">Compareceu</span><span class="step">Pacote fechado</span>
+    </div>
+  </section>
+
+  <section id="formulario">
+    <div class="sec-head"><span class="sec-num">3.7</span><h2>Como funciona a campanha de formulário</h2></div>
+    <p class="sec-desc">Pra não ter surpresa depois: o caminho do lead, do anúncio até o atendimento, e o que cada lado faz.</p>
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><span class="who">Lead</span><b>Vê o anúncio e responde 3 perguntas</b><span>O formulário abre dentro do Instagram/Facebook, já com nome e telefone preenchidos. As 3 perguntas filtram quem está pronta e já entregam o contexto pra quem vai atender. As perguntas foram definidas pela Elevare a partir da call e a Lu valida na apresentação.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Automático</span><b>O lead chega pra Lu em poucos minutos</b><span>Cada lead novo aparece com nome, telefone e as 3 respostas. O canal de aviso (grupo de WhatsApp ou outro) é definido na implantação.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Podolux</span><b>Atende em até 5 minutos</b><span>Seguindo a aba Comercial: ler as respostas, classificar (quente, morna ou fria) e ligar.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Podolux</span><b>Atualiza a planilha de acompanhamento</b><span>A Lu registra a etapa de cada lead (se agendou, se compareceu, se fechou, o valor e o motivo da perda) e envia as vendas toda terça-feira.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Lê a planilha e ajusta a campanha</b><span>Com a etapa de cada lead, a Elevare vê qual anúncio traz gente que agenda e fecha, não só lead barato, e otimiza a campanha toda semana.</span></div></div>
+    </div>
+
+    <h3 class="sub-h">As 3 perguntas do formulário</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pergunta</th><th>Opções de resposta</th><th>Pra que serve</th></tr></thead>
+      <tbody>
+        <tr><td class="name">P1 · Qual é a sua situação hoje?</td><td>Tenho micose e nunca tratei · Tenho micose e já tentei outros tratamentos · Não sei se é micose · Quero cuidar dos pés (calos, unha encravada, ressecamento)</td><td>Já entrega o caso: quem atende abre a conversa por ele.</td></tr>
+        <tr><td class="name">P2 · Em quanto tempo você quer resolver?</td><td>O quanto antes · Este mês · Nos próximos 3 meses · Só quero entender minhas opções</td><td>Define quem é atendida primeiro.</td></tr>
+        <tr><td class="name">P3 · Qual forma de pagamento você prefere?</td><td>À vista · Cartão de crédito · Outra forma de parcelamento · Ainda não sei</td><td>Prepara a conversa sobre valor, sem pegar ninguém de surpresa.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Formulário traz mais volume que mensagem direta, mas o lead esfria rápido: o resultado depende de quanto tempo o atendimento leva pra ligar.</p>
+  </section>
+    <nav class="pager"><a href="#tab-persona">← Persona</a><a href="#tab-perfil">Estruturação do perfil →</a></nav>
+  </div>
+
+  
+  <div class="tab" id="tab-perfil">
+    <header class="tab-head"><span class="tab-num">Parte 04 de 08</span><h1>Estruturação do perfil</h1><p>O que precisa estar no perfil antes das campanhas: o posicionamento, a bio, os destaques, os fixados e a linha editorial.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#perfil">Estruturação do perfil</a><a href="#editorial">Linha editorial e pilares de conteúdo</a></nav></header>
+  <section id="posicionamento">
+    <div class="sec-head"><span class="sec-num">4.1</span><h2>Posicionamento e proposta de valor</h2></div>
+    <p class="sec-desc">&quot;Tecnologia&quot;, &quot;clínica completa&quot; e &quot;atendimento humanizado&quot; são o que todo concorrente já diz, e não servem de diferencial. O território que a Podolux pode ocupar é o tratamento de micose com começo, meio e fim.</p>
+
+    <h3 class="sub-h">Diferenciais competitivos defensáveis</h3>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag is-ghost">Diferencial 1</span>
+        <h3 style="margin-top:10px;">Tratamento com começo, meio e fim</h3>
+        <p>Pacote fechado, com número de sessões definido e acompanhamento semanal. Quem já gastou com pomada e sessão avulsa sabe o que vai acontecer e por quanto tempo.</p>
+        <p><strong>Na comunicação:</strong> “Micose tem tratamento, e ele tem começo, meio e fim.“</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Diferencial 2</span>
+        <h3 style="margin-top:10px;">A sondagem vem antes do preço</h3>
+        <p>A Lu pergunta há quanto tempo é a micose e o que a cliente já tentou antes de falar de valor ou de agenda. Uma rede ou uma clínica que só responde &quot;quanto custa&quot; dificilmente faz isso.</p>
+        <p><strong>Na comunicação:</strong> “Antes de falar de preço, a gente entende o seu caso.“</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Diferencial 3</span>
+        <h3 style="margin-top:10px;">Cuidado que continua em casa</h3>
+        <p>O tratamento inclui orientação de produtos tópicos pra usar entre as sessões, no lugar de depender só da clínica. Baixar o preço não copia isso.</p>
+        <p><strong>Na comunicação:</strong> “O que você faz em casa entre as sessões também faz parte do tratamento.“</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h">Declaração de posicionamento</h3>
+    <div class="statement">
+      <p>Para mulheres de 29 a 40 anos de Taguatinga e região que já tentaram pomada, esmalte ou sessões avulsas pra micose de unha, a Podolux é a clínica de podologia que trata a micose com começo, meio e fim, porque o pacote tem avaliação do caso, sessões semanais definidas e orientação de cuidado em casa.</p>
+      <div class="statement-foot">Território: <strong>tratamento de micose com começo, meio e fim</strong></div>
+    </div>
+
+    <h3 class="sub-h">Proposta única de valor (UVP)</h3>
+    <div class="statement is-accent">
+      <p>Tratamento de micose de unha com começo, meio e fim: você sabe quantas sessões, o que acontece em cada uma e como cuidar em casa.</p>
+      <div class="statement-foot">Tradução comercial: pacote de 10 sessões semanais por R$ 2.000 hoje, com a avaliação do caso antes de qualquer pacote.</div>
+    </div>
+    <div class="quote-strip" style="margin-top:1px;">
+      <div class="quote"><strong>Micose:</strong> “Micose tem tratamento, e tem começo, meio e fim.“</div>
+      <div class="quote"><strong>Podologia mensal:</strong> “Pés cuidados todo mês, sem susto.“</div>
+    </div>
+  </section>
+
+  <section id="perfil">
+    <div class="sec-head"><span class="sec-num">4.2</span><h2>Estruturação do perfil</h2></div>
+    <p class="sec-desc">Quem chega pelo anúncio visita o perfil antes de chamar no WhatsApp. Em poucos segundos ele precisa entender quem é, o que trata, por que confiar e como agendar. São três ajustes: bio, destaques e posts fixados.</p>
+
+    
+    <div class="callout" style="margin-bottom:6px;">
+      <span class="mark">→</span>
+      <div>
+        <p><strong>Quem executa:</strong> a Podolux, seguindo os modelos abaixo. A Elevare revisa o perfil depois dos ajustes, antes de subir as campanhas. A criação e a postagem de conteúdo orgânico não fazem parte do escopo da Elevare.</p>
+      </div>
+    </div>
+
+    
+    <h3 class="sub-h">1. Bio</h3>
+    <p style="font-size:14px;margin:0 0 10px;">Até 150 caracteres, terminando com chamada pra ação. Toda bio precisa ter:</p>
+    <ul style="font-size:14px;color:var(--text-soft);margin:0 0 12px;padding-left:18px;">
+      <li><strong>Marco de autoridade:</strong> um número que prove experiência, como quantidade de atendimentos/procedimentos ou anos de mercado.</li>
+      <li><strong>Diferencial + serviço, de forma objetiva:</strong> o que faz e o que tem de diferente, sem frase genérica.</li>
+      <li><strong>Identificação:</strong> o nome da clínica e a especialidade (podologia clínica). A podologia ainda não tem conselho profissional, então não há registro a informar.</li>
+    </ul>
+    <p style="font-size:14px;margin:0 0 12px;">O campo <strong>Nome</strong> do perfil entra na busca do Instagram: usar nome + especialidade (ex.: “Podolux | Podologia e micose“).</p>
+    <div class="grid3">
+      
+      <div class="card">
+        <span class="tag is-ghost">Opção 1 · Abre pelo marco</span>
+        <p class="bio">Podologia clínica · [X] atendimentos<br>Tratamento de micose com começo, meio e fim<br>Águas Claras · Taguatinga<br>Agende pelo WhatsApp</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Opção 2 · Abre pelo serviço</span>
+        <p class="bio">Podologia clínica e tratamento de micose<br>Método com começo, meio e fim<br>[X] atendimentos · Águas Claras<br>Agende pelo WhatsApp</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Opção 3 · Abre pelo diferencial</span>
+        <p class="bio">Micose tem tratamento, com começo, meio e fim<br>Podologia clínica · [X] atendimentos<br>Águas Claras<br>Agende pelo WhatsApp</p>
+      </div>
+    </div>
+    <p style="font-size:14px;margin:10px 0 0;"><strong>Link da bio:</strong> WhatsApp da Lu com mensagem pronta (a Podolux não tem site nem agenda online).</p>
+
+    
+    <h3 class="sub-h">2. Destaques</h3>
+    <p style="font-size:14px;margin:0 0 12px;">Quatro destaques, nesta ordem. Capas simples e iguais entre si (ícone ou palavra, na cor da marca). Cada destaque com 4 a 7 stories, pouco texto por tela.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Destaque</th><th>Pergunta que responde</th><th>Sequência de stories</th></tr></thead>
+        <tbody>
+          
+          <tr>
+            <td class="name">Sobre</td>
+            <td>Quem é esse profissional e por que confiar?</td>
+            <td>1. Apresentação com foto real e especialidade · 2. Formação e trajetória (só o que dá credibilidade) · 3. Como enxerga o trabalho / filosofia de atendimento · 4. Estrutura do consultório ou clínica · 5. CTA pra agendar.<br><strong>Neste perfil:</strong> apresentar a Lu e a clínica, com o ambiente que as avaliações elogiam. Nada de foto ou vídeo com a ex-profissional Jaque.</td>
+          </tr>
+          <tr>
+            <td class="name">Serviços/tratamentos</td>
+            <td>Ele trata o problema que eu tenho?</td>
+            <td>1. “Como posso te ajudar” · 2 a 5. Um story por necessidade (agrupar por problema, não por nome de procedimento), dizendo pra quem é · 6. “A indicação depende de avaliação” · 7. CTA.<br><strong>Neste perfil:</strong> micose primeiro (como funciona o pacote, sem prometer resultado), depois podologia mensal, calos e fissuras e unha encravada. Sem preço no story.</td>
+          </tr>
+          <tr>
+            <td class="name">Depoimentos</td>
+            <td>Outras pessoas confiaram e deu certo?</td>
+            <td>1. Abertura (“Quem já passou por aqui”) · 2 a 5. Prints de avaliação do Google e mensagens reais, com autorização · 6. Vídeo curto de cliente, se houver · 7. CTA. Preferir relatos com contexto (qual era a preocupação, como foi a experiência) a elogio solto.<br><strong>Neste perfil:</strong> hoje são 13 avaliações do Google, sobre atendimento e ambiente: usar os prints com autorização e, conforme chegarem, relatos de clientes que trataram a micose.</td>
+          </tr>
+          <tr>
+            <td class="name">Como agendar/local</td>
+            <td>O que eu faço agora?</td>
+            <td>1. “Quer agendar? Veja como funciona” · 2. Passo 1: chamar no WhatsApp/link · 3. Passo 2: o que acontece na primeira conversa · 4. Passo 3: a consulta/avaliação · 5. Endereço, horário e forma de pagamento · 6. CTA com link.<br><strong>Neste perfil:</strong> WhatsApp pelo link da bio, endereço (QS 1, Ed. Connect Towers, Águas Claras) e horário confirmados com a Lu. Valor e forma de pagamento só se a Lu quiser divulgar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <h3 class="sub-h">3. Posts fixados</h3>
+    <p style="font-size:14px;margin:0 0 12px;">Três posts fixados no topo do feed, nesta ordem. Juntos funcionam como um mini-funil: primeiro mostram quem é o profissional e por que confiar, depois o que ele trata, por último provam com quem já foi atendido.</p>
+    <div class="fixados">
+      
+      <div class="fixado">
+        <div class="fixado-head">
+          <span class="tag">Fixado 1</span>
+          <span class="fixado-type">Autoridade · vídeo do profissional falando (preferência) ou carrossel de 4 a 5 slides</span>
+        </div>
+        <div class="art">
+          <div class="art-k">Roteiro</div>
+          <p><strong>Abertura:</strong> uma frase que mostra como o profissional pensa sobre o problema que trata, não “olá, eu sou...”.</p>
+          <p><strong>Quem é:</strong> especialidade, formação e experiência que dão credibilidade, em 2 a 3 linhas.</p>
+          <p><strong>Como trabalha:</strong> a filosofia de atendimento ou o critério que o diferencia (o território do Posicionamento).</p>
+          <p><strong>Fechamento:</strong> por que isso importa pra quem está do outro lado + CTA pra agendar.</p>
+        </div>
+        <div class="legenda">
+          <div class="art-k">Ângulo neste perfil</div>
+          <p>A Lu falando de como pensa o tratamento de micose: não é só pomada, tem começo, meio e fim. Credencial só com o que for confirmado (formação e tempo de atuação). Abertura sugerida: “Micose de unha tem tratamento, e ele não é só passar pomada.“</p>
+        </div>
+        <p class="fixado-foot"><strong>Evitar:</strong> currículo longo, autoelogio (“o melhor”, “referência”), título ou especialidade que não pode ser comprovado.</p>
+      </div>
+
+      <div class="fixado">
+        <div class="fixado-head">
+          <span class="tag">Fixado 2</span>
+          <span class="fixado-type">Serviços · carrossel de 4 a 5 slides</span>
+        </div>
+        <div class="art">
+          <div class="art-k">Roteiro</div>
+          <p><strong>Slide 1:</strong> capa que fala da necessidade da pessoa, não “conheça nossos serviços”.</p>
+          <p><strong>Slides 2 a 4:</strong> os principais serviços/tratamentos, agrupados por necessidade, cada um dizendo pra quem é.</p>
+          <p><strong>Penúltimo slide:</strong> como funciona o atendimento (ex.: avaliar → tratar → acompanhar) e que a indicação depende de avaliação.</p>
+          <p><strong>Último slide:</strong> CTA pra agendar a avaliação.</p>
+        </div>
+        <div class="legenda">
+          <div class="art-k">Ângulo neste perfil</div>
+          <p>Ordem: micose, podologia mensal, calos e fissuras, unha encravada. Capa sugerida: “Micose, calos, unha encravada: qual é o seu caso?“</p>
+        </div>
+        <p class="fixado-foot"><strong>Evitar:</strong> catálogo com nome técnico de procedimento, preço ou promoção, foto de banco de imagem.</p>
+      </div>
+
+      <div class="fixado">
+        <div class="fixado-head">
+          <span class="tag">Fixado 3</span>
+          <span class="fixado-type">Prova social · vídeo de depoimento (preferência) ou carrossel</span>
+        </div>
+        <div class="art">
+          <div class="art-k">Roteiro</div>
+          <p><strong>Abertura:</strong> começa direto na fala da pessoa, sem “oi, eu sou...”. Ex.: “Minha maior insegurança antes de vir era...”.</p>
+          <p><strong>Antes:</strong> qual era o problema ou a preocupação.</p>
+          <p><strong>Durante:</strong> como foi o atendimento, o que surpreendeu.</p>
+          <p><strong>Depois:</strong> o que mudou (sem promessa de resultado) e pra quem recomendaria.</p>
+          <p>Sem vídeo: carrossel com prints de avaliações reais do Google, com uma frase de abertura.</p>
+        </div>
+        <div class="legenda">
+          <div class="art-k">Ângulo neste perfil</div>
+          <p>O que falta é relato de micose. Coletar um comentário no Google e um relato em áudio ou vídeo, com autorização, de cliente que trata a micose. Enquanto não houver, usar prints das 13 avaliações atuais, avisando que falam de atendimento e ambiente.</p>
+        </div>
+        <p class="fixado-foot"><strong>Evitar:</strong> elogio solto (“amei!”), depoimento sem autorização, antes/depois em nicho de saúde fora das regras do conselho.</p>
+      </div>
+    </div>
+  </section>
+  <section id="editorial">
+    <div class="sec-head"><span class="sec-num">4.3</span><h2>Linha editorial e pilares de conteúdo</h2></div>
+    <p class="sec-desc">O Instagram funciona como uma segunda conversa antes do WhatsApp: precisa explicar o tratamento e dar segurança antes de a cliente perguntar o preço.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Tom de voz</h3>
+        <p><strong>Direto, acolhedor, explicativo, sem julgamento.</strong></p>
+        <p>A profissional que entende de pés e explica com calma, sem pressa e sem fazer ninguém se sentir culpada.</p>
+      </div>
+      <div class="card">
+        <h3>Evitar</h3>
+        <ul>
+          <li>“Cura definitiva“ ou “fim da micose pra sempre“</li>
+          <li>“Resultado garantido“ ou prazo prometido</li>
+          <li>“O melhor tratamento de Brasília“</li>
+          <li>“Você tem micose?“ (atribui a condição a quem vê)</li>
+          <li>“Falta de higiene“ como causa</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-h">Pilares</h3>
+    <div class="pillars">
+      <div class="card">
+        <span class="tag is-ghost">Pilar 1</span>
+        <h3 style="margin-top:10px;">Micose explicada</h3>
+        <p><strong>Objetivo:</strong> educar e gerar consciência de que a micose tem tratamento.</p>
+        <ul>
+          <li>Por que o tratamento da micose leva meses e precisa de constância</li>
+          <li>Micose não é falta de higiene</li>
+          <li>O que muda do primeiro ao último mês</li>
+        </ul>
+        <p class="hook">“Micose tem tratamento. Quer entender como funciona?“</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Pilar 2</span>
+        <h3 style="margin-top:10px;">O método: começo, meio e fim</h3>
+        <p><strong>Objetivo:</strong> mostrar o pacote e reduzir a objeção de preço.</p>
+        <ul>
+          <li>Como é a avaliação</li>
+          <li>O que acontece em cada sessão</li>
+          <li>Quantas sessões e por quê</li>
+        </ul>
+        <p class="hook">“Antes de falar de preço, deixa eu te mostrar como funciona.“</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Pilar 3</span>
+        <h3 style="margin-top:10px;">Cuidado em casa</h3>
+        <p><strong>Objetivo:</strong> mostrar que o tratamento continua entre as sessões.</p>
+        <ul>
+          <li>Produtos tópicos que a Lu orienta</li>
+          <li>Meia, sapato e rotina no calor do DF</li>
+          <li>O que fazer (e o que evitar) entre uma sessão e outra</li>
+        </ul>
+        <p class="hook">“O que você faz em casa também faz parte do tratamento.“</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Pilar 4</span>
+        <h3 style="margin-top:10px;">Podologia do dia a dia</h3>
+        <p><strong>Objetivo:</strong> trazer a recorrência e mostrar a clínica.</p>
+        <ul>
+          <li>Calos e fissuras no período seco</li>
+          <li>Unha encravada: quando procurar</li>
+          <li>Bastidores e o ambiente da clínica</li>
+        </ul>
+        <p class="hook">“Pés cuidados todo mês, sem susto.“</p>
+      </div>
+      <div class="card">
+        <span class="tag is-ghost">Pilar 5</span>
+        <h3 style="margin-top:10px;">Prova e jornada</h3>
+        <p><strong>Objetivo:</strong> construir a prova de micose que o perfil ainda não tem.</p>
+        <ul>
+          <li>Comentários reais de clientes, com autorização</li>
+          <li>Relato de cliente que trata a micose</li>
+          <li>Acompanhamento do tratamento, sem promessa de resultado</li>
+        </ul>
+        <p class="hook">“Quem já passou por aqui conta como foi.“</p>
+      </div>
+    </div>
+  </section>
+    <nav class="pager"><a href="#tab-trafego">← Estratégia de tráfego</a><a href="#tab-roteiros">Roteiros →</a></nav>
+  </div>
+
+  
+  <div class="tab" id="tab-roteiros">
+    <header class="tab-head"><span class="tab-num">Parte 05 de 08</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
+  <section id="referencias">
+    <div class="sec-head"><span class="sec-num">5.1</span><h2>Referências da Biblioteca de Anúncios</h2></div>
+    <p class="sec-desc">Buscamos na Biblioteca de Anúncios da Meta os anúncios do seu nicho que estão no ar há mais tempo no Brasil. Anúncio que roda por meses é anúncio que se paga: é o melhor sinal público de que o criativo funciona.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>No ar desde</th><th>Dias no ar</th><th>Anunciante</th><th>Formato</th><th>Prévia</th></tr></thead>
+        <tbody>
+          <tr><td>02/07/2024</td><td>835</td><td class="name">Ai meu pé Podologia</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1029861215425052" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>18/09/2024</td><td>757</td><td class="name">Alexandre Okubo Dermatologista</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=407757698682288" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>29/11/2024</td><td>685</td><td class="name">By Pé - Podologia Clínica</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=497006463357375" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>07/03/2025</td><td>587</td><td class="name">All Pé Manaus - Clínica de Podologia</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1838559693621795" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>08/03/2025</td><td>586</td><td class="name">Podologia Estilo Nill</td><td>Imagem</td><td><a href="https://www.facebook.com/ads/library/?id=1430046098370073" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>16/05/2025</td><td>517</td><td class="name">Oasis da Beleza São Judas</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1062115009157137" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>04/06/2025</td><td>498</td><td class="name">Podóloga Rafaela Tamiris</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1356240962116639" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>03/11/2025</td><td>346</td><td class="name">Michele  Fernanda Ferreira</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1541413596891127" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>26/02/2026</td><td>231</td><td class="name">Alê Pé Podologia</td><td>Imagem</td><td><a href="https://www.facebook.com/ads/library/?id=1398829688213098" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>26/02/2026</td><td>231</td><td class="name">Jocelma Podóloga</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1241543070748276" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>11/03/2026</td><td>218</td><td class="name">Podologa Girlene Slz</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1481152700062723" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>12/03/2026</td><td>217</td><td class="name">Joyce podologia</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1710848966568473" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>14/03/2026</td><td>215</td><td class="name">Podo Saúde Podologia e Bem Estar</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=2131386174286184" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>18/03/2026</td><td>211</td><td class="name">Antônia Gutierrez - clínica integrada de podologia</td><td>Imagem</td><td><a href="https://www.facebook.com/ads/library/?id=2835064466830916" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+          <tr><td>19/03/2026</td><td>210</td><td class="name">Studio Clauslei</td><td>Vídeo</td><td><a href="https://www.facebook.com/ads/library/?id=1564054608003631" target="_blank" rel="noopener">Ver anúncio</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Busca feita em 15/10/2026 com os termos: clínica de podologia, micose de unha, podologia, podóloga, tratamento de micose, unha encravada. Ficaram de fora anúncios de outro país, de cursos pra profissionais e de outros serviços. Como o tempo no ar é o critério, o anúncio de dermatologia com laser entrou na lista por falar de micose, mas só aproveitamos a estrutura dele, não a promessa.</p>
+  </section>
+  <section id="roteiros-video">
+    <div class="sec-head"><span class="sec-num">5.2</span><h2>Os 6 roteiros</h2></div>
+    <p class="sec-desc">Todos são do T, a etapa de conversão: dois inspirados nos anúncios que estão há mais tempo no ar, dois de antes e depois e dois de depoimento. O K e o L usam o que já está no perfil. O roteiro é um ponto de partida: grave do seu jeito, mantendo a estrutura.</p>
+
+    <div class="roteiro">
+      <div class="roteiro-head">
+        <span class="rot-n">R1</span>
+        <div>
+          <span class="tag is-ghost">Biblioteca</span>
+          <h3>Na sua região, o tratamento da micose tem método</h3>
+        </div>
+      </div>
+      <div class="rota-metrics" style="margin-top:14px;">
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
+        <div><div class="k">Duração</div><div class="v">20 a 30 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">A Lu</div></div>
+        <div><div class="k">Campanha</div><div class="v">T · A (Meta, micose)</div></div>
+      </div>
+      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Ai meu pé Podologia, no ar desde 02/07/2024 · <a href="https://www.facebook.com/ads/library/?id=1029861215425052" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: o gancho local (cidade na primeira frase) e a lista curta do que a clínica trata, em vídeo curto e direto.</p>
+      <div class="tbl-wrap">
+        <table class="script">
+          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Quem mora em Taguatinga, Guará, Riacho Fundo ou Recanto das Emas: micose de unha tem tratamento.“</td><td>Texto na tela: &quot;Micose de unha tem tratamento&quot;. A Lu em plano médio, olhando pra câmera.</td></tr>
+            <tr><td class="name">3 a 20 s</td><td>“Aqui na Podolux, em Águas Claras, ao lado do Shopping Taguatinga, a gente trata micose, calos e unha encravada. O tratamento de micose é em pacote: avaliação do caso, sessões semanais e orientação pra cuidar em casa.“</td><td>Imagens da clínica e das mãos em procedimento, sem rostos. Lista na tela: avaliação · sessões · cuidado em casa.</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Clica no botão, responde três perguntas rápidas e eu falo com você pelo WhatsApp.“</td><td>Botão do formulário e @podoluxdf</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Micose de unha tem tratamento, com avaliação, sessões semanais e orientação pra cuidar em casa. Responda 3 perguntas e fale com a Podolux, em Águas Claras.</p>
+    </div>
+    <div class="roteiro">
+      <div class="roteiro-head">
+        <span class="rot-n">R2</span>
+        <div>
+          <span class="tag is-ghost">Biblioteca</span>
+          <h3>Muita gente já tentou de tudo pra micose</h3>
+        </div>
+      </div>
+      <div class="rota-metrics" style="margin-top:14px;">
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
+        <div><div class="k">Duração</div><div class="v">30 a 40 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">A Lu</div></div>
+        <div><div class="k">Campanha</div><div class="v">T · A (Meta, micose)</div></div>
+      </div>
+      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Alexandre Okubo Dermatologista, no ar desde 18/09/2024 · <a href="https://www.facebook.com/ads/library/?id=407757698682288" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: a pergunta de abertura sobre quem já tentou de tudo, a explicação curta do método e o convite pra avaliação. Não usamos a promessa de &quot;rápido&quot; nem de &quot;indolor&quot;.</p>
+      <div class="tbl-wrap">
+        <table class="script">
+          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Muita gente já tentou pomada, esmalte e receita caseira pra micose de unha e continua com o problema.“</td><td>Texto na tela: &quot;Já tentou de tudo?&quot;. Fundo neutro, sem imagem de unha.</td></tr>
+            <tr><td class="name">3 a 25 s</td><td>“É por isso que o nosso tratamento tem começo, meio e fim: a gente avalia o seu caso, define quantas sessões são e orienta o que fazer em casa entre elas. Você sabe o que vai acontecer em cada etapa.“</td><td>Linha do tempo na tela: avaliação, sessões semanais, cuidado em casa.</td></tr>
+            <tr><td class="name">25 a 35 s</td><td>“Cada caso é um caso, e a gente só indica o tratamento depois de entender o seu.“</td><td>A Lu fala direto pra câmera.</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Preenche as três perguntas e vem fazer a sua avaliação.“</td><td>Botão do formulário</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Já tentou de tudo e a unha continua igual? Conheça o tratamento da Podolux, com avaliação, sessões definidas e orientação de cuidado em casa.</p>
+    </div>
+    <div class="roteiro">
+      <div class="roteiro-head">
+        <span class="rot-n">R3</span>
+        <div>
+          <span class="tag is-ghost">Antes e depois</span>
+          <h3>Como a cliente chega e como ela sai</h3>
+        </div>
+      </div>
+      <div class="rota-box">
+        <div class="k">Adaptado</div>
+        <p>Antes e depois da situação, não da imagem: política da Meta pra saúde e regra de não prometer resultado. A Lu narra como a cliente chega e como sai, sem identificar ninguém e sem foto de unha.</p>
+      </div>
+      <div class="rota-metrics" style="margin-top:14px;">
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
+        <div><div class="k">Duração</div><div class="v">30 a 45 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">A Lu</div></div>
+        <div><div class="k">Campanha</div><div class="v">T · A (Meta, micose)</div></div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="script">
+          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Quando uma cliente chega pra tratar a micose, quase sempre ela já tentou [o que as clientes costumam ter tentado: a Lu completa com um caso real].“</td><td>Texto na tela: &quot;Como ela chega&quot;</td></tr>
+            <tr><td class="name">3 a 30 s</td><td>“Ela chega [como se sentia: a Lu completa]. A gente avalia o caso, combina as sessões e orienta o cuidado em casa. Ao longo das semanas, o que ela me conta é que [o que mudou na rotina dela: a Lu completa com um caso real e autorizado].“</td><td>Troca de texto na tela: &quot;Como ela chega&quot; e &quot;Como ela está agora&quot;. Sem imagem de unha e sem identificar a cliente.</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Se esse é o seu caso, responde as três perguntas e vamos conversar.“</td><td>Botão do formulário</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Antes de resolver a micose, a gente entende o seu caso. Responda 3 perguntas e fale com a Podolux. Cada caso é um caso e o resultado varia.</p>
+    </div>
+    <div class="roteiro">
+      <div class="roteiro-head">
+        <span class="rot-n">R4</span>
+        <div>
+          <span class="tag is-ghost">Antes e depois</span>
+          <h3>O pacote de micose, do início ao fim</h3>
+        </div>
+      </div>
+      <div class="rota-box">
+        <div class="k">Adaptado</div>
+        <p>Antes e depois em linha do tempo do método, sem foto de unha: o que muda é o que a cliente vive em cada etapa, e não a imagem. Política da Meta pra saúde.</p>
+      </div>
+      <div class="rota-metrics" style="margin-top:14px;">
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, com texto e animação na tela</div></div>
+        <div><div class="k">Duração</div><div class="v">25 a 35 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">A Lu (voz) e a Elevare (edição, em até 72 horas)</div></div>
+        <div><div class="k">Campanha</div><div class="v">T · A (Meta, micose)</div></div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="script">
+          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Como funciona um pacote de micose na Podolux, do primeiro dia à última sessão.“</td><td>Texto na tela: &quot;Do início ao fim&quot;</td></tr>
+            <tr><td class="name">3 a 25 s</td><td>“Primeiro, a avaliação do seu caso. Depois, as sessões semanais, com o número definido desde o começo. Entre uma sessão e outra, o cuidado em casa que a gente orienta. No fim, a gente conversa sobre como manter.“</td><td>Linha do tempo animada: avaliação, sessões, cuidado em casa, manutenção. Sem imagens de unha.</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Quer saber como seria no seu caso? Responde as três perguntas.“</td><td>Botão do formulário</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Do primeiro dia à última sessão: veja como funciona o tratamento de micose da Podolux. Cada caso é um caso e o resultado varia.</p>
+    </div>
+    <div class="roteiro">
+      <div class="roteiro-head">
+        <span class="rot-n">R5</span>
+        <div>
+          <span class="tag is-ghost">Depoimento</span>
+          <h3>Uma cliente conta como foi tratar a micose</h3>
+        </div>
+      </div>
+      <div class="rota-metrics" style="margin-top:14px;">
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, a cliente fala pra câmera</div></div>
+        <div><div class="k">Duração</div><div class="v">30 a 45 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">A cliente (a Lu conduz com 3 perguntas)</div></div>
+        <div><div class="k">Campanha</div><div class="v">T · A (Meta, micose)</div></div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="script">
+          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“[Frase de abertura da cliente, do jeito dela. Ex.: &quot;Eu escondia os pés há [X] anos&quot;]“</td><td>A cliente em plano fechado, sem a imagem da ex-profissional ao fundo. Nome só se ela autorizar.</td></tr>
+            <tr><td class="name">3 a 30 s</td><td>“[O que ela já tinha tentado] · [como foi o atendimento e o que a surpreendeu] · [o que mudou na rotina dela, sem promessa de resultado]“</td><td>Imagens da clínica e das mãos em procedimento, sem identificar mais ninguém.</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Se você também quer entender o seu caso, responde as três perguntas.“</td><td>Botão do formulário</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Uma cliente conta como foi o tratamento de micose na Podolux. Cada caso é um caso e o resultado varia. Responda 3 perguntas e fale com a gente.</p>
+    </div>
+    <div class="roteiro">
+      <div class="roteiro-head">
+        <span class="rot-n">R6</span>
+        <div>
+          <span class="tag is-ghost">Depoimento</span>
+          <h3>O que as clientes dizem da Podolux</h3>
+        </div>
+      </div>
+      <div class="rota-box">
+        <div class="k">Adaptado</div>
+        <p>Depoimento sem rosto: ainda não há cliente de micose pra gravar. A Lu lê uma avaliação real do Google, com a autorização de quem escreveu. Hoje as 13 avaliações falam de atendimento, ambiente e pés macios.</p>
+      </div>
+      <div class="rota-metrics" style="margin-top:14px;">
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, a Lu lê o comentário</div></div>
+        <div><div class="k">Duração</div><div class="v">20 a 30 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">A Lu</div></div>
+        <div><div class="k">Campanha</div><div class="v">T · A (Meta, micose)</div></div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="script">
+          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Eu quero te mostrar o que uma cliente escreveu sobre a gente.“</td><td>Print da avaliação do Google, com o nome da cliente coberto se ela preferir.</td></tr>
+            <tr><td class="name">3 a 20 s</td><td>“[Trecho real da avaliação, lido pela Lu] · É assim que a gente quer que você se sinta no atendimento.“</td><td>O trecho destacado na tela, com as 5 estrelas.</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Se você quer cuidar dos seus pés com essa tranquilidade, responde as três perguntas.“</td><td>Botão do formulário</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Veja o que uma cliente escreveu sobre o atendimento da Podolux, em Águas Claras. Responda 3 perguntas e fale com a gente.</p>
+    </div>
+
+    <h3 class="sub-h">Como gravar</h3>
+    <div class="grid2">
+      <div class="card">
+        <h3>Na hora de gravar</h3>
+        <ul>
+          <li>Celular na vertical, na altura dos olhos, com a câmera de trás.</li>
+          <li>Luz de frente pro rosto (janela ou luz de anel). Nada de luz forte atrás.</li>
+          <li>Microfone de lapela, ou um lugar silencioso, sem eco.</li>
+          <li>Grave o gancho 3 vezes, com jeitos diferentes de falar. É a parte que decide se a pessoa assiste.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Na rotina</h3>
+        <ul>
+          <li>Grave em lote: os vídeos do mês cabem numa mesma sessão.</li>
+          <li>Não precisa decorar: leia o roteiro antes e fale com as suas palavras.</li>
+          <li>A edição (cortes, legenda e capa) sai em até 72 horas, como combinado na call. A produção audiovisual será confirmada pela Victoria.</li>
+          <li>Cliente que aparecer precisa autorizar por escrito. Nada de imagem da ex-profissional.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    <nav class="pager"><a href="#tab-perfil">← Estruturação do perfil</a><a href="#tab-comercial">Comercial →</a></nav>
+  </div>
+
+  
+  <div class="tab" id="tab-comercial">
+    <header class="tab-head"><span class="tab-num">Parte 06 de 08</span><h1>Comercial</h1><p>Manual de atendimento: do primeiro contato até a avaliação.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro de conversa no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz na ligação e no WhatsApp</a><a href="#disc">Perfis de cliente (metodologia DISC)</a><a href="#agenda">Agenda, confirmação e pós-avaliação</a><a href="#funil">Gestão do funil e previsibilidade</a></nav></header>
+  
+  <section id="atendimento-fluxo">
+    <div class="sec-head"><span class="sec-num">6.1</span><h2>O fluxo de atendimento</h2></div>
+    <div class="facts" style="margin-top:0;">
+      <div class="fact"><div class="k">Pra quem</div><div class="v">a Lu e quem atender o WhatsApp da clínica</div></div>
+      <div class="fact"><div class="k">Objetivo</div><div class="v">avaliação para o tratamento de micose</div></div>
+      <div class="fact"><div class="k">Tom</div><div class="v">acolhedor, sem julgamento e cliente</div></div>
+    </div>
+    <p>Quem preenche o formulário do anúncio está pensando no problema naquele momento. Se espera horas pela resposta, o interesse esfria ou outro profissional responde antes. A regra é <strong>velocidade e insistência, com acolhimento:</strong> responder rápido, não desistir do contato e explicar com calma, sem pressionar.</p>
+    <div class="grid2">
+      <div class="card"><h3>Tempo de resposta</h3><p>Até <strong>5 minutos</strong> em horário de atendimento.</p></div>
+      <div class="card"><h3>Fora do horário</h3><p>Mensagem automática avisando quando a pessoa vai ser atendida. Na manhã seguinte, entrar direto no assunto, sem repetir a saudação nem perguntar de novo o que ela já respondeu.</p></div>
+      <div class="card"><h3>Lead de formulário</h3><ul>
+        <li>Aqui quem fala primeiro somos nós. Antes de ligar, ler as 3 respostas do formulário e classificar o lead.</li>
+        <li><strong>Regra do 2x:</strong> não atendeu a primeira ligação? Ligar de novo na hora. Só depois da segunda, mandar a primeira mensagem.</li>
+        <li>Esse público (mulheres de 29 a 40 anos, com trabalho e família) decide melhor com horário que caiba na rotina: oferecer o dia e o período antes de explicar o resto, e usar áudio curto quando a pessoa preferir.</li>
+      </ul></div>
+      <div class="card"><h3>Quem mandou mensagem</h3><p>Responder no WhatsApp. Se demonstrar interesse e parar de responder, ligar.</p></div>
+    </div>
+    <h3 class="sub-h">Cadência quando a pessoa não responde (mínimo de 7 tentativas)</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Tentativa</th><th>Quando</th><th>O que fazer</th></tr></thead>
+      <tbody>
+        <tr><td class="name">1</td><td>Dia 1, manhã (assim que o lead entra)</td><td>2 ligações + primeira mensagem</td></tr>
+        <tr><td class="name">2</td><td>Dia 1, tarde</td><td>2 ligações + mensagem curta</td></tr>
+        <tr><td class="name">3</td><td>Dia 2, manhã</td><td>2 ligações + mensagem com conteúdo útil (como é a avaliação, apresentação da Lu)</td></tr>
+        <tr><td class="name">4</td><td>Dia 2, tarde</td><td>2 ligações + mensagem curta</td></tr>
+        <tr><td class="name">5</td><td>Dia 3, manhã</td><td>2 ligações + mensagem</td></tr>
+        <tr><td class="name">6</td><td>Dia 3, tarde</td><td>2 ligações + mensagem curta</td></tr>
+        <tr><td class="name">7</td><td>Dia 4</td><td>2 ligações + mensagem de encerramento, deixando a porta aberta</td></tr>
+      </tbody>
+    </table></div>
+    <div class="quote-strip" style="margin-top:12px;"><div class="quote">Encerramento (7ª tentativa): “[Nome], não quero te incomodar. Vou deixar seu contato separado aqui. Quando for o momento certo pra você, é só me chamar que eu vejo um horário com a Lu.“</div></div>
+    <p class="note">Depois da 7ª tentativa, o contato vai pra etapa “Follow-up (recuperação)” na planilha e entra na repescagem do mês seguinte.</p>
+  </section>
+  <section id="qualificacao">
+    <div class="sec-head"><span class="sec-num">6.2</span><h2>Qualificação</h2></div>
+    <p class="sec-desc">O papel de quem atende não é vender o pacote de micose. É entender a situação, mostrar quem é a Lu e levar até a avaliação. Quem indica o tratamento e apresenta o pacote é a Lu, depois de ouvir o caso. Usamos a lógica do <strong>SPIN:</strong> entender a situação, o problema, o impacto e a necessidade, com a pessoa contando a própria história.</p>
+
+    <h3 class="sub-h">Lead de formulário: ler as respostas antes de ligar</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Pergunta do formulário</th><th>O que a resposta diz pra conversa</th></tr></thead>
+      <tbody>
+        <tr><td class="name">P1 · Situação hoje</td><td>abrir a conversa pelo caso (&quot;Vi que você já tentou outros tratamentos...&quot;). Quem marcou &quot;tenho micose e nunca tratei&quot; ou &quot;já tentei&quot; pede a agenda mais próxima; quem marcou &quot;não sei se é micose&quot; precisa de explicação antes de qualquer valor.</td></tr>
+        <tr><td class="name">P2 · Em quanto tempo quer resolver</td><td>Define a prioridade de contato. Quem marcou “o quanto antes” ou “este mês” é o primeiro da fila.</td></tr>
+        <tr><td class="name">P3 · Forma de pagamento</td><td>Define o cuidado na conversa sobre valor. Nunca prometer condição que a Lu não autorizou.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub-h">Classificação do lead</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Lead</th><th>Respostas</th><th>Como conduzir</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Quente</td><td>P2 &quot;o quanto antes&quot; ou &quot;este mês&quot; e P3 &quot;à vista&quot; ou &quot;cartão&quot;</td><td>Ligar primeiro. Conversa curta, apresentar a Lu e oferecer duas datas nos próximos dias.</td></tr>
+        <tr><td class="name">Morno</td><td>P2 &quot;nos próximos 3 meses&quot; ou P3 &quot;outra forma de parcelamento&quot; ou &quot;ainda não sei&quot;</td><td>Acolher a dúvida de valor: orçamento e formas de pagamento são apresentados na avaliação. Agendar mesmo assim.</td></tr>
+        <tr><td class="name">Frio</td><td>P2 &quot;só quero entender minhas opções&quot;</td><td>Explicar com calma, mandar um vídeo da Lu e oferecer a avaliação como o jeito de entender o próprio caso. Sem pressa.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub-h">Etapas obrigatórias</h3>
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><b>Abertura com propósito</b><span>“Vi aqui que você [resposta da P1]. Pra eu já entender o seu caso antes da avaliação, posso te fazer duas perguntas rápidas?“</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Investigar a dor (pelo menos 3 perguntas)</b><span>&quot;Há quanto tempo você convive com a micose?&quot; · &quot;O que você já tentou?&quot; · &quot;Como isso te afeta hoje?&quot; · &quot;O que te impediu de resolver antes?&quot; A resposta do “o que te impediu” quase sempre é a objeção que vai aparecer depois: anotar.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Confirmar o atendimento presencial</b><span>“A clínica fica em Águas Claras, no Ed. Connect Towers, ao lado do Shopping Taguatinga. Fica bom pra você vir até aqui?“</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Prova e autoridade</b><span>Enviar a apresentação da Lu (foto, nome e formação) e o texto “Como é a avaliação?“: a nota 5,0 no Google (13 avaliações), o Instagram @podoluxdf e a explicação do pacote: só o que estiver confirmado. Isso é pra conversa individual, não vira post nem anúncio.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Agendamento com compromisso</b><span>“Tenho dois horários com a Lu nos próximos dias: [dia] às [horário] ou [dia] às [horário]. Qual fica melhor pra você?“ Sempre duas opções nos próximos 7 dias.</span></div></div>
+    </div>
+
+    <div class="callout" style="margin-top:18px;">
+      <span class="mark">!</span>
+      <div>
+        <p><strong>O que não fazer na qualificação</strong></p>
+        <p>Não dizer se a pessoa pode ou não fazer o procedimento (só a Lu, depois de examinar). O valor do pacote só entra depois da sondagem e da explicação do método, e condição especial de pagamento só com autorização da Lu. Não prometer resultado, prazo ou que “não dói”. Não repetir as perguntas do formulário. Não perguntar “você tem urgência?” (convida a adiar). Não pedir CPF nem endereço antes de a data estar escolhida.</p>
+      </div>
+    </div>
+  </section>
+  <section id="roteiro-whatsapp">
+    <div class="sec-head"><span class="sec-num">6.3</span><h2>Roteiro de conversa no WhatsApp</h2></div>
+    <p class="sec-desc">Cinco blocos, cada um com um motivo. As falas são um ponto de partida: adapte ao seu jeito, mantendo a ordem.</p>
+    <div class="funnel" style="margin-bottom:18px;"><span class="step">1 Abertura</span><span class="step">2 Investigação</span><span class="step">3 Percepção de valor</span><span class="step">4 Isolar a objeção</span><span class="step">5 Datas e confirmação</span></div>
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><b>Abertura e contexto</b><span>Formulário: “Oi, [Nome]! Aqui é a Lu, da Podolux. Vi que você respondeu o nosso formulário sobre o tratamento de micose e quis falar com você pessoalmente.“ · Mensagem: ”Oi, [Nome]! Aqui é a Lu, da Podolux. Vi a sua mensagem e quero entender o seu caso pra te direcionar certo. Posso te fazer duas perguntas?“</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Investigação (a pessoa fala)</b><span>“Me conta: há quanto tempo é a micose e o que mais te incomoda hoje? Assim eu consigo te direcionar da forma certa.“ Se já tentou outros tratamentos: &quot;Faz sentido desconfiar depois de tentar tanta coisa. Vou te explicar como o nosso funciona.&quot; · Se sente vergonha: &quot;Micose é muito comum e aqui ninguém julga.&quot; · Se a dúvida é o preço: &quot;Já te explico como é o pacote e as formas de pagamento.&quot;</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Percepção de valor (o diferencial)</b><span>Enviar a apresentação da Lu e apresentar o método em 3 pilares: “avaliação do seu caso · sessões semanais com número definido · orientação de cuidado em casa“ Não comparar com outros profissionais.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Isolamento da objeção</b><span>“[Nome], se a Lu mostrar na avaliação que o tratamento é indicado pro seu caso, deixando o valor de lado por um instante, você quer começar?“ Se sim, o valor vira conversa de forma de pagamento. Se hesitar, perguntar o que pesa e ir pra Matriz de objeções.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Datas e confirmação</b><span>“Tenho dois horários com a Lu: [dia], [data] às [horário] · [dia], [data] às [horário]. Qual fica melhor pra eu já segurar pra você?“ Depois: pedir os dados, mandar a localização com uma referência fácil e confirmar por escrito.</span></div></div>
+    </div>
+    <div class="card" style="border:1px solid var(--line);margin-top:16px;">
+      <h3>Regras de ouro do WhatsApp</h3>
+      <ul>
+        <li>O valor só entra depois da sondagem e de explicar como funciona o pacote. Condição especial de pagamento só com autorização da Lu.</li>
+        <li>Sem saudação dupla: se a pessoa já disse o nome e o que quer, não perguntar de novo.</li>
+        <li>Revisar antes de enviar: nome, data, dia da semana e horário.</li>
+        <li>Mensagens curtas. Texto longo só pra apresentação da Lu e pro “Como é a avaliação?“.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="objecoes">
+    <div class="sec-head"><span class="sec-num">6.4</span><h2>Matriz de objeções</h2></div>
+    <p class="sec-desc">Objeção não é recusa, é um pedido de mais informação. Acolher primeiro, esclarecer depois, sempre com calma.</p>
+    
+    <div class="objections">
+      <div class="card">
+        <h3>“R$ 2.000 é muito pra unha.“</h3>
+        <p>“Entendo, é um valor importante. Posso te explicar o que está incluído? São 10 sessões semanais, com avaliação e orientação de cuidado em casa, e a gente vê juntas a forma de pagamento que cabe no seu mês.“</p>
+        <p class="note">Desconto ou brinde só com autorização da Lu, depois de entender o que pesa (o valor total ou a parcela).</p>
+      </div>
+      <div class="card">
+        <h3>“Já tentei e não deu certo, por que agora daria?“</h3>
+        <p>“Faz sentido desconfiar. Por isso o nosso começa com a avaliação do seu caso e te mostra quantas sessões são, o que acontece em cada uma e o que fazer em casa. Posso te explicar?“</p>
+        <p class="note">Não prometer cura nem comparar com outros tratamentos.</p>
+      </div>
+      <div class="card">
+        <h3>“Toda semana eu não consigo ir.“</h3>
+        <p>“As sessões são semanais mesmo, mas a gente combina o dia e o horário que cabem na sua rotina. Qual período fica melhor pra você?“</p>
+        <p class="note">Oferecer primeiro os horários com mais vaga (a manhã tem pouco movimento).</p>
+      </div>
+      <div class="card">
+        <h3>“Será que é micose mesmo?“</h3>
+        <p>“Por isso a avaliação vem primeiro: ela mostra o que é e o que fazer, antes de qualquer pacote.“</p>
+        <p class="note">O atendimento não diz se é micose. Só a avaliação confirma.</p>
+      </div>
+      <div class="card">
+        <h3>“Vou tentar mais uma pomada antes.“</h3>
+        <p>“Tudo bem, a decisão é sua. Se quiser, a avaliação mostra como está a unha hoje, e a gente deixa combinada pra quando você preferir.“</p>
+        <p class="note">Não criticar o produto nem pressionar. Registrar em &quot;Follow-up&quot; e retomar em 7 dias.</p>
+      </div>
+      <div class="card">
+        <h3>“Está caro / vou me organizar.“</h3>
+        <p>“Claro. Posso te contar as formas de pagamento pra ver se ajudam a caber? Se preferir, eu te chamo daqui a alguns dias.“</p>
+        <p class="note">Contato em 7 e 15 dias. Anotar o motivo na planilha.</p>
+      </div>
+      <div class="card">
+        <h3>“Vou falar com meu marido.“</h3>
+        <p>“Claro! Quer que eu te mande um resumo de como funciona o tratamento, pra você mostrar pra ele?“</p>
+        <p class="note">Não pressionar. Retomar no prazo combinado.</p>
+      </div>
+      <div class="card">
+        <h3>“Já vi mais barato em outro lugar.“</h3>
+        <p>“Vale comparar. O que pesa mais pra você: o valor ou o que está incluído? Te explico o que o nosso pacote inclui: avaliação, sessões, acompanhamento e orientação em casa.“</p>
+        <p class="note">Não falar mal de outra clínica e não comparar preço de sessão.</p>
+      </div>
+      <div class="card">
+        <h3>“Tenho medo de doer ou de piorar.“</h3>
+        <p>“Entendo. Na avaliação a gente explica como é cada sessão, e você tira todas as dúvidas antes de decidir.“</p>
+        <p class="note">Nunca dizer &quot;não dói&quot; nem &quot;sem dor&quot;.</p>
+      </div>
+    </div>
+    <div class="card" style="border:1px solid var(--line);border-top:none;">
+      <h3>Fora do perfil</h3>
+      <ul>
+        <li>Mora longe: confirmar se consegue vir até Águas Claras; se não, registrar como &quot;Fora do perfil&quot;.</li>
+        <li>Procura atendimento infantil: fora do foco das campanhas, avisar a Lu.</li>
+        <li>Só quer saber o preço e não quer entender o tratamento: explicar uma vez, oferecer a avaliação e registrar.</li>
+        
+      </ul>
+    </div>
+  </section>
+  <section id="tom-voz-atendimento">
+    <div class="sec-head"><span class="sec-num">6.5</span><h2>Tom de voz na ligação e no WhatsApp</h2></div>
+    <p class="sec-desc">A pessoa não vê o seu rosto. A sua voz e as suas mensagens são a primeira impressão da Podolux.</p>
+    <div class="grid2">
+      <div class="card"><h3>Sorriso na voz</h3><p>Antes de ligar, sorria de verdade. O sorriso muda o timbre e passa acolhimento e confiança. A pessoa percebe na hora se você está lendo um roteiro.</p></div>
+      <div class="card"><h3>Energia um tom acima</h3><p>Mantenha a energia um tom acima da da pessoa. Se ela atende desanimada ou desconfiada, a sua clareza baixa a guarda dela.</p></div>
+      <div class="card"><h3>Postura de autoridade</h3><p>Entusiasmo não é falar rápido nem parecer desesperado. Energia na investigação; fala pausada e firme ao explicar a avaliação, o valor e as objeções.</p></div>
+      <div class="card"><h3>Paciência e escuta</h3><p>Deixe a pessoa terminar de falar e explique quantas vezes for preciso. Quem tem vergonha dos pés precisa se sentir à vontade, não julgada: nunca dizer que a micose é falta de higiene.</p></div>
+      <div class="card"><h3>Linguagem simples</h3><p>Use &quot;avaliação&quot;, &quot;tratamento&quot;, &quot;sessões&quot; e &quot;cuidado com a unha&quot;. Evite termo técnico e evite “promoção”, “barato”, “garantido”, “não dói”, “sem dor”.</p></div>
+      <div class="card"><h3>Áudio e ligação</h3><p>Pra esse público, áudio curto (até 1 minuto) ou ligação costuma funcionar melhor que texto grande.</p></div>
+    </div>
+  </section>
+  <section id="disc">
+    <div class="sec-head"><span class="sec-num">6.6</span><h2>Perfis de cliente (metodologia DISC)</h2></div>
+    <p class="sec-desc">Não existe uma fala que funcione igual pra todo mundo. Nos primeiros segundos, identifique o perfil e adapte a abordagem.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Perfil</th><th>Como ele é</th><th>Como conduzir</th></tr></thead>
+      <tbody>
+        <tr><td class="name">D · Dominante</td><td>Direto, imcliente, fala rápido. Quer saber “o que” e “quanto tempo”.</td><td>Ir direto ao ponto: o que é a avaliação e duas datas. Deixar ele sentir que está decidindo.</td></tr>
+        <tr><td class="name">I · Influente</td><td>Comunicativo, conta a história toda, manda áudio.</td><td>Acompanhar a energia e deixar falar. Contar como outros clientes se sentiram (sem nome e sem prometer resultado). Depois puxar de volta pras datas.</td></tr>
+        <tr><td class="name">S · Estável</td><td>Calmo e amigável, mas com medo de decidir errado.</td><td>Passar segurança: explicar o passo a passo, da chegada até o planejamento. Sem escassez e sem pressa.</td></tr>
+        <tr><td class="name">C · Conforme</td><td>Analítico e cético, faz perguntas técnicas. Muitas vezes já se sentiu enganado.</td><td>Menos emoção, mais lógica: explicar como é a avaliação e os 3 pilares, e reforçar que o orçamento sai completo, sem surpresa.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+  <section id="agenda">
+    <div class="sec-head"><span class="sec-num">6.7</span><h2>Agenda, confirmação e pós-avaliação</h2></div>
+    <div class="grid2">
+      <div class="card"><h3>Regra de agenda</h3><ul>
+        <li>Oferecer sempre <strong>duas datas nos próximos 7 dias</strong>.</li>
+        <li>Sem horário nesse prazo: avisar a Lu antes de oferecer datas mais distantes.</li>
+        <li>Quanto mais longe a data, maior a chance de desistência ou falta.</li>
+      </ul></div>
+      <div class="card"><h3>Pós-avaliação (orçamento aberto)</h3><ul>
+        <li>Quem passou pela avaliação e não fechou entra em “Orçamento aberto”.</li>
+        <li>Contato em <strong>2, 7 e 15 dias</strong>, perguntando como está e se ficou alguma dúvida.</li>
+        <li>Perguntar com cuidado o que pesou (valor, forma de pagamento, medo, data) e anotar na planilha.</li>
+        <li>Condição especial de pagamento só com autorização da Lu.</li>
+        <li><strong>Pedir o comentário no Google:</strong> logo depois da avaliação ou do procedimento, mandar o link direto do Google e, pra quem tratou a micose, pedir que conte como foi o tratamento. O cliente costuma escrever pouco, e o link facilita.</li>
+      </ul></div>
+    </div>
+    <h3 class="sub-h">Confirmação (evitar falta)</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Quando</th><th>O que fazer</th></tr></thead>
+      <tbody>
+        <tr><td class="name">48 h antes</td><td>Lembrete com data, horário e endereço</td></tr>
+        <tr><td class="name">24 h antes</td><td>Pedido de confirmação: “Posso confirmar sua avaliação amanhã às [horário]?“</td></tr>
+        <tr><td class="name">No dia, de manhã</td><td>“Te esperamos hoje às [horário]! Qualquer coisa, me avisa.”</td></tr>
+        <tr><td class="name">Faltou</td><td>Ligar no mesmo dia pra reagendar, com cuidado e sem cobrança no tom</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+  <section id="funil">
+    <div class="sec-head"><span class="sec-num">6.8</span><h2>Gestão do funil e previsibilidade</h2></div>
+    <p class="sec-desc">Tudo só funciona se estiver registrado. Se não está na planilha, não aconteceu.</p>
+    <h3 class="sub-h">Etapas da planilha</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Etapa</th><th>Quando usar</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Lead entrou</td><td>Contato novo, de anúncio, Instagram ou indicação. O prazo de 5 minutos começa aqui.</td></tr>
+        <tr><td class="name">Tentativa de contato</td><td>Ainda sem resposta (cadência de 7 tentativas).</td></tr>
+        <tr><td class="name">Em qualificação</td><td>Conversa em andamento.</td></tr>
+        <tr><td class="name">Avaliação agendada</td><td>Data marcada e dados coletados.</td></tr>
+        <tr><td class="name">Não compareceu</td><td>Reagendar no mesmo dia.</td></tr>
+        <tr><td class="name">Avaliação feita</td><td></td></tr>
+        <tr><td class="name">Orçamento aberto</td><td>Passou pela avaliação e ainda não fechou.</td></tr>
+        <tr><td class="name">Tratamento fechado</td><td>Com o valor fechado.</td></tr>
+        <tr><td class="name">Follow-up (recuperação)</td><td>Sem resposta depois das 7 tentativas, “vou me organizar”, orçamento aberto depois de 15 dias. Repescagem todo mês.</td></tr>
+        <tr><td class="name">Perdido</td><td>Sempre com o motivo (valor, forma de pagamento, medo, sem resposta, data).</td></tr>
+        <tr><td class="name">Fora do perfil</td><td>mora longe, procura atendimento infantil</td></tr>
+      </tbody>
+    </table></div>
+    <div class="grid2" style="margin-top:16px;">
+      <div class="card"><h3>Números da semana (no grupo com a Elevare)</h3><ul>
+        <li>Leads recebidos</li><li>Responderam</li><li>Avaliações agendadas</li><li>Compareceram</li><li>Fecharam</li><li>Valor vendido</li>
+      </ul></div>
+      <div class="card"><h3>MQL e SQL</h3>
+        <p><strong>MQL (qualificado pelo marketing):</strong> mulher com micose, dentro da faixa e das regiões do onboarding, que respondeu as 3 perguntas e não só pediu o preço (a Lu ainda precisa validar essa definição). As respostas do formulário mostram isso.</p>
+        <p><strong>SQL (qualificado pelo atendimento):</strong> contou a situação, entendeu como funciona e confirmou a data. Etapa “Avaliação agendada“, com a confirmação de 24 h feita. A Lu atende principalmente SQL: aumenta o fechamento e valoriza o tempo.</p>
+      </div>
+    </div>
+  </section>
+    <nav class="pager"><a href="#tab-roteiros">← Roteiros</a><a href="#tab-jornada">Jornada →</a></nav>
+  </div>
+
+  
+  <div class="tab" id="tab-jornada">
+    <header class="tab-head"><span class="tab-num">Parte 07 de 08</span><h1>Jornada</h1><p>Como funciona a implantação do plano, o que acontece nos primeiros 90 dias, e quem faz o quê.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a></nav></header>
+  <section id="jornada">
+    <div class="sec-head"><span class="sec-num">7.1</span><h2>A jornada dos primeiros 90 dias</h2></div>
+
+    
+    <div class="statement">
+      <p>A Podolux pode continuar sendo mais uma clínica de podologia onde a cliente pergunta o preço em três WhatsApps e compara com pacotes de R$ 910. Ou pode virar o lugar onde a micose tem um método claro, com começo, meio e fim, e a cliente chega sabendo como funciona.</p>
+    </div>
+
+    
+    <h3 class="sub-h">Como funciona a implantação</h3>
+    <div class="impl-head"><span class="k">Mês 01</span><b>Implantação, estratégia e primeiras validações</b></div>
+    <div class="journey">
+      <div class="jstep"><div class="jn">01</div><b>Reunião comercial</b><span>Entender o negócio e o momento do cliente.</span></div>
+      <div class="jstep"><div class="jn">02</div><b>Formalização de contrato</b><span>Escopo e responsabilidades de cada lado.</span></div>
+      <div class="jstep"><div class="jn">03</div><b>Entrada e apresentação do squad e agendamento do onboarding</b><span>Quem cuida do projeto na Elevare.</span></div>
+      <div class="jstep"><div class="jn">04</div><b>Reunião de onboarding</b><span>Call de 06/10/2026: tudo o que está no Briefing.</span></div>
+      <div class="jstep is-here"><div class="jn">05</div><b>Apresentação do Plano Macro e implementação do projeto</b><span>Este documento.</span><em class="here">Você está aqui</em></div>
+      <div class="jstep"><div class="jn">06</div><b>Entrega dos vídeos</b><span>A Lu grava os roteiros da aba Roteiros. A produção audiovisual será confirmada pela Victoria.</span></div>
+      <div class="jstep"><div class="jn">07</div><b>Edição dos vídeos entregues</b><span>Em até 72 horas.</span></div>
+      <div class="jstep"><div class="jn">08</div><b>Aprovação dos criativos em vídeo</b><span>Aprovação rápida, pra não travar a criação.</span></div>
+      <div class="jstep"><div class="jn">09</div><b>Ativação de campanhas e publicação</b><span>O funil KLT no ar.</span></div>
+      <div class="jstep"><div class="jn">10</div><b>Monitoramento inicial</b><span>A fase de aprendizado acompanhada de perto.</span></div>
+      <div class="jstep"><div class="jn">11</div><b>Assessoria comercial</b><span>Atendimento no roteiro da aba Comercial.</span></div>
+      <div class="jstep"><div class="jn">12</div><b>Primeiro relatório semanal</b><span>Com os últimos 7 dias.</span></div>
+      <div class="jstep"><div class="jn">13</div><b>Otimização das campanhas</b><span>A verba vai pro que gera avaliação.</span></div>
+      <div class="jstep"><div class="jn">14</div><b>Acompanhamento diário</b><span>Otimização diária.</span></div>
+      <div class="jstep"><div class="jn">15</div><b>Validação de copy e público</b><span>O que fica e o que muda pro mês 2.</span></div>
+    </div>
+    <p class="impl-next">Próximas etapas → o que cada mês traz, logo abaixo.</p>
+
+    <h3 class="sub-h">Três acordos da operação</h3>
+    
+    <div class="criteria is-3">
+      <div class="card"><span class="crit-n">01</span><h3>O mês 1 é calibragem, não fechamento.</h3><p>No primeiro mês organizamos o acompanhamento dos leads, calibramos público, testamos criativos e mapeamos as objeções que chegam pelo WhatsApp. É a fundação: os resultados consistentes aparecem a partir do mês 2, quando a campanha já aprendeu.</p></div>
+      <div class="card"><span class="crit-n">02</span><h3>O lead de tráfego não chega te conhecendo.</h3><p>Quem vem por indicação já chega confiando. Quem vem do anúncio está te descobrindo agora: vai pesquisar, comparar e perguntar preço. Por isso a autoridade entra primeiro e o atendimento caminha junto: a velocidade e a forma de responder no WhatsApp decidem boa parte do resultado.</p></div>
+      <div class="card"><span class="crit-n">03</span><h3>Verba enxuta pede foco.</h3><p>Com R$ 1.500 de mídia por mês, o volume é limitado. Por isso a verba fica no tratamento de micose e segue o custo por avaliação. Preferimos dizer isso agora do que prometer volume que não vamos entregar.</p></div>
+    </div>
+
+    <h3 class="sub-h">O que cada mês traz</h3>
+    <div class="months">
+      <div class="card"><div class="k">Mês 1</div><h3>Calibragem e descoberta</h3><p>Setup, formulário e planilha de acompanhamento. A primeira campanha entra em até 7 dias depois do setup. A Lu grava os vídeos e ajusta o perfil, e começamos a pedir comentários de quem trata a micose. O que aprendemos vira o baseline de conversão.</p></div>
+      <div class="card"><div class="k">Mês 2</div><h3>Otimização</h3><p>Com 30 a 45 dias de dado, vemos o que o formulário filtra e qual anúncio traz quem agenda e fecha, e ajustamos público e criativo. A meta é o primeiro pacote de micose vindo do tráfego.</p></div>
+      <div class="card"><div class="k">Mês 3+</div><h3>Consolidação e fase 2</h3><p>Decidir o Google (campanha B) com o volume medido e o destino do clique definido, rever a comunicação da máquina de ozônio com a regra confirmada e avaliar aumento de verba se o custo por pacote permitir.</p></div>
+    </div>
+
+    
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">→</span>
+      <div>
+        <p><strong>Prioridade antes de escalar:</strong> atendimento e medição antes de verba. A planilha com a etapa de cada lead e as vendas enviadas toda terça decidem se a verba aumenta.</p>
+        <p>Meta (micose) → demanda e conversa qualificada · Formulário → filtro · Planilha → inteligência de venda · Google → captura, na fase 2.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h">O que alinhar na apresentação deste plano</h3>
+    <div class="ladder">
+      
+      <div class="rung"><span class="n"></span><div><b>Valor e comunicação do pacote</b><span>Hoje são 10 sessões por R$ 2.000. Com a máquina nova, a Lu projeta 8 sessões por R$ 2.500: definir a partir de quando e como comunicar.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Ozônio na comunicação</b><span>Confirmar quem aplica e o registro do equipamento na Anvisa antes de usar &quot;ozônio&quot; ou &quot;ozonioterapia&quot; em anúncio.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Perguntas do formulário e lead qualificado</b><span>Validar as 3 perguntas e o que a Lu considera um lead qualificado.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Agenda de gravação e produção audiovisual</b><span>A Lu grava os roteiros. A Victoria confirma se a produção audiovisual está no contrato.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Ajustes do perfil</b><span>Bio, destaques e fixados, e a revisão dos vídeos antigos por causa da imagem da ex-profissional.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Verba e acessos</b><span>Aportes quinzenais de R$ 750 e aviso de saldo com 1 a 2 dias de antecedência. Acessos às contas de anúncio.</span></div></div>
+    </div>
+  </section>
+
+  <section id="responsabilidades">
+    <div class="sec-head"><span class="sec-num">7.2</span><h2>Quem faz o quê</h2></div>
+    <p class="sec-desc">Pra ninguém ficar esperando o outro: o que é da Elevare, o que é da Lu e o que é do atendimento.</p>
+    
+    <div class="grid3">
+      <div class="card"><span class="kicker">Elevare</span><h3>Mídia, dados e criativos</h3><ul>
+        <li>Criar, gerir e otimizar as campanhas</li>
+        <li>Avisar o saldo da conta com 1 a 2 dias de antecedência</li>
+        <li>Relatório semanal</li>
+        <li>Roteiros dos vídeos e edição em até 72 horas (produção audiovisual a confirmar no contrato)</li>
+        <li>Ler a planilha de acompanhamento e ajustar a verba entre as campanhas de cada plataforma pelo custo por avaliação e por pacote</li>
+      </ul></div>
+      <div class="card"><span class="kicker">Lu Silva</span><h3>Autoridade e decisões</h3><ul>
+        <li>Gravar os vídeos do mês</li>
+        <li>Aprovar os criativos rápido</li>
+        <li>Manter acessos e saldo nas contas de anúncio, com os aportes quinzenais de R$ 750</li>
+        <li>Enviar as vendas toda terça-feira</li>
+        <li>Participar da reunião mensal</li>
+        <li>Ajustar bio, destaques e fixados (aba Estruturação do perfil)</li>
+      </ul></div>
+      <div class="card"><span class="kicker">Atendimento</span><h3>Do lead à avaliação</h3><ul>
+        <li>Responder em até 5 minutos</li>
+        <li>Seguir o roteiro da aba Comercial</li>
+        <li>Atualizar a etapa de cada lead na planilha</li>
+        <li>Passar os números da semana</li>
+        
+      </ul></div>
+    </div>
+    <p class="note">A Elevare não cria nem posta o conteúdo orgânico e os stories do perfil (combinado na call). A produção audiovisual será confirmada pela Victoria.</p>
+  </section>
+
+
+    <nav class="pager"><a href="#tab-comercial">← Comercial</a><a href="#tab-info">Informações gerais →</a></nav>
+  </div>
+
+  <div class="tab" id="tab-info">
+    <header class="tab-head"><span class="tab-num">Parte 08 de 08</span><h1>Informações gerais</h1><p>Pra consultar quando precisar: as regras de comunicação que valem pra todo o material, os termos usados no plano e o que ainda falta confirmar.</p><nav class="tab-toc"><a href="#regras-conselho">Regras de comunicação</a><a href="#termos">Termos usados neste plano</a><a href="#lacunas">O que falta confirmar</a></nav></header>
+    
+
+  <section id="regras-conselho">
+    <div class="sec-head"><span class="sec-num">8.1</span><h2>Regras de comunicação aplicadas a este plano</h2></div>
+    <p class="sec-desc">A podologia não tem conselho profissional nem norma própria de publicidade. Por isso valem o Código de Defesa do Consumidor, a política de anúncios da Meta pra saúde e a lei que regula o ozônio. Toda peça deste plano (anúncio, bio, destaque, fixado, roteiro e mensagem de WhatsApp) segue esta tabela.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Regra</th><th>O que a norma diz</th><th>Como aplicamos aqui</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Promessa de resultado</td><td>O Código de Defesa do Consumidor (art. 37) proíbe a publicidade enganosa.</td><td>Sem &quot;cura&quot;, &quot;garantido&quot;, &quot;definitivo&quot; nem prazo prometido. Os textos dizem &quot;cada caso é um caso&quot;.</td></tr>
+        <tr><td class="name">Atribuir condição a quem vê</td><td>A política da Meta pra saúde não permite o anúncio sugerir que a pessoa tem uma condição.</td><td>Sem &quot;você tem micose?&quot;. Falamos do tratamento e de &quot;muita gente&quot;, não da pessoa.</td></tr>
+        <tr><td class="name">Imagem de unha e antes e depois</td><td>A política da Meta restringe imagem chocante e antes e depois que sugira resultado garantido.</td><td>Sem foto de unha com micose em destaque. Usamos linha do tempo do método e o relato narrado.</td></tr>
+        <tr><td class="name">Ozonioterapia</td><td>A Lei 14.648/2023 autoriza como procedimento complementar, aplicado por profissional de saúde de nível superior inscrito em conselho, com equipamento regularizado na Anvisa.</td><td>Não anunciar &quot;ozonioterapia&quot; até confirmar quem aplica e o registro do equipamento. Até lá, comunicamos o método, as sessões e o acompanhamento.</td></tr>
+        <tr><td class="name">Profissão de podólogo</td><td>Sem lei federal nem conselho. O PL 618/2022 aguarda o plenário da Câmara e o PL 632/2023 do DF aguarda sanção.</td><td>Não usamos &quot;registro no conselho&quot; na identificação. Acompanhamos a regulamentação.</td></tr>
+        <tr><td class="name">Direito de imagem</td><td>Imagem de pessoa precisa de autorização.</td><td>Autorização por escrito de qualquer cliente que apareça. Nenhuma imagem da ex-profissional Jaque, por causa do processo em andamento.</td></tr>
+        <tr><td class="name">Exclusividade</td><td>O art. 37 do Código de Defesa do Consumidor também alcança a afirmação de exclusividade sem comprovação.</td><td>&quot;Podologia quente só em Brasília&quot; é uma afirmação da Lu, sem fonte: não entra em anúncio até ser conferida.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout" style="margin-top:16px;">
+      <span class="mark">!</span>
+      <div><p><strong>Material antigo:</strong> antes de usar qualquer vídeo ou foto antigo em anúncio, conferir que não mostra a ex-profissional. A Elevare não apaga nem arquiva nada do perfil: se algum conteúdo precisar sair, a Lu faz pelo Instagram.</p></div>
+    </div>
+  </section>
+
+  <section id="termos">
+    <div class="sec-head"><span class="sec-num">8.2</span><h2>Termos usados neste plano</h2></div>
+    
+    <dl class="glossary">
+      <div><dt>Lead</dt><dd>Pessoa que levantou a mão: preencheu o formulário ou mandou mensagem a partir de um anúncio.</dd></div>
+      <div><dt>CPL (custo por lead)</dt><dd>Quanto custou, em mídia, cada lead. Ajuda a ler a campanha, mas o que importa é quanto custa cada consulta e cada venda.</dd></div>
+      <div><dt>Formulário instantâneo</dt><dd>Formulário que abre dentro do Instagram ou do Facebook, já com nome e telefone preenchidos.</dd></div>
+      <div><dt>CRM</dt><dd>Onde cada lead fica registrado, com a etapa em que está: respondeu, agendou, compareceu, fechou.</dd></div>
+      <div><dt>MQL e SQL</dt><dd>MQL é o lead que tem a dor que a Podolux trata; SQL é o que passou pelo atendimento e agendou.</dd></div>
+      <div><dt>Público quente (remarketing)</dt><dd>Quem interagiu com o perfil ou com os anúncios nos últimos 30 dias e volta a ver anúncios.</dd></div>
+      <div><dt>Funil KLT</dt><dd>Conhecer, gostar e confiar (<em>Know, Like, Trust</em>): as três etapas que a pessoa percorre até agendar, cada uma com conteúdo e campanha próprios.</dd></div>
+      <div><dt>Distribuição</dt><dd>Campanha que leva vídeo a mais gente sem pedir o contato. É o que roda no K e no L.</dd></div>
+      <div><dt>Criativo</dt><dd>A peça do anúncio: o vídeo, a imagem ou o carrossel.</dd></div>
+      <div><dt>Fase de aprendizado</dt><dd>As primeiras semanas de uma campanha, em que a plataforma testa públicos e o custo oscila mais.</dd></div>
+      <div><dt>Micose de unha (onicomicose)</dt><dd>Infecção da unha por fungo. O tratamento leva meses e precisa de constância.</dd></div>
+      <div><dt>Ozonioterapia</dt><dd>Procedimento complementar regulado pela Lei 14.648/2023: aplicado por profissional de saúde de nível superior inscrito em conselho, com equipamento regularizado na Anvisa.</dd></div>
+    </dl>
+  </section>
+
+  <section id="lacunas">
+    <div class="sec-head"><span class="sec-num">8.3</span><h2>O que falta confirmar</h2></div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Ainda não confirmado</h3>
+        <ul>
+          <li>Quem faz a avaliação e as sessões e a formação, pra identificação no perfil.</li>
+          <li>Marco de autoridade da bio: número de atendimentos ou anos de atuação (hoje está como [X]).</li>
+          <li>Detoxlux e os combos (a Lu ficou de enviar), e a máquina nova de ozônio: preço novo, data, quem aplica e registro na Anvisa.</li>
+          <li>&quot;Podologia quente só em Brasília&quot;: afirmação sem fonte.</li>
+          <li>Base da taxa de conversão de 68% informada na call.</li>
+          <li>Horário: 9h às 18h na call, e a ficha do Google fecha às 19h.</li>
+          <li>Instagram: legendas e engajamento dos posts não apareceram na coleta.</li>
+          <li>Tom de voz definitivo da marca.</li>
+          <li>Nome e endereço: a ficha e a bio dizem Taguatinga, e o endereço é em Águas Claras.</li>
+          <li>Produção audiovisual no contrato (a Victoria confirma).</li>
+          <li>Planilha de acompanhamento: modelo e como o lead avisa a Lu (grupo ou outro canal).</li>
+          <li>Volume de busca da micose no Google: o Planejador voltou zerado.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Perguntas pra você</h3>
+        <ul>
+          <li>A primeira visita é uma avaliação? Tem custo e quanto tempo dura?</li>
+          <li>O cartão parcela em quantas vezes? Há condição à vista?</li>
+          <li>Quando a máquina nova chega e o pacote passa a 8 sessões por R$ 2.500?</li>
+          <li>Quais vídeos e posts do perfil funcionaram melhor, e algum mostra a ex-profissional?</li>
+          <li>O que é, pra você, um lead qualificado?</li>
+          <li>Quais dias e horários têm mais vaga, principalmente de manhã?</li>
+          <li>Você pode pedir comentário no Google a quem tratou a micose?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    <nav class="pager"><a href="#tab-jornada">← Jornada</a><span></span></nav>
+  </div>
+
+
+  <footer>
+    <span>Plano Macro · Podolux · outubro de 2026</span>
+    <span>ELEVARE Business Group · Time de Tráfego</span>
+  </footer>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  // o índice de cada aba sai do cabeçalho pra poder ficar fixo enquanto a aba rola
+  Array.prototype.forEach.call(document.querySelectorAll('.tab-head > .tab-toc'), function(t){ var hd = t.parentNode; hd.parentNode.insertBefore(t, hd.nextSibling); });
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var links = document.querySelectorAll('.tabs-nav a');
+  var select = document.querySelector('.tabs-select');
+  function abrir(hash, rolar){
+    var alvo = hash ? document.getElementById(hash.replace('#','')) : null;
+    var tab = alvo ? (alvo.classList.contains('tab') ? alvo : alvo.closest('.tab')) : null;
+    if(!tab) tab = tabs[0];
+    tabs.forEach(function(t){ t.classList.toggle('is-active', t === tab); });
+    Array.prototype.forEach.call(links, function(a){ var on = a.dataset.tab === tab.id; a.classList.toggle('is-active', on); if(on){ a.setAttribute('aria-current','page'); } else { a.removeAttribute('aria-current'); } });
+    if(select) select.value = tab.id;
+    if(alvo && alvo !== tab && rolar){ alvo.scrollIntoView(); } else { window.scrollTo(0,0); }
+  }
+  window.addEventListener('hashchange', function(){ abrir(location.hash, true); });
+  if(select) select.addEventListener('change', function(){ location.hash = select.value; });
+  abrir(location.hash, true);
+  // rótulos das colunas em cada célula (no celular a tabela vira cartões)
+  Array.prototype.forEach.call(document.querySelectorAll('.tbl-wrap table'), function(t){
+    var hs = Array.prototype.map.call(t.querySelectorAll('thead th'), function(th){ return th.textContent.trim(); });
+    Array.prototype.forEach.call(t.querySelectorAll('tbody tr'), function(tr){
+      Array.prototype.forEach.call(tr.children, function(td, i){ if(hs[i]) td.setAttribute('data-label', hs[i]); });
+    });
+    // coluna só com números (R$, %, quantidades) fica alinhada à direita
+    var ths = t.querySelectorAll('thead th');
+    Array.prototype.forEach.call(ths, function(th, i){
+      if(i === 0) return;
+      var cels = t.querySelectorAll('tbody tr > :nth-child(' + (i + 1) + ')');
+      var todas = cels.length > 0 && Array.prototype.every.call(cels, function(c){ return /^[R$\s≈~\d.,%–-]+$/.test(c.textContent.trim()); });
+      if(todas){ th.classList.add('num'); Array.prototype.forEach.call(cels, function(c){ c.classList.add('num'); }); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
