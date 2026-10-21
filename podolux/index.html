@@ -298,6 +298,8 @@
   .proj-row.is-total{border-bottom:none;padding-top:10px;}
   .proj-row.is-total b{color:var(--accent-ink);}
   .note{font-size:14px;color:var(--muted);margin:12px 0 0;}
+  .res-link{display:inline-block;margin:14px 18px 0 0;font-family:"Montserrat",sans-serif;font-weight:600;font-size:14px;color:var(--accent-ink);text-decoration:none;}
+  .res-link:hover{text-decoration:underline;}
   .card .card-foot{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-weight:600;color:var(--accent-ink);}
 
   .months{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
@@ -569,25 +571,27 @@
     <div class="side-client">Plano Macro · Podolux</div>
     <nav class="tabs-nav" aria-label="Partes do plano">
       <a href="#inicio" data-tab="inicio">Início</a>
-      <a href="#tab-briefing" data-tab="tab-briefing"><span>01</span>Briefing</a>
-      <a href="#tab-persona" data-tab="tab-persona"><span>02</span>Persona</a>
-      <a href="#tab-trafego" data-tab="tab-trafego"><span>03</span>Estratégia de tráfego</a>
-      <a href="#tab-perfil" data-tab="tab-perfil"><span>04</span>Estruturação do perfil</a>
-      <a href="#tab-roteiros" data-tab="tab-roteiros"><span>05</span>Roteiros</a>
-      <a href="#tab-comercial" data-tab="tab-comercial"><span>06</span>Comercial</a>
-      <a href="#tab-jornada" data-tab="tab-jornada"><span>07</span>Jornada</a>
-      <a href="#tab-info" data-tab="tab-info"><span>08</span>Informações gerais</a>
+      <a href="#tab-resumo" data-tab="tab-resumo"><span>01</span>Resumo</a>
+      <a href="#tab-briefing" data-tab="tab-briefing"><span>02</span>Briefing</a>
+      <a href="#tab-persona" data-tab="tab-persona"><span>03</span>Persona</a>
+      <a href="#tab-trafego" data-tab="tab-trafego"><span>04</span>Estratégia de tráfego</a>
+      <a href="#tab-perfil" data-tab="tab-perfil"><span>05</span>Estruturação do perfil</a>
+      <a href="#tab-roteiros" data-tab="tab-roteiros"><span>06</span>Roteiros</a>
+      <a href="#tab-comercial" data-tab="tab-comercial"><span>07</span>Comercial</a>
+      <a href="#tab-jornada" data-tab="tab-jornada"><span>08</span>Jornada</a>
+      <a href="#tab-info" data-tab="tab-info"><span>09</span>Informações gerais</a>
     </nav>
     <select class="tabs-select" aria-label="Partes do plano">
       <option value="inicio">Início</option>
-      <option value="tab-briefing">01 · Briefing</option>
-      <option value="tab-persona">02 · Persona</option>
-      <option value="tab-trafego">03 · Estratégia de tráfego</option>
-      <option value="tab-perfil">04 · Estruturação do perfil</option>
-      <option value="tab-roteiros">05 · Roteiros</option>
-      <option value="tab-comercial">06 · Comercial</option>
-      <option value="tab-jornada">07 · Jornada</option>
-      <option value="tab-info">08 · Informações gerais</option>
+      <option value="tab-resumo">01 · Resumo</option>
+      <option value="tab-briefing">02 · Briefing</option>
+      <option value="tab-persona">03 · Persona</option>
+      <option value="tab-trafego">04 · Estratégia de tráfego</option>
+      <option value="tab-perfil">05 · Estruturação do perfil</option>
+      <option value="tab-roteiros">06 · Roteiros</option>
+      <option value="tab-comercial">07 · Comercial</option>
+      <option value="tab-jornada">08 · Jornada</option>
+      <option value="tab-info">09 · Informações gerais</option>
     </select>
   </aside>
 
@@ -607,34 +611,143 @@
       <div><div class="k">Etapa</div><div class="v">Validação da estratégia</div></div>
     </div>
 
-    <h3 class="sub-h">O plano em 5 decisões</h3>
-    <div class="decisions">
-      <div class="decision"><b>Micose é a frente do plano</b><span>O pacote de R$ 2.000 é o maior ticket, o vídeo de micose puxou agosto (R$ 22 mil) e a frente custou cerca de R$ 2 por conversa na conta.</span></div>
-      <div class="decision"><b>Meta agora, Google depois</b><span>Com R$ 1.500 por mês, um motor só aprende melhor. A Meta tem histórico e cria a vontade de tratar; o Google entra quando a Meta estiver validada.</span></div>
-      <div class="decision"><b>Filtrar antes de atender</b><span>Na call, a Lu contou que a verba maior trouxe leads reclamando de preço. O formulário de 3 perguntas filtra antes do contato.</span></div>
-      <div class="decision"><b>Prova de micose antes de escalar</b><span>As 13 avaliações do Google são da inauguração e nenhuma fala de micose. O plano pede avaliações e relatos desse tratamento.</span></div>
-      <div class="decision"><b>Medir agendamento e venda, não conversa</b><span>Sem CRM, a taxa de 68% não tem base. A planilha de acompanhamento, com as vendas enviadas toda terça, cria a conversão real no mês 1.</span></div>
-    </div>
-
     <h3 class="sub-h">O que tem neste plano</h3>
     <div class="toc">
-      <a href="#tab-briefing"><span>01</span><b>Briefing</b><em>Quem é a Podolux, o diagnóstico da conta, o mercado e o que alinhamos no onboarding.</em></a>
-      <a href="#tab-persona"><span>02</span><b>Persona</b><em>Quem é a sua cliente ideal: medos, objeções e o que ela pensa antes de agendar.</em></a>
-      <a href="#tab-trafego"><span>03</span><b>Estratégia de tráfego</b><em>Funil KLT, público prioritário, plataforma, campanhas, projeção, objetivos e formulário.</em></a>
-      <a href="#tab-perfil"><span>04</span><b>Estruturação do perfil</b><em>Posicionamento, bio, destaques, fixados e linha editorial.</em></a>
-      <a href="#tab-roteiros"><span>05</span><b>Roteiros</b><em>Referências que estão no ar há mais tempo e os 6 roteiros de vídeo.</em></a>
-      <a href="#tab-comercial"><span>06</span><b>Comercial</b><em>Manual de atendimento: do primeiro contato até a avaliação.</em></a>
-      <a href="#tab-jornada"><span>07</span><b>Jornada</b><em>Os primeiros 90 dias, quem faz o quê e o que alinhar na apresentação.</em></a>
-      <a href="#tab-info"><span>08</span><b>Informações gerais</b><em>As regras de comunicação, os termos usados e o que falta confirmar.</em></a>
+      <a href="#tab-resumo"><span>01</span><b>Resumo</b><em>O plano em uma página: o que vamos fazer, por quê e o que precisamos de você.</em></a>
+      <a href="#tab-briefing"><span>02</span><b>Briefing</b><em>Quem é a Podolux, o diagnóstico da conta, o mercado e o que alinhamos no onboarding.</em></a>
+      <a href="#tab-persona"><span>03</span><b>Persona</b><em>Quem é a sua cliente ideal: medos, objeções e o que ela pensa antes de agendar.</em></a>
+      <a href="#tab-trafego"><span>04</span><b>Estratégia de tráfego</b><em>Funil KLT, público prioritário, plataforma, campanhas, projeção, objetivos e formulário.</em></a>
+      <a href="#tab-perfil"><span>05</span><b>Estruturação do perfil</b><em>Posicionamento, bio, destaques, fixados e linha editorial.</em></a>
+      <a href="#tab-roteiros"><span>06</span><b>Roteiros</b><em>Referências que estão no ar há mais tempo e os 6 roteiros de vídeo.</em></a>
+      <a href="#tab-comercial"><span>07</span><b>Comercial</b><em>Manual de atendimento: do primeiro contato até a avaliação.</em></a>
+      <a href="#tab-jornada"><span>08</span><b>Jornada</b><em>Os primeiros 90 dias, quem faz o quê e o que alinhar na apresentação.</em></a>
+      <a href="#tab-info"><span>09</span><b>Informações gerais</b><em>As regras de comunicação, os termos usados e o que falta confirmar.</em></a>
     </div>
-    <a class="btn" href="#tab-briefing">Começar pelo briefing →</a>
+    <a class="btn" href="#tab-resumo">Começar pelo resumo →</a>
+  </div>
+
+  
+  <div class="tab" id="tab-resumo">
+    <header class="tab-head"><span class="tab-num">Parte 01 de 09</span><h1>Resumo</h1><p>O plano em uma página: o que vamos fazer, por quê e o que precisamos de você. Cada bloco leva ao detalhe na aba correspondente.</p><nav class="tab-toc"><a href="#r-hoje">Onde estamos</a><a href="#r-critico">Ponto crítico</a><a href="#r-persona">Pra quem falamos</a><a href="#r-estrategia">A estratégia</a><a href="#r-posicionamento">Posicionamento</a><a href="#r-voce">O que precisamos de você</a><a href="#r-90dias">90 dias</a><a href="#r-decisoes">O que decidimos hoje</a></nav></header>
+    
+
+  <section id="r-hoje">
+    <div class="sec-head"><span class="sec-num">1.1</span><h2>Onde estamos hoje</h2></div>
+    <div class="stats">
+      <div class="stat"><div class="num">590</div><div class="lbl">seguidores no Instagram (15/10/2026)</div></div>
+      <div class="stat"><div class="num">5,0</div><div class="lbl">nota no Google, com 13 avaliações, nenhuma sobre micose</div></div>
+      <div class="stat"><div class="num">R$ 13 mil</div><div class="lbl">faturamento de setembro, contra a meta de R$ 30 mil</div></div>
+      <div class="stat"><div class="num">R$ 2,00</div><div class="lbl">por conversa nas campanhas de micose, sem filtro</div></div>
+    </div>
+    <p>Clínica nova, com um tratamento de ticket alto que já provou demanda. Falta filtrar quem chega, medir o que vira venda e construir prova de micose.</p>
+    <a class="res-link" href="#contexto">Ver o briefing completo →</a>
+  </section>
+
+  <section id="r-critico">
+    <div class="sec-head"><span class="sec-num">1.2</span><h2>O ponto crítico</h2></div>
+    <div class="callout">
+      <span class="mark">!</span>
+      <div><p><strong>Imagem da ex-profissional:</strong> não pode aparecer em nenhum material, por causa do processo judicial em andamento. Vídeos e fotos antigos precisam ser revisados antes de qualquer uso em anúncio.</p></div>
+    </div>
+    <a class="res-link" href="#swot">Ver a análise SWOT →</a>
+  </section>
+
+  <section id="r-persona">
+    <div class="sec-head"><span class="sec-num">1.3</span><h2>Pra quem vamos falar</h2></div>
+    <div class="grid3">
+      <div class="card"><h3>Quem é</h3><p>Juliana Ferreira, 34 anos, de Taguatinga e região: convive há meses ou anos com micose nas unhas dos pés e já gastou com o que não funcionou.</p></div>
+      <div class="card"><h3>A objeção principal</h3><p>“R$ 2.000 é muito pra unha.“</p></div>
+      <div class="card"><h3>Nível de consciência</h3><p>Entre o consciente do problema e o consciente da solução: sabe que é micose e que existe tratamento, mas não conhece o pacote.</p></div>
+    </div>
+    <a class="res-link" href="#persona">Ver a persona completa →</a>
+  </section>
+
+  <section id="r-estrategia">
+    <div class="sec-head"><span class="sec-num">1.4</span><h2>A estratégia</h2></div>
+    <div class="stats">
+      <div class="stat"><div class="num">R$ 1.500</div><div class="lbl">por mês, todo na Meta agora; o Google entra na fase 2, com valor próprio</div></div>
+      <div class="stat"><div class="num">85% · 15%</div><div class="lbl">R$ 1.275 na conversão (T) e R$ 225 em vídeos que fazem você ser conhecido (K e L)</div></div>
+      <div class="stat"><div class="num">1 pacote</div><div class="lbl">de micose (R$ 2.000) paga a verba do mês (R$ 1.500)</div></div>
+      <div class="stat"><div class="num">R$ 30 mil</div><div class="lbl">de faturamento por mês é a meta da clínica (setembro: cerca de R$ 13 mil)</div></div>
+    </div>
+
+    <h3 class="sub-h">Como a cliente chega até a avaliação</h3>
+    <div class="funnel"><span class="step">Assiste a um vídeo (K)</span><span class="step">Volta e interage (L)</span><span class="step">Entra no público quente (T)</span><span class="step">Formulário</span><span class="step">Avaliação</span></div>
+
+    <h3 class="sub-h">As campanhas de conversão</h3>
+    <div class="grid2">
+      <div class="card"><span class="tag">A · Meta Ads</span><h3 style="margin-top:10px;">Tratamento de micose</h3>
+        <p><strong>Público:</strong> mulheres de 29 a 40 anos, Taguatinga, Riacho Fundo I e II, Recanto das Emas e Guará</p>
+        <p><strong>Objetivo:</strong> leads por formulário (3 perguntas)</p>
+        <p><strong>Verba:</strong> R$ 1.500 por mês, divididos entre conversão e vídeos</p>
+        <p><strong>Histórico:</strong> R$ 2,00 por conversa, sem filtro</p>
+        <p class="card-foot">Papel: campanha de entrada e única conversão da Meta no mês 1.</p></div>
+      <div class="card"><span class="tag">B · Google Ads</span><h3 style="margin-top:10px;">Busca por podologia e micose</h3>
+        <p><strong>Público:</strong> quem pesquisa podologia e micose de unha nas regiões da campanha</p>
+        <p><strong>Objetivo:</strong> leads no WhatsApp</p>
+        <p><strong>Verba:</strong> definida quando a campanha entrar</p>
+        <p><strong>Histórico:</strong> sem histórico no Google</p>
+        <p class="card-foot">Papel: segunda frente, na fase 2, depois de validar a Meta.</p></div>
+    </div>
+
+    <h3 class="sub-h">Os objetivos</h3>
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><span class="who">Primeiros 30 dias</span><b>Criar o baseline de conversão</b><span>Registrar 100% dos leads na planilha, com a etapa de cada um.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Até o fim do mês 2</span><b>Pelo menos 1 pacote de micose por mês vindo do tráfego</b><span>Um pacote de R$ 2.000 cobre os R$ 1.500 de verba.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Até o fim do mês 3</span><b>Construir a prova de micose</b><span>10 avaliações novas no Google de clientes que trataram a micose.</span></div></div>
+    </div>
+    <a class="res-link" href="#campanhas">Ver as campanhas →</a><a class="res-link" href="#projecao">Ver a projeção →</a><a class="res-link" href="#objetivos">Ver os objetivos →</a>
+  </section>
+
+  <section id="r-posicionamento">
+    <div class="sec-head"><span class="sec-num">1.5</span><h2>Como vamos nos posicionar</h2></div>
+    <div class="statement is-accent"><p>Tratamento de micose de unha com começo, meio e fim: você sabe quantas sessões, o que acontece em cada uma e como cuidar em casa.</p></div>
+    <a class="res-link" href="#posicionamento">Ver posicionamento e perfil →</a>
+  </section>
+
+  <section id="r-voce">
+    <div class="sec-head"><span class="sec-num">1.6</span><h2>O que precisamos de você</h2></div>
+    <div class="card" style="border:1px solid var(--line);">
+      <ul>
+        <li>Gravar os 6 roteiros de vídeo</li>
+        <li>Responder cada lead em até 5 minutos, seguindo o manual de atendimento</li>
+        <li>Registrar a etapa de cada lead na planilha e enviar as vendas toda terça-feira</li>
+        <li>Pedir comentário no Google a quem tratou a micose</li>
+        <li>Ajustar bio, destaques e fixados do perfil, e manter os aportes quinzenais de R$ 750</li>
+      </ul>
+    </div>
+    <a class="res-link" href="#roteiros-video">Ver os roteiros →</a><a class="res-link" href="#atendimento-fluxo">Ver o manual de atendimento →</a>
+  </section>
+
+  <section id="r-90dias">
+    <div class="sec-head"><span class="sec-num">1.7</span><h2>Os primeiros 90 dias</h2></div>
+    <div class="months">
+      <div class="card"><div class="k">Mês 1</div><h3>Calibragem e descoberta</h3><p>Setup, formulário e planilha; primeira campanha em até 7 dias; criamos o baseline de conversão.</p></div>
+      <div class="card"><div class="k">Mês 2</div><h3>Otimização</h3><p>Com 30 a 45 dias de dado, ajustamos público e criativo. A meta é o primeiro pacote vindo do tráfego.</p></div>
+      <div class="card"><div class="k">Mês 3+</div><h3>Consolidação e fase 2</h3><p>Decidimos o Google (campanha B) com o volume medido e avaliamos aumento de verba.</p></div>
+    </div>
+    <a class="res-link" href="#jornada">Ver a jornada completa →</a>
+  </section>
+
+  <section id="r-decisoes">
+    <div class="sec-head"><span class="sec-num">1.8</span><h2>O que decidimos hoje</h2></div>
+    <div class="decisions">
+      <div class="decision"><b>Valor e comunicação do pacote</b><span>Hoje são 10 sessões por R$ 2.000. Com a máquina nova, 8 sessões por R$ 2.500: a partir de quando e como comunicar.</span></div>
+      <div class="decision"><b>Ozônio na comunicação</b><span>Confirmar quem aplica e o registro do equipamento na Anvisa antes de usar &quot;ozônio&quot; em anúncio.</span></div>
+      <div class="decision"><b>Perguntas do formulário e lead qualificado</b><span>Validar as 3 perguntas e o que a Lu considera um lead qualificado.</span></div>
+      <div class="decision"><b>Agenda de gravação e produção audiovisual</b><span>A Lu grava os roteiros. A Victoria confirma se a produção audiovisual está no contrato.</span></div>
+      <div class="decision"><b>Ajustes do perfil</b><span>Bio, destaques e fixados, e a revisão dos vídeos antigos por causa da imagem da ex-profissional.</span></div>
+    </div>
+    <a class="res-link" href="#lacunas">Ver o que falta confirmar →</a>
+  </section>
+    <nav class="pager"><a href="#inicio">← Início</a><a href="#tab-briefing">Briefing →</a></nav>
   </div>
 
   
   <div class="tab" id="tab-briefing">
-    <header class="tab-head"><span class="tab-num">Parte 01 de 08</span><h1>Briefing</h1><p>Quem é a Podolux, o diagnóstico da conta de anúncios, o mercado e tudo o que alinhamos na call de onboarding.</p><nav class="tab-toc"><a href="#contexto">Contexto do cliente</a><a href="#diagnostico">Diagnóstico da conta</a><a href="#mercado">Mercado</a><a href="#briefing">Briefing da call de onboarding</a><a href="#swot">Análise SWOT</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 02 de 09</span><h1>Briefing</h1><p>Quem é a Podolux, o diagnóstico da conta de anúncios, o mercado e tudo o que alinhamos na call de onboarding.</p><nav class="tab-toc"><a href="#contexto">Contexto do cliente</a><a href="#diagnostico">Diagnóstico da conta</a><a href="#mercado">Mercado</a><a href="#briefing">Briefing da call de onboarding</a><a href="#swot">Análise SWOT</a></nav></header>
   <section id="contexto">
-    <div class="sec-head"><span class="sec-num">1.1</span><h2>Contexto do cliente</h2></div>
+    <div class="sec-head"><span class="sec-num">2.1</span><h2>Contexto do cliente</h2></div>
     <p class="sec-desc">O que a Podolux vende, os diferenciais e o que ainda falta confirmar.</p>
     <div class="facts">
       <div class="fact"><div class="k">Nicho</div><div class="v">Podologia clínica, com foco em tratamento de micose</div></div>
@@ -672,7 +785,7 @@
     </div>
   </section>
   <section id="diagnostico">
-    <div class="sec-head"><span class="sec-num">1.2</span><h2>Diagnóstico da conta de anúncios</h2></div>
+    <div class="sec-head"><span class="sec-num">2.2</span><h2>Diagnóstico da conta de anúncios</h2></div>
     <p class="sec-desc">Auditoria combinada no onboarding: o que a conta da Meta rodou de 01/01 a 05/10/2026, antes da Elevare. Todo o investimento está entre julho e setembro, no período da agência anterior (de 24/07 ao começo de outubro). É a base pra planejar a verba.</p>
     <div class="stats">
       <div class="stat"><div class="num">R$ 3,15 mil</div><div class="lbl">investidos no período, quase tudo em 3 meses (julho R$ 626, agosto R$ 1.069, setembro R$ 1.457)</div></div>
@@ -698,7 +811,7 @@
     <p class="note">Fonte: conta de anúncios da Meta da Podolux, consulta somente leitura, período de 01/01 a 05/10/2026. A linha &quot;Demais campanhas&quot; é a diferença entre o total e as campanhas de micose, sem separar cada campanha. A Lu comentou na call que chegou a subir a verba para R$ 2 mil; na conta, o maior mês foi setembro, com R$ 1.457. Não foi auditado o Google Ads, porque a Lu não informa histórico nessa plataforma.</p>
   </section>
   <section id="mercado">
-    <div class="sec-head"><span class="sec-num">1.3</span><h2>Mercado</h2></div>
+    <div class="sec-head"><span class="sec-num">2.3</span><h2>Mercado</h2></div>
     <p class="sec-desc">A podologia está saindo do salão e indo pra clínica, com tecnologia como argumento de venda, e o tratamento de micose é o serviço de maior ticket e de maior constância.</p>
 
     <div class="stats">
@@ -742,7 +855,7 @@
     </div>
   </section>
   <section id="briefing">
-    <div class="sec-head"><span class="sec-num">1.4</span><h2>Briefing da call de onboarding</h2></div>
+    <div class="sec-head"><span class="sec-num">2.4</span><h2>Briefing da call de onboarding</h2></div>
     <p class="sec-desc">Call em 06/10/2026, com a Lu Silva, sócia da Podolux, e o time da Elevare.</p>
     <div class="grid2">
       <div class="card">
@@ -807,7 +920,7 @@
     </div>
   </section>
   <section id="swot">
-    <div class="sec-head"><span class="sec-num">1.5</span><h2>Análise SWOT</h2></div>
+    <div class="sec-head"><span class="sec-num">2.5</span><h2>Análise SWOT</h2></div>
     <p class="sec-desc">A Podolux tem um tratamento de ticket alto que já provou demanda. O problema central é transformar a conversa barata em agendamento de pacote, com filtro, prova do carro-chefe e medição.</p>
 
     <div class="swot">
@@ -855,14 +968,14 @@
       </div>
     </div>
   </section>
-    <nav class="pager"><a href="#inicio">← Início</a><a href="#tab-persona">Persona →</a></nav>
+    <nav class="pager"><a href="#tab-resumo">← Resumo</a><a href="#tab-persona">Persona →</a></nav>
   </div>
 
   
   <div class="tab" id="tab-persona">
-    <header class="tab-head"><span class="tab-num">Parte 02 de 08</span><h1>Persona</h1><p>Quem a mídia paga precisa convencer: medos, objeções e o que essa pessoa pensa antes de agendar.</p><nav class="tab-toc"><a href="#persona">Persona</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 03 de 09</span><h1>Persona</h1><p>Quem a mídia paga precisa convencer: medos, objeções e o que essa pessoa pensa antes de agendar.</p><nav class="tab-toc"><a href="#persona">Persona</a></nav></header>
   <section id="persona">
-    <div class="sec-head"><span class="sec-num">2.1</span><h2>Persona</h2></div>
+    <div class="sec-head"><span class="sec-num">3.1</span><h2>Persona</h2></div>
     <p class="sec-desc">A mídia paga precisa convencer a mulher que decide e paga o próprio tratamento: quem convive com a micose há meses e já gastou com o que não funcionou. Nome, história e frases são ilustrativos, montados a partir do que você contou no onboarding e das pesquisas.</p>
 
     <div class="persona-card">
@@ -939,9 +1052,9 @@
 
   
   <div class="tab" id="tab-trafego">
-    <header class="tab-head"><span class="tab-num">Parte 03 de 08</span><h1>Estratégia de tráfego</h1><p>Do funil KLT às metas: o público prioritário, onde anunciar, as campanhas, a projeção, os objetivos e o formulário.</p><nav class="tab-toc"><a href="#klt">Funil KLT</a><a href="#publico">Público prioritário</a><a href="#plataforma">Por que Meta agora e Google depois</a><a href="#campanhas">As campanhas</a><a href="#projecao">Projeção</a><a href="#objetivos">Objetivos de marketing (SMART)</a><a href="#formulario">Como funciona a campanha de formulário</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 04 de 09</span><h1>Estratégia de tráfego</h1><p>Do funil KLT às metas: o público prioritário, onde anunciar, as campanhas, a projeção, os objetivos e o formulário.</p><nav class="tab-toc"><a href="#klt">Funil KLT</a><a href="#publico">Público prioritário</a><a href="#plataforma">Por que Meta agora e Google depois</a><a href="#campanhas">As campanhas</a><a href="#projecao">Projeção</a><a href="#objetivos">Objetivos de marketing (SMART)</a><a href="#formulario">Como funciona a campanha de formulário</a></nav></header>
   <section id="klt">
-    <div class="sec-head"><span class="sec-num">3.1</span><h2>O funil KLT: conhecer, gostar e confiar</h2></div>
+    <div class="sec-head"><span class="sec-num">4.1</span><h2>O funil KLT: conhecer, gostar e confiar</h2></div>
     <p class="sec-desc">KLT vem de <em>Know, Like, Trust</em>: conhecer, gostar e confiar. É o caminho que a cliente percorre até agendar: primeiro saber que você existe e que a micose tem tratamento, depois se identificar com o jeito que você explica e trabalha e, por fim, sentir segurança pra dar o passo. Na call, a Lu contou que o pacote de R$ 2.000 gera objeção de preço: quem confia antes de perguntar o valor reclama menos dele.</p>
     <div class="grid3">
       <div class="card">
@@ -964,7 +1077,7 @@
         <span class="tag">T · Confiar</span>
         <h3 style="margin-top:10px;">Sentir segurança pra agendar</h3>
         <p><strong>Pra quem:</strong> quem já conhece e gosta, e (na fase 2) quem já pesquisa podologia no Google.</p>
-        <p><strong>O que roda:</strong> as campanhas de conversão da seção 3.4, com o público quente dos últimos 30 dias.</p>
+        <p><strong>O que roda:</strong> as campanhas de conversão da seção 4.4, com o público quente dos últimos 30 dias.</p>
         <p><strong>Conteúdo:</strong> os 6 roteiros da aba Roteiros, com o método do pacote, a forma de pagamento e a prova que já existe, e chamada direta pra agendar.</p>
         <p class="card-foot">Como medimos: custo por lead e custo por agendamento.</p>
       </div>
@@ -989,7 +1102,7 @@
   </section>
 
   <section id="publico">
-    <div class="sec-head"><span class="sec-num">3.2</span><h2>Público prioritário</h2></div>
+    <div class="sec-head"><span class="sec-num">4.2</span><h2>Público prioritário</h2></div>
     <p class="sec-desc">Quem a mídia mira primeiro e o que fica pra depois.</p>
     <div class="grid2">
       <div class="card">
@@ -1010,7 +1123,7 @@
   </section>
 
   <section id="plataforma">
-    <div class="sec-head"><span class="sec-num">3.3</span><h2>Por que Meta agora e Google depois</h2></div>
+    <div class="sec-head"><span class="sec-num">4.3</span><h2>Por que Meta agora e Google depois</h2></div>
     <p class="sec-desc">As duas plataformas servem a momentos diferentes da operação. Com a verba da Podolux, começar pela Meta e abrir o Google só depois de validar a primeira economiza dinheiro.</p>
 
     <div class="grid2">
@@ -1036,7 +1149,7 @@
   </section>
 
   <section id="campanhas">
-    <div class="sec-head"><span class="sec-num">3.4</span><h2>As campanhas</h2></div>
+    <div class="sec-head"><span class="sec-num">4.4</span><h2>As campanhas</h2></div>
     <p class="sec-desc">Duas campanhas: a A, de micose na Meta, abre o plano; a B, de busca no Google, entra na fase 2. A decisão final é tomada junto na call.</p>
 
     <h3 class="sub-h">Como escolhemos</h3>
@@ -1155,7 +1268,7 @@
   </section>
 
   <section id="projecao">
-    <div class="sec-head"><span class="sec-num">3.5</span><h2>Projeção</h2></div>
+    <div class="sec-head"><span class="sec-num">4.5</span><h2>Projeção</h2></div>
     <p class="sec-desc">A projeção parte do que a sua conta já mostrou e do que precisa acontecer pra meta fechar. O número de leads é calibrado no primeiro mês, com as campanhas novas rodando.</p>
 
     <div class="proj">
@@ -1178,7 +1291,7 @@
   </section>
 
   <section id="objetivos">
-    <div class="sec-head"><span class="sec-num">3.6</span><h2>Objetivos de marketing (SMART)</h2></div>
+    <div class="sec-head"><span class="sec-num">4.6</span><h2>Objetivos de marketing (SMART)</h2></div>
     <p class="sec-desc">Sem CRM e sem conversão confirmada, os primeiros 30 dias criam o baseline. Meta de custo por lead arbitrária seria irresponsável, então os objetivos partem do ticket e da verba confirmados.</p>
 
     <div class="ladder">
@@ -1194,7 +1307,7 @@
   </section>
 
   <section id="formulario">
-    <div class="sec-head"><span class="sec-num">3.7</span><h2>Como funciona a campanha de formulário</h2></div>
+    <div class="sec-head"><span class="sec-num">4.7</span><h2>Como funciona a campanha de formulário</h2></div>
     <p class="sec-desc">Pra não ter surpresa depois: o caminho do lead, do anúncio até o atendimento, e o que cada lado faz.</p>
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><span class="who">Lead</span><b>Vê o anúncio e responde 3 perguntas</b><span>O formulário abre dentro do Instagram/Facebook, já com nome e telefone preenchidos. As 3 perguntas filtram quem está pronta e já entregam o contexto pra quem vai atender. As perguntas foram definidas pela Elevare a partir da call e a Lu valida na apresentação.</span></div></div>
@@ -1220,9 +1333,9 @@
 
   
   <div class="tab" id="tab-perfil">
-    <header class="tab-head"><span class="tab-num">Parte 04 de 08</span><h1>Estruturação do perfil</h1><p>O que precisa estar no perfil antes das campanhas: o posicionamento, a bio, os destaques, os fixados e a linha editorial.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#perfil">Estruturação do perfil</a><a href="#editorial">Linha editorial e pilares de conteúdo</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 05 de 09</span><h1>Estruturação do perfil</h1><p>O que precisa estar no perfil antes das campanhas: o posicionamento, a bio, os destaques, os fixados e a linha editorial.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#perfil">Estruturação do perfil</a><a href="#editorial">Linha editorial e pilares de conteúdo</a></nav></header>
   <section id="posicionamento">
-    <div class="sec-head"><span class="sec-num">4.1</span><h2>Posicionamento e proposta de valor</h2></div>
+    <div class="sec-head"><span class="sec-num">5.1</span><h2>Posicionamento e proposta de valor</h2></div>
     <p class="sec-desc">&quot;Tecnologia&quot;, &quot;clínica completa&quot; e &quot;atendimento humanizado&quot; são o que todo concorrente já diz, e não servem de diferencial. O território que a Podolux pode ocupar é o tratamento de micose com começo, meio e fim.</p>
 
     <h3 class="sub-h">Diferenciais competitivos defensáveis</h3>
@@ -1265,7 +1378,7 @@
   </section>
 
   <section id="perfil">
-    <div class="sec-head"><span class="sec-num">4.2</span><h2>Estruturação do perfil</h2></div>
+    <div class="sec-head"><span class="sec-num">5.2</span><h2>Estruturação do perfil</h2></div>
     <p class="sec-desc">Quem chega pelo anúncio visita o perfil antes de chamar no WhatsApp. Em poucos segundos ele precisa entender quem é, o que trata, por que confiar e como agendar. São três ajustes: bio, destaques e posts fixados.</p>
 
     
@@ -1399,7 +1512,7 @@
     </div>
   </section>
   <section id="editorial">
-    <div class="sec-head"><span class="sec-num">4.3</span><h2>Linha editorial e pilares de conteúdo</h2></div>
+    <div class="sec-head"><span class="sec-num">5.3</span><h2>Linha editorial e pilares de conteúdo</h2></div>
     <p class="sec-desc">O Instagram funciona como uma segunda conversa antes do WhatsApp: precisa explicar o tratamento e dar segurança antes de a cliente perguntar o preço.</p>
 
     <div class="grid2">
@@ -1484,9 +1597,9 @@
 
   
   <div class="tab" id="tab-roteiros">
-    <header class="tab-head"><span class="tab-num">Parte 05 de 08</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 06 de 09</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
   <section id="referencias">
-    <div class="sec-head"><span class="sec-num">5.1</span><h2>Referências da Biblioteca de Anúncios</h2></div>
+    <div class="sec-head"><span class="sec-num">6.1</span><h2>Referências da Biblioteca de Anúncios</h2></div>
     <p class="sec-desc">Buscamos na Biblioteca de Anúncios da Meta os anúncios do seu nicho que estão no ar há mais tempo no Brasil. Anúncio que roda por meses é anúncio que se paga: é o melhor sinal público de que o criativo funciona.</p>
     <div class="tbl-wrap">
       <table>
@@ -1513,7 +1626,7 @@
     <p class="note">Busca feita em 15/10/2026 com os termos: clínica de podologia, micose de unha, podologia, podóloga, tratamento de micose, unha encravada. Ficaram de fora anúncios de outro país, de cursos pra profissionais e de outros serviços. Como o tempo no ar é o critério, o anúncio de dermatologia com laser entrou na lista por falar de micose, mas só aproveitamos a estrutura dele, não a promessa.</p>
   </section>
   <section id="roteiros-video">
-    <div class="sec-head"><span class="sec-num">5.2</span><h2>Os 6 roteiros</h2></div>
+    <div class="sec-head"><span class="sec-num">6.2</span><h2>Os 6 roteiros</h2></div>
     <p class="sec-desc">Todos são do T, a etapa de conversão: dois inspirados nos anúncios que estão há mais tempo no ar, dois de antes e depois e dois de depoimento. O K e o L usam o que já está no perfil. O roteiro é um ponto de partida: grave do seu jeito, mantendo a estrutura.</p>
 
     <div class="roteiro">
@@ -1715,10 +1828,10 @@
 
   
   <div class="tab" id="tab-comercial">
-    <header class="tab-head"><span class="tab-num">Parte 06 de 08</span><h1>Comercial</h1><p>Manual de atendimento: do primeiro contato até a avaliação.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro de conversa no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz na ligação e no WhatsApp</a><a href="#disc">Perfis de cliente (metodologia DISC)</a><a href="#agenda">Agenda, confirmação e pós-avaliação</a><a href="#funil">Gestão do funil e previsibilidade</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 07 de 09</span><h1>Comercial</h1><p>Manual de atendimento: do primeiro contato até a avaliação.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro de conversa no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz na ligação e no WhatsApp</a><a href="#disc">Perfis de cliente (metodologia DISC)</a><a href="#agenda">Agenda, confirmação e pós-avaliação</a><a href="#funil">Gestão do funil e previsibilidade</a></nav></header>
   
   <section id="atendimento-fluxo">
-    <div class="sec-head"><span class="sec-num">6.1</span><h2>O fluxo de atendimento</h2></div>
+    <div class="sec-head"><span class="sec-num">7.1</span><h2>O fluxo de atendimento</h2></div>
     <div class="facts" style="margin-top:0;">
       <div class="fact"><div class="k">Pra quem</div><div class="v">a Lu e quem atender o WhatsApp da clínica</div></div>
       <div class="fact"><div class="k">Objetivo</div><div class="v">avaliação para o tratamento de micose</div></div>
@@ -1752,7 +1865,7 @@
     <p class="note">Depois da 7ª tentativa, o contato vai pra etapa “Follow-up (recuperação)” na planilha e entra na repescagem do mês seguinte.</p>
   </section>
   <section id="qualificacao">
-    <div class="sec-head"><span class="sec-num">6.2</span><h2>Qualificação</h2></div>
+    <div class="sec-head"><span class="sec-num">7.2</span><h2>Qualificação</h2></div>
     <p class="sec-desc">O papel de quem atende não é vender o pacote de micose. É entender a situação, mostrar quem é a Lu e levar até a avaliação. Quem indica o tratamento e apresenta o pacote é a Lu, depois de ouvir o caso. Usamos a lógica do <strong>SPIN:</strong> entender a situação, o problema, o impacto e a necessidade, com a pessoa contando a própria história.</p>
 
     <h3 class="sub-h">Lead de formulário: ler as respostas antes de ligar</h3>
@@ -1793,7 +1906,7 @@
     </div>
   </section>
   <section id="roteiro-whatsapp">
-    <div class="sec-head"><span class="sec-num">6.3</span><h2>Roteiro de conversa no WhatsApp</h2></div>
+    <div class="sec-head"><span class="sec-num">7.3</span><h2>Roteiro de conversa no WhatsApp</h2></div>
     <p class="sec-desc">Cinco blocos, cada um com um motivo. As falas são um ponto de partida: adapte ao seu jeito, mantendo a ordem.</p>
     <div class="funnel" style="margin-bottom:18px;"><span class="step">1 Abertura</span><span class="step">2 Investigação</span><span class="step">3 Percepção de valor</span><span class="step">4 Isolar a objeção</span><span class="step">5 Datas e confirmação</span></div>
     <div class="ladder">
@@ -1814,7 +1927,7 @@
     </div>
   </section>
   <section id="objecoes">
-    <div class="sec-head"><span class="sec-num">6.4</span><h2>Matriz de objeções</h2></div>
+    <div class="sec-head"><span class="sec-num">7.4</span><h2>Matriz de objeções</h2></div>
     <p class="sec-desc">Objeção não é recusa, é um pedido de mais informação. Acolher primeiro, esclarecer depois, sempre com calma.</p>
     
     <div class="objections">
@@ -1875,7 +1988,7 @@
     </div>
   </section>
   <section id="tom-voz-atendimento">
-    <div class="sec-head"><span class="sec-num">6.5</span><h2>Tom de voz na ligação e no WhatsApp</h2></div>
+    <div class="sec-head"><span class="sec-num">7.5</span><h2>Tom de voz na ligação e no WhatsApp</h2></div>
     <p class="sec-desc">A pessoa não vê o seu rosto. A sua voz e as suas mensagens são a primeira impressão da Podolux.</p>
     <div class="grid2">
       <div class="card"><h3>Sorriso na voz</h3><p>Antes de ligar, sorria de verdade. O sorriso muda o timbre e passa acolhimento e confiança. A pessoa percebe na hora se você está lendo um roteiro.</p></div>
@@ -1887,7 +2000,7 @@
     </div>
   </section>
   <section id="disc">
-    <div class="sec-head"><span class="sec-num">6.6</span><h2>Perfis de cliente (metodologia DISC)</h2></div>
+    <div class="sec-head"><span class="sec-num">7.6</span><h2>Perfis de cliente (metodologia DISC)</h2></div>
     <p class="sec-desc">Não existe uma fala que funcione igual pra todo mundo. Nos primeiros segundos, identifique o perfil e adapte a abordagem.</p>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Perfil</th><th>Como ele é</th><th>Como conduzir</th></tr></thead>
@@ -1900,7 +2013,7 @@
     </table></div>
   </section>
   <section id="agenda">
-    <div class="sec-head"><span class="sec-num">6.7</span><h2>Agenda, confirmação e pós-avaliação</h2></div>
+    <div class="sec-head"><span class="sec-num">7.7</span><h2>Agenda, confirmação e pós-avaliação</h2></div>
     <div class="grid2">
       <div class="card"><h3>Regra de agenda</h3><ul>
         <li>Oferecer sempre <strong>duas datas nos próximos 7 dias</strong>.</li>
@@ -1927,7 +2040,7 @@
     </table></div>
   </section>
   <section id="funil">
-    <div class="sec-head"><span class="sec-num">6.8</span><h2>Gestão do funil e previsibilidade</h2></div>
+    <div class="sec-head"><span class="sec-num">7.8</span><h2>Gestão do funil e previsibilidade</h2></div>
     <p class="sec-desc">Tudo só funciona se estiver registrado. Se não está na planilha, não aconteceu.</p>
     <h3 class="sub-h">Etapas da planilha</h3>
     <div class="tbl-wrap"><table>
@@ -1961,9 +2074,9 @@
 
   
   <div class="tab" id="tab-jornada">
-    <header class="tab-head"><span class="tab-num">Parte 07 de 08</span><h1>Jornada</h1><p>Como funciona a implantação do plano, o que acontece nos primeiros 90 dias, e quem faz o quê.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 08 de 09</span><h1>Jornada</h1><p>Como funciona a implantação do plano, o que acontece nos primeiros 90 dias, e quem faz o quê.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a></nav></header>
   <section id="jornada">
-    <div class="sec-head"><span class="sec-num">7.1</span><h2>A jornada dos primeiros 90 dias</h2></div>
+    <div class="sec-head"><span class="sec-num">8.1</span><h2>A jornada dos primeiros 90 dias</h2></div>
 
     
     <div class="statement">
@@ -2029,7 +2142,7 @@
   </section>
 
   <section id="responsabilidades">
-    <div class="sec-head"><span class="sec-num">7.2</span><h2>Quem faz o quê</h2></div>
+    <div class="sec-head"><span class="sec-num">8.2</span><h2>Quem faz o quê</h2></div>
     <p class="sec-desc">Pra ninguém ficar esperando o outro: o que é da Elevare, o que é da Lu e o que é do atendimento.</p>
     
     <div class="grid3">
@@ -2064,11 +2177,11 @@
   </div>
 
   <div class="tab" id="tab-info">
-    <header class="tab-head"><span class="tab-num">Parte 08 de 08</span><h1>Informações gerais</h1><p>Pra consultar quando precisar: as regras de comunicação que valem pra todo o material, os termos usados no plano e o que ainda falta confirmar.</p><nav class="tab-toc"><a href="#regras-conselho">Regras de comunicação</a><a href="#termos">Termos usados neste plano</a><a href="#lacunas">O que falta confirmar</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 09 de 09</span><h1>Informações gerais</h1><p>Pra consultar quando precisar: as regras de comunicação que valem pra todo o material, os termos usados no plano e o que ainda falta confirmar.</p><nav class="tab-toc"><a href="#regras-conselho">Regras de comunicação</a><a href="#termos">Termos usados neste plano</a><a href="#lacunas">O que falta confirmar</a></nav></header>
     
 
   <section id="regras-conselho">
-    <div class="sec-head"><span class="sec-num">8.1</span><h2>Regras de comunicação aplicadas a este plano</h2></div>
+    <div class="sec-head"><span class="sec-num">9.1</span><h2>Regras de comunicação aplicadas a este plano</h2></div>
     <p class="sec-desc">A podologia não tem conselho profissional nem norma própria de publicidade. Por isso valem o Código de Defesa do Consumidor, a política de anúncios da Meta pra saúde e a lei que regula o ozônio. Toda peça deste plano (anúncio, bio, destaque, fixado, roteiro e mensagem de WhatsApp) segue esta tabela.</p>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Regra</th><th>O que a norma diz</th><th>Como aplicamos aqui</th></tr></thead>
@@ -2089,7 +2202,7 @@
   </section>
 
   <section id="termos">
-    <div class="sec-head"><span class="sec-num">8.2</span><h2>Termos usados neste plano</h2></div>
+    <div class="sec-head"><span class="sec-num">9.2</span><h2>Termos usados neste plano</h2></div>
     
     <dl class="glossary">
       <div><dt>Lead</dt><dd>Pessoa que levantou a mão: preencheu o formulário ou mandou mensagem a partir de um anúncio.</dd></div>
@@ -2108,7 +2221,7 @@
   </section>
 
   <section id="lacunas">
-    <div class="sec-head"><span class="sec-num">8.3</span><h2>O que falta confirmar</h2></div>
+    <div class="sec-head"><span class="sec-num">9.3</span><h2>O que falta confirmar</h2></div>
 
     <div class="grid2">
       <div class="card">
