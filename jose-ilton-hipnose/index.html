@@ -119,6 +119,7 @@
   strong{color:var(--text);}
 
   /* ---- generic card grid ---- */
+  .grid1{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   @media (max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
@@ -129,6 +130,8 @@
   .card li{margin-bottom:6px;font-size:16px;color:var(--text-soft);}
   .card p{font-size:16px;margin:0;}
   .card p + p{margin-top:8px;}
+  .card ol.card-list{margin:4px 0 8px;padding-left:20px;}
+  .card ol.card-list li{margin-bottom:4px;font-size:15px;color:var(--text-soft);}
 
   .tag{
     display:inline-block;font-family:"Montserrat",monospace;font-weight:700;font-size:12px;
@@ -289,7 +292,7 @@
   .rota-box.is-accent{border-color:var(--accent-ink);}
   .rota-box p{margin:0;font-size:16px;}
 
-  .proj{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   @media (max-width:640px){.proj{grid-template-columns:1fr;}}
   .proj-col{background:var(--surface);padding:16px 18px;}
   .proj-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;}
@@ -476,7 +479,8 @@
   #klt .grid3 > .card:nth-child(3) h3,#klt .grid3 > .card:nth-child(3) p,#klt .grid3 > .card:nth-child(3) strong{color:var(--bg);}
   #klt .grid3 > .card:nth-child(3) .card-foot{border-top-color:rgba(127,127,127,.4);color:var(--bg);}
   #klt .grid3 > .card:nth-child(3) .tag{background:var(--bg);color:var(--text);}
-  .proj-row b{white-space:nowrap;}
+  .proj-row span{flex:1 1 40%;min-width:0;}
+  .proj-row b{flex:0 1 auto;max-width:62%;min-width:0;overflow-wrap:anywhere;}
   .split{display:flex;height:34px;margin:0 0 12px;font-family:"Montserrat",sans-serif;font-weight:600;font-size:14px;}
   .split span{display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden;}
   .split .is-main{background:var(--accent);color:var(--on-accent);}
@@ -607,7 +611,7 @@
       <div><div class="k">Cliente</div><div class="v">José Ilton</div></div>
       <div><div class="k">Modalidade</div><div class="v">Terapias breves e hipnoterapia, atendimento presencial em Brasília</div></div>
       <div><div class="k">Plataforma</div><div class="v">Meta Ads (principal) e Google Ads</div></div>
-      <div><div class="k">Investimento</div><div class="v">R$ 8 mil por mês</div></div>
+      <div><div class="k">Investimento</div><div class="v">R$ 6 mil por mês</div></div>
       <div><div class="k">Etapa</div><div class="v">Validação da estratégia</div></div>
     </div>
 
@@ -628,45 +632,121 @@
 
   
   <div class="tab" id="tab-resumo">
-    <header class="tab-head"><span class="tab-num">Parte 01 de 09</span><h1>Resumo</h1><p>O plano em uma página: o que vamos fazer, por quê e o que precisamos de você. Cada bloco leva ao detalhe na aba correspondente.</p><nav class="tab-toc"><a href="#r-hoje">Onde estamos</a><a href="#r-critico">Ponto crítico</a><a href="#r-persona">Pra quem falamos</a><a href="#r-estrategia">A estratégia</a><a href="#r-posicionamento">Posicionamento</a><a href="#r-voce">O que precisamos de você</a><a href="#r-90dias">90 dias</a><a href="#r-decisoes">O que decidimos hoje</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 01 de 09</span><h1>Resumo</h1><p>O plano em uma página: o que vamos fazer, por quê e o que precisamos de você. Cada bloco leva ao detalhe na aba correspondente.</p><nav class="tab-toc"><a href="#r-hoje">Contexto</a><a href="#r-swot">Análise SWOT</a><a href="#r-persona">Pra quem falamos</a><a href="#r-klt">Funil KLT</a><a href="#r-estrategia">A estratégia</a><a href="#r-posicionamento">Posicionamento</a><a href="#r-voce">O que precisamos de você</a><a href="#r-90dias">90 dias</a><a href="#r-decisoes">O que decidimos hoje</a><a href="#r-responsabilidades">Quem faz o quê</a></nav></header>
     
 
   <section id="r-hoje">
-    <div class="sec-head"><span class="sec-num">1.1</span><h2>Onde estamos hoje</h2></div>
-    <div class="stats">
-      <div class="stat"><div class="num">1.991</div><div class="lbl">seguidores no Instagram (23/10/2026)</div></div>
-      <div class="stat"><div class="num">5,0 · 71</div><div class="lbl">nota e avaliações no Google (98% de recomendação)</div></div>
-      <div class="stat"><div class="num">R$ 11,6 mil</div><div class="lbl">investidos no Google de 01/09 a 22/10, com retorno fraco</div></div>
-      <div class="stat"><div class="num">R$ 73,83</div><div class="lbl">por conversão de plataforma, sem o custo por consulta amarrado</div></div>
+    <div class="sec-head"><span class="sec-num">1.1</span><h2>Contexto do cliente</h2></div>
+    <p>Terapeuta de saúde emocional em Brasília, com terapias breves (TRI e hipnoterapia avançada) pra quem já tentou terapia longa e não resolveu. Autoridade e prova social acima do nicho, e um ticket que se paga.</p>
+    <div class="facts">
+      <div class="fact"><div class="k">Nicho</div><div class="v">Saúde emocional · terapias breves</div></div>
+      <div class="fact"><div class="k">Consulta de avaliação</div><div class="v">R$ 400 (R$ 350 à vista)</div></div>
+      <div class="fact"><div class="k">Tratamento</div><div class="v">12x R$ 490 (cerca de R$ 5.880)</div></div>
+      <div class="fact"><div class="k">Reputação</div><div class="v">Google 5,0 · 71 avaliações (98% recomendam)</div></div>
+      <div class="fact"><div class="k">Instagram</div><div class="v">1.991 seguidores (23/10/2026)</div></div>
+      <div class="fact"><div class="k">Região</div><div class="v">Brasília/DF, presencial (Asa Norte)</div></div>
     </div>
-    <p>Terapeuta com autoridade e prova social acima do nicho, e um ticket alto que se sustenta. Falta filtrar quem chega, medir o que vira consulta paga e proteger o atendimento, que hoje depende só do José.</p>
-    <a class="res-link" href="#contexto">Ver o briefing completo →</a>
+    <div class="grid2">
+      <div class="card">
+        <h3>O que vende</h3>
+        <p>Duas portas: a <strong>consulta de avaliação</strong> (R$ 400), que filtra e gera compromisso de agenda, e o <strong>plano de acompanhamento terapêutico</strong> (12x R$ 490), vendido na consulta. O diferencial é o formato breve, com o plano definido na consulta.</p>
+      </div>
+      <div class="card">
+        <h3>Diferencial competitivo</h3>
+        <ul>
+          <li>Terapias breves com resposta rápida, no lugar de anos de terapia convencional</li>
+          <li>Prova social forte: 71 avaliações 5 estrelas e depoimentos em vídeo</li>
+          <li>Autoridade como especialista em terapias breves (TRI e hipnoterapia)</li>
+          <li>Consulta de avaliação como passo de baixo risco antes do tratamento</li>
+        </ul>
+      </div>
+    </div>
+    <a class="res-link" href="#contexto">Ver o contexto completo →</a><a class="res-link" href="#diagnostico">Ver o diagnóstico da conta →</a>
   </section>
 
-  <section id="r-critico">
-    <div class="sec-head"><span class="sec-num">1.2</span><h2>O ponto crítico</h2></div>
-    <div class="callout">
-      <span class="mark">!</span>
-      <div><p><strong>A conversão depende hoje só do José,</strong> que atende sozinho e responde sobretudo à noite. Com mais leads, o tempo de resposta sobe e o lead quente esfria: reativar a secretária digital no WhatsApp quando o volume crescer é o que protege o resultado. Em paralelo, o site precisa ser revisado antes do tráfego pago (traz promessa de 95%, &quot;menos remédios&quot; e depoimento de câncer, fora da política de saúde).</p></div>
+
+  <section id="r-swot">
+    <div class="sec-head"><span class="sec-num">1.2</span><h2>Análise SWOT</h2></div>
+    <p class="sec-desc">O ativo é forte: autoridade, prova social e ticket que se paga. O desafio não é procura, é transformar lead em consulta paga, com a qualificação por preço e a conversão concentrada numa pessoa só.</p>
+    <div class="swot">
+      <div class="card is-pos"><span class="kicker">Interno · a favor</span><h3>Forças</h3><ul>
+        <li><strong>Prova social acima do nicho:</strong> 71 avaliações 5 estrelas e depoimentos em vídeo</li>
+        <li><strong>Ticket que se paga:</strong> 1 tratamento (R$ 5.880) cobre quase a verba do mês</li>
+        <li><strong>Autoridade e método próprios:</strong> terapias breves com resposta rápida (TRI e hipnoterapia)</li>
+      </ul></div>
+      <div class="card is-neg"><span class="kicker">Interno · contra</span><h3>Fraquezas</h3><ul>
+        <li><strong>Conversão concentrada no José:</strong> atende sozinho e responde à noite; com mais lead, o quente esfria</li>
+        <li><strong>Sem medição amarrada:</strong> CRM no início, custo por consulta e por tratamento não acompanhado</li>
+        <li><strong>Ticket acima da concorrência:</strong> sem filtro, a verba atrai o lead de preço, que você diz não fechar</li>
+      </ul></div>
+      <div class="card is-pos"><span class="kicker">Externo · a favor</span><h3>Oportunidades</h3><ul>
+        <li><strong>Demanda em alta:</strong> a procura por ansiedade, pânico e depressão cresce</li>
+        <li><strong>Território livre:</strong> poucos unem resultado rápido e prova social forte por dor específica</li>
+        <li><strong>Dois canais com papéis distintos:</strong> Meta cria demanda e Google captura quem já busca</li>
+      </ul></div>
+      <div class="card is-neg"><span class="kicker">Externo · contra</span><h3>Ameaças</h3><ul>
+        <li>Política de saúde da Meta e do Google limita falar em cura, percentual e dor</li>
+        <li>Concorrência que briga por preço, abaixo de R$ 5 mil</li>
+        <li>Subir verba sem filtro repete o histórico: muito contato, pouca consulta paga</li>
+      </ul></div>
     </div>
-    <a class="res-link" href="#swot">Ver a análise SWOT →</a>
+    <a class="res-link" href="#swot">Ver a análise SWOT completa →</a>
   </section>
+
 
   <section id="r-persona">
     <div class="sec-head"><span class="sec-num">1.3</span><h2>Pra quem vamos falar</h2></div>
-    <div class="grid3">
-      <div class="card"><h3>Quem é</h3><p>Marcos Andrade, 46 anos, servidor público em Brasília: convive há anos com ansiedade e crises de pânico e já tentou terapia longa e remédio sem resolver.</p></div>
-      <div class="card"><h3>A objeção principal</h3><p>&quot;É caro, e eu já gastei antes sem resultado.&quot;</p></div>
-      <div class="card"><h3>Nível de consciência</h3><p>Entre o consciente do problema e o da solução: sabe que é ansiedade e que existe tratamento, mas conhece pouco a hipnoterapia como método.</p></div>
+    <p>Um público só: o adulto a partir de 40 anos em Brasília que decide e paga o próprio tratamento. Nome e frases são ilustrativos, montados a partir do que você contou no onboarding e das pesquisas.</p>
+    <div class="grid1">
+      <div class="card"><span class="tag is-ghost">Ansiedade e pânico</span><h3 style="margin-top:10px;">Marcos, 46 anos</h3>
+        <p><strong>Perfil:</strong> a partir de 40 anos, servidor público, casado, dois filhos, renda estável.</p>
+        <p><strong>O que vive:</strong> convive há anos com ansiedade e crises de pânico que pioraram e atrapalham o sono, o trabalho e a vida em casa.</p>
+        <p><strong>Maior medo:</strong> ter uma crise em público, depender de remédio pra sempre e gastar de novo sem resolver.</p>
+        <p><strong>O que já tentou:</strong> terapia convencional por meses, que sentiu lenta, medicação, que alivia mas não resolve a raiz, e conteúdo de autoajuda.</p>
+        <p><strong>Objeções:</strong> “É caro, e eu já gastei antes sem resultado”, “Hipnose é coisa de palco”, “Resultado em poucas sessões parece bom demais”.</p>
+        <p><strong>O que o anúncio precisa dizer:</strong> dá pra tratar a raiz com resposta rápida, e as 71 avaliações mostram que funciona.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:16px;">
+      <span class="mark">→</span>
+      <div><p><strong>Em que ponto da decisão eles estão:</strong> entre o consciente do problema e o da solução. Ele sabe que é ansiedade e que existe tratamento, mas conhece pouco a hipnoterapia. Por isso o anúncio leva da dor ao método e mostra por que escolher o José: a autoridade em terapias breves e a prova social.</p></div>
     </div>
     <a class="res-link" href="#persona">Ver a persona completa →</a>
   </section>
 
+
+  <section id="r-klt">
+    <div class="sec-head"><span class="sec-num">1.4</span><h2>O funil KLT</h2></div>
+    <p>Ninguém marca um tratamento de quase R$ 6 mil no primeiro anúncio. Antes, a pessoa precisa saber que o José existe, se identificar com o jeito dele e confiar pra agendar. O KLT (<em>Know, Like, Trust</em>: conhecer, gostar e confiar) organiza a mídia nessas três etapas, que rodam juntas desde o primeiro dia.</p>
+    <div class="grid3">
+      <div class="card"><span class="tag">K · Conhecer</span><h3 style="margin-top:10px;">Saber que existe e que dá pra tratar rápido</h3>
+        <p><strong>Pra quem:</strong> adultos 40+ no DF que ainda não conhecem o José.</p>
+        <p><strong>O que roda:</strong> distribuição de vídeo na Meta, com posts e reels do perfil, sem produção nova.</p>
+        <p><strong>Por que roda:</strong> quem sofre de ansiedade raramente pesquisa terapeuta; convive com a dor e adia. O vídeo alcança essa pessoa no feed antes de ela procurar.</p>
+        <p class="card-foot">Como medimos: seguidores novos, custo por seguidor e quem assiste a maior parte do vídeo.</p>
+      </div>
+      <div class="card"><span class="tag">L · Gostar</span><h3 style="margin-top:10px;">Se identificar e tirar as dúvidas</h3>
+        <p><strong>Pra quem:</strong> quem já assistiu aos vídeos ou interagiu com o perfil.</p>
+        <p><strong>O que roda:</strong> a mesma campanha, num conjunto só com esse público, com conteúdo que educa e quebra objeção.</p>
+        <p><strong>Por que roda:</strong> quem já viu o José ainda duvida se a hipnose funciona e é segura. Tirar essa dúvida antes de falar em preço faz o valor pesar menos.</p>
+        <p class="card-foot">Como medimos: comentários, salvamentos, compartilhamentos, visitas ao perfil e mensagens.</p>
+      </div>
+      <div class="card"><span class="tag">T · Confiar</span><h3 style="margin-top:10px;">Sentir segurança pra marcar a consulta</h3>
+        <p><strong>Pra quem:</strong> o público quente de 30 dias e quem pesquisa terapia no Google.</p>
+        <p><strong>O que roda:</strong> as campanhas de conversão: formulário na Meta e busca no Google.</p>
+        <p><strong>Por que roda:</strong> é quem já confia e está pronto pra agendar. Por isso fica com 85% da verba: é aqui que a consulta de avaliação acontece.</p>
+        <p class="card-foot">Como medimos: custo por lead e custo por consulta de avaliação.</p>
+      </div>
+    </div>
+    <a class="res-link" href="#klt">Ver o funil KLT completo →</a>
+  </section>
+
+
   <section id="r-estrategia">
-    <div class="sec-head"><span class="sec-num">1.4</span><h2>A estratégia</h2></div>
+    <div class="sec-head"><span class="sec-num">1.5</span><h2>A estratégia</h2></div>
     <div class="stats">
-      <div class="stat"><div class="num">R$ 8 mil</div><div class="lbl">por mês: R$ 6 mil na Meta (principal) e R$ 2 mil no Google</div></div>
-      <div class="stat"><div class="num">85% · 15%</div><div class="lbl">R$ 6,8 mil na conversão (T) e R$ 1,2 mil em vídeos que fazem você ser conhecido (K e L)</div></div>
+      <div class="stat"><div class="num">R$ 6 mil</div><div class="lbl">por mês: R$ 4 mil na Meta (principal) e R$ 2 mil no Google</div></div>
+      <div class="stat"><div class="num">85% · 15%</div><div class="lbl">R$ 5,1 mil na conversão (T) e R$ 900 em vídeos que fazem você ser conhecido (K e L)</div></div>
       <div class="stat"><div class="num">1 tratamento</div><div class="lbl">(R$ 5.880) cobre quase a verba do mês; 2 cobrem com folga</div></div>
       <div class="stat"><div class="num">15 a 20</div><div class="lbl">consultas por mês é a meta do onboarding (10 a 15 tratamentos)</div></div>
     </div>
@@ -679,14 +759,22 @@
       <div class="card"><span class="tag">A · Meta Ads</span><h3 style="margin-top:10px;">Formulário por dor</h3>
         <p><strong>Público:</strong> adultos 40+ no DF (frio aberto + quente de 30 dias)</p>
         <p><strong>Objetivo:</strong> leads por formulário (3 perguntas)</p>
-        <p><strong>Verba:</strong> R$ 6 mil por mês, divididos entre conversão e vídeos</p>
+        <p><strong>Verba:</strong> R$ 4 mil por mês, divididos entre conversão e vídeos</p>
         <p><strong>Histórico:</strong> conta nova, sem histórico; o mês 1 calibra</p>
-        <p class="card-foot">Papel: motor principal, cria demanda e alimenta o público quente.</p></div>
+        <p><strong>Perguntas do formulário:</strong></p>
+        <ol class="card-list">
+          <li>O que te fez buscar ajuda agora?</li>
+          <li>Qual a sua faixa de idade?</li>
+          <li>Você já tentou resolver isso antes?</li>
+        </ol>
+        <p class="card-foot">Papel: motor principal: gera a maior parte dos contatos e faz mais gente conhecer o José.</p></div>
       <div class="card"><span class="tag">B · Google Ads</span><h3 style="margin-top:10px;">Busca por hipnoterapia e terapeuta</h3>
         <p><strong>Público:</strong> quem pesquisa hipnoterapia, terapeuta e tratamento em Brasília</p>
         <p><strong>Objetivo:</strong> leads no WhatsApp</p>
         <p><strong>Verba:</strong> R$ 2 mil por mês</p>
         <p><strong>Histórico:</strong> R$ 70,90 por conversão de plataforma na campanha principal</p>
+        <p><strong>Palavras-chave:</strong> hipnoterapia (320/mês no DF) · terapeuta em brasília (90) · hipnoterapia brasília (70) · tratamento para ansiedade (70) · hipnose para ansiedade (50)</p>
+        <p><strong>Negativas principais:</strong> curso, formação, certificação, hipnose de palco, grátis, emprego</p>
         <p class="card-foot">Papel: captura a intenção de busca, reestruturada e com filtro.</p></div>
     </div>
 
@@ -696,33 +784,48 @@
       <div class="rung"><span class="n"></span><div><span class="who">Até o fim do mês 2</span><b>1 a 2 tratamentos por mês vindos do tráfego</b><span>Um tratamento (R$ 5.880) cobre quase a verba do mês.</span></div></div>
       <div class="rung"><span class="n"></span><div><span class="who">Até o fim do mês 3</span><b>Chegar à faixa de 15 a 20 consultas por mês</b><span>A meta do onboarding, com o custo por consulta estável.</span></div></div>
     </div>
+
+    <h3 class="sub-h">A projeção</h3>
+    <div class="proj">
+      <div class="proj-col">
+        <div class="k">Ponto de partida · histórico do Google (01/09 a 22/10/2026)</div>
+        <div class="proj-row"><span>Investimento médio</span><b>≈ R$ 6,6 mil por mês</b></div>
+        <div class="proj-row"><span>Conversões por mês</span><b>≈ 90 (ação a confirmar)</b></div>
+        <div class="proj-row is-total"><span>Custo por conversão</span><b>R$ 73,83 (R$ 71 a R$ 109)</b></div>
+      </div>
+      <div class="proj-col">
+        <div class="k">Com R$ 6 mil por mês (R$ 4 mil Meta + R$ 2 mil Google)</div>
+        <div class="proj-row"><span>Custo por lead esperado</span><b>R$ 50 a R$ 70</b></div>
+        <div class="proj-row"><span>Leads por dia</span><b>≈ 2,4 a 3,4</b></div>
+        <div class="proj-row is-total"><span>Leads por mês</span><b>≈ 73 a 102</b></div>
+      </div>
+    </div>
     <a class="res-link" href="#campanhas">Ver as campanhas →</a><a class="res-link" href="#projecao">Ver a projeção →</a><a class="res-link" href="#objetivos">Ver os objetivos →</a>
   </section>
 
   <section id="r-posicionamento">
-    <div class="sec-head"><span class="sec-num">1.5</span><h2>Como vamos nos posicionar</h2></div>
-    <div class="statement is-accent"><p>Alívio da ansiedade, do pânico e da depressão em poucas sessões, tratando a raiz e não só o sintoma, com a autoridade e as 71 avaliações reais de quem já se libertou.</p></div>
+    <div class="sec-head"><span class="sec-num">1.6</span><h2>Como vamos nos posicionar</h2></div>
+    <div class="statement is-accent"><p>Terapias breves pra quem já fez terapia longa e não resolveu. O José trabalha a origem da ansiedade e do pânico, e a consulta de avaliação mostra o que dá pra fazer no seu caso.</p></div>
     <a class="res-link" href="#posicionamento">Ver posicionamento e perfil →</a>
   </section>
 
   <section id="r-voce">
-    <div class="sec-head"><span class="sec-num">1.6</span><h2>O que precisamos de você</h2></div>
+    <div class="sec-head"><span class="sec-num">1.7</span><h2>O que precisamos de você</h2></div>
     <div class="card" style="border:1px solid var(--line);">
       <ul>
-        <li>Gravar os 6 roteiros de vídeo e enviar crus</li>
-        <li>Responder cada lead em até 5 minutos, seguindo o manual de atendimento (e reativar a secretária digital quando o volume subir)</li>
-        <li>Registrar a etapa de cada lead no CRM e enviar o avanço de leads e vendas toda terça</li>
-        <li>Revisar o site dentro da política de saúde antes do tráfego pago</li>
+        <li>Aprovar os vídeos editados dos roteiros pra subir as campanhas</li>
+        <li>Seguir o manual de atendimento da aba Comercial, respondendo cada lead em até 5 minutos. Quando a secretária digital voltar, passar o manual pra ela</li>
+        <li>Registrar a etapa de cada lead no CRM (XPED) e enviar o avanço de leads e vendas toda terça</li>
         <li>Ajustar bio, destaques e fixados do perfil, e manter o cartão ativo nas contas</li>
       </ul>
     </div>
-    <a class="res-link" href="#roteiros-video">Ver os roteiros →</a><a class="res-link" href="#atendimento-fluxo">Ver o manual de atendimento →</a>
+    <a class="res-link" href="#roteiros-video">Ver os vídeos →</a><a class="res-link" href="#atendimento-fluxo">Ver o manual de atendimento →</a>
   </section>
 
   <section id="r-90dias">
-    <div class="sec-head"><span class="sec-num">1.7</span><h2>Os primeiros 90 dias</h2></div>
+    <div class="sec-head"><span class="sec-num">1.8</span><h2>Os primeiros 90 dias</h2></div>
     <div class="months">
-      <div class="card"><div class="k">Mês 1</div><h3>Calibragem e descoberta</h3><p>Setup, formulário e CRM amarrado; primeira campanha em até 7 dias; criamos o baseline de conversão (custo por lead, consulta e tratamento).</p></div>
+      <div class="card"><div class="k">Mês 1</div><h3>Implantação, estratégia e primeiras validações</h3><p>Os primeiros passos para estruturar a estratégia, ativar as campanhas e gerar as primeiras validações.</p></div>
       <div class="card"><div class="k">Mês 2</div><h3>Otimização</h3><p>Com 30 a 45 dias de dado, ajustamos público e criativo. A meta é 1 a 2 tratamentos vindos do tráfego.</p></div>
       <div class="card"><div class="k">Mês 3+</div><h3>Consolidação e escala</h3><p>Chegar à faixa de 15 a 20 consultas por mês e avaliar aumento de verba se o custo por consulta permitir.</p></div>
     </div>
@@ -730,16 +833,43 @@
   </section>
 
   <section id="r-decisoes">
-    <div class="sec-head"><span class="sec-num">1.8</span><h2>O que decidimos hoje</h2></div>
+    <div class="sec-head"><span class="sec-num">1.9</span><h2>O que decidimos hoje</h2></div>
     <div class="decisions">
-      <div class="decision"><b>Verba e divisão por plataforma</b><span>R$ 8 mil por mês: R$ 6 mil na Meta (formulário) e R$ 2 mil no Google (busca reestruturada).</span></div>
-      <div class="decision"><b>Revisão do site</b><span>Ajustar percentual de sucesso, &quot;menos medicação&quot; e depoimento de câncer antes do tráfego pago.</span></div>
+      <div class="decision"><b>Verba e divisão por plataforma</b><span>R$ 6 mil por mês: R$ 4 mil na Meta (formulário) e R$ 2 mil no Google (busca reestruturada).</span></div>
       <div class="decision"><b>Atendimento e secretária digital</b><span>Definir quando reativar a secretária digital no WhatsApp pra segurar o tempo de resposta.</span></div>
       <div class="decision"><b>CRM e planilha</b><span>Dar acesso ao XPED e definir o modelo da planilha e como o lead cai no grupo.</span></div>
       <div class="decision"><b>Perguntas do formulário e lead qualificado</b><span>Validar as 3 perguntas e o que o José considera lead qualificado (profissão e idade).</span></div>
     </div>
-    <a class="res-link" href="#lacunas">Ver o que falta confirmar →</a>
+    <a class="res-link" href="#jornada">Ver o que alinhar na apresentação →</a>
   </section>
+  <section id="r-responsabilidades">
+    <div class="sec-head"><span class="sec-num">1.10</span><h2>Quem faz o quê</h2></div>
+    <div class="grid3">
+      <div class="card"><span class="kicker">Elevare</span><h3>Mídia, dados e criativos</h3><ul>
+        <li>Criar, gerir e otimizar as campanhas na Meta e no Google</li>
+        <li>Avisar o saldo das contas com antecedência</li>
+        <li>Relatório toda segunda-feira</li>
+        <li>Roteiros dos vídeos e edição do material gravado</li>
+        <li>Ler o CRM e a planilha e ajustar a verba entre as campanhas de cada plataforma pelo custo por consulta e por tratamento</li>
+      </ul></div>
+      <div class="card"><span class="kicker">José Ilton</span><h3>Autoridade e decisões</h3><ul>
+        <li>Gravar os vídeos do mês a partir dos roteiros e enviar crus</li>
+        <li>Aprovar os criativos rápido (sobretudo no período noturno, como combinado)</li>
+        <li>Manter acessos e o cartão ativo nas contas de anúncio</li>
+        <li>Enviar o avanço de leads e vendas toda terça</li>
+        <li>Registrar os leads no CRM e participar da reunião mensal</li>
+        <li>Ajustar bio, destaques e fixados</li>
+      </ul></div>
+      <div class="card"><span class="kicker">Atendimento</span><h3>Do lead à consulta</h3><ul>
+        <li>Responder em até 5 minutos (o José hoje, e a secretária digital quando o volume subir)</li>
+        <li>Seguir o roteiro da aba Comercial</li>
+        <li>Atualizar a etapa de cada lead no CRM</li>
+        <li>Passar os números da semana</li>
+      </ul></div>
+    </div>
+    <a class="res-link" href="#responsabilidades">Ver quem faz o quê na jornada →</a>
+  </section>
+
     <nav class="pager"><a href="#inicio">← Início</a><a href="#tab-briefing">Briefing →</a></nav>
   </div>
 
@@ -751,20 +881,19 @@
     <p class="sec-desc">O que o José vende, os diferenciais e o que ainda falta confirmar.</p>
     <div class="facts">
       <div class="fact"><div class="k">Nicho</div><div class="v">Terapia de saúde emocional, terapias breves (Terapia de Reintegração Implícita e hipnoterapia avançada)</div></div>
-      <div class="fact"><div class="k">Site</div><div class="v"><a href="https://joseiltonhipnose.com/m/" target="_blank" rel="noopener">joseiltonhipnose.com</a></div></div>
       <div class="fact"><div class="k">Instagram</div><div class="v"><a href="https://www.instagram.com/joseilton.terapeuta/" target="_blank" rel="noopener">@joseilton.terapeuta</a></div></div>
       <div class="fact"><div class="k">Seguidores</div><div class="v">1.991 (23/10/2026)</div></div>
       <div class="fact"><div class="k">Consulta de avaliação</div><div class="v">R$ 400 (R$ 350 à vista antecipado; 50% no agendamento e 50% no dia)</div></div>
       <div class="fact"><div class="k">Tratamento</div><div class="v">Plano de acompanhamento terapêutico: 12x R$ 490 (cerca de R$ 5.880)</div></div>
       <div class="fact"><div class="k">Google Meu Negócio</div><div class="v"><a href="https://share.google/saEkYUrYQ0NQQm1et" target="_blank" rel="noopener">5,0 · 71 avaliações · 98% de recomendação</a></div></div>
       <div class="fact"><div class="k">Região</div><div class="v">Brasília/DF, presencial (consultório na Asa Norte, ao lado do HRAN)</div></div>
-      <div class="fact is-new"><div class="k">Verba aprovada</div><div class="v">R$ 8 mil por mês: R$ 6 mil na Meta e R$ 2 mil no Google</div></div>
+      <div class="fact is-new"><div class="k">Verba aprovada</div><div class="v">R$ 6 mil por mês: R$ 4 mil na Meta e R$ 2 mil no Google</div></div>
     </div>
 
     <div class="grid2">
       <div class="card">
         <h3>O que vende</h3>
-        <p>Duas portas: a <strong>consulta de avaliação e pré-terapia</strong> (R$ 400), que filtra o interessado e gera compromisso de agenda, e o <strong>plano de acompanhamento terapêutico</strong> (12x R$ 490), vendido na consulta. O José trabalha por plano até o resultado, não por pacote fechado de sessões. A promessa central é a rapidez das terapias breves (TRI e hipnoterapia avançada): alívio em poucas sessões.</p>
+        <p>Duas portas: a <strong>consulta de avaliação e pré-terapia</strong> (R$ 400), que filtra o interessado e gera compromisso de agenda, e o <strong>plano de acompanhamento terapêutico</strong> (12x R$ 490), vendido na consulta. O José trabalha por plano até o resultado, não por pacote fechado de sessões. O diferencial que o José destaca é a rapidez das terapias breves (TRI e hipnoterapia avançada). Na comunicação, isso aparece como formato breve, sem prometer prazo de resultado.</p>
       </div>
       <div class="card">
         <h3>Diferencial (segundo o José)</h3>
@@ -781,7 +910,7 @@
       </div>
       <div class="card">
         <h3>Restrições</h3>
-        <p>Nicho de saúde emocional: a Meta e o Google restringem o que o anúncio pode dizer. Sem promessa de cura, sem percentual de sucesso, sem atribuir a condição a quem vê (&quot;você que tem depressão&quot;) e sem falar em parar medicação. O site hoje traz alegações fortes (95% de sucesso, depoimento de câncer, &quot;menos remédios&quot;) que precisam ser revisadas antes de levar tráfego (ver Informações gerais).</p>
+        <p>Nicho de saúde emocional: a Meta e o Google restringem o que o anúncio pode dizer. Sem promessa de cura, sem percentual de sucesso, sem atribuir a condição a quem vê (&quot;você que tem depressão&quot;) e sem falar em parar medicação.</p>
       </div>
     </div>
   </section>
@@ -809,7 +938,7 @@
       <div class="card"><h3>O dado que falta: a conversão real</h3><p>A plataforma registra 157 conversões a R$ 73, mas o José relata retorno fraco nos últimos dois meses e diz nunca ter acompanhado CPA. Sem o CRM (XPED) amarrado, o custo por conversão da plataforma não diz o custo por consulta paga nem por tratamento fechado. Esse é o número que o mês 1 precisa criar.</p></div>
       <div class="card"><h3>O que funcionou: intenção de busca</h3><p>A campanha principal teve CTR de 3,88% e taxa de conversão de 11,84%, sinal de que a busca por terapia e tratamento em Brasília existe e responde. O Google é o canal que o José conhece e que já trouxe volume; o problema é a qualificação, não a falta de procura.</p></div>
     </div>
-    <p class="note">Fonte: exportação &quot;Performance da campanha&quot; do Google Ads do José, enviada por ele, período de 01/09 a 22/10/2026. &quot;Conversão&quot; é a ação configurada na conta (a confirmar qual, assim que o acesso for auditado), e não equivale a consulta paga nem a tratamento fechado. Na Meta, a conta antiga tinha proprietário externo e foi abandonada no onboarding; a nova entra sem histórico. A auditoria completa da conta do Google (termos de busca, estrutura, rastreamento) entra assim que o acesso pela MCC estiver vinculado; o pedido está em &quot;O que falta confirmar&quot;.</p>
+    <p class="note">Fonte: exportação do Google Ads enviada pelo José (01/09 a 22/10/2026). &quot;Conversão&quot; é a ação configurada na conta, ainda a confirmar, e não equivale a consulta paga. A auditoria completa entra quando o acesso pela MCC for liberado.</p>
   </section>
   <section id="mercado">
     <div class="sec-head"><span class="sec-num">2.3</span><h2>Mercado</h2></div>
@@ -840,7 +969,7 @@
       <span class="mark">→</span>
       <div>
         <p><strong>Conclusão competitiva:</strong> a maioria do nicho em Brasília briga por preço ou fala a linguagem clínica tradicional. Disputar preço joga o José num leilão que ele mesmo diz perder, já que cobra acima da concorrência.</p>
-        <p>O território livre é <strong>resposta rápida com autoridade e prova social</strong>: alívio em poucas sessões, método que trata a raiz e dezenas de avaliações reais. Fala direto com quem já fez terapia longa ou toma remédio e continua sofrendo.</p>
+        <p>O território livre é <strong>resposta rápida com autoridade e prova social</strong>: terapia breve, método que trabalha a origem do sofrimento e 71 avaliações 5 estrelas no Google. Fala direto com quem já fez terapia longa ou toma remédio e continua sofrendo.</p>
       </div>
     </div>
 
@@ -879,7 +1008,7 @@
       <div class="card">
         <h3>Comercial hoje</h3>
         <ul>
-          <li>Jornada: anúncio, página de destino, WhatsApp (acolhimento e 3 perguntas), consulta, e na consulta vende o tratamento.</li>
+          <li>Jornada: anúncio, WhatsApp (acolhimento e 3 perguntas), consulta, e na consulta vende o tratamento.</li>
           <li>CRM XPED há cerca de 3 meses, em uso inicial, com etapas de lead qualificado (marcou consulta) e ganho (converteu em terapia).</li>
           <li>Secretária digital no WhatsApp: desativada por baixo volume; reativa quando o fluxo subir.</li>
           <li>O José atua sozinho e responde demandas sobretudo no período noturno.</li>
@@ -899,7 +1028,7 @@
       <div class="card">
         <h3>Verba e plataformas</h3>
         <ul>
-          <li>R$ 8 mil por mês: R$ 6 mil na Meta (principal) e R$ 2 mil no Google.</li>
+          <li>R$ 6 mil por mês: R$ 4 mil na Meta (principal) e R$ 2 mil no Google.</li>
           <li>Intenção de migrar o peso pro Meta (cerca de 80/20) conforme o caixa permitir.</li>
           <li>Forma de pagamento dos anúncios: cartão de crédito.</li>
         </ul>
@@ -931,7 +1060,7 @@
         <h3>Forças</h3>
         <ul>
           <li><strong>Prova social acima do nicho:</strong> 71 avaliações 5 estrelas e depoimentos em vídeo são o maior redutor de risco pra um ticket alto, e a concorrência local raramente tem isso.</li>
-          <li><strong>Ticket que se paga:</strong> um plano de tratamento (R$ 5.880) cobre quase a verba mensal inteira (R$ 8 mil), e dois cobrem com folga.</li>
+          <li><strong>Ticket que se paga:</strong> um plano de tratamento (R$ 5.880) cobre quase a verba mensal inteira (R$ 6 mil), e dois cobrem com folga.</li>
           <li><strong>Posicionamento claro:</strong> terapias breves com resposta rápida é um território de valor, não de preço.</li>
           <li><strong>Autoridade e método próprios:</strong> TRI e hipnoterapia avançada dão um discurso que o concorrente de preço não copia.</li>
         </ul>
@@ -942,7 +1071,6 @@
         <ul>
           <li><strong>Conversão concentrada em uma pessoa:</strong> o José atende sozinho e responde à noite; com mais lead, o tempo de resposta sobe e o lead quente esfria.</li>
           <li><strong>Sem medição amarrada:</strong> o CRM (XPED) está em uso inicial e o custo por consulta e por tratamento não é acompanhado, então não dá pra ler o retorno real.</li>
-          <li><strong>Site com alegações fortes:</strong> promessas de 95% de sucesso, &quot;menos remédios&quot; e depoimento de câncer são risco de reprovação na Meta e de exposição legal.</li>
           <li><strong>Ticket acima da concorrência:</strong> sem filtro, a verba atrai o lead de preço, que o próprio José diz não fechar.</li>
         </ul>
       </div>
@@ -1063,6 +1191,7 @@
         <h3 style="margin-top:10px;">Saber que existe e que dá pra tratar rápido</h3>
         <p><strong>Pra quem:</strong> adultos 40+ em Brasília que ainda não conhecem o José.</p>
         <p><strong>O que roda:</strong> campanha de distribuição na Meta (visualização de vídeo), com público aberto de adultos a partir dos 40 anos no DF.</p>
+        <p><strong>Por que roda:</strong> quem sofre de ansiedade raramente pesquisa terapeuta; convive com a dor e adia. O vídeo alcança essa pessoa no feed antes de ela procurar.</p>
         <p><strong>Conteúdo:</strong> posts e reels que já estão no perfil, escolhidos pelo desempenho: o José explicando a dor (ansiedade, pânico) e o método das terapias breves. Sem produção nova.</p>
         <p class="card-foot">Como medimos: seguidores novos por mês, custo por seguidor e quantas pessoas assistem à maior parte do vídeo.</p>
       </div>
@@ -1071,6 +1200,7 @@
         <h3 style="margin-top:10px;">Se identificar e tirar as dúvidas</h3>
         <p><strong>Pra quem:</strong> quem já assistiu aos vídeos do K ou interagiu com o perfil.</p>
         <p><strong>O que roda:</strong> a mesma campanha de distribuição, num conjunto só com esse público.</p>
+        <p><strong>Por que roda:</strong> quem já viu o José ainda duvida se a hipnose funciona e é segura. Tirar essa dúvida antes de falar em preço faz o valor pesar menos.</p>
         <p><strong>Conteúdo:</strong> posts e reels do perfil que educam e quebram objeção: como a hipnoterapia funciona e é segura, o que é a TRI, o que esperar das sessões, bastidores e um caso real narrado.</p>
         <p class="card-foot">Como medimos: comentários, salvamentos, compartilhamentos, visitas ao perfil e mensagens.</p>
       </div>
@@ -1079,6 +1209,7 @@
         <h3 style="margin-top:10px;">Sentir segurança pra marcar a consulta</h3>
         <p><strong>Pra quem:</strong> quem já conhece e gosta, quem está no público quente de 30 dias e quem pesquisa terapia e tratamento no Google.</p>
         <p><strong>O que roda:</strong> as campanhas de conversão da seção 4.4, o formulário na Meta e a busca no Google.</p>
+        <p><strong>Por que roda:</strong> é quem já confia e está pronto pra agendar. Por isso fica com 85% da verba: é aqui que a consulta de avaliação acontece.</p>
         <p><strong>Conteúdo:</strong> os 6 roteiros da aba Roteiros, com o método, a prova social e a chamada pra marcar a consulta de avaliação.</p>
         <p class="card-foot">Como medimos: custo por lead e custo por consulta de avaliação.</p>
       </div>
@@ -1086,8 +1217,8 @@
 
     <h3 class="sub-h">Como a verba se divide</h3>
     <div class="stats is-2">
-      <div class="stat"><div class="num">85%</div><div class="lbl">no T, a conversão: formulário na Meta e busca no Google (cerca de R$ 6,8 mil por mês)</div></div>
-      <div class="stat"><div class="num">15%</div><div class="lbl">no K e no L, a distribuição de vídeo na Meta (cerca de R$ 1,2 mil por mês)</div></div>
+      <div class="stat"><div class="num">85%</div><div class="lbl">no T, a conversão: formulário na Meta e busca no Google (cerca de R$ 5,1 mil por mês)</div></div>
+      <div class="stat"><div class="num">15%</div><div class="lbl">no K e no L, a distribuição de vídeo na Meta (cerca de R$ 900 por mês)</div></div>
     </div>
 
     <h3 class="sub-h">Como a pessoa anda no funil</h3>
@@ -1129,11 +1260,11 @@
 
   <section id="plataforma">
     <div class="sec-head"><span class="sec-num">4.3</span><h2>O papel de cada plataforma</h2></div>
-    <p class="sec-desc">A verba de R$ 8 mil justifica rodar as duas plataformas ao mesmo tempo, com papéis diferentes. A Meta é o motor principal (R$ 6 mil), porque cria demanda e usa a autoridade do José pra converter; o Google (R$ 2 mil) captura quem já está procurando.</p>
+    <p class="sec-desc">A verba de R$ 6 mil justifica rodar as duas plataformas ao mesmo tempo, com papéis diferentes. A Meta é o motor principal (R$ 4 mil), porque cria demanda e usa a autoridade do José pra converter; o Google (R$ 2 mil) captura quem já está procurando.</p>
 
     <div class="grid2">
       <div class="card platform is-now">
-        <span class="tag">Meta Ads · R$ 6 mil · principal</span>
+        <span class="tag">Meta Ads · R$ 4 mil · principal</span>
         <h3 style="margin-top:12px;">Cria a demanda e converte pela autoridade</h3>
         <p>Quem sofre de ansiedade ou pânico muitas vezes não pesquisa &quot;terapeuta&quot;: convive com a dor e adia. A Meta alcança essa pessoa no feed, educa com o vídeo do José, apresenta a hipnoterapia como alternativa e converte pelo formulário. É onde a prova social e a marca pessoal do José mais pesam, e onde o José quer concentrar a verba (cerca de 80/20).</p>
       </div>
@@ -1147,7 +1278,7 @@
     <div class="callout" style="margin-top:22px;">
       <span class="mark">→</span>
       <div>
-        <p><strong>Verba fixa por plataforma:</strong> R$ 6 mil na Meta e R$ 2 mil no Google, como alinhado na call. O que se ajusta ao longo do mês é a verba entre as campanhas da mesma plataforma, não a divisão entre Meta e Google.</p>
+        <p><strong>Verba fixa por plataforma:</strong> R$ 4 mil na Meta e R$ 2 mil no Google, como alinhado na call. O que se ajusta ao longo do mês é a verba entre as campanhas da mesma plataforma, não a divisão entre Meta e Google.</p>
         <p>A tabela de palavras e volume de busca no DF está no cartão da campanha de busca (seção 4.4).</p>
       </div>
     </div>
@@ -1160,7 +1291,7 @@
     <h3 class="sub-h">Como escolhemos</h3>
     <div class="criteria">
       <div class="card"><span class="crit-n">01</span><h3>A dor que a pessoa sente agora</h3><p>Ansiedade, pânico e depressão pesam todo dia. É o que move quem procura, e o que o anúncio precisa nomear pra atrair o público certo.</p></div>
-      <div class="card"><span class="crit-n">02</span><h3>Ticket que paga o canal</h3><p>Um plano de tratamento (R$ 5.880) cobre quase a verba mensal inteira (R$ 8 mil). Por isso o foco é levar à consulta de avaliação, que é a porta pro tratamento.</p></div>
+      <div class="card"><span class="crit-n">02</span><h3>Ticket que paga o canal</h3><p>Um plano de tratamento (R$ 5.880) cobre quase a verba mensal inteira (R$ 6 mil). Por isso o foco é levar à consulta de avaliação, que é a porta pro tratamento.</p></div>
       <div class="card"><span class="crit-n">03</span><h3>O que o histórico provou</h3><p>A busca no Google responde (CTR de 3,88% e taxa de conversão de 11,84% na campanha principal). A procura existe; o que faltava era filtro e medição.</p></div>
       <div class="card"><span class="crit-n">04</span><h3>Capacidade de atendimento</h3><p>O José atende sozinho e responde à noite. O formulário e a qualificação seguram a quantidade de contato pra não estourar o atendimento e perder lead quente.</p></div>
     </div>
@@ -1187,7 +1318,7 @@
       <ul>
         <li><strong>Autoridade e prova social:</strong> 71 avaliações 5 estrelas e depoimentos em vídeo são o que mais converte na Meta, onde a pessoa ainda não te procurava.</li>
         <li><strong>Cria demanda:</strong> alcança quem sofre mas não pesquisa &quot;terapeuta&quot;.</li>
-        <li><strong>Filtra antes do contato:</strong> as 3 perguntas antecipam a leitura de prazo e forma de pagamento, onde mora a objeção de preço.</li>
+        <li><strong>Filtra antes do contato:</strong> as 3 perguntas leem a idade e se a pessoa já tentou resolver antes; a profissão é lida na conversa do WhatsApp.</li>
         <li><strong>Concentra a verba:</strong> é onde o José quer o peso (cerca de 80%).</li>
       </ul>
       <div class="rota-box">
@@ -1200,7 +1331,7 @@
         </ul>
       </div>
       <h4>O papel dela</h4>
-      <p>Campanha de entrada e principal conversão do plano. Escala volume e alimenta o público quente que o remarketing reaproveita.</p>
+      <p>Campanha de entrada e principal conversão do plano: gera a maior parte dos contatos e faz mais gente conhecer o José.</p>
       <div class="rota-box is-accent">
         <div class="k">A contrapartida</div>
         <p>Gravar os vídeos a partir dos roteiros, responder o formulário em até 5 minutos (ou acionar a secretária digital quando o volume subir), registrar cada lead no CRM e enviar o avanço de leads e vendas toda terça.</p>
@@ -1242,7 +1373,7 @@
         <ul>
           <li>&quot;Hipnoterapia&quot; tem o maior volume (320/mês no DF), mas atrai também quem busca curso e formação: as negativas e as correspondências exata/frase decidem a qualidade.</li>
           <li>Vários termos de sintoma (&quot;tratamento para depressão&quot;, &quot;terapia para ansiedade&quot;) voltaram sem volume no DF: não entram como aposta de volume.</li>
-          <li>O destino do clique (site ou WhatsApp) e a conversão precisam ser amarrados ao CRM pra o custo por consulta aparecer.</li>
+          <li>O clique no WhatsApp e a conversão precisam ser amarrados ao CRM pra o custo por consulta aparecer.</li>
         </ul>
       </div>
       <h4>Palavras pesquisadas e volume no Distrito Federal</h4>
@@ -1255,15 +1386,15 @@
           <tr><td class="name">Sem volume retornado</td><td>tratamento para depressão · terapia para ansiedade · como tratar ansiedade</td><td>Sem volume retornado no DF</td></tr>
         </tbody>
       </table></div>
-      <p class="note">Fonte: Planejador de palavras-chave do Google, Distrito Federal, 23/10/2026 (média mensal). &quot;Hipnoterapia&quot; tem concorrência baixa e lance de topo de R$ 2,03 a R$ 7,09; os termos de marca da cidade têm concorrência alta. Os termos sem volume não são usados como aposta. Negativas sugeridas: curso, formação, faculdade, certificação, pós, como ser, hipnose de palco, grátis, gratuito, PDF, concurso, emprego, vaga, salário.</p>
-      <h4>Página de destino</h4>
-      <p>O José tem site (joseiltonhipnose.com), que hoje traz alegações fortes (percentual de sucesso, &quot;menos remédios&quot;, depoimento de câncer). Antes de levar tráfego pago, a recomendação é revisar a página pra ficar dentro da política de saúde (ver Informações gerais) ou direcionar o clique pro WhatsApp com mensagem pronta.</p>
+      <p class="note">Fonte: Planejador de palavras-chave do Google, DF, 23/10/2026. Negativas: curso, formação, faculdade, certificação, pós, como ser, hipnose de palco, grátis, PDF, concurso, emprego, vaga.</p>
+      <h4>Destino do clique</h4>
+      <p>O clique vai direto pro WhatsApp do José, com mensagem pronta, e o atendimento segue o manual da aba Comercial.</p>
       <h4>O papel dela</h4>
       <p>Segunda frente, rodando junto com a Meta: captura a intenção de busca enquanto a Meta cria demanda.</p>
     </div>
 
     <div class="statement is-accent" style="margin-top:22px;">
-      <p>Rodar as duas desde o início: R$ 6 mil na Meta (formulário) e R$ 2 mil no Google (busca reestruturada), com o foco em consulta de avaliação paga, não em volume de contato.</p>
+      <p>Rodar as duas desde o início: R$ 4 mil na Meta (formulário) e R$ 2 mil no Google (busca reestruturada), com o foco em consulta de avaliação paga, não em volume de contato.</p>
       <div class="statement-foot">O vencedor não é o lead mais barato: é a combinação de custo por lead, qualidade da conversa, consulta paga e tratamento fechado.</div>
     </div>
     <div class="callout" style="margin-top:22px;">
@@ -1276,26 +1407,27 @@
 
   <section id="projecao">
     <div class="sec-head"><span class="sec-num">4.5</span><h2>Projeção</h2></div>
-    <p class="sec-desc">A projeção parte do que a conta do Google já mostrou e do que precisa acontecer pra meta do onboarding fechar. O número de consultas é calibrado no primeiro mês, com o CRM amarrado e as campanhas novas rodando.</p>
+    <p class="sec-desc">A projeção fala do que a mídia controla: o custo por lead e o volume de leads. Ela parte do que a conta do Google já mostrou e é calibrada no primeiro mês, com as campanhas novas rodando. Consultas e tratamentos dependem do atendimento e ficam nos objetivos.</p>
 
     <div class="proj">
       <div class="proj-col">
         <div class="k">Ponto de partida · histórico do Google (01/09 a 22/10/2026)</div>
-        <div class="proj-row"><span>Investimento no período</span><b>R$ 11.591 (cerca de R$ 6,6 mil por mês)</b></div>
-        <div class="proj-row"><span>Conversões de plataforma</span><b>157 (R$ 73,83 cada)</b></div>
-        <div class="proj-row"><span>Meta Ads</span><b>Conta nova, sem histórico</b></div>
-        <div class="proj-row is-total"><span>Consultas pagas e tratamentos</span><b>Sem dado (CRM em uso inicial)</b></div>
+        <div class="proj-row"><span>Investimento médio</span><b>≈ R$ 6,6 mil por mês (R$ 11.591 no período)</b></div>
+        <div class="proj-row"><span>Conversões por mês</span><b>≈ 90 (157 no período)</b></div>
+        <div class="proj-row"><span>Custo por conversão médio</span><b>R$ 73,83</b></div>
+        <div class="proj-row is-total"><span>Custo por conversão por campanha</span><b>R$ 70,90 a R$ 109</b></div>
       </div>
       <div class="proj-col">
-        <div class="k">Com R$ 8 mil por mês (R$ 6 mil Meta + R$ 2 mil Google)</div>
-        <div class="proj-row"><span>Investimento</span><b>R$ 8 mil (onboarding)</b></div>
-        <div class="proj-row"><span>Meta do onboarding</span><b>15 a 20 consultas por mês</b></div>
-        <div class="proj-row"><span>Conversão esperada</span><b>10 a 15 tratamentos por mês (segundo o José)</b></div>
-        <div class="proj-row is-total"><span>Ponto de equilíbrio</span><b>1 tratamento (R$ 5.880) cobre quase a verba; 2 cobrem com folga</b></div>
+        <div class="k">Com R$ 6 mil por mês (R$ 4 mil Meta + R$ 2 mil Google)</div>
+        <div class="proj-row"><span>Verba de conversão (T)</span><b>R$ 5,1 mil</b></div>
+        <div class="proj-row"><span>Custo por lead esperado</span><b>R$ 50 a R$ 70</b></div>
+        <div class="proj-row"><span>Leads por dia</span><b>≈ 2,4 a 3,4</b></div>
+        <div class="proj-row is-total"><span>Leads por mês</span><b>≈ 73 a 102</b></div>
       </div>
     </div>
-    <p class="note">Histórico: exportação do Google Ads do José, de 01/09 a 22/10/2026. A &quot;conversão de plataforma&quot; (R$ 73,83) é a ação configurada na conta e não equivale a consulta paga nem a tratamento fechado: por isso a linha de consultas e tratamentos fica &quot;sem dado&quot; até o CRM ser amarrado. As metas de 15 a 20 consultas e 10 a 15 tratamentos vieram do José na call. Pra referência, 15 consultas a R$ 400 somam R$ 6 mil, e cada tratamento fechado (R$ 5.880) vale mais de um mês de consultas. O custo por consulta e por tratamento real sai do CRM no primeiro mês, e a projeção é refeita com esse número.</p>
+    <p class="note">O custo por lead de R$ 50 a R$ 70 é a referência da Elevare, já que a Meta começa agora. O volume é a verba de conversão (R$ 5,1 mil) dividida por esse custo; o vídeo do K e L fica fora. O histórico do Google mostra conversões, não leads, e só dá pra comparar depois de auditar a conta.</p>
   </section>
+
 
   <section id="objetivos">
     <div class="sec-head"><span class="sec-num">4.6</span><h2>Objetivos de marketing (SMART)</h2></div>
@@ -1328,12 +1460,12 @@
     <div class="tbl-wrap"><table>
       <thead><tr><th>Pergunta</th><th>Opções de resposta</th><th>Pra que serve</th></tr></thead>
       <tbody>
-        <tr><td class="name">P1 · O que mais te incomoda hoje?</td><td>Ansiedade ou crises de pânico · Tristeza ou desânimo há muito tempo · Medos, fobias ou trauma · Outro motivo</td><td>Entrega o caso: quem atende abre a conversa por ele, sem atribuir a condição no anúncio.</td></tr>
-        <tr><td class="name">P2 · Em quanto tempo você quer resolver?</td><td>O quanto antes · Nas próximas semanas · Ainda estou pesquisando</td><td>Define quem é atendido primeiro.</td></tr>
-        <tr><td class="name">P3 · Como você prefere investir no seu tratamento?</td><td>À vista · Parcelado no cartão · Ainda quero entender os valores</td><td>Prepara a conversa sobre valor e ajuda a ler o poder aquisitivo, sem pegar ninguém de surpresa.</td></tr>
+        <tr><td class="name">P1 · O que te fez buscar ajuda agora?</td><td>Quero voltar a ter tranquilidade no dia a dia · Quero dormir e render melhor · Quero superar um medo ou trauma · Outro motivo</td><td>A pergunta que você já faz no WhatsApp. Abre a conversa pelo objetivo, sem pedir diagnóstico.</td></tr>
+        <tr><td class="name">P2 · Qual a sua faixa de idade?</td><td>Até 39 anos · 40 a 49 anos · 50 a 59 anos · 60 anos ou mais</td><td>Seu primeiro critério: a partir de 40 anos é quem mais fecha. Define quem é atendido primeiro.</td></tr>
+        <tr><td class="name">P3 · Você já tentou resolver isso antes?</td><td>Sim, mas não resolveu como eu queria · Sim, e quero continuar cuidando · Ainda não tentei</td><td>Quem já tentou e não resolveu é quem mais fecha com você.</td></tr>
       </tbody>
     </table></div>
-    <p class="note">O formulário traz mais volume que a mensagem direta, mas o lead esfria rápido: o resultado depende de quanto tempo o atendimento leva pra responder. A qualificação fina por profissão e idade acontece na conversa do WhatsApp, não no formulário.</p>
+    <p class="note">Saíram da call: você qualifica por idade (40+) e profissão, e fecha com quem cansou de tratamento longo. A profissão fica pra conversa no WhatsApp, pra não parecer que você atende só alguns grupos.</p>
   </section>
     <nav class="pager"><a href="#tab-persona">← Persona</a><a href="#tab-perfil">Estruturação do perfil →</a></nav>
   </div>
@@ -1350,8 +1482,8 @@
       <div class="card">
         <span class="tag is-ghost">Diferencial 1</span>
         <h3 style="margin-top:10px;">Resposta rápida das terapias breves</h3>
-        <p>A proposta é aliviar o sofrimento em poucas sessões, não em anos. Pra quem já fez terapia longa e continua igual, é a diferença que mais pesa.</p>
-        <p><strong>Na comunicação:</strong> &quot;Você não precisa de anos de terapia pra começar a viver melhor.&quot;</p>
+        <p>A terapia breve costuma ter menos sessões que a convencional, com o plano definido na consulta de avaliação. Pra quem já fez terapia longa e continua igual, é a diferença que mais pesa.</p>
+        <p><strong>Na comunicação:</strong> &quot;Um caminho mais curto pra quem já tentou terapia longa.&quot;</p>
       </div>
       <div class="card">
         <span class="tag is-ghost">Diferencial 2</span>
@@ -1369,13 +1501,13 @@
 
     <h3 class="sub-h">Declaração de posicionamento</h3>
     <div class="statement">
-      <p>Para adultos de Brasília que convivem há anos com ansiedade, pânico ou depressão e já tentaram terapia longa ou medicação sem resolver, o José Ilton é o terapeuta especialista em terapias breves que trata a raiz do sofrimento com resposta rápida, porque combina hipnoterapia avançada e TRI com dezenas de avaliações reais de quem já se libertou.</p>
+      <p>Para adultos de Brasília que convivem há anos com ansiedade ou pânico e já tentaram terapia longa ou remédio sem o resultado que queriam, o José Ilton é o terapeuta de terapias breves que trabalha a origem do sofrimento, com um plano definido na consulta de avaliação, porque une hipnoterapia avançada e TRI e tem 71 avaliações 5 estrelas no Google.</p>
       <div class="statement-foot">Território: <strong>resposta rápida com autoridade e prova social</strong></div>
     </div>
 
     <h3 class="sub-h">Proposta única de valor (UVP)</h3>
     <div class="statement is-accent">
-      <p>Alívio da ansiedade, do pânico e da depressão em poucas sessões, tratando a raiz e não só o sintoma.</p>
+      <p>Terapias breves pra quem já fez terapia longa e não resolveu. O José trabalha a origem da ansiedade e do pânico, e a consulta de avaliação mostra o que dá pra fazer no seu caso.</p>
       <div class="statement-foot">Tradução comercial: consulta de avaliação (R$ 400) pra entender o caso, e o plano de acompanhamento terapêutico (12x R$ 490) até o resultado.</div>
     </div>
     <div class="quote-strip" style="margin-top:1px;">
@@ -1399,25 +1531,25 @@
     <p style="font-size:14px;margin:0 0 10px;">Até 150 caracteres, terminando com chamada pra ação. Toda bio precisa ter:</p>
     <ul style="font-size:14px;color:var(--text-soft);margin:0 0 12px;padding-left:18px;">
       <li><strong>Marco de autoridade:</strong> um número que prove experiência (avaliações 5 estrelas, pessoas atendidas ou anos de atuação).</li>
-      <li><strong>Diferencial + serviço, de forma objetiva:</strong> terapias breves pra ansiedade, pânico e depressão.</li>
+      <li><strong>Diferencial + serviço, de forma objetiva:</strong> terapias breves pra ansiedade e pânico.</li>
       <li><strong>Identificação:</strong> o nome e a função (terapeuta especialista em terapias breves). Não usar &quot;psicólogo&quot; nem registro de conselho, que não é o caso.</li>
     </ul>
     <p style="font-size:14px;margin:0 0 12px;">O campo <strong>Nome</strong> do perfil entra na busca do Instagram: usar nome + função (ex.: &quot;José Ilton · Terapeuta&quot;).</p>
     <div class="grid3">
       <div class="card">
         <span class="tag is-ghost">Opção 1 · Abre pelo marco</span>
-        <p class="bio">71 avaliações 5 estrelas no Google<br>Terapias breves pra ansiedade, pânico e depressão<br>Brasília · presencial<br>Agende pelo WhatsApp</p>
+        <p class="bio">71 avaliações 5 estrelas no Google<br>Terapias breves pra ansiedade e pânico<br>Brasília · presencial<br>Agende pelo WhatsApp</p>
       </div>
       <div class="card">
         <span class="tag is-ghost">Opção 2 · Abre pelo serviço</span>
-        <p class="bio">Terapeuta · terapias breves (hipnoterapia e TRI)<br>Ansiedade, pânico e depressão<br>71 avaliações 5 estrelas · Brasília<br>Agende pelo WhatsApp</p>
+        <p class="bio">Terapeuta · terapias breves (hipnoterapia e TRI)<br>Ansiedade e pânico<br>71 avaliações 5 estrelas · Brasília<br>Agende pelo WhatsApp</p>
       </div>
       <div class="card">
         <span class="tag is-ghost">Opção 3 · Abre pelo diferencial</span>
-        <p class="bio">Viver melhor sem anos de terapia<br>Terapias breves pra ansiedade e pânico<br>Brasília · 71 avaliações 5 estrelas<br>Agende pelo WhatsApp</p>
+        <p class="bio">Pra quem já tentou terapia longa<br>Terapias breves pra ansiedade e pânico<br>Brasília · 71 avaliações 5 estrelas<br>Agende pelo WhatsApp</p>
       </div>
     </div>
-    <p style="font-size:14px;margin:10px 0 0;"><strong>Link da bio:</strong> WhatsApp com mensagem pronta, ou o site revisado dentro da política de saúde (ver Informações gerais).</p>
+    <p style="font-size:14px;margin:10px 0 0;"><strong>Link da bio:</strong> WhatsApp com mensagem pronta.</p>
 
     <h3 class="sub-h">2. Destaques</h3>
     <p style="font-size:14px;margin:0 0 12px;">Quatro destaques, nesta ordem. Capas simples e iguais entre si. Cada destaque com 4 a 7 stories, pouco texto por tela.</p>
@@ -1553,7 +1685,7 @@
         <ul>
           <li>O que é a TRI e a hipnoterapia avançada</li>
           <li>Como é a consulta de avaliação</li>
-          <li>Por que poucas sessões, e não anos</li>
+          <li>Por que a terapia breve tem menos sessões</li>
         </ul>
         <p class="hook">&quot;Antes de falar de preço, deixa eu te mostrar como o tratamento funciona.&quot;</p>
       </div>
@@ -1625,170 +1757,137 @@
   </section>
   <section id="roteiros-video">
     <div class="sec-head"><span class="sec-num">6.2</span><h2>Os 6 roteiros</h2></div>
-    <p class="sec-desc">Todos são do T, a etapa de conversão: dois inspirados nos anúncios que estão há mais tempo no ar, dois de antes e depois e dois de depoimento. O K e o L usam o que já está no perfil. O roteiro é um ponto de partida: grave do seu jeito, mantendo a estrutura. Nenhum promete cura, percentual de sucesso ou fim da medicação.</p>
+    <p class="sec-desc">Os 6 roteiros são do T, a etapa de conversão, e cada um trabalha um ângulo diferente. Siga os tópicos ou use as frases sugeridas. O gancho e o CTA são as partes mais importantes.</p>
 
     <div class="roteiro">
       <div class="roteiro-head">
         <span class="rot-n">R1</span>
         <div>
-          <span class="tag is-ghost">Biblioteca</span>
-          <h3>Você mora em Brasília? Já ouviu falar de terapia com hipnose?</h3>
+          <span class="tag is-ghost">Mitos · caixinha de perguntas</span>
+          <h3>Os 4 mitos da hipnose</h3>
         </div>
       </div>
       <div class="rota-metrics" style="margin-top:14px;">
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
-        <div><div class="k">Duração</div><div class="v">25 a 40 s</div></div>
+        <div><div class="k">Duração</div><div class="v">35 a 45 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">O José</div></div>
         <div><div class="k">Campanha</div><div class="v">T · A (Meta, formulário)</div></div>
       </div>
-      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Alexandra Oliveira Linhares Hipnoterapia, no ar desde 03/02/2025 · <a href="https://www.facebook.com/ads/library/?id=1004001054941080" target="_blank" rel="noopener">ver anúncio</a>. É o anúncio de hipnoterapia há mais tempo no ar no Brasil, e o mesmo formato se repete em vários anunciantes (sinal de escala): o gancho local na primeira frase e a lista curta de dores que o método trata.</p>
       <div class="tbl-wrap">
         <table class="script">
           <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
           <tbody>
-            <tr><td class="name">Gancho · 0 a 3 s</td><td>&quot;Você mora em Brasília e já ouviu falar sobre a terapia com hipnose?&quot;</td><td>Texto na tela: &quot;Terapia com hipnose, em Brasília&quot;. O José em plano médio, olhando pra câmera.</td></tr>
-            <tr><td class="name">3 a 25 s</td><td>&quot;A hipnoterapia e a TRI são terapias breves: a gente trabalha a raiz do que te incomoda, e não só o sintoma. Dá pra tratar ansiedade, crises de pânico, insônia, medos e aquele peso que você carrega e nem sabe nomear.&quot;</td><td>Lista curta na tela: ansiedade · pânico · insônia · medos. Imagens do consultório.</td></tr>
-            <tr><td class="name">25 a 35 s</td><td>&quot;Cada caso é um caso, e por isso tudo começa com uma consulta de avaliação, pra entender o seu.&quot;</td><td>O José fala direto pra câmera.</td></tr>
-            <tr><td class="name">Chamada pra ação</td><td>&quot;Clica no botão, responde três perguntas rápidas e eu te explico como funciona.&quot;</td><td>Botão do formulário e @joseilton.terapeuta</td></tr>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Essa é a pergunta que eu mais recebo. Então vamos aos mitos, um por um.”</td><td>Abre com a caixinha de perguntas na tela: “José, hipnose não é aquilo de palco?”. O José lê e olha pra câmera.</td></tr>
+            <tr><td class="name">3 a 12 s</td><td>“Vou perder o controle? Não vai. Você fica consciente o tempo todo e pode interromper quando quiser. Ninguém faz você fazer nada que não queira.”</td><td>“Mito 1: vou perder o controle”</td></tr>
+            <tr><td class="name">12 a 22 s</td><td>“É igual à hipnose de palco? Hipnose de palco é espetáculo. A clínica acontece numa sala reservada, com conversa antes e um objetivo que a gente define junto.”</td><td>“Mito 2: é igual à de palco”</td></tr>
+            <tr><td class="name">22 a 35 s</td><td>“Uma sessão resolve tudo? Não resolve. É um tratamento com plano, definido na consulta de avaliação. E hipnose substitui o remédio? Também não. Quem ajusta remédio é o seu médico. A terapia caminha junto.”</td><td>“Mito 3: uma sessão resolve” e “Mito 4: substitui o remédio”</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Ficou com alguma dúvida que não está aqui? Clique no botão, responda três perguntas rápidas e me pergunte direto. Melhor do que perguntar pro Google.”</td><td>Botão do formulário</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Terapia com hipnose em Brasília: as terapias breves trabalham a raiz da ansiedade, do pânico e da insônia. Responda 3 perguntas e fale comigo. Cada caso é um caso.</p>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Hipnose clínica não tem nada de palco. Os 4 mitos que eu mais escuto no consultório, em Brasília. Responda 3 perguntas e tire a sua dúvida comigo.</p>
     </div>
 
     <div class="roteiro">
       <div class="roteiro-head">
         <span class="rot-n">R2</span>
         <div>
-          <span class="tag is-ghost">Biblioteca</span>
-          <h3>Na mente, tudo o que a gente alimenta cresce</h3>
+          <span class="tag is-ghost">Frase do paciente</span>
+          <h3>“Já fiz terapia por mais de um ano e continuo do mesmo jeito”</h3>
         </div>
       </div>
       <div class="rota-metrics" style="margin-top:14px;">
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
-        <div><div class="k">Duração</div><div class="v">40 a 60 s</div></div>
+        <div><div class="k">Duração</div><div class="v">35 a 45 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">O José</div></div>
         <div><div class="k">Campanha</div><div class="v">T · A (Meta, formulário)</div></div>
       </div>
-      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Rafael Capita, Psicólogo e Hipnoterapeuta, no ar desde 07/03/2025 · <a href="https://www.facebook.com/ads/library/?id=1023772459610781" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: a abertura com uma ideia que prende (um hábito mental comum), a explicação de que a raiz está no subconsciente e o convite pra tratar. Vídeo educativo, que constrói autoridade e não atrapalha a conversão.</p>
       <div class="tbl-wrap">
         <table class="script">
           <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
           <tbody>
-            <tr><td class="name">Gancho · 0 a 3 s</td><td>&quot;Você vive no modo alerta, com o pensamento acelerado, mesmo quando não tem motivo?&quot;</td><td>Texto na tela: &quot;Modo alerta o dia inteiro&quot;. Fundo neutro.</td></tr>
-            <tr><td class="name">3 a 40 s</td><td>&quot;Na nossa mente, aquilo que a gente alimenta cresce. Quando a ansiedade vira hábito, o corpo aprende a ficar em alerta o tempo todo, e a força de vontade sozinha não desliga isso, porque a raiz está no que ficou guardado, muitas vezes lá atrás. É aí que entram as terapias breves: a gente acessa essa raiz e ressignifica, em poucas sessões, em vez de anos só falando sobre o problema.&quot;</td><td>Animação simples: &quot;gatilho&quot;, &quot;padrão&quot;, &quot;raiz&quot;. O José explicando com calma.</td></tr>
-            <tr><td class="name">40 a 50 s</td><td>&quot;Cada caso é um caso, e tudo começa com uma consulta de avaliação pra entender o seu.&quot;</td><td>O José fala direto pra câmera.</td></tr>
-            <tr><td class="name">Chamada pra ação</td><td>&quot;Se você quer tratar a raiz e não só o sintoma, responde as três perguntas.&quot;</td><td>Botão do formulário</td></tr>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“‘Já fiz terapia por mais de um ano e continuo do mesmo jeito.’ Essa é uma das frases que eu mais escuto aqui no consultório.”</td><td>“Mais de um ano de terapia. E tudo igual?”</td></tr>
+            <tr><td class="name">3 a 15 s</td><td>“Quem me diz isso quase sempre já tentou bastante coisa: terapia toda semana, remédio, vídeo de autoajuda. E chega cansado, achando que o problema é ele.”</td><td>O José em plano médio, falando com calma.</td></tr>
+            <tr><td class="name">15 a 25 s</td><td>“Força de vontade sozinha raramente dá conta disso. As terapias breves, como a TRI e a hipnoterapia, vão direto na origem do que dispara a crise.”</td><td>“Terapias breves: TRI e hipnoterapia”</td></tr>
+            <tr><td class="name">25 a 35 s</td><td>“Por isso, aqui o tratamento tem um plano, com começo, meio e fim, combinado na consulta de avaliação.” [DADO A PREENCHER: há quantos anos o José atende ou quantas pessoas já atendeu, pra fechar com autoridade]</td><td>“Plano com começo, meio e fim”</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Se você também cansou de tratamento sem fim, clique no botão e responda três perguntas. Na avaliação, a gente olha o seu caso do zero.”</td><td>Botão do formulário</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="fixado-foot"><strong>Texto do anúncio:</strong> A ansiedade vira hábito, e a força de vontade sozinha não desliga isso. As terapias breves tratam a raiz, não só o sintoma. Responda 3 perguntas e fale comigo.</p>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> “Já fiz terapia por mais de um ano e continuo do mesmo jeito.” É uma das frases que eu mais escuto no consultório. As terapias breves têm um plano, com começo, meio e fim. Responda 3 perguntas.</p>
     </div>
 
     <div class="roteiro">
       <div class="roteiro-head">
         <span class="rot-n">R3</span>
         <div>
-          <span class="tag is-ghost">Antes e depois</span>
-          <h3>Como a pessoa chega e como ela sai</h3>
+          <span class="tag is-ghost">Analogia · como a ansiedade funciona</span>
+          <h3>O alarme que dispara sem incêndio</h3>
         </div>
-      </div>
-      <div class="rota-box">
-        <div class="k">Adaptado</div>
-        <p>Antes e depois da situação, não da imagem: política da Meta pra saúde e regra de não prometer resultado. O José narra como o paciente chega e como sai, sem identificar ninguém e sem citar doença grave.</p>
       </div>
       <div class="rota-metrics" style="margin-top:14px;">
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
-        <div><div class="k">Duração</div><div class="v">30 a 45 s</div></div>
+        <div><div class="k">Duração</div><div class="v">35 a 45 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">O José</div></div>
         <div><div class="k">Campanha</div><div class="v">T · A (Meta, formulário)</div></div>
       </div>
+      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Rafael Capita, Psicólogo e Hipnoterapeuta · <a href="https://www.facebook.com/ads/library/?id=1023772459610781" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: a explicação de que a origem está no que ficou guardado, num tom calmo e educativo.</p>
       <div class="tbl-wrap">
         <table class="script">
           <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
           <tbody>
-            <tr><td class="name">Gancho · 0 a 3 s</td><td>&quot;Quando uma pessoa chega aqui com ansiedade, quase sempre ela já tentou [o que costumam ter tentado: o José completa com um caso real].&quot;</td><td>Texto na tela: &quot;Como ela chega&quot;</td></tr>
-            <tr><td class="name">3 a 30 s</td><td>&quot;Ela chega [como se sentia: o José completa]. A gente faz a avaliação, entende a raiz e combina o plano. Ao longo das sessões, o que ela me conta é que [o que mudou na rotina dela: o José completa com um caso real e autorizado].&quot;</td><td>Troca de texto: &quot;Como ela chega&quot; e &quot;Como ela está agora&quot;. Sem identificar a pessoa.</td></tr>
-            <tr><td class="name">Chamada pra ação</td><td>&quot;Se esse é o seu momento, responde as três perguntas e vamos conversar.&quot;</td><td>Botão do formulário</td></tr>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“A ansiedade funciona como um alarme de incêndio que dispara com a fumaça da torrada.”</td><td>“Alarme sem incêndio”</td></tr>
+            <tr><td class="name">3 a 15 s</td><td>“O alarme existe pra te proteger. O problema é quando ele fica sensível demais: dispara na reunião, no trânsito, antes de dormir, sem nenhum perigo de verdade.”</td><td>Palavras na tela conforme ele fala: “reunião”, “trânsito”, “antes de dormir”.</td></tr>
+            <tr><td class="name">15 a 25 s</td><td>“Brigar com o alarme toda vez que ele toca cansa, e não muda a sensibilidade dele. Muitas vezes, o que deixou o alarme assim é algo que ficou guardado lá atrás.”</td><td>O José explicando com calma.</td></tr>
+            <tr><td class="name">25 a 35 s</td><td>“Nas terapias breves, eu trabalho exatamente esse ajuste: entender o que deixou o alarme sensível e mudar a forma como ele responde.”</td><td>“Terapias breves”</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Quer entender como isso funciona no seu caso? Clique no botão, responda três perguntas e marque sua consulta de avaliação.”</td><td>Botão do formulário</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Antes de tratar, a gente entende o seu caso. Responda 3 perguntas e fale comigo. Cada caso é um caso e o resultado varia.</p>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> A ansiedade funciona como um alarme sensível demais, que dispara sem incêndio. Nas terapias breves, eu trabalho o que deixou ele assim. Responda 3 perguntas e marque sua avaliação em Brasília.</p>
     </div>
 
     <div class="roteiro">
       <div class="roteiro-head">
         <span class="rot-n">R4</span>
         <div>
-          <span class="tag is-ghost">Antes e depois</span>
-          <h3>Como funciona o tratamento, do início ao fim</h3>
+          <span class="tag is-ghost">Pergunta e resposta</span>
+          <h3>Hipnoterapia funciona pra ansiedade?</h3>
         </div>
       </div>
-      <div class="rota-box">
-        <div class="k">Adaptado</div>
-        <p>Antes e depois em linha do tempo do método, sem imagem de resultado: o que muda é o que o paciente vive em cada etapa. Política da Meta pra saúde.</p>
-      </div>
       <div class="rota-metrics" style="margin-top:14px;">
-        <div><div class="k">Formato</div><div class="v">Reels 9:16, com texto e animação na tela</div></div>
-        <div><div class="k">Duração</div><div class="v">25 a 35 s</div></div>
-        <div><div class="k">Quem grava</div><div class="v">O José (voz) e a Elevare (edição)</div></div>
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
+        <div><div class="k">Duração</div><div class="v">30 a 40 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">O José</div></div>
         <div><div class="k">Campanha</div><div class="v">T · A (Meta, formulário)</div></div>
       </div>
+      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Alexandra Oliveira Linhares Hipnoterapia · <a href="https://www.facebook.com/ads/library/?id=1004001054941080" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: a pergunta direta no gancho e a cidade logo no começo.</p>
       <div class="tbl-wrap">
         <table class="script">
           <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
           <tbody>
-            <tr><td class="name">Gancho · 0 a 3 s</td><td>&quot;Como funciona o tratamento com terapias breves, do primeiro contato à última sessão.&quot;</td><td>Texto na tela: &quot;Do início ao fim&quot;</td></tr>
-            <tr><td class="name">3 a 25 s</td><td>&quot;Primeiro, a consulta de avaliação, pra entender o seu caso. Depois, as sessões, com o método definido pra você. Como são terapias breves, a maioria das pessoas sente diferença em poucas sessões. No fim, a gente conversa sobre como manter.&quot;</td><td>Linha do tempo animada: avaliação, sessões, acompanhamento. Sem promessa de prazo fixo.</td></tr>
-            <tr><td class="name">Chamada pra ação</td><td>&quot;Quer saber como seria no seu caso? Responde as três perguntas.&quot;</td><td>Botão do formulário</td></tr>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Hipnoterapia funciona pra ansiedade? Vou te responder com honestidade.”</td><td>“Hipnoterapia funciona?”</td></tr>
+            <tr><td class="name">3 a 12 s</td><td>“Depende do caso. E desconfie de quem promete resultado antes de te conhecer.”</td><td>O José olhando direto pra câmera.</td></tr>
+            <tr><td class="name">12 a 22 s</td><td>“A hipnoterapia e a TRI são terapias breves. Elas trabalham a origem do que dispara a ansiedade, em sessões planejadas pra cada pessoa.”</td><td>“TRI e hipnoterapia”</td></tr>
+            <tr><td class="name">22 a 32 s</td><td>“Por isso, aqui no consultório da Asa Norte tudo começa com uma consulta de avaliação. Eu entendo a sua história e te digo com clareza se esse caminho faz sentido pra você. São 71 avaliações 5 estrelas no Google de quem já passou por aqui.”</td><td>“71 avaliações 5 estrelas no Google”</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Quer saber se faz sentido pro seu caso? Clique no botão e responda três perguntas rápidas. Quem te responde sou eu.”</td><td>Botão do formulário</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Da avaliação à última sessão: veja como funciona o tratamento com terapias breves. Cada caso é um caso e o resultado varia.</p>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Hipnoterapia funciona pra ansiedade? Depende do caso, e é isso que a consulta de avaliação responde. Atendimento presencial em Brasília, 71 avaliações 5 estrelas. Responda 3 perguntas.</p>
     </div>
 
     <div class="roteiro">
       <div class="roteiro-head">
         <span class="rot-n">R5</span>
         <div>
-          <span class="tag is-ghost">Depoimento</span>
-          <h3>Uma pessoa conta como foi o tratamento</h3>
+          <span class="tag is-ghost">Passo a passo</span>
+          <h3>Do formulário à primeira sessão</h3>
         </div>
       </div>
       <div class="rota-metrics" style="margin-top:14px;">
-        <div><div class="k">Formato</div><div class="v">Reels 9:16, o paciente fala pra câmera</div></div>
-        <div><div class="k">Duração</div><div class="v">30 a 45 s</div></div>
-        <div><div class="k">Quem grava</div><div class="v">O paciente (o José conduz com 3 perguntas)</div></div>
-        <div><div class="k">Campanha</div><div class="v">T · A (Meta, formulário)</div></div>
-      </div>
-      <div class="tbl-wrap">
-        <table class="script">
-          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
-          <tbody>
-            <tr><td class="name">Gancho · 0 a 3 s</td><td>&quot;[Frase de abertura do paciente, do jeito dele. Ex.: &quot;Eu vivia com o coração acelerado o dia inteiro&quot;]&quot;</td><td>O paciente em plano fechado. Nome só se autorizar.</td></tr>
-            <tr><td class="name">3 a 30 s</td><td>&quot;[O que já tinha tentado] · [como foi a avaliação e o que surpreendeu] · [o que mudou na rotina, sem promessa de resultado e sem citar doença grave]&quot;</td><td>Imagens do consultório.</td></tr>
-            <tr><td class="name">Chamada pra ação</td><td>&quot;Se você também quer entender o seu caso, responde as três perguntas.&quot;</td><td>Botão do formulário</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Uma pessoa conta como foi o tratamento com o José. Cada caso é um caso e o resultado varia. Responda 3 perguntas e fale comigo.</p>
-    </div>
-
-    <div class="roteiro">
-      <div class="roteiro-head">
-        <span class="rot-n">R6</span>
-        <div>
-          <span class="tag is-ghost">Depoimento</span>
-          <h3>O que já escreveram sobre o José no Google</h3>
-        </div>
-      </div>
-      <div class="rota-box">
-        <div class="k">Adaptado</div>
-        <p>Depoimento sem rosto, pra quando o paciente não quer se expor. O José tem 71 avaliações 5 estrelas no Google: ele lê uma avaliação real, com a autorização de quem escreveu, sem citar diagnóstico de doença grave.</p>
-      </div>
-      <div class="rota-metrics" style="margin-top:14px;">
-        <div><div class="k">Formato</div><div class="v">Reels 9:16, o José lê a avaliação</div></div>
-        <div><div class="k">Duração</div><div class="v">20 a 30 s</div></div>
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera em movimento</div></div>
+        <div><div class="k">Duração</div><div class="v">35 a 45 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">O José</div></div>
         <div><div class="k">Campanha</div><div class="v">T · A (Meta, formulário)</div></div>
       </div>
@@ -1796,13 +1895,44 @@
         <table class="script">
           <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
           <tbody>
-            <tr><td class="name">Gancho · 0 a 3 s</td><td>&quot;Quero te mostrar o que uma pessoa escreveu sobre o tratamento aqui.&quot;</td><td>Print da avaliação do Google, com o nome coberto se preferir.</td></tr>
-            <tr><td class="name">3 a 20 s</td><td>&quot;[Trecho real da avaliação, lido pelo José] · É esse o cuidado que eu quero com você também.&quot;</td><td>O trecho destacado na tela, com as 5 estrelas.</td></tr>
-            <tr><td class="name">Chamada pra ação</td><td>&quot;Se você quer dar esse passo, responde as três perguntas.&quot;</td><td>Botão do formulário</td></tr>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“Muita gente adia porque imagina mais um tratamento longo e sem fim. Deixa eu te mostrar como funciona aqui.”</td><td>O José caminhando pela recepção do consultório. Texto: “Como funciona, passo a passo”.</td></tr>
+            <tr><td class="name">3 a 13 s</td><td>“Primeiro, você responde três perguntas rápidas no formulário. Eu mesmo leio e te chamo no WhatsApp.”</td><td>“1. Formulário”</td></tr>
+            <tr><td class="name">13 a 25 s</td><td>“Depois vem a consulta de avaliação. A gente conversa com calma, eu entendo a sua história e te explico o plano.”</td><td>Sentado na poltrona das sessões. “2. Consulta de avaliação”</td></tr>
+            <tr><td class="name">25 a 35 s</td><td>“Se fizer sentido pra você, começamos as sessões, com o plano combinado desde o início. Você sabe onde está e pra onde vai.”</td><td>“3. Sessões com plano”</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“O primeiro passo é o mais simples. Clique no botão e responda as três perguntas.”</td><td>Botão do formulário</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="fixado-foot"><strong>Texto do anúncio:</strong> 71 pessoas avaliaram o atendimento do José com 5 estrelas no Google. Veja o que elas dizem. Responda 3 perguntas e fale comigo.</p>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> Do formulário à primeira sessão: três perguntas, uma conversa no WhatsApp e a consulta de avaliação. Tudo começa por ela. Responda 3 perguntas.</p>
+    </div>
+
+    <div class="roteiro">
+      <div class="roteiro-head">
+        <span class="rot-n">R6</span>
+        <div>
+          <span class="tag is-ghost">Prova · avaliação real</span>
+          <h3>O que escreveram sobre o atendimento</h3>
+        </div>
+      </div>
+      <div class="rota-metrics" style="margin-top:14px;">
+        <div><div class="k">Formato</div><div class="v">Reels 9:16, o José lê a avaliação</div></div>
+        <div><div class="k">Duração</div><div class="v">25 a 35 s</div></div>
+        <div><div class="k">Quem grava</div><div class="v">O José</div></div>
+        <div><div class="k">Campanha</div><div class="v">T · A (Meta, formulário)</div></div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="script">
+          <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Gancho · 0 a 3 s</td><td>“71 pessoas avaliaram o atendimento aqui com 5 estrelas. Vou ler uma delas.”</td><td>Print das 5 estrelas do Google, com o nome coberto. Só com a autorização de quem escreveu.</td></tr>
+            <tr><td class="name">3 a 15 s</td><td>[DADO A PREENCHER: trecho real de uma avaliação do Google, lido pelo José, sem diagnóstico de doença grave]</td><td>O trecho destacado na tela.</td></tr>
+            <tr><td class="name">15 a 25 s</td><td>“O que mais me marca nessas mensagens é quando a pessoa conta que voltou a [DADO A PREENCHER: o que a pessoa da avaliação contou que voltou a fazer, com as palavras dela].”</td><td>O José fala direto pra câmera.</td></tr>
+            <tr><td class="name">25 a 30 s</td><td>“Cada caso é um caso. Mas todo caso começa do mesmo jeito: uma conversa com calma pra entender a sua história.”</td><td>“Cada caso é um caso”</td></tr>
+            <tr><td class="name">Chamada pra ação</td><td>“Quer conhecer esse atendimento de perto? Clique no botão, responda três perguntas e marque sua consulta de avaliação.”</td><td>Botão do formulário</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fixado-foot"><strong>Texto do anúncio:</strong> 71 avaliações 5 estrelas no Google. Veja o que escreveu quem passou pelo consultório. Responda 3 perguntas e marque sua avaliação em Brasília.</p>
     </div>
 
     <h3 class="sub-h">Como gravar</h3>
@@ -1832,10 +1962,24 @@
 
   
   <div class="tab" id="tab-comercial">
-    <header class="tab-head"><span class="tab-num">Parte 07 de 09</span><h1>Comercial</h1><p>Manual de atendimento: do primeiro contato até a consulta de avaliação.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro de conversa no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz na ligação e no WhatsApp</a><a href="#disc">Perfis de paciente (metodologia DISC)</a><a href="#agenda">Agenda, confirmação e pós-consulta de avaliação</a><a href="#funil">Gestão do funil e previsibilidade</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 07 de 09</span><h1>Comercial</h1><p>Manual de atendimento: do primeiro contato até a consulta de avaliação.</p><nav class="tab-toc"><a href="#comercial-servicos">O que atendemos</a><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro de WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz na ligação e no WhatsApp</a><a href="#disc">Perfis de paciente (metodologia DISC)</a><a href="#agenda">Agenda, confirmação e pós-consulta de avaliação</a><a href="#funil">Gestão do funil e da planilha</a><a href="#interesse-consulta">Do interesse à consulta de avaliação</a></nav></header>
   
+  <section id="comercial-servicos">
+    <div class="sec-head"><span class="sec-num">7.1</span><h2>O que o José atende e como funciona a consulta de avaliação</h2></div>
+    <p class="sec-desc">Os anúncios trazem pessoas interessadas no tratamento com terapias breves. Quem avalia, indica o plano e apresenta o valor do tratamento é sempre o José.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Serviço</th><th>Quem atende</th><th>Consulta de avaliação</th><th>Pagamento</th></tr></thead>
+      <tbody>
+        
+        <tr><td class="name">Terapias breves (TRI e hipnoterapia avançada) para ansiedade e pânico</td><td>O José</td><td>Consulta de avaliação e pré-terapia: R$ 400 (R$ 350 à vista, pago antes)</td><td>Consulta: 50% no agendamento e 50% no dia. Tratamento: plano de acompanhamento em 12x R$ 490, apresentado na consulta</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Atendimento presencial no consultório da Asa Norte (SMHN, ao lado do HRAN), em Brasília. Atendimento online ainda a confirmar com o José.</p>
+    <h3 class="sub-h">O que é um paciente qualificado aqui</h3>
+    <p>Para o José, paciente qualificado é quem interage na conversa, responde as perguntas e tem perfil pra investir no tratamento. Quem só pergunta o preço ou não responde não é qualificado. É isso que o atendimento persegue, e é o que o CRM mede.</p>
+  </section>
   <section id="atendimento-fluxo">
-    <div class="sec-head"><span class="sec-num">7.1</span><h2>O fluxo de atendimento</h2></div>
+    <div class="sec-head"><span class="sec-num">7.2</span><h2>O fluxo de atendimento</h2></div>
     <div class="facts" style="margin-top:0;">
       <div class="fact"><div class="k">Pra quem</div><div class="v">o José e quem atender o WhatsApp (e a secretária digital, quando o volume subir)</div></div>
       <div class="fact"><div class="k">Objetivo</div><div class="v">consulta de avaliação para o tratamento com terapias breves</div></div>
@@ -1844,41 +1988,51 @@
     <p>Quem preenche o formulário do anúncio está pensando no problema naquele momento. Se espera horas pela resposta, o interesse esfria ou outro profissional responde antes. A regra é <strong>velocidade e insistência, com acolhimento:</strong> responder rápido, não desistir do contato e explicar com calma, sem pressionar.</p>
     <div class="grid2">
       <div class="card"><h3>Tempo de resposta</h3><p>Até <strong>5 minutos</strong> em horário de atendimento.</p></div>
-      <div class="card"><h3>Fora do horário</h3><p>Mensagem automática avisando quando a pessoa vai ser atendida. Na manhã seguinte, entrar direto no assunto, sem repetir a saudação nem perguntar de novo o que ela já respondeu.</p></div>
+      <div class="card"><h3>Fora do horário</h3><p>A mensagem de saudação e a de ausência do WhatsApp Business ficam sempre ligadas (textos abaixo). Na manhã seguinte, entrar direto no assunto, sem repetir a saudação nem perguntar de novo o que a pessoa já respondeu.</p></div>
       <div class="card"><h3>Lead de formulário</h3><ul>
-        <li>Aqui quem fala primeiro somos nós. Antes de ligar, ler as 3 respostas do formulário e classificar o lead.</li>
-        <li><strong>Regra do 2x:</strong> não atendeu a primeira ligação? Ligar de novo na hora. Só depois da segunda, mandar a primeira mensagem.</li>
+        <li>Aqui quem fala primeiro somos nós. Antes do contato, ler as 3 respostas do formulário e classificar o lead.</li>
+        <li><strong>Assim que o lead entra: 2 ligações seguidas.</strong> Não atendeu a primeira? Ligar de novo na hora. Só depois da segunda, mandar a primeira mensagem (Bloco 1).</li>
+        <li><strong>Regra do 2x</strong> também no meio da conversa: se a pessoa parar de responder, ligar; se não atender, ligar de novo na hora e só depois mandar outra mensagem.</li>
+        <li>Do 2º contato em diante, a cadência segue por mensagem (tabela abaixo).</li>
         <li>Esse público (adultos 40+, muitos servidores públicos e profissionais ocupados) valoriza quem explica com calma e decide melhor com horário que cabe na rotina; áudio curto ou ligação costuma funcionar melhor que texto grande.</li>
       </ul></div>
       <div class="card"><h3>Quem mandou mensagem</h3><p>Responder no WhatsApp. Se demonstrar interesse e parar de responder, ligar.</p></div>
+    </div>
+    <div class="quote-strip" style="margin-top:12px;">
+      <div class="quote"><strong>Mensagem de saudação (primeiro contato):</strong> “Olá! Que bom ter você aqui. Já recebi a sua mensagem e em breve eu te respondo. José Ilton”</div>
+      <div class="quote"><strong>Mensagem de ausência (fora do horário):</strong> “Olá! Obrigado pelo contato. Meu atendimento no WhatsApp é de [dias e horário]. Assim que eu voltar, falo com você. José Ilton”</div>
     </div>
     <h3 class="sub-h">Cadência quando a pessoa não responde (mínimo de 7 tentativas)</h3>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Tentativa</th><th>Quando</th><th>O que fazer</th></tr></thead>
       <tbody>
-        <tr><td class="name">1</td><td>Dia 1, manhã (assim que o lead entra)</td><td>2 ligações + primeira mensagem</td></tr>
-        <tr><td class="name">2</td><td>Dia 1, tarde</td><td>2 ligações + mensagem curta</td></tr>
-        <tr><td class="name">3</td><td>Dia 2, manhã</td><td>2 ligações + mensagem com conteúdo útil (como é a consulta de avaliação, apresentação do José)</td></tr>
-        <tr><td class="name">4</td><td>Dia 2, tarde</td><td>2 ligações + mensagem curta</td></tr>
-        <tr><td class="name">5</td><td>Dia 3, manhã</td><td>2 ligações + mensagem</td></tr>
-        <tr><td class="name">6</td><td>Dia 3, tarde</td><td>2 ligações + mensagem curta</td></tr>
-        <tr><td class="name">7</td><td>Dia 4</td><td>2 ligações + mensagem de encerramento, deixando a porta aberta</td></tr>
+        <tr><td class="name">1</td><td>Dia 1, assim que o lead entra</td><td><strong>2 ligações seguidas.</strong> Se não atender, primeira mensagem (Bloco 1)</td></tr>
+        <tr><td class="name">2</td><td>Dia 1, tarde</td><td>Mensagem curta retomando</td></tr>
+        <tr><td class="name">3</td><td>Dia 2, manhã</td><td>Mensagem com conteúdo útil: como é a consulta de avaliação, ou um vídeo do José sobre o tema</td></tr>
+        <tr><td class="name">4</td><td>Dia 2, tarde</td><td>Mensagem curta (ou ligação)</td></tr>
+        <tr><td class="name">5</td><td>Dia 3, manhã</td><td>Mensagem perguntando se prefere conversar por ligação ou por mensagem</td></tr>
+        <tr><td class="name">6</td><td>Dia 3, tarde</td><td>Mensagem curta</td></tr>
+        <tr><td class="name">7</td><td>Dia 4</td><td>Mensagem de encerramento, deixando a porta aberta</td></tr>
       </tbody>
     </table></div>
-    <div class="quote-strip" style="margin-top:12px;"><div class="quote">Encerramento (7ª tentativa): “[Nome], não quero te incomodar. Vou deixar seu contato separado aqui. Quando for o momento certo pra você, é só me chamar que eu vejo um horário com o José.“</div></div>
+    <p class="note">Cada mensagem é diferente da anterior: repetir o mesmo texto faz a pessoa ignorar.</p>
+    <div class="quote-strip" style="margin-top:12px;">
+      <div class="quote">Retomada curta (tentativas 2, 4 e 6): “[Nome], conseguiu ver minha mensagem? Tenho horário com o José esta semana. Quer que eu veja um pra você?”</div>
+      <div class="quote">Encerramento (7ª tentativa): “[Nome], não quero te incomodar. Vou deixar seu contato separado aqui. Quando for o momento certo pra você, é só me chamar que eu vejo um horário com o José.”</div>
+    </div>
     <p class="note">Depois da 7ª tentativa, o contato vai pra etapa “Follow-up (recuperação)” na planilha e entra na repescagem do mês seguinte.</p>
   </section>
   <section id="qualificacao">
-    <div class="sec-head"><span class="sec-num">7.2</span><h2>Qualificação</h2></div>
+    <div class="sec-head"><span class="sec-num">7.3</span><h2>Qualificação</h2></div>
     <p class="sec-desc">O papel de quem atende não é vender o tratamento com terapias breves. É entender a situação, mostrar quem é o José e levar até a consulta de avaliação. Quem examina, indica e apresenta o orçamento é o José. Usamos a lógica do <strong>SPIN:</strong> entender a situação, o problema, o impacto e a necessidade, com a pessoa contando a própria história.</p>
 
-    <h3 class="sub-h">Lead de formulário: ler as respostas antes de ligar</h3>
+    <h3 class="sub-h">Lead de formulário: ler as respostas antes do contato</h3>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Pergunta do formulário</th><th>O que a resposta diz pra conversa</th></tr></thead>
       <tbody>
-        <tr><td class="name">P1 · Situação hoje</td><td>abrir a conversa pelo que a pessoa respondeu ("Vi que o que mais te incomoda é..."); quem marcou "o quanto antes" pede a agenda mais próxima</td></tr>
-        <tr><td class="name">P2 · Em quanto tempo quer resolver</td><td>Define a prioridade de contato. Quem marcou “o quanto antes” ou “este mês” é o primeiro da fila.</td></tr>
-        <tr><td class="name">P3 · Forma de pagamento</td><td>Define o cuidado na conversa sobre valor. Nunca prometer condição que o José não autorizou.</td></tr>
+        <tr><td class="name">P1 · O que te fez buscar ajuda</td><td>abrir a conversa pelo objetivo que a pessoa marcou ("Vi que você quer voltar a ter tranquilidade..."), sem falar em diagnóstico</td></tr>
+        <tr><td class="name">P2 · Faixa de idade</td><td>a partir de 40 anos é o perfil que mais fecha: atender primeiro. Abaixo de 40 também atende, com a mesma conversa</td></tr>
+        <tr><td class="name">P3 · Já tentou resolver antes</td><td>"Sim, mas não resolveu" é quem cansou de tratamento longo: abrir pelo método rápido. "Ainda não tentei": explicar com calma o que é a hipnoterapia. A profissão (estabilidade pra investir) é lida na conversa, ao perguntar como isso tem afetado o trabalho</td></tr>
       </tbody>
     </table></div>
 
@@ -1886,16 +2040,16 @@
     <div class="tbl-wrap"><table>
       <thead><tr><th>Lead</th><th>Respostas</th><th>Como conduzir</th></tr></thead>
       <tbody>
-        <tr><td class="name">Quente</td><td>P2 "o quanto antes" e P3 "à vista" ou "parcelado no cartão"</td><td>Ligar primeiro. Conversa curta, apresentar o José e oferecer duas datas nos próximos dias.</td></tr>
-        <tr><td class="name">Morno</td><td>P2 "nas próximas semanas" ou P3 "ainda quero entender os valores"</td><td>Acolher a dúvida de valor: orçamento e formas de pagamento são apresentados na consulta de avaliação. Agendar mesmo assim.</td></tr>
-        <tr><td class="name">Frio</td><td>P2 "ainda estou pesquisando"</td><td>Explicar com calma, mandar um vídeo do José e oferecer a consulta de avaliação como o jeito de entender o próprio caso. Sem pressa.</td></tr>
+        <tr><td class="name">Quente</td><td>P2 "40 anos ou mais" e P3 "Sim, mas não resolveu como eu queria"</td><td>Contato primeiro. Conversa curta: investigar, apresentar o José e oferecer dois horários.</td></tr>
+        <tr><td class="name">Morno</td><td>só um dos dois: 40 anos ou mais, ou já tentou e não resolveu</td><td>Não descartar. Acolher a dúvida de valor: orçamento e formas de pagamento são apresentados na consulta de avaliação. Agendar mesmo assim.</td></tr>
+        <tr><td class="name">Frio</td><td>P2 "até 39 anos" e P3 "Ainda não tentei"</td><td>Conteúdo útil (como é a consulta de avaliação, vídeo do José) e repescagem no mês seguinte. Sem pressa.</td></tr>
       </tbody>
     </table></div>
 
     <h3 class="sub-h">Etapas obrigatórias</h3>
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><b>Abertura com propósito</b><span>“Vi aqui que você [resposta da P1]. Pra que o José já chegue na sua consulta entendendo o seu caso, posso te fazer duas perguntas rápidas?“</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Investigar a dor (pelo menos 3 perguntas)</b><span>"Há quanto tempo você convive com isso?" · "O que você já tentou pra resolver?" · "Como isso afeta o seu dia a dia hoje?" · "O que te impediu de resolver antes?" A resposta do “o que te impediu” quase sempre é a objeção que vai aparecer depois: anotar.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Investigar a dor (pelo menos 3 perguntas)</b><span>"Há quanto tempo você convive com isso?" · "Como isso tem afetado o seu trabalho?" ·"Como isso afeta o seu dia a dia hoje?" · "O que te impediu de resolver antes?" A resposta do “o que te impediu” quase sempre é a objeção que vai aparecer depois: anotar.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Confirmar o atendimento presencial</b><span>“O consultório fica na Asa Norte, no SMHN, ao lado do HRAN. Fica tranquilo pra você vir até aqui?“</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Prova e autoridade</b><span>Enviar a apresentação do José (foto, nome e registro no conselho) e o texto “Como é a consulta de avaliação?“: as 71 avaliações 5 estrelas no Google, os depoimentos em vídeo e a explicação do método: só o que estiver confirmado. Isso é pra conversa individual, não vira post nem anúncio.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Agendamento com compromisso</b><span>“Tenho dois horários com o José nos próximos dias: [dia] às [horário] ou [dia] às [horário]. Qual fica melhor pra você?“ Sempre duas opções nos próximos 7 dias.</span></div></div>
@@ -1905,25 +2059,25 @@
       <span class="mark">!</span>
       <div>
         <p><strong>O que não fazer na qualificação</strong></p>
-        <p>Não dizer se a pessoa pode ou não fazer o procedimento (só o José, depois de examinar). Não passar o valor do tratamento antes da consulta de avaliação. Não prometer resultado, prazo ou que “não dói”. Não repetir as perguntas do formulário. Não perguntar “você tem urgência?” (convida a adiar). Não pedir CPF nem endereço antes de a data estar escolhida.</p>
+        <p>Não dizer se a pessoa pode ou não fazer o procedimento (só o José, depois de examinar). Não passar o valor do tratamento antes da consulta de avaliação, nem negociar o valor da consulta ou o pagamento antecipado. Não prometer resultado, prazo ou que “não dói”. Não repetir as perguntas do formulário. Não perguntar “você tem urgência?” (convida a adiar). Não pedir CPF nem endereço antes de a data estar escolhida.</p>
       </div>
     </div>
   </section>
   <section id="roteiro-whatsapp">
-    <div class="sec-head"><span class="sec-num">7.3</span><h2>Roteiro de conversa no WhatsApp</h2></div>
+    <div class="sec-head"><span class="sec-num">7.4</span><h2>Roteiro de conversa no WhatsApp: terapias breves para ansiedade e pânico</h2></div>
     <p class="sec-desc">Cinco blocos, cada um com um motivo. As falas são um ponto de partida: adapte ao seu jeito, mantendo a ordem.</p>
     <div class="funnel" style="margin-bottom:18px;"><span class="step">1 Abertura</span><span class="step">2 Investigação</span><span class="step">3 Percepção de valor</span><span class="step">4 Isolar a objeção</span><span class="step">5 Datas e confirmação</span></div>
     <div class="ladder">
-      <div class="rung"><span class="n"></span><div><b>Abertura e contexto</b><span>Formulário: “Oi, [Nome]! Aqui é o José Ilton. Vi que você respondeu o nosso formulário sobre o tratamento e quis falar com você pessoalmente, pra entender o seu caso e te direcionar certo.“ · Mensagem: ”Oi, [Nome]! Aqui é o José Ilton. Vi a sua mensagem e quero entender o seu caso pra te direcionar certo. Posso te fazer duas perguntas?“</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Abertura e contexto</b><span>Formulário: “Oi, [Nome]! Aqui é o José Ilton. Vi que você respondeu o nosso formulário sobre o tratamento e quis falar com você pessoalmente, pra entender o seu caso e te direcionar certo.“ · Mensagem: “Oi, [Nome]! Aqui é o José Ilton. Vi a sua mensagem e quero entender o seu caso pra te direcionar certo. Posso te fazer duas perguntas?”<br><br><strong>Ligação</strong> (as 2 ligações assim que o lead entra): “Oi, [Nome]? Aqui é o José Ilton, terapeuta. Você respondeu umas perguntas no meu anúncio agora há pouco e eu quis falar com você pessoalmente. Tem dois minutinhos?”<br><strong>Como conduzir:</strong> se apresentar e dizer de onde veio o contato; pedir dois minutos; abrir pela resposta da P1 do formulário; seguir os blocos 2 a 5 falando, deixando a pessoa contar a história; terminar com as duas datas. Se ela não puder falar, perguntar o melhor horário ou se prefere seguir por mensagem, e mandar o Bloco 1 por escrito logo depois.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Investigação (a pessoa fala)</b><span>“Me conta um pouco: há quanto tempo você está assim e o que mais te incomoda hoje? Assim eu consigo te direcionar da forma certa.“ Se já fez terapia e não resolveu: "Faz sentido o cansaço; vou te explicar como a terapia breve funciona." · Se tem medo da hipnose: "Você fica consciente e no controle o tempo todo." · Se a dúvida é o preço: "Já te explico como funciona o plano e as formas de pagamento."</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Percepção de valor (o diferencial)</b><span>Enviar a apresentação do José e apresentar o método em 3 pilares: “resposta rápida das terapias breves · método que trata a raiz (TRI e hipnoterapia) · prova social de quem já passou por aqui“ Não comparar com outros profissionais.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Isolamento da objeção</b><span>“[Nome], se o José mostrar na consulta de avaliação que o plano de acompanhamento terapêutico resolve o seu caso, deixando o valor de lado por um instante, você quer começar?“ Se sim, o valor vira conversa de forma de pagamento. Se hesitar, perguntar o que pesa e ir pra Matriz de objeções.</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Datas e confirmação</b><span>“Tenho dois horários com o José: 📅 [dia], [data] às [horário] · 📅 [dia], [data] às [horário]. Qual fica melhor pra eu já segurar pra você?“ Depois: pedir os dados, mandar a localização com uma referência fácil e confirmar por escrito.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Datas e confirmação</b><span>“Tenho dois horários com o José: 📅 [dia], [data] às [horário] · 📅 [dia], [data] às [horário]. Qual fica melhor pra eu já segurar pra você?“ Depois: é aqui que se passa o valor da consulta: “A consulta de avaliação é comigo, presencial. Nela eu entendo a sua história e te apresento o plano do seu caso. O valor é R$ 400: metade agora, pra garantir o horário, e metade no dia. Se preferir pagar tudo antes, fica R$ 350.” Por fim, pedir os dados, mandar a localização com uma referência fácil e confirmar por escrito.</span></div></div>
     </div>
     <div class="card" style="border:1px solid var(--line);margin-top:16px;">
       <h3>Regras de ouro do WhatsApp</h3>
       <ul>
-        <li>O valor do tratamento não é informado antes da consulta: ele depende do caso, avaliado na consulta de avaliação.</li>
+        <li>O valor do tratamento não é passado antes da consulta de avaliação: depende do caso. O que pode ser dito: o valor da consulta (R$ 400, ou R$ 350 pago todo antes), que metade é paga no agendamento e metade no dia, e que o plano é apresentado na consulta. Valor da consulta e pagamento antecipado não se negociam: exceção só com o José.</li>
         <li>Sem saudação dupla: se a pessoa já disse o nome e o que quer, não perguntar de novo.</li>
         <li>Revisar antes de enviar: nome, data, dia da semana e horário.</li>
         <li>Mensagens curtas. Texto longo só pra apresentação do José e pro “Como é a consulta de avaliação?“.</li>
@@ -1938,7 +2092,7 @@
       <div class="card">
         <h3>&quot;Resultado em poucas sessões? Parece bom demais.&quot;</h3>
         <p>&quot;Faz sentido desconfiar, ainda mais depois de tanto tempo. Por isso tudo começa com a avaliação: eu entendo o seu caso e te explico como as terapias breves chegam na raiz. Cada caso é um caso.&quot;</p>
-        <p class="note">Nunca prometer prazo nem cura. Falar em &quot;a maioria sente diferença em poucas sessões&quot;, não &quot;você vai ficar curado&quot;.</p>
+        <p class="note">Nunca prometer prazo nem cura. Falar que a terapia breve costuma ter menos sessões que a convencional e que o número é definido na avaliação. Nunca &quot;a maioria sente diferença&quot; nem &quot;você vai ficar curado&quot;.</p>
       </div>
       <div class="card">
         <h3>&quot;Tenho medo de perder o controle na hipnose.&quot;</h3>
@@ -1971,9 +2125,14 @@
         <p class="note">Não pressionar. Registrar e retomar no prazo combinado.</p>
       </div>
       <div class="card">
-        <h3>&quot;Qual o preço da sessão?&quot; (lead de preço)</h3>
-        <p>&quot;Eu trabalho com um plano de acompanhamento, não com sessão avulsa, e o valor depende do seu caso, que eu entendo na avaliação. Posso te explicar como funciona primeiro?&quot;</p>
-        <p class="note">Quem só quer preço e não interage tende a não fechar. Explicar o valor uma vez, oferecer a avaliação e registrar.</p>
+        <h3>&quot;Quanto custa?&quot; / &quot;Qual o preço da sessão?&quot;</h3>
+        <p>&quot;Te explico sim! Eu trabalho com um plano de acompanhamento, não com sessão avulsa, e o valor do plano depende do seu caso, que eu entendo na consulta de avaliação. A consulta custa R$ 400, ou R$ 350 se você pagar tudo antes. Quer que eu veja um horário pra você?&quot;</p>
+        <p class="note">O valor da consulta pode ser dito; o do tratamento, só na consulta. Quem só quer preço e não interage tende a não fechar: explicar uma vez, oferecer a avaliação e registrar.</p>
+      </div>
+      <div class="card">
+        <h3>&quot;A consulta é paga? Por que R$ 400?&quot;</h3>
+        <p>&quot;É comigo, presencial, e é o primeiro passo do tratamento: eu entendo a sua história e te apresento o plano pro seu caso. Metade é paga agora, pra garantir o horário, e metade no dia.&quot;</p>
+        <p class="note">Não negociar o valor da consulta nem o pagamento antecipado. Exceção, só o José decide.</p>
       </div>
       <div class="card">
         <h3>&quot;Já vi mais barato em outro lugar.&quot;</h3>
@@ -1991,7 +2150,7 @@
     </div>
   </section>
   <section id="tom-voz-atendimento">
-    <div class="sec-head"><span class="sec-num">7.5</span><h2>Tom de voz na ligação e no WhatsApp</h2></div>
+    <div class="sec-head"><span class="sec-num">7.6</span><h2>Tom de voz na ligação e no WhatsApp</h2></div>
     <p class="sec-desc">A pessoa não vê o seu rosto. A sua voz e as suas mensagens são a primeira impressão de José Ilton.</p>
     <div class="grid2">
       <div class="card"><h3>Sorriso na voz</h3><p>Antes de ligar, sorria de verdade. O sorriso muda o timbre e passa acolhimento e confiança. A pessoa percebe na hora se você está lendo um roteiro.</p></div>
@@ -2003,7 +2162,7 @@
     </div>
   </section>
   <section id="disc">
-    <div class="sec-head"><span class="sec-num">7.6</span><h2>Perfis de paciente (metodologia DISC)</h2></div>
+    <div class="sec-head"><span class="sec-num">7.7</span><h2>Perfis de paciente (metodologia DISC)</h2></div>
     <p class="sec-desc">Não existe uma fala que funcione igual pra todo mundo. Nos primeiros segundos, identifique o perfil e adapte a abordagem.</p>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Perfil</th><th>Como ele é</th><th>Como conduzir</th></tr></thead>
@@ -2016,7 +2175,7 @@
     </table></div>
   </section>
   <section id="agenda">
-    <div class="sec-head"><span class="sec-num">7.7</span><h2>Agenda, confirmação e pós-consulta de avaliação</h2></div>
+    <div class="sec-head"><span class="sec-num">7.8</span><h2>Agenda, confirmação e pós-consulta de avaliação</h2></div>
     <div class="grid2">
       <div class="card"><h3>Regra de agenda</h3><ul>
         <li>Oferecer sempre <strong>duas datas nos próximos 7 dias</strong>.</li>
@@ -2043,33 +2202,34 @@
     </table></div>
   </section>
   <section id="funil">
-    <div class="sec-head"><span class="sec-num">7.8</span><h2>Gestão do funil e previsibilidade</h2></div>
-    <p class="sec-desc">Tudo só funciona se estiver registrado. Se não está na planilha, não aconteceu.</p>
-    <h3 class="sub-h">Etapas da planilha</h3>
+    <div class="sec-head"><span class="sec-num">7.9</span><h2>Gestão do funil e da planilha</h2></div>
+    <p class="sec-desc">Tudo só funciona se estiver registrado. Se não está na planilha, não aconteceu. É com ela que a Elevare descobre qual anúncio traz quem agenda, comparece e fecha, e não só contato.</p>
+    <p>O José usa o XPED como CRM: as mesmas informações vão pro XPED, nas etapas equivalentes (lead qualificado = marcou a consulta; ganho = fechou o tratamento). As colunas são preenchidas por quem atende, no mesmo dia do contato.</p>
+    <h3 class="sub-h">O que preencher em cada coluna</h3>
     <div class="tbl-wrap"><table>
-      <thead><tr><th>Etapa</th><th>Quando usar</th></tr></thead>
+      <thead><tr><th>Coluna</th><th>Quando preencher</th><th>O que escrever</th></tr></thead>
       <tbody>
-        <tr><td class="name">Lead entrou</td><td>Contato novo, de anúncio, Instagram ou indicação. O prazo de 5 minutos começa aqui.</td></tr>
-        <tr><td class="name">Tentativa de contato</td><td>Ainda sem resposta (cadência de 7 tentativas).</td></tr>
-        <tr><td class="name">Em qualificação</td><td>Conversa em andamento.</td></tr>
-        <tr><td class="name">Consulta de avaliação agendada</td><td>Data marcada e dados coletados.</td></tr>
-        <tr><td class="name">Não compareceu</td><td>Reagendar no mesmo dia.</td></tr>
-        <tr><td class="name">Consulta de avaliação feita</td><td></td></tr>
-        <tr><td class="name">Orçamento aberto</td><td>Passou pela consulta de avaliação e ainda não fechou.</td></tr>
-        <tr><td class="name">Tratamento fechado</td><td>Com o valor fechado.</td></tr>
-        <tr><td class="name">Follow-up (recuperação)</td><td>Sem resposta depois das 7 tentativas, “vou me organizar”, orçamento aberto depois de 15 dias. Repescagem todo mês.</td></tr>
-        <tr><td class="name">Perdido</td><td>Sempre com o motivo (valor, forma de pagamento, medo, sem resposta, data).</td></tr>
-        <tr><td class="name">Fora do perfil</td><td>mora fora de Brasília, procura só o menor preço</td></tr>
+        <tr><td class="name">Contato realizado/recebido</td><td>No primeiro contato</td><td>A data e se fomos nós que chamamos ou se a pessoa chamou</td></tr>
+        <tr><td class="name">Conseguimos retorno do contato?</td><td>Quando a pessoa responder, ou ao fim das 7 tentativas</td><td>Sim ou Não</td></tr>
+        <tr><td class="name">Agendou?</td><td>Assim que a data for escolhida</td><td>Sim ou Não (e a data da consulta de avaliação na Observação)</td></tr>
+        
+        <tr><td class="name">Sinal pago?</td><td>Quando o pagamento cair</td><td>Sim ou Não</td></tr>
+        <tr><td class="name">Compareceu?</td><td>No dia da consulta de avaliação</td><td>Sim, Não ou Remarcou</td></tr>
+        <tr><td class="name">Fechou?</td><td>Depois da consulta de avaliação</td><td>Sim, com o tratamento com terapias breves e o valor fechado, ou Não, com o motivo</td></tr>
+        <tr><td class="name">Observação</td><td>Sempre que houver algo importante</td><td>Motivo da perda (valor, medo, tempo, desconfiança, sem resposta, data), a objeção principal e a data do próximo contato</td></tr>
       </tbody>
     </table></div>
-    <div class="grid2" style="margin-top:16px;">
-      <div class="card"><h3>Números da semana (no grupo com a Elevare)</h3><ul>
-        <li>Leads recebidos</li><li>Responderam</li><li>Consulta de avaliaçãos agendadas</li><li>Compareceram</li><li>Fecharam</li><li>Valor vendido</li>
-      </ul></div>
-      <div class="card"><h3>MQL e SQL</h3>
-        <p><strong>MQL (qualificado pelo marketing):</strong> quem interage na conversa e tem perfil pra investir no tratamento (profissão e idade), não quem só pergunta o preço. As respostas do formulário mostram isso.</p>
-        <p><strong>SQL (qualificado pelo atendimento):</strong> contou a situação, entendeu como funciona e confirmou a data. Etapa “Consulta de avaliação agendada“, com a confirmação de 24 h feita. o José atende principalmente SQL: aumenta o fechamento e valoriza o tempo.</p>
-      </div>
+    <p class="note">Quem chegou por indicação, retorno ou Instagram também entra, numa linha nova, com a origem na Observação. Os nomes exatos das colunas seguem a planilha do cliente.</p>
+    <div class="card" style="border:1px solid var(--line);margin-top:16px;"><h3>Números da semana (enviados no grupo com a Elevare toda terça)</h3><ul>
+      <li>Leads recebidos</li><li>Responderam</li><li>Consulta de avaliaçãos agendadas</li><li>Compareceram</li><li>Fecharam</li><li>Valor vendido</li>
+    </ul></div>
+  </section>
+  <section id="interesse-consulta">
+    <div class="sec-head"><span class="sec-num">7.10</span><h2>Do interesse à consulta de avaliação</h2></div>
+    <div class="grid3">
+      <div class="card"><span class="kicker">Marketing</span><h3>MQL</h3><p>“Vi o anúncio, convivo há anos com crises de ansiedade e quero entender se a hipnoterapia serve pra mim.”</p><p class="card-foot">Na prática: a linha nova que aparece na planilha.</p></div>
+      <div class="card"><span class="kicker">Atendimento</span><h3>A ponte</h3><p>Responde rápido, entende o que a pessoa quer resolver, mostra quem é o José e as avaliações, isola a objeção do valor, oferece duas datas e registra tudo no CRM.</p></div>
+      <div class="card"><span class="kicker">Atendimento concluído</span><h3>SQL</h3><p>“Entendi como funciona a consulta de avaliação, paguei os 50% e confirmei pra quinta às 19h.”</p><p class="card-foot">Na prática: “Agendou? Sim”, com a confirmação de 24 h feita. o José atende principalmente SQL: isso aumenta o fechamento e valoriza o tempo.</p></div>
     </div>
   </section>
     <nav class="pager"><a href="#tab-roteiros">← Roteiros</a><a href="#tab-jornada">Jornada →</a></nav>
@@ -2090,21 +2250,20 @@
     <h3 class="sub-h">Como funciona a implantação</h3>
     <div class="impl-head"><span class="k">Mês 01</span><b>Implantação, estratégia e primeiras validações</b></div>
     <div class="journey">
-      <div class="jstep"><div class="jn">01</div><b>Reunião comercial</b><span>Entender o negócio e o momento do cliente.</span></div>
-      <div class="jstep"><div class="jn">02</div><b>Formalização de contrato</b><span>Escopo e responsabilidades de cada lado.</span></div>
-      <div class="jstep"><div class="jn">03</div><b>Entrada e apresentação do squad e agendamento do onboarding</b><span>Quem cuida do projeto na Elevare.</span></div>
-      <div class="jstep"><div class="jn">04</div><b>Reunião de onboarding</b><span>21/10/2026: tudo o que está no Briefing.</span></div>
-      <div class="jstep is-here"><div class="jn">05</div><b>Apresentação do Plano Macro e implementação do projeto</b><span>Este documento.</span><em class="here">Você está aqui</em></div>
-      <div class="jstep"><div class="jn">06</div><b>Entrega dos vídeos</b><span>você grava os roteiros da aba Roteiros e envia crus</span></div>
-      <div class="jstep"><div class="jn">07</div><b>Edição dos vídeos entregues</b><span>Em até até 7 dias dias úteis.</span></div>
-      <div class="jstep"><div class="jn">08</div><b>Aprovação dos criativos em vídeo</b><span>Aprovação rápida, pra não travar a criação.</span></div>
-      <div class="jstep"><div class="jn">09</div><b>Ativação de campanhas e publicação</b><span>O funil KLT no ar.</span></div>
-      <div class="jstep"><div class="jn">10</div><b>Monitoramento inicial</b><span>A fase de aprendizado acompanhada de perto.</span></div>
-      <div class="jstep"><div class="jn">11</div><b>Assessoria comercial</b><span>Atendimento no roteiro da aba Comercial.</span></div>
-      <div class="jstep"><div class="jn">12</div><b>Primeiro relatório semanal</b><span>segunda-feira, com os últimos 7 dias.</span></div>
-      <div class="jstep"><div class="jn">13</div><b>Otimização das campanhas</b><span>A verba vai pro que gera consulta de avaliação.</span></div>
-      <div class="jstep"><div class="jn">14</div><b>Acompanhamento diário</b><span>Otimização diária.</span></div>
-      <div class="jstep"><div class="jn">15</div><b>Validação de copy e público</b><span>O que fica e o que muda pro mês 2.</span></div>
+      <div class="jstep"><div class="jn">01</div><b>Entrada e apresentação do squad e agendamento do onboarding</b><span>Quem cuida do projeto na Elevare.</span></div>
+      <div class="jstep"><div class="jn">02</div><b>Envio dos acessos pelo cliente</b><span>Até 24h após o contrato.</span></div>
+      <div class="jstep"><div class="jn">03</div><b>Setup: estruturação da conta para o início das campanhas</b><span>Até 72h após a liberação dos acessos.</span></div>
+      <div class="jstep"><div class="jn">04</div><b>Entrega dos roteiros</b><span>48h após o onboarding (23/10).</span></div>
+      <div class="jstep"><div class="jn">05</div><b>Gravação e envio dos vídeos pelo cliente</b><span>Até 72h após a entrega dos roteiros (26/10).</span></div>
+      <div class="jstep is-here"><div class="jn">06</div><b>Apresentação do Plano Macro</b><span>Vídeos editados, anúncios estáticos e estratégia, 7 dias após o onboarding (28/10). Este documento.</span><em class="here">Você está aqui</em></div>
+      <div class="jstep"><div class="jn">07</div><b>Aprovação dos materiais enviados no grupo</b><span>Vídeos e estáticos, até 24h após o Plano Macro (29/10).</span></div>
+      <div class="jstep"><div class="jn">08</div><b>Ativação das campanhas</b><span>Imediatamente após a aprovação dos anúncios.</span></div>
+      <div class="jstep"><div class="jn">09</div><b>Monitoramento inicial</b><span>Buscando a nossa meta de custo por lead e de vendas.</span></div>
+      <div class="jstep"><div class="jn">10</div><b>Relatórios semanais</b><span>Toda segunda, referente à semana anterior.</span></div>
+      <div class="jstep"><div class="jn">11</div><b>Acompanhamento diário</b><span>As campanhas conferidas todos os dias.</span></div>
+      <div class="jstep"><div class="jn">12</div><b>Otimização das campanhas</b><span>A verba vai pro que gera consulta de avaliação.</span></div>
+      <div class="jstep"><div class="jn">13</div><b>Validação de anúncios, públicos e campanhas</b><span>Estáticos e vídeos: o que fica e o que muda pro mês 2.</span></div>
+      <div class="jstep"><div class="jn">14</div><b>Reunião de alinhamento mensal</b><span>Resultados do mês e próximos passos.</span></div>
     </div>
     <p class="impl-next">Próximas etapas → o que cada mês traz, logo abaixo.</p>
 
@@ -2113,12 +2272,12 @@
     <div class="criteria is-3">
       <div class="card"><span class="crit-n">01</span><h3>O mês 1 é calibragem, não fechamento.</h3><p>No primeiro mês organizamos o acompanhamento dos leads, calibramos público, testamos criativos e mapeamos as objeções que chegam pelo WhatsApp. É a fundação: os resultados consistentes aparecem a partir do mês 2, quando a campanha já aprendeu.</p></div>
       <div class="card"><span class="crit-n">02</span><h3>O lead de tráfego não chega te conhecendo.</h3><p>Quem vem por indicação já chega confiando. Quem vem do anúncio está te descobrindo agora: vai pesquisar, comparar e perguntar preço. Por isso a autoridade entra primeiro e o atendimento caminha junto: a velocidade e a forma de responder no WhatsApp decidem boa parte do resultado.</p></div>
-      <div class="card"><span class="crit-n">03</span><h3>Verba enxuta pede foco.</h3><p>Com R$ 8 mil por mês (R$ 6 mil na Meta e R$ 2 mil no Google) de mídia por mês, o volume é limitado. Por isso a verba fica na consulta de avaliação, que é a porta pro tratamento e segue o custo por consulta de avaliação. Preferimos dizer isso agora do que prometer volume que não vamos entregar.</p></div>
+      <div class="card"><span class="crit-n">03</span><h3>Verba enxuta pede foco.</h3><p>Com R$ 6 mil por mês (R$ 4 mil na Meta e R$ 2 mil no Google) de mídia por mês, o volume é limitado. Por isso a verba fica na consulta de avaliação, que é a porta pro tratamento e segue o custo por consulta de avaliação. Preferimos dizer isso agora do que prometer volume que não vamos entregar.</p></div>
     </div>
 
     <h3 class="sub-h">O que cada mês traz</h3>
     <div class="months">
-      <div class="card"><div class="k">Mês 1</div><h3>Calibragem e descoberta</h3><p>Setup, formulário e CRM amarrado. A primeira campanha entra em até 7 dias depois do setup. Você grava os vídeos e ajusta o perfil, e revisamos o site dentro da política de saúde. O que aprendemos vira o baseline de conversão.</p></div>
+      <div class="card"><div class="k">Mês 1</div><h3>Implantação, estratégia e primeiras validações</h3><p>Setup, formulário e CRM amarrado. A primeira campanha entra em até 7 dias depois do setup. Você aprova os vídeos e ajusta o perfil. O que aprendemos vira o baseline de conversão.</p></div>
       <div class="card"><div class="k">Mês 2</div><h3>Otimização</h3><p>Com 30 a 45 dias de dado, vemos o que o formulário filtra e qual anúncio traz quem marca a consulta e fecha, e ajustamos público e criativo. A meta é 1 a 2 tratamentos vindos do tráfego.</p></div>
       <div class="card"><div class="k">Mês 3+</div><h3>Consolidação e escala</h3><p>Chegar à faixa de 15 a 20 consultas por mês, reativar a secretária digital se o volume pedir e avaliar aumento de verba se o custo por consulta permitir.</p></div>
     </div>
@@ -2135,7 +2294,10 @@
     <h3 class="sub-h">O que alinhar na apresentação deste plano</h3>
     <div class="ladder">
       
-      <div class="rung"><span class="n"></span><div><b>Revisão do site dentro da política de saúde antes do tráfego pago</b><span>Ajustar percentual de sucesso, "menos medicação" e o depoimento de câncer, por política de anúncio e segurança jurídica.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Verba e divisão por plataforma</b><span>R$ 6 mil por mês: R$ 4 mil na Meta (formulário) e R$ 2 mil no Google (busca reestruturada).</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Atendimento e secretária digital</b><span>Definir quando reativar a secretária digital no WhatsApp pra segurar o tempo de resposta.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>CRM e planilha</b><span>Dar acesso ao XPED e definir o modelo da planilha e como o lead cai no grupo.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Perguntas do formulário e lead qualificado</b><span>Validar as 3 perguntas e o que o José considera lead qualificado.</span></div></div>
     </div>
   </section>
 
@@ -2156,7 +2318,7 @@
         <li>Manter acessos e o cartão ativo nas contas de anúncio</li>
         <li>Enviar o avanço de leads e vendas toda terça</li>
         <li>Registrar os leads no CRM e participar da reunião mensal</li>
-        <li>Ajustar bio, destaques e fixados, e revisar o site dentro da política de saúde</li>
+        <li>Ajustar bio, destaques e fixados</li>
       </ul></div>
       <div class="card"><span class="kicker">Atendimento</span><h3>Do lead à consulta</h3><ul>
         <li>Responder em até 5 minutos (o José hoje, e a secretária digital quando o volume subir)</li>
@@ -2173,7 +2335,7 @@
   </div>
 
   <div class="tab" id="tab-info">
-    <header class="tab-head"><span class="tab-num">Parte 09 de 09</span><h1>Informações gerais</h1><p>Pra consultar quando precisar: as regras de comunicação que valem pra todo o material, os termos usados no plano e o que ainda falta confirmar.</p><nav class="tab-toc"><a href="#regras-conselho">Regras de comunicação</a><a href="#termos">Termos usados neste plano</a><a href="#lacunas">O que falta confirmar</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 09 de 09</span><h1>Informações gerais</h1><p>Pra consultar quando precisar: as regras de comunicação que valem pra todo o material, os termos usados no plano e o que ainda falta confirmar.</p><nav class="tab-toc"><a href="#regras-conselho">Regras de comunicação</a><a href="#termos">Termos usados neste plano</a></nav></header>
     
 
   <section id="regras-conselho">
@@ -2191,10 +2353,6 @@
         <tr><td class="name">Identificação do profissional</td><td>Usar título de profissão regulamentada sem registro é irregular.</td><td>Na bio e nos materiais, &quot;terapeuta&quot; e &quot;hipnoterapeuta&quot;, não &quot;psicólogo&quot; e sem registro de conselho (CRP), que não é o caso.</td></tr>
       </tbody>
     </table></div>
-    <div class="callout" style="margin-top:16px;">
-      <span class="mark">!</span>
-      <div><p><strong>Material atual pra ajustar:</strong> o site (joseiltonhipnose.com) traz hoje alegações que ferem essas regras: percentual de sucesso (&quot;até 95%&quot;), &quot;menos medicação&quot; e um depoimento que menciona câncer. Antes de levar tráfego pago pro site, essas partes precisam ser revisadas, por política de anúncio e por segurança jurídica. A Elevare não apaga nada do perfil nem do site: os ajustes são feitos pelo José, com a nossa orientação.</p></div>
-    </div>
   </section>
 
   <section id="termos">
@@ -2216,33 +2374,6 @@
     </dl>
   </section>
 
-  <section id="lacunas">
-    <div class="sec-head"><span class="sec-num">9.3</span><h2>O que falta confirmar</h2></div>
-
-    <div class="grid2">
-      <div class="card">
-        <h3>Acessos e dados</h3>
-        <ul>
-          <li>ID da conta do Google Ads (customer ID), pra vincular na nossa MCC e fazer a auditoria completa (termos de busca, estrutura, rastreamento).</li>
-          <li>Qual ação está contando como &quot;conversão&quot; no Google hoje (clique no WhatsApp, formulário ou outra), pra ler o custo por conversão com clareza.</li>
-          <li>Acesso ao CRM XPED e o modelo da planilha de acompanhamento; como o lead cai no grupo (automação ou manual).</li>
-          <li>Confirmar a conta nova da Meta: página, Instagram e pixel conectados.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Conteúdo e definições</h3>
-        <ul>
-          <li>Revisão do site antes do tráfego pago: percentual de sucesso, &quot;menos medicação&quot; e depoimento de câncer.</li>
-          <li>Lista de dores e profissões-alvo que o José ficou de enviar, pra calibrar a copy.</li>
-          <li>Marco de autoridade da bio: anos de atuação ou número de pessoas atendidas (temos 71 avaliações 5 estrelas confirmadas).</li>
-          <li>Detalhe fino do Google Meu Negócio (horário e trechos de avaliações) não foi coletado; se for usar em criativo, o José envia.</li>
-          <li>Tom de voz definitivo da marca.</li>
-          <li>Validar as 3 perguntas do formulário e o que o José considera lead qualificado.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note">Nada neste plano foi preenchido por suposição: o que não está confirmado está nesta lista. Os números (ticket, verba, metas) vieram da call e do histórico enviado pelo José; a conversão real em consulta e tratamento é criada no primeiro mês, com o CRM amarrado.</p>
-  </section>
     <nav class="pager"><a href="#tab-jornada">← Jornada</a><span></span></nav>
   </div>
 
