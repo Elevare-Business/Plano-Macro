@@ -546,8 +546,10 @@
   .tab-head h1{font-size:clamp(28px,3.4vw,34px);line-height:1.1;margin:4px 0 8px;}
   .tab-head p{margin:0;max-width:66ch;}
   .tab-toc{margin:0 0 8px;padding:16px 0;border-bottom:1px solid var(--line);}
-  @media (min-width:901px){ .tab-toc{padding:16px 0;margin:0 0 8px;} }
+  /* índice da aba ocupa a largura toda, até a lateral, como as seções cinzas (sem faixa vazando por trás quando fixa no topo) */
+  @media (min-width:901px){ .tab-toc{padding:16px 40px;margin:0 -40px 8px;} }
   @media (max-width:900px){
+    .tab-toc{margin-inline:-16px;padding-inline:16px;}
     .tab{scroll-margin-top:64px;}
     .tab-head{margin-inline:-16px;padding:24px 16px 20px;height:auto;min-height:208px;}
     .tab > section:nth-of-type(even){margin-inline:-16px;padding-inline:16px;}
